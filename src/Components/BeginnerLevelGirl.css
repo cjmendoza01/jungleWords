@@ -1,0 +1,93 @@
+.beginnerlevelGirl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative; /* Ensure child elements can be positioned absolutely */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.girl-image {
+  position: absolute;
+  top: 300px; /* Adjust based on desired position */
+  right: 140px; /* Adjust based on desired position */
+  max-width: 30%; /* Adjust size */
+  height: auto;   
+}
+
+
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px; /* Adjust based on desired position */
+  margin-right: 500px;
+}
+
+.begStage1 {
+  margin: 5px;
+  cursor: pointer;
+  width: 250px;
+  background-color: transparent; /* Ensure buttons are transparent */
+  border: none; /* Ensure no border */
+}
+
+.begStage2 {
+  margin: 5px;
+  cursor: pointer;
+  width: 250px;
+  background-color: transparent; /* Ensure buttons are transparent */
+  border: none; /* Ensure no border */
+}
+
+.begStage3 {
+  margin: 5px;
+  cursor: pointer;
+  width: 250px;
+  background-color: transparent; /* Ensure buttons are transparent */
+  border: none; /* Ensure no border */
+}
+
+.begStage1 img {
+  width: 100%; /* Ensure image fits within the button */
+  height: auto;
+}
+
+.begStage2 img {
+  width: 100%; /* Ensure image fits within the button */
+  height: auto;
+}
+
+.begStage3 img {
+  width: 100%; /* Ensure image fits within the button */
+  height: auto;
+}
+
+.begStage1:hover {
+  transform: scale(1.1);
+}
+
+.begStage2:hover {
+  transform: scale(1.1);
+}
+
+.begStage3:hover {
+  transform: scale(1.1);
+}
+.buttonLevel img {
+  width: 150px; /* Adjust width based on desired size */
+  height: auto; /* Auto height to maintain aspect ratio */
+}
+
+.buttonLevel:hover{
+  transform: scale(1.1);
+}
+.selected {
+  border: 2px solid #655c25; /* Yellow border indicating selection */
+  border-radius: 10px; /* Adjust border radius as needed */
+
+}

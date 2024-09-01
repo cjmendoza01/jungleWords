@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url('opaque.png') no-repeat center bottom/cover;
+  font-family: 'Poppins';
+  overflow: hidden;
+}
+
+header nav {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 75px;
+  padding-left: 60px;
+}
+
+.nav-links {
+  margin-right: 40px;
+  display: flex;
+  gap: 30px; /* Add spacing between nav links */
+}
+
+.nav-links a {
+  display: inline-block;
+  transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.nav-links img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.nav-links a:hover img {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.home-link img {
+  width: 150px; /* Adjust the width as needed */
+  height: 49px; /* Adjust the height as needed */
+  padding-top: 6px;
+}
+
+.aboutus-link img {
+  width: 150px; /* Adjust the width as needed */
+  height: 56px; /* Adjust the height as needed */
+}
+
+.jungle-background {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents {
+  text-align: center;
+  color: white;
+}
+
+.contents img {
+  max-width: 100%;
+  width: 500px;
+  height: auto;
+  display: block;
+  margin: 50px auto 20px auto; /* Adjust the top margin to move it down */
+}
+
+.text-content {
+  margin-top: 10px; /* Reduce the top margin to move the text up */
+  padding: 20px; /* Add padding to create space around the text */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background for better readability */
+  border-radius: 10px; /* Rounded corners for better aesthetics */
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  max-width: 1000px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.8; /* Increase line-height for better readability */
+  text-align: justify;
+  font-family: 'Poppins';
+}

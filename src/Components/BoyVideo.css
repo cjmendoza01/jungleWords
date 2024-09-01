@@ -1,0 +1,38 @@
+.BoyVideo {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+}
+
+.skip-button {
+  bottom: 20px;
+  right: 40px;
+  width: 150px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+}
+
+.mute-button {
+  top: 20px;
+  left: 20px;
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+.skip-button:hover, .mute-button:hover {
+  transform: scale(1.1);
+}

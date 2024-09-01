@@ -1,0 +1,60 @@
+.K1 {
+  text-align: center;
+  background: url('junglebg.png') no-repeat center bottom/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px; /* Adjust the padding-bottom as needed */
+  position: relative; /* Ensure relative positioning for the speech bubble */
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Adjust the gap as needed */
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+.character-girl {
+  max-width: 70%;
+  padding-right: 150px;
+  padding-top: 400px;
+  margin-right: 600px;
+  height: auto;
+}
+
+.speech-bubble {
+  position: absolute;
+  top: 110px;
+  right: 420px;
+  border-radius: 10px;
+  padding: 10px;
+  width: 390px;
+  text-align: center;
+}
+
+.next-button {
+  padding: 10px; /* Add padding to the button to make it larger */
+  background-color: transparent !important; /* Force background to be transparent */
+  border: none !important; /* Force no border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Add margin-top to create space between the characters and the button */
+}
+
+.nextButtonImage {
+  width: 150px; /* Increase the width to make the button larger */
+  height: auto;
+  display: block; /* Ensure the image is displayed as a block element */
+  margin-bottom: 50px;
+}
+
+.next-button:hover .nextButtonImage {
+  transform: scale(1.1);
+}

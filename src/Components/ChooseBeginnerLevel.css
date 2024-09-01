@@ -1,0 +1,72 @@
+.beginnerlevel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('junglebg.png') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative; /* Ensure child elements can be positioned absolutely */
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+.girl-image {
+  position: absolute;
+  top: 300px; /* Adjust based on desired position */
+  right: 140px; /* Adjust based on desired position */
+  max-width: 30%; /* Adjust size */
+  height: auto;
+}
+
+.speech-bubble {
+  position: absolute;
+  top: 110px; /* Adjust based on desired position */
+  right: 420px; /* Adjust based on desired position */
+  border-radius: 10px;
+  padding: 10px;
+  width: 300px; /* Adjust based on desired size */
+  text-align: center;
+}
+
+.speech-bubble img {
+  width: 100%; /* Ensure image fits within the bubble */
+  height: auto;
+}
+
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px; /* Adjust based on desired position */
+  margin-right: 500px;
+}
+
+.buttonLevel {
+  margin: 10px;
+  cursor: pointer;
+  width: 250px;
+  background-color: transparent; /* Ensure buttons are transparent */
+  border: none; /* Ensure no border */
+}
+
+.buttonLevel img {
+  width: 100%; /* Ensure image fits within the button */
+  height: auto;
+}
+
+.buttonLevel:hover {
+  transform: scale(1.1);
+}
+
+.done-buttonLevel {
+  width: 150px; /* Adjust width based on desired size */
+  height: auto; /* Auto height to maintain aspect ratio */
+}
+
+.selected {
+  border: 2px solid #655c25; /* Yellow border indicating selection */
+  border-radius: 10px; /* Adjust border radius as needed */
+
+}

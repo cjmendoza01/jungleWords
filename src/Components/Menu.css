@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url('opaque.png') no-repeat center bottom/cover;
+  font-family: 'Poppins';
+  overflow: hidden;
+}
+
+.Menu {
+  text-align: center;
+  background: url('junglebg.png') no-repeat center bottom/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chooseIcon img {
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.characters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Adjust the gap as needed */
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+.character-option {
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.character-option img {
+  height: 400px; /* Set a specific height for characters */
+  width: auto;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+
+.wooden-sign {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.done-button {
+  padding: 10px; /* Add padding to the button to make it larger */
+  background-color: transparent !important; /* Force background to be transparent */
+  border: none !important; /* Force no border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Add margin-top to create space between the characters and the button */
+}
+
+.doneButtonImage {
+  width: 150px; /* Increase the width to make the button larger */
+  height: auto;
+  display: block; /* Ensure the image is displayed as a block element */
+}
+
+.done-button:hover .ButtonImage {
+  transform: scale(1.1);
+}
+

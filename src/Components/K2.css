@@ -1,0 +1,64 @@
+.K2 {
+    text-align: center;
+    background: url('junglebg.png') no-repeat center bottom/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px; /* Adjust the padding-bottom as needed */
+  }
+    
+    
+    .characters {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px; /* Adjust the gap as needed */
+      margin-bottom: 20px;
+      width: 60%;
+    }
+    
+    
+    .character-girl {
+      max-width: 70%;
+      padding-right: 150px;
+      padding-top: 400px;
+      margin-right: 600px;
+      height: auto;
+    }
+    
+    
+    .speech-bubble {
+      position: absolute;
+      top: 110px;
+      right: 420px;
+      border-radius: 10px;
+      padding: 10px;
+      width: 390px;
+      text-align: center;
+    }
+    
+   
+    .next-button {
+      margin-bottom: 50px;
+      padding: 10px 20px;
+      background-color: #ffb74d;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .next-button:hover {
+      background-color: #ffa726;
+    }
+
+    .next-button:hover .nextButtonImage {
+      transform: scale(1.1);
+    }

@@ -1,0 +1,220 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    position: relative;
+  }
+  
+  .drag-n-drop-container {
+    height: 100vh; /* Ensures it fills the height of the viewport */
+    width: 100vw; /* Ensures it fills the width of the viewport */
+    background-color: #326901;
+    background-image: url('../assets/bgbs1.png'); /* Your background image */
+    background-size: cover; /* Ensures the background covers the entire container */
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 1fr auto; /* Adjusts to have the food container on the right */
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .drag-n-drop-container .draggable-container {
+    padding: 50px;
+    height: auto; /* Makes the height adjustable */
+    width: auto; /* Makes the width adjustable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10%; /* Adjusted to allow more space for the container */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .drag-n-drop-container .draggable-container .foods-container {
+    background-color: #cfdecb;
+    height: auto;
+    width: auto;
+    max-width: 700px; /* Adjust width as needed */
+    max-height: 400px; /* Adjust height as needed */
+    border: 2px solid green;
+    border-radius: 20px;
+    padding: 70px; /* Adjust padding as needed */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for layout */
+    grid-auto-rows: 120px; /* Adjusted height for bigger items */
+    column-gap: 20px; /* Added gap between columns */
+    row-gap: 20px; /* Added gap between rows */
+    justify-items: center; /* Centers items horizontally */
+    min-height: 400px;  /* Ensures the container has a minimum height */
+    min-width: 700px;   /* Ensures the container has a minimum width */
+    box-sizing: border-box;
+  }
+  
+  /* Each food item within the container */
+  .drag-n-drop-container .draggable-container .foods-container .food-item {
+    background-color: #cfdecb;
+    border: none;
+    padding: 1px; /* Adjust padding as needed */
+    cursor: grab;
+  }
+  
+  .drag-n-drop-container .draggable-container .foods-container .food-item img {
+    height: 130px; /* Adjusted size of food items */
+    width: 150px;
+    object-fit: contain;
+  }
+  
+  
+  /* Position the girl to the left */
+  .drag-n-drop-container .droppable-container .droppable-zone {
+    height: 350px;
+    width: 250px;
+    border: none;
+    background-image: url("../assets/girl.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom center;
+    transition: transform 0.1s ease-in-out;
+    position: absolute;
+    top: 45%;
+    right: 60%; /* Moved the girl further to the left */
+  }
+  
+  .drag-n-drop-container .droppable-container .droppable-zone img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .drag-n-drop-container .droppable-container .droppable-zone .dropped-item {
+    margin-top: 15%;
+    height: 80px;
+    width: 80px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .drag-n-drop-container .droppable-container .droppable-zone .dropped-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .drag-n-drop-container .draggable-container .foods-container .food-item:active {
+    background-color: transparent; /* Fully transparent when dragging */
+    cursor: grabbing;
+  }
+  
+  
+  /* MODAL / POPUP */
+  .modal {
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal .modal-backdrop {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(52, 64, 84, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+  }
+  
+  .modal .modal-container {
+    background-color: lightgray;
+    width: 440px;
+    border: 10px solid green;
+    margin: auto;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+  }
+  
+  .soundicon,
+  .choice {
+    height: 100px;
+    width: 100px;
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .soundicon img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .choice img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .choice.right {
+    background-color: green;
+  }
+  
+  .choice.wrong {
+    background-color: red;
+  }
+  
+  /* NEW CSS FOR SOUND ICON IN MODAL */
+  .modal .soundicon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  .modal .soundicon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .soundicon:hover img {
+    transform: scale(1.1);
+  }
+  
+  .choice:hover img {
+    transform: scale(1.1);
+  }
+  
+  
+  

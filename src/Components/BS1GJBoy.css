@@ -1,0 +1,42 @@
+.GoodJob {
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover; /* Ensures the background covers the entire container */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  background-attachment: fixed; /* Ensures the background stays fixed while scrolling */
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.button {
+  position: absolute;
+  cursor: pointer;
+}
+
+.nextStage-button {
+  bottom: 40px;
+  right: 500px;
+  width: 150px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+}
+
+.buttonPlay-button {
+  bottom: 40px;
+  right: 800px;
+  width: 150px; /* Adjust size as needed */
+  height: 60px; /* Adjust size as needed */
+}
+
+.nextStage-button:hover,
+.buttonPlay-button:hover {
+  transform: scale(1.1);
+}

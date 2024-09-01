@@ -1,0 +1,25 @@
+.LostGirl {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    width: 100px; /* Adjust size as needed */
+    height: 60px; /* Adjust size as needed */
+    cursor: pointer;
+  }
+  
