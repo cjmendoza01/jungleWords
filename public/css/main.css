@@ -1,0 +1,231 @@
+.tester-container{
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.tester-image-container{
+    display: flex;
+	gap: 5px;
+    flex-direction: row-reverse;
+    height: 100%;
+    align-Items: "end",
+}
+
+.testr-img{
+    width: 80px;
+	height: 80px;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.tester-Button{
+    margin-top: 20px;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+} 
+  
+  .animate-bananaFall {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+
+  .stage2-monkey-div{
+    width: 20%;
+    height: 150px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+  }
+  .stage2-monkey-img{
+    height: 100%;
+    width: 50px;
+    object-fit: contain;
+  }
+  .tester-Button {
+    margin-top: 20px;
+    padding: 10px 20px;
+  }
+  
+
+  .stage2-upper-div {
+    height: 60%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.stage2-upper2-div{
+width: 90%;
+    display: flex;
+    align-items: end;
+    justify-content: right;}
+
+.stage2-lower-div {
+    height: 40%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.stage-2-button-div{
+    display: flex;
+    width: 50%;
+    padding: 20px;
+    height: 50%;
+    background-color: #cbd8c9;
+    border: 3px solid #034703;
+    border-radius: 10px;
+    
+}
+
+.stage-2-button-div-item{
+    width: 20%;
+    height: 100%;
+    font-weight: bold;
+    font-size: 7vw;
+    color: #116213;
+    background-color: #cbd8c9;
+    align-content: center;
+    text-align: center;
+    border: outset;
+    font-family: sans-serif;
+}
+
+.stage-2-button-div-item:first-child {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px; 
+  }
+  
+.stage-2-button-div-item:last-child {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+  
+.button-stage2-error{
+    background-color: #4caf50;
+	color: white;
+}
+/* .button-stage2-error{
+    background-color: #912222;
+    color: #e45e5e;
+} */
+
+.stage-2-character-div{
+    width: 10%;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+}
+
+.stage-2-char-div{
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+  
+/* //Modal// */
+
+.modal {
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal .modal-backdrop {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(52, 64, 84, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: -1;
+  }
+  
+  .modal .modal-container {
+    background-color: lightgray;
+    width: 440px;
+    border: 10px solid green;
+    margin: auto;
+    box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+  }
+  
+  .soundicon,
+  .choice {
+    height: 100px;
+    width: 100px;
+    border: 2px solid green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .soundicon img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 16px; */
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  .choice img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .choice.right {
+    background-color: green;
+  }
+  
+  .choice.wrong {
+    background-color: red;
+  }
+  
+  .modal .soundicon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+  
+  .modal .soundicon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+  
+  .soundicon:hover img {
+    transform: scale(1.1);
+  }
+  
+  .choice:hover img {
+    transform: scale(1.1);
+  }
+  
+  

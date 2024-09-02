@@ -287,17 +287,17 @@ const BeginnerStage1Boy = () => {
         { image: LetterB, isCorrect: true },
       ],
     },
-    {
-      image: Butter,
-      audio: ButterAudio,
-      id: "butter",
-      isDisplayed: true,
-      modalChoices: [
-        { image: LetterK, isCorrect: false },
-        { image: LetterB, isCorrect: true },
-        { image: LetterG, isCorrect: false },
-      ],
-    },
+    // {
+    //   image: Butter,
+    //   audio: ButterAudio,
+    //   id: "butter",
+    //   isDisplayed: true,
+    //   modalChoices: [
+    //     { image: LetterK, isCorrect: false },
+    //     { image: LetterB, isCorrect: true },
+    //     { image: LetterG, isCorrect: false },
+    //   ],
+    // },
     {
       image: Carrots,
       audio: CarrotsAudio,
@@ -475,17 +475,17 @@ const BeginnerStage1Boy = () => {
         { image: LetterD, isCorrect: false },
       ],
     },
-    {
-      image: Itlog,
-      audio: ItlogAudio,
-      id: "itlog",
-      isDisplayed: true,
-      modalChoices: [
-        { image: LetterI, isCorrect: true },
-        { image: LetterK, isCorrect: false },
-        { image: LetterW, isCorrect: false },
-      ],
-    },
+    // {
+    //   image: Itlog,
+    //   audio: ItlogAudio,
+    //   id: "itlog",
+    //   isDisplayed: true,
+    //   modalChoices: [
+    //     { image: LetterI, isCorrect: true },
+    //     { image: LetterK, isCorrect: false },
+    //     { image: LetterW, isCorrect: false },
+    //   ],
+    // },
     {
       image: Jackfruit,
       audio: JackfruitAudio,
@@ -585,17 +585,17 @@ const BeginnerStage1Boy = () => {
         { image: LetterU, isCorrect: false },
       ],
     },
-    {
-      image: Lollipop,
-      audio: LollipopAudio,
-      id: "lollipop",
-      isDisplayed: true,
-      modalChoices: [
-        { image: LetterL, isCorrect: true },
-        { image: LetterD, isCorrect: false },
-        { image: LetterU, isCorrect: false },
-      ],
-    },
+    // {
+    //   image: Lollipop,
+    //   audio: LollipopAudio,
+    //   id: "lollipop",
+    //   isDisplayed: true,
+    //   modalChoices: [
+    //     { image: LetterL, isCorrect: true },
+    //     { image: LetterD, isCorrect: false },
+    //     { image: LetterU, isCorrect: false },
+    //   ],
+    // },
     {
       image: Lumpia,
       audio: LumpiaAudio,
@@ -717,17 +717,17 @@ const BeginnerStage1Boy = () => {
         { image: LetterA, isCorrect: false },
       ],
     },
-    {
-      image: Omelet,
-      audio: OmeletAudio,
-      id: "omelet",
-      isDisplayed: true,
-      modalChoices: [
-        { image: LetterO, isCorrect: true },
-        { image: LetterC, isCorrect: false },
-        { image: LetterA, isCorrect: false },
-      ],
-    },
+    // {
+    //   image: Omelet,
+    //   audio: OmeletAudio,
+    //   id: "omelet",
+    //   isDisplayed: true,
+    //   modalChoices: [
+    //     { image: LetterO, isCorrect: true },
+    //     { image: LetterC, isCorrect: false },
+    //     { image: LetterA, isCorrect: false },
+    //   ],
+    // },
     {
       image: Onion,
       audio: OnionAudio,
@@ -904,17 +904,17 @@ const BeginnerStage1Boy = () => {
         { image: LetterE, isCorrect: false },
       ],
     },
-    {
-      image: Soup,
-      audio: SoupAudio,
-      id: "soup",
-      isDisplayed: true,
-      modalChoices: [
-        { image: LetterS, isCorrect: true },
-        { image: LetterD, isCorrect: false },
-        { image: LetterE, isCorrect: false },
-      ],
-    },
+    // {
+    //   image: Soup,
+    //   audio: SoupAudio,
+    //   id: "soup",
+    //   isDisplayed: true,
+    //   modalChoices: [
+    //     { image: LetterS, isCorrect: true },
+    //     { image: LetterD, isCorrect: false },
+    //     { image: LetterE, isCorrect: false },
+    //   ],
+    // },
     {
       image: Spinach,
       audio: SpinachAudio,

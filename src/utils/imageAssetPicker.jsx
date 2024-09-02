@@ -1,10 +1,3 @@
-import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
-import { useEffect, useRef, useState } from "react";
-import './BeginnerStage1Boy.css'; 
-import stage1Done from '../assets/buttons&dialogues/stage1Done.png';
-
-
-// Import all images/assets of food items
 import Adobo from "../assets/foods/Adobo.png";
 import Apple from "../assets/foods/Apple.png";
 import Atis from "../assets/foods/Atis.png";
@@ -207,9 +200,9 @@ import LetterZ from "../assets/letters/Z.png";
 // Import all image of sound icon
 import soundicon from '../assets/Volume.png'; 
 
-const BeginnerStage1Boy = () => {
+
   // Food items to display in the side and to be dragged
-  const [foodItemsList, setFoodItemsList] = useState([
+ export  const foodItemsList = [
     {
       image: Adobo,
       audio: AdoboAudio,
@@ -1147,277 +1140,23 @@ const BeginnerStage1Boy = () => {
       ],
     },
 
-  ]);
-  
+  ];
 
-  const [foodItems, setFoodItems] = useState([])
+  export const randonFoodGetter = (numElements, notIncluddedValues) =>{
 
-  
-  useEffect(() => {
-    // Function to select random elements without replacement
-function getRandomElements(arr, numElements) {
-  const shuffled = arr.slice(); // Create a copy to avoid modifying original array
-  const selected = [];
-  for (let i = 0; i < numElements; i++) {
-    const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
-    selected.push(shuffled.splice(randomIndex, 1)[0]);
-  }
-  return selected;
-}
-
-  const x = getRandomElements(foodItemsList, 6) // Adjusted to select 10 items
-
-  setFoodItems(x)
-  }, [foodItemsList])
-
-  // Variable to store what food item is being dragged
-  const [currentFoodItem, setCurrentFoodItem] = useState(null);
-
-  // Flag to check if the food item being dragged has been dropped
-  const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
-
-  // Data to show in the modal/popup
-  const [modalData, setModalData] = useState({
-    item: "",
-    choices: [],
-    audio: null,
-  });
-
-  // Flag to check if modal/popup should be shown
-  const [modalActive, setModalActive] = useState(false);
-
-  // Flag to check if the answer in the modal is correct
-  const [isModalAnswerCorrect, setIsModalAnswerCorrect] = useState(false);
-
-  // Scale of the boy. To be increased when getting correct answers
-  const [scale, setScale] = useState(1);
-
-  // Reference for the audio to be played in the modal / popup
-  const audioRef = useRef();
-
-  function handleDragEnd(event) {
-    // Check if dragged food item is dropped in the droppable
-    if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
-      // Get the active draggable food item
-      const active = event.active;
-
-      // Find the dragged food item in the list of food items
-      const item = foodItems.find((f) => "food-" + f.id == active.id);
-
-      // The food item has been dropped
-      setIsFoodItemDropped(true);
-
-      // Display the dropped food item in the container (near the mouth of the boy)
-      setCurrentFoodItem(item.image);
-
-      // Remove the dropped food item from the draggable container of food items
-      setFoodItems((foodItems) => {
-        return foodItems.map((f) =>
-          "food-" + f.id === active.id ? { ...f, isDisplayed: false } : f
-        );
-      });
-
-      // Set the data for the modal / popup
-      setModalData({
-        id: item.id,
-        choices: item.modalChoices,
-        audio: item.audio,
-      });
-
-      // Show modal / popup
-      setModalActive(true);
-
-      // Reset the modal status
-      setIsModalAnswerCorrect(false);
+    let items = foodItemsList;
+    
+    if( notIncluddedValues?.length ){
+         items =items.filter(value => notIncluddedValues.includes(value));
     }
-  }
 
-  useEffect(() => {
-    // If the selected choice in the modal is correct, then
-    if (isModalAnswerCorrect && !modalActive) {
-      // Remove the dropped item from the droppable zone after 1 second
-      setTimeout(() => {
-        setCurrentFoodItem("");
-        setIsFoodItemDropped(false);
-      }, 0.5 * 1000);
-
-      // Scale up the droppable zone (boy) after 1 second
-      setTimeout(() => {
-        setScale((scale) => scale + 0.05);
-      }, 1 * 1000);
-    }
-  }, [isModalAnswerCorrect, modalActive]);
-
-  
-const VowelButton = ({ vowel }) => (
-  <button className="vowel-button">{vowel}</button>
-);
-
-  return (
-    <main className="">
- 
-      <div className="drag-n-drop-container">
-     
-        <DndContext onDragEnd={handleDragEnd}>
-          {/* Container for the droppable zone */}
-          <div className="droppable-container">
-            <DroppableZone scale={scale}>
-              {isFoodItemDropped && (
-                <div className="dropped-item">
-                  <img src={currentFoodItem} alt="dropped-item" />
-                </div>
-              )}
-            </DroppableZone>
-          </div>
-
-          {/* Container for the food items */}
-          <div className="draggable-container">
-            <div className="foods-container">
-              {/* Iterating over the food items and displaying it */}
-              {foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
-                return isDisplayed ? (
-                  <FoodItem
-                    key={i}
-                    id={"food-" + id}
-                    modalChoices={modalChoices}
-                  >
-                    <img src={image} alt={id} />
-                  </FoodItem>
-                ) : (
-                  <div key={i}></div>
-                );
-              })}
-            </div>
-          </div>
-        </DndContext>
-        <div style={{width: "60%"}}> 
-       <div className="vowel-box">
-    {['A', 'E', 'I', 'O', 'U'].map(vowel => (
-      <VowelButton key={vowel} vowel={vowel} />
-    ))}
-  </div>
-  </div>
-      </div>
-
-      {/* MODAL / POPUP */}
-      {modalActive && (
-        <div className="modal">
-          <div className="modal-backdrop"></div>
-          <div className="modal-container">
-          {/* SOUND ICON */}
-<div className="soundicon" onClick={() => audioRef.current.play()}>
-  <img src={soundicon} alt="soundicon" />
-</div>
-<audio ref={audioRef} src={modalData.audio} />
-
-            {/* CHOICES */}
-            <div className="choices">
-              {modalData.choices.map(({ image, isCorrect }, i) => {
-                return (
-                  <ModalChoice
-                    key={i}
-                    image = {image}
-                    isCorrect={isCorrect}
-                    setModalActive={setModalActive}
-                    isModalAnswerCorrect={isModalAnswerCorrect}
-                    setIsModalAnswerCorrect={setIsModalAnswerCorrect}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      )}
-    </main>
-  );
-};
-
-export default BeginnerStage1Boy;
-
-
-// Component for the food item
-const FoodItem = ({ id, modalChoices, children }) => {
-  const { attributes, listeners, setNodeRef, transform, isDragging } =
-    useDraggable({
-      id: id,
-      data: { choices: modalChoices },
-    });
-
-  const style = transform
-    ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-        cursor: isDragging ? "grabbing" : "grab",
-      }
-    : undefined;
-
-  return (
-    <button
-      ref={setNodeRef}
-      className="food-item"
-      style={style}
-      {...listeners}
-      {...attributes}
-      id={id}
-    >
-      {children}
-    </button>
-  );
-};
-
-// Component for the droppable zone
-const DroppableZone = (props) => {
-  const { isOver, setNodeRef } = useDroppable({
-    id: "droppable-zone",
-  });
-  const style = {
-    backgroundColor: isOver ? "green" : undefined,
-    transform: "scale(" + props.scale + ")",
-  };
-
-  return (
-    <div style={style} className="droppable-zone" ref={setNodeRef}>
-      {props.children}
-    </div>
-  );
-};
-
-// Component for the modal/popup choices
-const ModalChoice = ({
-  image,
-  isCorrect,
-  setModalActive,
-  isModalAnswerCorrect,
-  setIsModalAnswerCorrect,
-}) => {
-  // Status whether the choice selected is right or wrong
-  const [status, setStatus] = useState("");
-
-  return (
-    <div
-      className={`choice ${status}`}
-      onClick={(e) => {
-        // If the correct answer is already selected, prevent any further selection
-        if (isModalAnswerCorrect) {
-          e.preventDefault();
-        } else {
-          // If the correct answer is not yet selected, then...
-          // If selected choice is not the correct answer, set status to wrong
-          if (!isCorrect) {
-            setStatus("wrong");
-          } else {
-            // If selected choice is the correct answer, then...
-            setStatus("right");
-            setIsModalAnswerCorrect(true);
-
-            // Close modal after 2 seconds
-            setTimeout(() => {
-              setModalActive(false);
-            }, 2 * 1000);
-          }
+        const shuffled = items.slice(); // Create a copy to avoid modifying original array
+        const selected = [];
+        for (let i = 0; i < numElements; i++) {
+          const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
+          selected.push(shuffled.splice(randomIndex, 1)[0]);
         }
-      }}
-    >
-      {image ? <img src={image} alt="letter" /> : label}
-    </div>
-  );
-};
+        return selected;
+  
+    }
+
