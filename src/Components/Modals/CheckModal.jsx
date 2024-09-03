@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import banana from "../../assets/bs2/banana.png";
+import Right from "../../assets/bs2/right.png";
 
 export default function CheckModal({ item }) {
 	const audioRef = useRef();
@@ -13,7 +13,7 @@ export default function CheckModal({ item }) {
 				<div style={{ width: "100%", height: "100%" }}>
 					<img
 						style={{ width: "100%", height: "100%", objectFit: "contain" }}
-						src={Banana}
+						src={Right}
 					/>
 				</div>
 			</div>

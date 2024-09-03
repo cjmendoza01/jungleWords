@@ -17,7 +17,7 @@ import BoyVideo from "./BoyVideo.jsx";
 import GirlVideo from "./GirlVideo.jsx";
 import Stage2 from "./Stage-2.jsx";
 import Tester from "./Tester.jsx";
-//import Stage3 from "./Stage3.jsx";
+import Stage3 from "./Stage3.jsx";
 
 function App() {
 	return (
@@ -39,7 +39,7 @@ function App() {
 			<Route path="/boy-video" element={<BoyVideo />} />
 			<Route path="/girl-video" element={<GirlVideo />} />
 			<Route path="/stage2" element={<Stage2 />} />
-			{/* <Route path="/stage3" element={<Stage3 />} /> */}
+			<Route path="/stage3" element={<Stage3 />} />
 			<Route path="/Tester" element={<Tester />} />
 		</Routes>
 	);

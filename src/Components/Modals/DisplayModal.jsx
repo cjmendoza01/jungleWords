@@ -10,10 +10,17 @@ export default function DisplayModal({ item }) {
 			<div className="modal-backdrop"></div>
 			<div className="modal-container">
 				{/* SOUND ICON */}
-				<div className="soundicon" onClick={() => audioRef.current.play()}>
-					<img src={soundicon} alt="soundicon" />
-				</div>
-				<audio ref={audioRef} src={item.audio} />
+				{item?.audio ? (
+					<>
+						<div className="soundicon" onClick={() => audioRef.current.play()}>
+							<img src={soundicon} alt="soundicon" />
+						</div>
+
+						<audio ref={audioRef} src={item.audio} />
+					</>
+				) : (
+					<></>
+				)}
 
 				{/* CHOICES */}
 				<div className="choices">
