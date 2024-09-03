@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-import Banana from "../../assets/bs2/bs2banana.png";
+import banana from "../../assets/bs2/banana.png";
 
 export default function CheckModal({ item }) {
 	const audioRef = useRef();

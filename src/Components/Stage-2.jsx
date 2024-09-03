@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 
 import DisplayModal from "./Modals/DisplayModal";
 
-import Banana from "../assets/bs2/bs2banana.png";
+import banana from "../assets/bs2/banana.png";
 import Boy from "../assets/boy.png";
 import Girl from "../assets/girl.png";
 import CheckModal from "./Modals/CheckModal";
