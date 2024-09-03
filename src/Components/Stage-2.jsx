@@ -12,7 +12,7 @@ import Girl from "../assets/girl.png";
 import CheckModal from "./Modals/CheckModal";
 
 export default function Stage2() {
-	const [bananaCount, setBananaCount] = useState(1);
+	const [bananaCount, setBananaCount] = useState(9);
 	const [questions, setQuestions] = useState([]);
 
 	const [openCheckModal, setOpenCheckModal] = useState(false);
@@ -21,16 +21,18 @@ export default function Stage2() {
 	const [disabledChoices, setDisabledChoices] = useState([]);
 
 	const [gender, setGender] = useState("boy");
+	const [level, setLevel] = useState(1);
 	const choices = ["A", "E", "I", "O", "U"];
 
 	const location = useLocation();
 	const queryParams = new URLSearchParams(location.search);
 
 	const qGender = queryParams.get("gender");
+	const qLevel = queryParams.get("level");
 
 	useEffect(() => {
 		if (questions.length === 0 && !gameComplete) {
-			const items = randonFoodGetter(1);
+			const items = randonFoodGetter(9);
 			setQuestions(items);
 			console.log(items);
 			setTimeout(() => {
@@ -54,7 +56,9 @@ export default function Stage2() {
 				setOpenCheckModal(false);
 			}, 2000);
 			const bnLen = bananaCount;
-			if (bnLen?.length > 0) {
+			console.log("bananacount :", bnLen);
+			console.log(bananaCount);
+			if (bnLen > 0) {
 				setTimeout(() => {
 					setOpenModal(true);
 				}, 2500);
