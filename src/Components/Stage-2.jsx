@@ -12,7 +12,7 @@ import Girl from "../assets/girl.png";
 import CheckModal from "./Modals/CheckModal";
 
 export default function Stage2() {
-	const [bananaCount, setBananaCount] = useState(9);
+	const [bananaCount, setBananaCount] = useState(8);
 	const [questions, setQuestions] = useState([]);
 
 	const [openCheckModal, setOpenCheckModal] = useState(false);
@@ -32,9 +32,8 @@ export default function Stage2() {
 
 	useEffect(() => {
 		if (questions.length === 0 && !gameComplete) {
-			const items = randonFoodGetter(9);
+			const items = randonFoodGetter(8);
 			setQuestions(items);
-			setBananaCount(items.length);
 			console.log(items);
 			setTimeout(() => {
 				setOpenModal(true);
