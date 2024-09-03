@@ -34,6 +34,7 @@ export default function Stage2() {
 		if (questions.length === 0 && !gameComplete) {
 			const items = randonFoodGetter(9);
 			setQuestions(items);
+			setBananaCount(items.length);
 			console.log(items);
 			setTimeout(() => {
 				setOpenModal(true);
