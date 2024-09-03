@@ -19,11 +19,11 @@ const BoyVideo = () => {
   }, []);
 
   const handleNextStage = () => {
-    navigate('/BeginnerLevelBoy');
+    navigate('/stage2');
   };
 
   const handleStart = () => {
-    navigate('/DragandDrop1');
+    navigate('/BeginnerStage1Boy');
   };
 
   const toggleMute = () => {
