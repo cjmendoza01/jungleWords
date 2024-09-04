@@ -18,6 +18,7 @@ import GirlVideo from "./GirlVideo.jsx";
 import Stage2 from "./Stage-2.jsx";
 import Tester from "./Tester.jsx";
 import Stage3 from "./Stage3.jsx";
+import Tester2 from "./Tester2.jsx";
 
 function App() {
 	return (
@@ -41,6 +42,7 @@ function App() {
 			<Route path="/stage2" element={<Stage2 />} />
 			<Route path="/stage3" element={<Stage3 />} />
 			<Route path="/Tester" element={<Tester />} />
+			<Route path="/Tester2" element={<Tester2 />} />
 		</Routes>
 	);
 }
