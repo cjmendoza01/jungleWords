@@ -1,4 +1,4 @@
-// bs3 images assets
+// Import all bs2 images
 
 import Bag from "../assets/bs3/bs3images/Bag.png";
 import Ban from "../assets/bs3/bs3images//Ban.png";
@@ -55,3 +55,62 @@ import Wed from "../assets/bs3/bs3images/Wed.png";
 import Wet from "../assets/bs3/bs3images/Wet.png";
 import Win from "../assets/bs3/bs3images/Win.png";
 import zip from "../assets/bs3/bs3images/Zip.png";
+
+
+// Import all bs2 words images
+
+import Bag from "../assets/bs3/bs3words/Bag.png";
+import Ban from "../assets/bs3/bs3words//Ban.png";
+import Bed from "../assets/bs3/bs3words/Bed.png";
+import Beg from "../assets/bs3/bs3words/Beg.png";
+import Big from "../assets/bs3/bs3words/Big.png";
+import Bin from "../assets/bs3/bs3words/Bin.png";
+import Bug from "../assets/bs3/bs3words/Bug.png";
+import Cop from "../assets/bs3/bs3words/Cop.png";
+import Cut from "../assets/bs3/bs3words/Cut.png";
+import Dig from "../assets/bs3/bs3words/Dig.png";
+import Dot from "../assets/bs3/bs3words/Dot.png";
+import Fan from "../assets/bs3/bs3words/Fan.png";
+import Far from "../assets/bs3/bs3words/Far.png";
+import Fat from "../assets/bs3/bs3words/Fat.png";
+import Gap from "../assets/bs3/bs3words/Gap.png";
+import Hen from "../assets/bs3/bs3words/Hen.png";
+import Hop from "../assets/bs3/bs3words/Hop.png";
+import Hot from "../assets/bs3/bs3words/Hot.png";
+import Hug from "../assets/bs3/bs3words/Hug.png";
+import Hut from "../assets/bs3/bs3words/Hut.png";
+import Jab from "../assets/bs3/bs3words/Jab.png";
+import Jar from "../assets/bs3/bs3words/Jar.png";
+import Jet from "../assets/bs3/bs3words/Jet.png";
+import Leg from "../assets/bs3/bs3words/Leg.png";
+import Mad from "../assets/bs3/bs3words/Mad.png";
+import Man from "../assets/bs3/bs3words/Man.png";
+import mat from "../assets/bs3/bs3words/mat.png";
+import Mop from "../assets/bs3/bs3words/Mop.png";
+import Mug from "../assets/bs3/bs3words/Mug.png";
+import Nap from "../assets/bs3/bs3words/Nap.png";
+import Not from "../assets/bs3/bs3words/Not.png";
+import Peg from "../assets/bs3/bs3words/Peg.png";
+import Pen from "../assets/bs3/bs3words/Pen.png";
+import Pet from "../assets/bs3/bs3words/Pet.png";
+import Pig from "../assets/bs3/bs3words/Pig.png";
+import Pin from "../assets/bs3/bs3words/Pin.png";
+import Pop from "../assets/bs3/bs3words/Pop.png";
+import Pot from "../assets/bs3/bs3words/Pot.png";
+import Rag from "../assets/bs3/bs3words/Rag.png";
+import Red from "../assets/bs3/bs3words/Red.png";
+import Rub from "../assets/bs3/bs3words/Rub.png";
+import Run from "../assets/bs3/bs3words/Run.png";
+import Sad from "../assets/bs3/bs3words/Sad.png";
+import Sit from "../assets/bs3/bs3words/Sit.png";
+import Sun from "../assets/bs3/bs3words/Sun.png";
+import Ten from "../assets/bs3/bs3words/Ten.png";
+import Top from "../assets/bs3/bs3words/Top.png";
+import Tub from "../assets/bs3/bs3words/Tub.png";
+import Tug from "../assets/bs3/bs3words/Tug.png";
+import Van from "../assets/bs3/bs3words/Van.png";
+import War from "../assets/bs3/bs3words/War.png";
+import Wed from "../assets/bs3/bs3words/Wed.png";
+import Wet from "../assets/bs3/bs3words/Wet.png";
+import Win from "../assets/bs3/bs3words/Win.png";
+import zip from "../assets/bs3/bs3words/Zip.png";
