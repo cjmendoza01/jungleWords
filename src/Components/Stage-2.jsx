@@ -9,8 +9,9 @@ import DisplayModal from "./Modals/DisplayModal";
 import Banana from "../assets/bs2/banana.png";
 import Basketfull from "../assets/bs2/basketfull.png";
 import Boy from "../assets/boy.png";
-import Girl from "../assets/girl.png";
+import Girl from "../assets/bs2/girlBasketEmpty.png";
 import CheckModal from "./Modals/CheckModal";
+import Gonzo from "../assets/bs2/Gonzo.png"
 
 import egg1 from "../assets/is1/egg1.png";
 import egg2 from "../assets/is1/egg2.png";
@@ -183,7 +184,8 @@ export default function Stage2() {
 						</div>
 					</div>
 					<div className="stage2-monkey-div">
-						<img className="stage2-monkey-img" src={Boy} />
+						<img className="stage2-monkey-img" src={Gonzo} />
+						
 					</div>
 				</div>
 			</div>
@@ -221,7 +223,7 @@ export default function Stage2() {
 										height: "100%",
 										objectFit: "contain",
 									}}
-									src={Basketfull}
+									src={Gonzo}
 								/>
 							</div>
 						</div>

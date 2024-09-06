@@ -21,7 +21,7 @@ const BeginnerLevelGirl = () => {
     } else {
       // Navigate to different routes for other stages
       if (selectedStage === 'BS2') {
-        navigate('/Stage2Page');
+        navigate('/Stage2?gender=girl');
       } else if (selectedStage === 'BS3') {
         navigate('/Stage3Page');
       } else {
