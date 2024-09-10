@@ -35,7 +35,11 @@ const BegLevelPickerBoy = () => {
     } else if (selectedLevel === 'Intermediate' && accessCode === '5678') {
       navigate('/IntermediateLevelBoy');
     } else if (selectedLevel === 'Advanced' && accessCode === '91011') {
+<<<<<<< HEAD
       navigate('/AdvancedLevelBoy');
+=======
+      navigate('/AdvanceLevelBoy');
+>>>>>>> 220c578 (ConnectionsOfLevels)
     } else {
       alert('Please select a level and enter the correct access code');
     }
