@@ -9,7 +9,9 @@ import bnextButton from '../assets/buttons&dialogues/beginNext.png';
 import lockImage from '../assets/buttons&dialogues/lock.png';
 import accessCodeImage from '../assets/buttons&dialogues/accessCode.png';
 import doneButton from '../assets/buttons&dialogues/done.png';
-import beginX from '../assets/buttons&dialogues/beginX.png'; // Import the X button image
+import beginX from '../assets/buttons&dialogues/beginX.png'; 
+import backButtonImage from '../assets/buttons&dialogues/backButton.png'; // New back button import
+import nextButtonImage from '../assets/buttons&dialogues/neksButton.png'; // New next button import
 
 const BegLevelPickerBoy = () => {
   const navigate = useNavigate();
@@ -47,12 +49,30 @@ const BegLevelPickerBoy = () => {
     setSelectedLevel(null);
   };
 
+  const handleBackClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
+  const handleNextButtonClick = () => {
+    alert('Next button clicked'); // Logic for the next button
+  };
+
   return (
     <div className="chooselevelBoy">
-    <video autoPlay muted loop className="background-video">
-      <source src="/BGAnimationBoy.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+      <video autoPlay muted loop className="background-video">
+        <source src="/BGAnimationBoy.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Back and Next Buttons in the upper left corner */}
+      <div className="nav-buttons">
+        <button onClick={handleBackClick} className="nav-button back-button">
+          <img src={backButtonImage} alt="Back" />
+        </button>
+        
+      </div>
+
+      {/* Main Buttons */}
       <div className="buttons">
         <div className="buttonWithLock">
           <button onClick={() => handleStageClick('Beginner')} className={`beginButton ${selectedLevel === 'Beginner' ? 'selected' : ''}`}>
@@ -76,6 +96,8 @@ const BegLevelPickerBoy = () => {
           <img src={bnextButton} alt="Next" />
         </button>
       </div>
+
+      {/* Access Code Input */}
       {showAccessCodeInput && (
         <div className="access-code-container">
           <img src={accessCodeImage} alt="Access Code" className="access-code-image" />

@@ -5,6 +5,7 @@ import { Qfilters } from "../utils/formatter";
 import { useLocation } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
+import exitButton from "../assets/bs2/exitButton.png";
 
 import DisplayModal from "./Modals/DisplayModal";
 
