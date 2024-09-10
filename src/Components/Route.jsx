@@ -19,7 +19,7 @@ import Stage2 from "./Stage-2.jsx";
 import Tester from "./Tester.jsx";
 import Stage3 from "./Stage3.jsx";
 import Tester2 from "./Tester2.jsx";
-
+import QRGame from "./QrGame.jsx";
 function App() {
 	return (
 		<Routes>
@@ -41,6 +41,7 @@ function App() {
 			<Route path="/girl-video" element={<GirlVideo />} />
 			<Route path="/stage2" element={<Stage2 />} />
 			<Route path="/stage3" element={<Stage3 />} />
+			<Route path="/QRGame" element={<QRGame />} />
 			<Route path="/Tester" element={<Tester />} />
 			<Route path="/Tester2" element={<Tester2 />} />
 		</Routes>

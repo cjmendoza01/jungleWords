@@ -6,7 +6,7 @@ import startButtonImage from "../assets/buttons&dialogues/start.png";
 import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
 
-export default function Tester() {
+export default function QRGame() {
 	const [gameStart, setGameStart] = useState(false);
 	const [questions, setQuestions] = useState([]);
 	const [stringArr, setStringArr] = useState([]);

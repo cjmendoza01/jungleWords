@@ -1272,6 +1272,49 @@ const itemsList2 = [
 	{ image: Lock, id: "lock" },
 	{ image: Mask, id: "mask" },
 ];
+
+const stage3Qs = [
+	{ image: Bell, id: "bell", sentence: "The kid rang the bell." },
+	{ image: Book, id: "book", sentence: "The book is on the shelf." },
+	{ image: Cart, id: "cart", sentence: "The kid is pushing the cart away." },
+	{ image: Drum, id: "drum", sentence: "I heard a very loud drum." },
+	{
+		image: Kite,
+		id: "kite",
+		sentence: "Playing with kite was his favorite thing.",
+	},
+	{ image: Lamp, id: "lamp", sentence: "The lamp shines the room." },
+	{
+		image: Lock,
+		id: "lock",
+		sentence: "I had just bought a lock for my door.",
+	},
+	{ image: Mask, id: "mask", sentence: "That mask was kinda cute." },
+];
+
+export const qrQsGetter = (numElements, notIncluddedValues) => {
+	let items = stage3Qs;
+
+	if (notIncluddedValues?.length) {
+		console.log("notIncVals");
+		console.log(notIncluddedValues);
+		items = items.filter(
+			(item) =>
+				!notIncluddedValues.some((notIncluded) => notIncluded.id === item.id)
+		);
+	}
+
+	const shuffled = items.slice();
+	const selected = [];
+
+	for (let i = 0; i < numElements; i++) {
+		const randomIndex = Math.floor(Math.random() * (shuffled.length - i));
+		selected.push(shuffled.splice(randomIndex, 1)[0]);
+	}
+
+	return selected;
+};
+
 export const randonFoodGetter = (numElements, notIncluddedValues) => {
 	let items = foodItemsList;
 
