@@ -33,7 +33,7 @@ const BegLevelPickerGirl = () => {
     if (selectedLevel === 'Beginner' && accessCode === '1234') {
       navigate('/BeginnerLevelGirl');
     } else if (selectedLevel === 'Intermediate' && accessCode === '5678') {
-      navigate('/IntermediatePage');
+      navigate('/IntermediateLevelGirl');
     } else if (selectedLevel === 'Advanced' && accessCode === '91011') {
       navigate('/AdvancedPage');
     } else {
