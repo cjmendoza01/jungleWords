@@ -37,6 +37,7 @@ export default function Stage2() {
 	const [openModal, setOpenModal] = useState(false);
 	const [gameComplete, setGameComplete] = useState(false);
 	const [disabledChoices, setDisabledChoices] = useState([]);
+	const [correctButton, setCorrectButton] = useState("");
 
 	const [gender, setGender] = useState("boy");
 	// const [level, setLevel] = useState(1);
@@ -75,6 +76,9 @@ export default function Stage2() {
 
 	useEffect(() => {
 		if (openCheckModal) {
+			setTimeout(() => {
+				setCorrectButton("");
+			}, 1000);
 			setRemoveBanana(false);
 			setBananaCount((prevCount) => {
 				const newCount = prevCount - 1;
@@ -115,6 +119,7 @@ export default function Stage2() {
 
 		if (right) {
 			setRemoveBanana(true);
+			setCorrectButton(ch);
 			console.log("Right");
 			const filtered = await Qfilters(rightAns, questions);
 
@@ -226,7 +231,7 @@ export default function Stage2() {
 								key={ch}
 								className={`stage-2-button-div-item ${
 									disabledChoices.includes(ch) ? "button-stage2-error" : ""
-								}`}
+								} ${correctButton === ch ? "button-stage2-correct" : ""}`}
 								onClick={() => handleButtonClick(ch)}
 								disabled={disabledChoices.includes(ch) ? true : false}
 							>

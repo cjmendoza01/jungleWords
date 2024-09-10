@@ -49,7 +49,7 @@
   }
   .stage2-monkey-img{
     /* height: 100%; */
-    width: 50px;
+    width: 80px;
     object-fit: contain;
   }
   .tester-Button {
@@ -117,13 +117,13 @@
   }
   
 .button-stage2-error{
-    background-color: #4caf50;
+  background-color: #FF0000 ;
 	color: white;
 }
-/* .button-stage2-error{
-    background-color: #912222;
-    color: #e45e5e;
-} */
+ .button-stage2-correct{
+  background-color: #4caf50;
+	color: white;
+} 
 
 .stage-2-character-div{
     width: 10%;

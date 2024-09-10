@@ -9,7 +9,7 @@ export default function CheckModal({ item }) {
 		<div className="modal">
 			<div className="modal-backdrop"></div>
 
-			<div style={{ width: "20%", height: "20%" }}>
+			<div style={{ width: "100%", height: "100%" }}>
 				<div style={{ width: "100%", height: "100%" }}>
 					<img
 						style={{ width: "100%", height: "100%", objectFit: "contain" }}
