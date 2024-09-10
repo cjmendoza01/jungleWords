@@ -138,9 +138,9 @@ export default function QRGame() {
 										}}
 									/> */}
 							</div>
-							<div>
+							{/* <div>
 								<button onClick={() => setOpenCam(true)}>Scan Qr</button>
-							</div>
+							</div> */}
 							{/* <div
 									style={
 										answerWrong

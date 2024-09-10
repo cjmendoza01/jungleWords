@@ -4,6 +4,8 @@ import { vowelChecker } from "../utils/checker";
 import { Qfilters } from "../utils/formatter";
 import { useLocation } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+
 import DisplayModal from "./Modals/DisplayModal";
 
 import Banana from "../assets/bs2/banana.png";
@@ -11,7 +13,7 @@ import Basketfull from "../assets/bs2/basketfull.png";
 import Boy from "../assets/boy.png";
 import Girl from "../assets/bs2/girlBasketEmpty.png";
 import CheckModal from "./Modals/CheckModal";
-import Gonzo from "../assets/bs2/Gonzo.png"
+import Gonzo from "../assets/bs2/Gonzo.png";
 
 import egg1 from "../assets/is1/egg1.png";
 import egg2 from "../assets/is1/egg2.png";
@@ -23,6 +25,8 @@ import egg7 from "../assets/is1/egg7.png";
 import egg8 from "../assets/is1/egg8.png";
 
 export default function Stage2() {
+	const navigate = useNavigate();
+
 	const [bananaCount, setBananaCount] = useState(9);
 	const [questions, setQuestions] = useState([]);
 
@@ -56,7 +60,7 @@ export default function Stage2() {
 			console.log(items);
 			setTimeout(() => {
 				setOpenModal(true);
-			}, 500);
+			}, 5000);
 		}
 	}, [questions, gameComplete]);
 
@@ -90,13 +94,13 @@ export default function Stage2() {
 		}
 	}, [openCheckModal]);
 
-	useEffect(() => {
-		if (openModal) {
-			setTimeout(() => {
-				setOpenModal(false);
-			}, 6000);
-		}
-	}, [openModal]);
+	// useEffect(() => {
+	// 	if (openModal) {
+	// 		setTimeout(() => {
+	// 			setOpenModal(false);
+	// 		}, 6000);
+	// 	}
+	// }, [openModal]);
 
 	useEffect(() => {
 		if (gameComplete) {
@@ -137,10 +141,10 @@ export default function Stage2() {
 			level = Number(qLevel);
 		}
 
-		console.log("qLevel", qLevel);
+		// console.log("qLevel", qLevel);
 		if (level === 2) {
-			console.log("level2", index);
-			console.log(eggs);
+			// console.log("level2", index);
+			// console.log(eggs);
 
 			return eggs[index];
 		}
@@ -149,9 +153,14 @@ export default function Stage2() {
 		return Banana;
 	};
 
+	const backButton = () => {
+		navigate(-1);
+	};
+
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
 			<div className="stage2-upper-div">
+				<button className="backButton">Back</button>
 				<div className="stage2-upper2-div">
 					<div
 						style={{
@@ -170,22 +179,41 @@ export default function Stage2() {
 						<div className="tester-image-container">
 							{/* Render banana images */}
 							{Array.from({ length: bananaCount }, (_, index) => (
-								<img
-									className={`testr-img ${
-										index === bananaCount - 1 && removeBanana
-											? "animate-bananaFall"
-											: ""
-									}`}
-									src={getfoodLogo(index)}
-									alt="Banana"
-									key={index}
-								/>
+								<>
+									{index === bananaCount - 1 ? (
+										<button
+											onClick={() => setOpenModal(true)}
+											style={{ background: "transparent", border: "none" }}
+										>
+											<img
+												className={`testr-img ${
+													index === bananaCount - 1 && removeBanana
+														? "animate-bananaFall"
+														: ""
+												}`}
+												src={getfoodLogo(index)}
+												alt="Banana"
+												key={index}
+											/>
+										</button>
+									) : (
+										<img
+											className={`testr-img ${
+												index === bananaCount - 1 && removeBanana
+													? "animate-bananaFall"
+													: ""
+											}`}
+											src={getfoodLogo(index)}
+											alt="Banana"
+											key={index}
+										/>
+									)}
+								</>
 							))}
 						</div>
 					</div>
 					<div className="stage2-monkey-div">
 						<img className="stage2-monkey-img" src={Gonzo} />
-						
 					</div>
 				</div>
 			</div>
@@ -208,7 +236,14 @@ export default function Stage2() {
 					})}
 				</div>
 			</div>
-			{openModal ? <DisplayModal item={questions[0]} /> : <></>}
+			{openModal ? (
+				<DisplayModal
+					item={questions[0]}
+					closeModal={() => setOpenModal(false)}
+				/>
+			) : (
+				<></>
+			)}
 			{openCheckModal ? <CheckModal /> : <></>}
 			{gameComplete ? (
 				<>

@@ -2,15 +2,21 @@ import React, { useEffect, useRef } from "react";
 
 import soundicon from "../../assets/Volume.png";
 
-export default function DisplayModal({ item }) {
+export default function DisplayModal({ item, closeModal }) {
 	const audioRef = useRef();
 
 	return (
 		<div className="modal">
 			<div className="modal-backdrop"></div>
 			<div className="modal-container">
+				<div className="modalCloseBtnDiv">
+					<div className="modalCloseBtn" onClick={() => closeModal()}>
+						X
+					</div>
+				</div>
+				<audio ref={audioRef} src={item?.audio} />
 				{/* SOUND ICON */}
-				{item?.audio ? (
+				{/* {item?.audio ? (
 					<>
 						<div className="soundicon" onClick={() => audioRef.current.play()}>
 							<img src={soundicon} alt="soundicon" />
@@ -20,12 +26,21 @@ export default function DisplayModal({ item }) {
 					</>
 				) : (
 					<></>
-				)}
+				)} */}
 
 				{/* CHOICES */}
 				<div className="choices">
-					<div>
-						<img src={item.image} />
+					<div
+						onClick={() => {
+							if (item?.audio) {
+								audioRef.current.play();
+							}
+						}}
+					>
+						<img
+							style={{ width: "100%", height: "100%", objectFit: "contain" }}
+							src={item.image}
+						/>
 					</div>
 				</div>
 			</div>
