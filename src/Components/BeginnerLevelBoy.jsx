@@ -23,7 +23,7 @@ const BeginnerLevelBoy = () => {
       if (selectedStage === 'BS2') {
         navigate('/stage2');
       } else if (selectedStage === 'BS3') {
-        navigate('/Stage3Page');
+        navigate('/stage3');
       } else {
         alert('Please select a stage');
       }
