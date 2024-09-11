@@ -165,7 +165,9 @@ export default function Stage2() {
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
 			<div className="stage2-upper-div">
-				<button className="backButton">Back</button>
+				<button className="backButton" onClick={() => backButton()}>
+					Back
+				</button>
 				<div className="stage2-upper2-div">
 					<div
 						style={{
