@@ -2,17 +2,23 @@ import React from "react";
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import { useEffect, useRef, useState } from "react";
 import "./BeginnerStage1Boy.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import bgImage from "../assets/bs3/bgbs3.png";
+import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
 
 import { randonItemGetter } from "../utils/imageAssetPicker";
 import { Qfilters, shuffle } from "../utils/formatter";
 
 import Boy from "../assets/boy.png";
 import Girl from "../assets/girl.png";
+import NextGameModal from "./Modals/NextGameModal";
 
 export default function Stage3() {
 	const [rightItems, setItems] = useState([]);
 	const [wrongItems, setWrongItems] = useState([]);
+	const [resetGame, setResetGame] = useState(false);
+
+	const [nextRoute, setNextRoute] = useState("");
 
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState(1);
@@ -22,6 +28,9 @@ export default function Stage3() {
 	const [rightAnsPosition, setRightAnsPosition] = "right";
 	const [correct, setCorrect] = useState(false);
 	const [wrong, setWrong] = useState(false);
+	const [openNextGameModal, setNextGameModal] = useState(false);
+
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (correct) {
@@ -84,13 +93,47 @@ export default function Stage3() {
 
 	useEffect(() => {
 		if (qGender) {
-			setGender(qGender);
+			setGender(qGender.toLowerCase());
+		}
+		if (qLevel) {
+			setLevel(qLevel);
 		}
 	}, [qGender]);
 
+	// useEffect routing for next page
+	useEffect(() => {
+		let gd = "boy";
+		if (qGender) {
+			gd = qGender.toLowerCase();
+		}
+
+		let lvl = "1";
+
+		let nxtRt = `BegLevelPickerBoy`;
+
+		if (qLevel && qLevel === "2") {
+			if (gd == "girl") {
+				nxtRt = `IntermediateLevelGirl`;
+			} else {
+				nxtRt = `IntermediateLevelBoy`;
+			}
+		} else {
+			if (gd == "girl") {
+				nxtRt = `BegLevelPickerGirl`;
+			} else {
+				nxtRt = `BegLevelPickerBoy`;
+			}
+		}
+
+		setNextRoute(nxtRt);
+	}, [qGender, qLevel]);
+
 	useEffect(() => {
 		let iLevel = qLevel || 1;
-		if (rightItems?.length === 0 && wrongItems?.length === 0 && !gameComplete) {
+		if (
+			(rightItems?.length === 0 && wrongItems?.length === 0 && !gameComplete) ||
+			resetGame
+		) {
 			shuffleItems("center");
 			const items = randonItemGetter(8, iLevel);
 			const wrnItems = randonItemGetter(8, iLevel, items);
@@ -101,7 +144,18 @@ export default function Stage3() {
 			setItems(items);
 			setWrongItems(wrnItems);
 		}
-	}, [rightItems, wrongItems, qLevel]);
+
+		if (gameComplete) {
+			setTimeout(() => {
+				setNextGameModal(true);
+			}, 500);
+		}
+
+		if (resetGame) {
+			setGameComplete(false);
+			setResetGame(false);
+		}
+	}, [rightItems, wrongItems, qLevel, gameComplete, resetGame]);
 
 	function handleDragEnd(event) {
 		const { over } = event;
@@ -166,8 +220,22 @@ export default function Stage3() {
 		);
 	}
 
+	const handleBackClick = () => {
+		navigate(-1); // Go back to the previous page
+	};
+
 	return (
-		<main className="main">
+		<main
+			className="main"
+			style={{
+				backgroundImage: `url(${bgImage})`,
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				width: "100%",
+				height: "100%",
+			}}
+		>
 			<div
 				style={{
 					display: "block",
@@ -176,6 +244,10 @@ export default function Stage3() {
 					justifyContent: "center",
 				}}
 			>
+				<button className="backButton" onClick={handleBackClick}>
+					<img src={backButtonImage} alt="Back" />
+				</button>
+
 				<div className="stage3-top-div">
 					<div className="stage3-top-div-level2">
 						{rightItems?.length ? (
@@ -218,6 +290,15 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
+			{openNextGameModal ? (
+				<NextGameModal
+					gender={gender}
+					route={nextRoute}
+					resetGame={() => setResetGame(true)}
+				/>
+			) : (
+				<></>
+			)}
 		</main>
 	);
 }

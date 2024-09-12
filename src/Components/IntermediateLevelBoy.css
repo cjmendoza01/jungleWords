@@ -92,3 +92,29 @@
   
   }
   
+
+  .nav-buttons {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    z-index: 1000; /* Ensure they appear on top */
+  }
+  
+  .nav-button {
+    background-color: transparent; /* Make the button background transparent */
+    border: none; /* Remove border */
+    padding: 0; /* Remove any padding */
+  }
+  
+  .nav-button img {
+    width: 80px; /* Adjust the size of the buttons */
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .nav-button:hover img {
+    transform: scale(1.1); /* Slight scale effect on hover */
+  }
+  

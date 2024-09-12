@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { randonItemGetter } from "../utils/imageAssetPicker";
 import { vowelChecker } from "../utils/checker";
 import { Qfilters } from "../utils/formatter";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom"; // Ensure useNavigate and useLocation are imported
 
-import { useNavigate } from "react-router-dom";
-import exitButton from "../assets/bs2/exitButton.png";
+import exitButton from "../assets/bs2/exitButton.png"; // Example import for the back button image
+import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
 
 import DisplayModal from "./Modals/DisplayModal";
-
+import NextGameModal from "./Modals/NextGameModal";
 import Banana from "../assets/bs2/banana.png";
 import Basketfull from "../assets/bs2/basketfull.png";
 import Boy from "../assets/boy.png";
@@ -26,10 +26,13 @@ import egg7 from "../assets/is1/egg7.png";
 import egg8 from "../assets/is1/egg8.png";
 
 export default function Stage2() {
-	const navigate = useNavigate();
+	const navigate = useNavigate(); // Enable navigation
 
 	const [bananaCount, setBananaCount] = useState(9);
 	const [questions, setQuestions] = useState([]);
+	const [resetGame, setResetGame] = useState(false);
+
+	const [nextRoute, setNextRoute] = useState("");
 
 	const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
 
@@ -39,9 +42,9 @@ export default function Stage2() {
 	const [gameComplete, setGameComplete] = useState(false);
 	const [disabledChoices, setDisabledChoices] = useState([]);
 	const [correctButton, setCorrectButton] = useState("");
+	const [openNextGameModal, setNextGameModal] = useState(true);
 
 	const [gender, setGender] = useState("boy");
-	// const [level, setLevel] = useState(1);
 	const choices = ["A", "E", "I", "O", "U"];
 
 	const location = useLocation();
@@ -49,6 +52,23 @@ export default function Stage2() {
 
 	const qGender = queryParams.get("gender");
 	const qLevel = queryParams.get("level");
+
+	useEffect(() => {
+		let gd = "boy";
+		if (qGender) {
+			gd = qGender.toLowerCase();
+		}
+
+		let lvl = "1";
+
+		if (qLevel) {
+			lvl = qLevel;
+		}
+
+		const nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
+
+		setNextRoute(nxtRt);
+	}, [qGender, qLevel]);
 
 	useEffect(() => {
 		let level = 1;
@@ -59,17 +79,32 @@ export default function Stage2() {
 			const items = randonItemGetter(8, level);
 			setQuestions(items);
 			setBananaCount(items.length);
-			console.log(items);
+
+			// setResetGame(false);
+			// setNextGameModal(false);
+
 			setTimeout(() => {
 				setOpenModal(true);
+			}, 5000);
+		}
+
+		if (gameComplete) {
+			setTimeout(() => {
+				// Gonzo animation
+				setNextGameModal(true);
 			}, 5000);
 		}
 	}, [questions, gameComplete]);
 
 	useEffect(() => {
+		setGameComplete(false);
+		setResetGame(false);
+		setNextGameModal(false);
+	}, [resetGame]);
+
+	useEffect(() => {
 		const gends = ["girl", "boy"];
-		console.log("QGender");
-		console.log(qGender);
+
 		if (qGender && gends.includes(qGender)) {
 			setGender(qGender);
 		}
@@ -88,30 +123,14 @@ export default function Stage2() {
 			setTimeout(() => {
 				setOpenCheckModal(false);
 			}, 2000);
-			const bnLen = bananaCount;
-			console.log("bananacount :", bnLen);
-			console.log(bananaCount);
-			if (bnLen > 0) {
+
+			if (bananaCount > 0) {
 				setTimeout(() => {
 					setOpenModal(true);
 				}, 2500);
 			}
 		}
 	}, [openCheckModal]);
-
-	// useEffect(() => {
-	// 	if (openModal) {
-	// 		setTimeout(() => {
-	// 			setOpenModal(false);
-	// 		}, 6000);
-	// 	}
-	// }, [openModal]);
-
-	useEffect(() => {
-		if (gameComplete) {
-			//route to animation page
-		}
-	}, [gameComplete]);
 
 	const handleButtonClick = async (ch) => {
 		const rightAns = questions[0];
@@ -121,7 +140,7 @@ export default function Stage2() {
 		if (right) {
 			setRemoveBanana(true);
 			setCorrectButton(ch);
-			console.log("Right");
+
 			const filtered = await Qfilters(rightAns, questions);
 
 			setQuestions(filtered);
@@ -136,39 +155,35 @@ export default function Stage2() {
 				}, 500);
 			}
 		} else {
-			console.log("Wrong");
 			setDisabledChoices([...disabledChoices, ch]);
 		}
 	};
 
-	const getfoodLogo = (index) => {
+	const getFoodLogo = (index) => {
 		let level = 1;
 		if (qLevel) {
 			level = Number(qLevel);
 		}
 
-		// console.log("qLevel", qLevel);
 		if (level === 2) {
-			// console.log("level2", index);
-			// console.log(eggs);
-
 			return eggs[index];
 		}
 
-		console.log("level1");
 		return Banana;
 	};
 
-	const backButton = () => {
-		navigate(-1);
+	const handleBackClick = () => {
+		navigate(-1); // Go back to the previous page
 	};
 
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
+			{/* Back button in the upper left corner */}
+			<button className="backButton" onClick={handleBackClick}>
+				<img src={backButtonImage} alt="Back" />
+			</button>
+
 			<div className="stage2-upper-div">
-				<button className="backButton" onClick={() => backButton()}>
-					Back
-				</button>
 				<div className="stage2-upper2-div">
 					<div
 						style={{
@@ -182,12 +197,13 @@ export default function Stage2() {
 							<img
 								className="stage-2-char-div"
 								src={gender === "boy" ? Boy : Girl}
+								alt="Character"
 							/>
 						</div>
+
 						<div className="tester-image-container">
-							{/* Render banana images */}
 							{Array.from({ length: bananaCount }, (_, index) => (
-								<>
+								<React.Fragment key={index}>
 									{index === bananaCount - 1 ? (
 										<button
 											onClick={() => setOpenModal(true)}
@@ -199,9 +215,8 @@ export default function Stage2() {
 														? "animate-bananaFall"
 														: ""
 												}`}
-												src={getfoodLogo(index)}
+												src={getFoodLogo(index)}
 												alt="Banana"
-												key={index}
 											/>
 										</button>
 									) : (
@@ -211,17 +226,17 @@ export default function Stage2() {
 													? "animate-bananaFall"
 													: ""
 											}`}
-											src={getfoodLogo(index)}
+											src={getFoodLogo(index)}
 											alt="Banana"
-											key={index}
 										/>
 									)}
-								</>
+								</React.Fragment>
 							))}
 						</div>
 					</div>
+
 					<div className="stage2-monkey-div">
-						<img className="stage2-monkey-img" src={Gonzo} />
+						<img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
 					</div>
 				</div>
 			</div>
@@ -236,7 +251,7 @@ export default function Stage2() {
 									disabledChoices.includes(ch) ? "button-stage2-error" : ""
 								} ${correctButton === ch ? "button-stage2-correct" : ""}`}
 								onClick={() => handleButtonClick(ch)}
-								disabled={disabledChoices.includes(ch) ? true : false}
+								disabled={disabledChoices.includes(ch)}
 							>
 								{ch}
 							</button>
@@ -244,34 +259,36 @@ export default function Stage2() {
 					})}
 				</div>
 			</div>
-			{openModal ? (
+
+			{openModal && (
 				<DisplayModal
 					item={questions[0]}
 					closeModal={() => setOpenModal(false)}
 				/>
-			) : (
-				<></>
 			)}
-			{openCheckModal ? <CheckModal /> : <></>}
-			{gameComplete ? (
-				<>
-					<div className="modal">
-						<div className="modal-backdrop"></div>
-
-						<div style={{ width: "20%", height: "20%" }}>
-							<div style={{ width: "100%", height: "100%" }}>
-								<img
-									style={{
-										width: "100%",
-										height: "100%",
-										objectFit: "contain",
-									}}
-									src={Gonzo}
-								/>
-							</div>
-						</div>
+			{openCheckModal && <CheckModal />}
+			{gameComplete && (
+				<div className="modal">
+					<div className="modal-backdrop"></div>
+					<div style={{ width: "20%", height: "20%" }}>
+						<img
+							style={{
+								width: "100%",
+								height: "100%",
+								objectFit: "contain",
+							}}
+							src={Gonzo}
+							alt="Gonzo"
+						/>
 					</div>
-				</>
+				</div>
+			)}
+			{openNextGameModal ? (
+				<NextGameModal
+					gender={gender}
+					route={nextRoute}
+					resetGame={() => setResetGame(true)}
+				/>
 			) : (
 				<></>
 			)}

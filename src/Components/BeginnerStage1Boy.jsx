@@ -1,7 +1,12 @@
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useNavigate } from "react";
 import './BeginnerStage1Boy.css'; 
 import stage1Done from '../assets/buttons&dialogues/stage1Done.png';
+import backButtonImage from '../assets/buttons&dialogues/backButton.png'; // New back button import
+
+
+
+
 
 
 // Import all images/assets of food items
@@ -1149,108 +1154,72 @@ const BeginnerStage1Boy = () => {
 
   ]);
   
+  const [foodItems, setFoodItems] = useState([]);
 
-  const [foodItems, setFoodItems] = useState([])
-
-  
   useEffect(() => {
-    // Function to select random elements without replacement
-function getRandomElements(arr, numElements) {
-  const shuffled = arr.slice(); // Create a copy to avoid modifying original array
-  const selected = [];
-  for (let i = 0; i < numElements; i++) {
-    const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
-    selected.push(shuffled.splice(randomIndex, 1)[0]);
-  }
-  return selected;
-}
+    function getRandomElements(arr, numElements) {
+      const shuffled = arr.slice(); // Create a copy to avoid modifying the original array
+      const selected = [];
+      for (let i = 0; i < numElements; i++) {
+        const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
+        selected.push(shuffled.splice(randomIndex, 1)[0]);
+      }
+      return selected;
+    }
 
-  const x = getRandomElements(foodItemsList, 6) // Adjusted to select 10 items
+    const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
+    setFoodItems(x);
+  }, [foodItemsList]);
 
-  setFoodItems(x)
-  }, [foodItemsList])
-
-  // Variable to store what food item is being dragged
   const [currentFoodItem, setCurrentFoodItem] = useState(null);
-
-  // Flag to check if the food item being dragged has been dropped
   const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
-
-  // Data to show in the modal/popup
-  const [modalData, setModalData] = useState({
-    item: "",
-    choices: [],
-    audio: null,
-  });
-
-  // Flag to check if modal/popup should be shown
+  const [modalData, setModalData] = useState({ item: "", choices: [], audio: null });
   const [modalActive, setModalActive] = useState(false);
-
-  // Flag to check if the answer in the modal is correct
   const [isModalAnswerCorrect, setIsModalAnswerCorrect] = useState(false);
-
-  // Scale of the boy. To be increased when getting correct answers
   const [scale, setScale] = useState(1);
-
-  // Reference for the audio to be played in the modal / popup
   const audioRef = useRef();
 
-  function handleDragEnd(event) {
-    // Check if dragged food item is dropped in the droppable
+  const handleDragEnd = (event) => {
     if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
-      // Get the active draggable food item
       const active = event.active;
-
-      // Find the dragged food item in the list of food items
-      const item = foodItems.find((f) => "food-" + f.id == active.id);
-
-      // The food item has been dropped
+      const item = foodItems.find((f) => "food-" + f.id === active.id);
       setIsFoodItemDropped(true);
-
-      // Display the dropped food item in the container (near the mouth of the boy)
       setCurrentFoodItem(item.image);
-
-      // Remove the dropped food item from the draggable container of food items
-      setFoodItems((foodItems) => {
-        return foodItems.map((f) =>
+      setFoodItems((foodItems) =>
+        foodItems.map((f) =>
           "food-" + f.id === active.id ? { ...f, isDisplayed: false } : f
-        );
-      });
-
-      // Set the data for the modal / popup
-      setModalData({
-        id: item.id,
-        choices: item.modalChoices,
-        audio: item.audio,
-      });
-
-      // Show modal / popup
+        )
+      );
+      setModalData({ id: item.id, choices: item.modalChoices, audio: item.audio });
       setModalActive(true);
-
-      // Reset the modal status
       setIsModalAnswerCorrect(false);
     }
-  }
+  };
 
   useEffect(() => {
-    // If the selected choice in the modal is correct, then
     if (isModalAnswerCorrect && !modalActive) {
-      // Remove the dropped item from the droppable zone after 1 second
       setTimeout(() => {
         setCurrentFoodItem("");
         setIsFoodItemDropped(false);
-      }, 0.5 * 1000);
-
-      // Scale up the droppable zone (boy) after 1 second
+      }, 500);
       setTimeout(() => {
         setScale((scale) => scale + 0.05);
-      }, 1 * 1000);
+      }, 1000);
     }
   }, [isModalAnswerCorrect, modalActive]);
 
-  
+  const handleBackClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
   return (
     <main className="main">
+      {/* Back button in the upper left corner */}
+      <div className="back-button-container">
+        <button onClick={handleBackClick} className="back-button">
+          <img src={backButtonImage} alt="Back" />
+        </button>
+      </div>
+
       <div className="drag-n-drop-container">
         <DndContext onDragEnd={handleDragEnd}>
           {/* Container for the droppable zone */}
@@ -1267,7 +1236,6 @@ function getRandomElements(arr, numElements) {
           {/* Container for the food items */}
           <div className="draggable-container">
             <div className="foods-container">
-              {/* Iterating over the food items and displaying it */}
               {foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
                 return isDisplayed ? (
                   <FoodItem
@@ -1291,19 +1259,17 @@ function getRandomElements(arr, numElements) {
         <div className="modal">
           <div className="modal-backdrop"></div>
           <div className="modal-container">
-          {/* SOUND ICON */}
-<div className="soundicon" onClick={() => audioRef.current.play()}>
-  <img src={soundicon} alt="soundicon" />
-</div>
-<audio ref={audioRef} src={modalData.audio} />
+            <div className="soundicon" onClick={() => audioRef.current.play()}>
+              <img src={soundicon} alt="soundicon" />
+            </div>
+            <audio ref={audioRef} src={modalData.audio} />
 
-            {/* CHOICES */}
             <div className="choices">
               {modalData.choices.map(({ image, isCorrect }, i) => {
                 return (
                   <ModalChoice
                     key={i}
-                    image = {image}
+                    image={image}
                     isCorrect={isCorrect}
                     setModalActive={setModalActive}
                     isModalAnswerCorrect={isModalAnswerCorrect}
@@ -1325,10 +1291,7 @@ export default BeginnerStage1Boy;
 // Component for the food item
 const FoodItem = ({ id, modalChoices, children }) => {
   const { attributes, listeners, setNodeRef, transform, isDragging } =
-    useDraggable({
-      id: id,
-      data: { choices: modalChoices },
-    });
+    useDraggable({ id: id, data: { choices: modalChoices } });
 
   const style = transform
     ? {
@@ -1351,11 +1314,10 @@ const FoodItem = ({ id, modalChoices, children }) => {
   );
 };
 
+
 // Component for the droppable zone
 const DroppableZone = (props) => {
-  const { isOver, setNodeRef } = useDroppable({
-    id: "droppable-zone",
-  });
+  const { isOver, setNodeRef } = useDroppable({ id: "droppable-zone" });
   const style = {
     backgroundColor: isOver ? "green" : undefined,
     transform: "scale(" + props.scale + ")",
@@ -1376,30 +1338,22 @@ const ModalChoice = ({
   isModalAnswerCorrect,
   setIsModalAnswerCorrect,
 }) => {
-  // Status whether the choice selected is right or wrong
   const [status, setStatus] = useState("");
-
   return (
     <div
       className={`choice ${status}`}
       onClick={(e) => {
-        // If the correct answer is already selected, prevent any further selection
         if (isModalAnswerCorrect) {
           e.preventDefault();
         } else {
-          // If the correct answer is not yet selected, then...
-          // If selected choice is not the correct answer, set status to wrong
           if (!isCorrect) {
             setStatus("wrong");
           } else {
-            // If selected choice is the correct answer, then...
             setStatus("right");
             setIsModalAnswerCorrect(true);
-
-            // Close modal after 2 seconds
             setTimeout(() => {
               setModalActive(false);
-            }, 2 * 1000);
+            }, 2000);
           }
         }
       }}
