@@ -204,47 +204,51 @@
 
 }
 
-.modal-nextGame-buttons{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 150px; /* Adjust based on desired position */
-  margin-left: 500px;
-}
-
-.modal-nextGame-buttons-div{
+/* next game mcss */
+.modal-buttons-div {
   position: absolute;
   width: 100%;
   height: 100%;
-  align-items: center;
   display: flex;
-  justify-content: right;
-  margin-right: 20%;
-  /* gap: 2%; */
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: flex-end; /* Align buttons at the bottom */
+  padding-bottom: 40px; /* Space from the bottom */
 }
 
-.modal-nextGame-buttons{
-  /* width: 20%;
-  height: 100px; */
-  background-color: transparent;
+.modal-nextGame-buttons,
+.modal-playAgain-buttons {
+  margin: 0 20px; /* Space between the two buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px; /* Set max width for buttons */
 }
 
-.modal-nextGame-buttons:hover img {
-  transform: scale(1.1);
-}
-
-.modal-nextGame-img{
-  width: 100%;
+.modal-nextGame-img,
+.modal-playAgain-img {
+  width: 100px; /* Set a default width */
+  max-width: 150px; /* Set a maximum width */
+  height: auto; /* Maintain aspect ratio */
   object-fit: contain;
-  background-color: transparent;
 }
 
+.modal-nextGame-buttons:hover img,
+.modal-playAgain-buttons:hover img {
+  transform: scale(1.1); /* Hover scaling effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
 
-.flipVid{
+/* Specific hover effect for Play Again */
+.modal-playAgain-buttons:hover img {
+  transform: scale(1.1); /* Ensure hover effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.flipVid {
   width: 100vw;
   height: 100vh;
-  transform: scaleX(-1);
 }
+
 
 .soundicon,
 .choice {
@@ -406,3 +410,4 @@
 }
 
  
+
