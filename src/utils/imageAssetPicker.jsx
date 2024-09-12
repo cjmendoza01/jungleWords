@@ -253,7 +253,7 @@ import War from "../assets/bs3/bs3images/War.png";
 import Wed from "../assets/bs3/bs3images/Wed.png";
 import Wet from "../assets/bs3/bs3images/Wet.png";
 import Win from "../assets/bs3/bs3images/Win.png";
-import zip from "../assets/bs3/bs3images/Zip.png";
+import Zip from "../assets/bs3/bs3images/Zip.png";
 
 import Bell from "../assets/is2/is2Images/Bell.png";
 import Book from "../assets/is2/is2Images/Book.png";
@@ -1259,7 +1259,7 @@ export const itemsList = [
 	{ image: Wed, id: "wed" },
 	{ image: Wet, id: "wet" },
 	{ image: Win, id: "win" },
-	{ image: zip, id: "zip" },
+	{ image: Zip, id: "zip" },
 ];
 
 const itemsList2 = [

@@ -178,6 +178,56 @@
     padding: 20px;
     align-items: center;
   }
+
+  .modal-video-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    position: relative; /* Ensure child elements can be positioned absolutely */
+    overflow: hidden; /* Prevent overflow issues */
+  
+  }
+
+  .modal-nextGame-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px; /* Adjust based on desired position */
+    margin-left: 500px;
+  }
+
+  .modal-nextGame-buttons-div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    margin-right: 20%;
+    /* gap: 2%; */
+  }
+
+  .modal-nextGame-buttons{
+    /* width: 20%;
+    height: 100px; */
+    background-color: transparent;
+  }
+
+  .modal-nextGame-img{
+    width: 100%;
+    object-fit: contain;
+    background-color: transparent;
+  }
+
+  .flipVid{
+    width: 100vw;
+    height: 100vh;
+    transform: scaleX(-1);
+  }
   
   .soundicon,
   .choice {
