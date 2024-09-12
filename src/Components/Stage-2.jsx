@@ -42,7 +42,7 @@ export default function Stage2() {
 	const [gameComplete, setGameComplete] = useState(false);
 	const [disabledChoices, setDisabledChoices] = useState([]);
 	const [correctButton, setCorrectButton] = useState("");
-	const [openNextGameModal, setNextGameModal] = useState(true);
+	const [openNextGameModal, setNextGameModal] = useState(false);
 
 	const [gender, setGender] = useState("boy");
 	const choices = ["A", "E", "I", "O", "U"];
