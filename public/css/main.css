@@ -21,6 +21,15 @@
   background-repeat: no-repeat;
 }
 
+
+.stage3-main {
+  background-color: #326901;
+  background-image: url('../../src/assets/bs3/bgbs3.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .testr-img {
   width: 80px;
   height: 80px;

@@ -225,17 +225,7 @@ export default function Stage3() {
 	};
 
 	return (
-		<main
-			className="main"
-			style={{
-				backgroundImage: `url(${bgImage})`,
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-				backgroundRepeat: "no-repeat",
-				width: "100%",
-				height: "100%",
-			}}
-		>
+		<div className="stage3-main main">
 			<div
 				style={{
 					display: "block",
@@ -299,6 +289,6 @@ export default function Stage3() {
 			) : (
 				<></>
 			)}
-		</main>
+		</div>
 	);
 }
