@@ -11,7 +11,6 @@ import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
-import nextButtonImage from "../assets/buttons&dialogues/neksButton.png"; // New next button import
 
 const BegLevelPickerBoy = () => {
 	const navigate = useNavigate();

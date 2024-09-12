@@ -3,6 +3,7 @@ import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import { useEffect, useRef, useState } from "react";
 import "./BeginnerStage1Boy.css";
 import { useLocation } from "react-router-dom";
+import bgImage from "../assets/bs3/bgbs3.png";
 
 import { randonItemGetter } from "../utils/imageAssetPicker";
 import { Qfilters, shuffle } from "../utils/formatter";
@@ -167,7 +168,17 @@ export default function Stage3() {
 	}
 
 	return (
-		<main className="main">
+		<main
+			className="main"
+			style={{
+				backgroundImage: `url(${bgImage})`,
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				backgroundRepeat: "no-repeat",
+				width: "100%",
+				height: "100vh",
+			}}
+		>
 			<div
 				style={{
 					display: "block",
@@ -219,5 +230,4 @@ export default function Stage3() {
 				</div>
 			</div>
 		</main>
-	);
-}
+	);}

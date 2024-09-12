@@ -9,7 +9,7 @@ import lockImage from '../assets/buttons&dialogues/lock.png';
 import accessCodeImage from '../assets/buttons&dialogues/accessCode.png';
 import doneButton from '../assets/buttons&dialogues/done.png';
 import beginX from '../assets/buttons&dialogues/beginX.png'; // Import the X button image
-// import backgroundVideo from '../BGAnimationGirl.mp4'; 
+import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const BegLevelPickerGirl = () => {
   const navigate = useNavigate();
@@ -46,13 +46,21 @@ const BegLevelPickerGirl = () => {
     setAccessCode('');
     setSelectedLevel(null);
   };
-
+  const handleBackClick = () => {
+		navigate(-1); // Go back to the previous page
+	};
   return (
     <div className="chooselevelGirl">
         <video autoPlay muted loop className="background-video">
       <source src="/BGAnimationGirl.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
+    {/* Back and Next Buttons in the upper left corner */}
+			<div className="nav-buttons">
+				<button onClick={handleBackClick} className="nav-button back-button">
+					<img src={backButtonImage} alt="Back" />
+				</button>
+			</div>
       <div className="buttons">
         <div className="buttonWithLock">
           <button onClick={() => handleStageClick('Beginner')} className={`beginButton ${selectedLevel === 'Beginner' ? 'selected' : ''}`}>

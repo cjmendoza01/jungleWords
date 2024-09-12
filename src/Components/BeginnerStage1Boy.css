@@ -255,3 +255,24 @@
 }
 
 
+.back-button-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure it appears on top */
+}
+
+.back-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.back-button img {
+  width: 80px; /* Adjust the size of the buttons */
+  height: auto;
+}
+
+.back-button:hover img {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
