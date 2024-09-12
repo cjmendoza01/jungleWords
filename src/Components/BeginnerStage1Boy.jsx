@@ -1213,7 +1213,7 @@ const BeginnerStage1Boy = () => {
 
 			setRightCounter(right);
 
-			if (right === 2) {
+			if (right === 6) {
 				setTimeout(() => {
 					navigate("/BS1GJBoy");
 				}, 1000);
