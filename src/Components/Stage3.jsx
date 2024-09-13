@@ -230,13 +230,13 @@ export default function Stage3() {
 				muted
 				loop
 				style={{
-					position: "fixed",  // Ensures it stays in the background
+					position: "fixed", // Ensures it stays in the background
 					top: 0,
 					left: 0,
 					width: "100%",
 					height: "100%",
-					objectFit: "cover",  // Stretches the video to cover the whole screen
-					zIndex: "1",  // Places the video behind the game content
+					objectFit: "cover", // Stretches the video to cover the whole screen
+					zIndex: "1", // Places the video behind the game content
 				}}
 			>
 				<source src="/bgstage4.mp4" type="video/mp4" />
@@ -247,7 +247,7 @@ export default function Stage3() {
 			<div
 				style={{
 					position: "relative",
-					zIndex: "1",  // Ensures the game is above the video
+					zIndex: "1", // Ensures the game is above the video
 					width: "100%",
 					height: "100%",
 					justifyContent: "center",
@@ -299,15 +299,15 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
-			{openNextGameModal ? (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => setResetGame(true)}
-				/>
-			) : (
+			{/* {openNextGameModal ? ( */}
+			<NextGameModal
+				gender={gender}
+				route={nextRoute}
+				resetGame={() => setResetGame(true)}
+			/>
+			{/* ) : (
 				<></>
-			)}
+			)} */}
 		</div>
 	);
 }

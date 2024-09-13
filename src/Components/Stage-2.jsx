@@ -283,15 +283,15 @@ export default function Stage2() {
 					</div>
 				</div>
 			)}
-			{openNextGameModal ? (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => setResetGame(true)}
-				/>
-			) : (
+			{/* {openNextGameModal ? ( */}
+			<NextGameModal
+				gender={gender}
+				route={nextRoute}
+				resetGame={() => setResetGame(true)}
+			/>
+			{/* ) : (
 				<></>
-			)}
+			)} */}
 		</div>
 	);
 }
