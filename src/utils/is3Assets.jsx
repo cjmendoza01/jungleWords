@@ -118,7 +118,12 @@ import Wave from "../assets/is3/Wave.png";
 import Well from "../assets/is3/Well.png";
 import Wig from "../assets/is3/Wig.png";
 import Win from "../assets/is3/Win.png";
-import Zip from "../assets/is3/Zip.png";
+import Zip from "../assets/is3/Zip  .png";
 
 
 // Import all words/assets for intermediate stage 3
+
+
+
+
+// Import all audio for intermediate stage 3
