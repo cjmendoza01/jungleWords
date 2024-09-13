@@ -11,8 +11,9 @@ import DisplayModal from "./Modals/DisplayModal";
 import NextGameModal from "./Modals/NextGameModal";
 import Banana from "../assets/bs2/banana.png";
 import Basketfull from "../assets/bs2/basketfull.png";
-import Boy from "../assets/boy.png";
 import Girl from "../assets/bs2/girlBasketEmpty.png";
+import Boy from "../assets/bs2/boyBasketEmpty.png";
+
 import CheckModal from "./Modals/CheckModal";
 import Gonzo from "../assets/bs2/Gonzo.png";
 
@@ -42,7 +43,7 @@ export default function Stage2() {
 	const [gameComplete, setGameComplete] = useState(false);
 	const [disabledChoices, setDisabledChoices] = useState([]);
 	const [correctButton, setCorrectButton] = useState("");
-	const [openNextGameModal, setNextGameModal] = useState(false);
+	const [openNextGameModal, setNextGameModal] = useState(true);
 
 	const [gender, setGender] = useState("boy");
 	const choices = ["A", "E", "I", "O", "U"];
@@ -291,7 +292,7 @@ export default function Stage2() {
 				/>
 			) : (
 				<></>
-			)}
+			)} 
 		</div>
 	);
 }
