@@ -1,5 +1,5 @@
 // Import all bs3 images
-
+import Ball from "../assets/is2/is2images/Ball.png";
 import Bell from "../assets/is2/is2images/Bell.png";
 import Book from "../assets/is2/is2images/Book.png";
 import Cart from "../assets/is2/is2images/Cart.png";
@@ -8,3 +8,14 @@ import Kite from "../assets/is2/is2images/Kite.png";
 import Lamp from "../assets/is2/is2images/Lamp.png";
 import Lock from "../assets/is2/is2images/Lock.png";
 import Mask from "../assets/is2/is2images/Mask.png";
+import Barn from "../assets/is2/is2images/Barn.png";
+import Belt from "../assets/is2/is2images/Belt.png";
+import Clip from "../assets/is2/is2images/Clip.png";
+import Coat from "../assets/is2/is2images/Coat.png";
+import Coin from "../assets/is2/is2images/Coin.png";
+import Fork from "../assets/is2/is2images/Fork.png";
+import Plug from "../assets/is2/is2images/Plug.png";
+import Ring from "../assets/is2/is2images/Ring.png";
+import Ship from "../assets/is2/is2images/Ship.png";
+import Sock from "../assets/is2/is2images/Sock.png";
+import Tent from "../assets/is2/is2images/Tent.png";

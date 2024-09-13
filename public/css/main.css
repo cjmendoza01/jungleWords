@@ -35,6 +35,7 @@
   height: 80px;
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin-right: 10px;
+  
 }
 
 .tester-Button {
@@ -51,11 +52,13 @@
 .tester-Button:hover {
   background-color: rgba(0, 0, 0, 0.1); /* Hover effect with slight transparency */
   transform: scale(1.05); /* Slightly enlarge button on hover */
+  
 }
 
 .animate-bananaFall {
   transform: translateY(30px);
   opacity: 0;
+  
 }
 
 .stage2-monkey-div {
@@ -223,7 +226,7 @@
 }
 .modal-playAgain-buttons {
   bottom: 40px;
-  right: 700px;
+  right: 800px;
   width: 250px; /* Adjust size as needed */
   height: 90px; /* Adjust size as needed */
 }
