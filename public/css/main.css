@@ -215,21 +215,25 @@
   padding-bottom: 40px; /* Space from the bottom */
 }
 
-.modal-nextGame-buttons,
+.modal-nextGame-buttons{
+  bottom: 40px;
+  right: 400px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
 .modal-playAgain-buttons {
-  margin: 0 20px; /* Space between the two buttons */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 150px; /* Set max width for buttons */
+  bottom: 40px;
+  right: 700px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
 }
 
 .modal-nextGame-img,
 .modal-playAgain-img {
-  width: 100px; /* Set a default width */
-  max-width: 150px; /* Set a maximum width */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: contain;
+  bottom: 40px;
+  right: 700px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
 }
 
 .modal-nextGame-buttons:hover img,

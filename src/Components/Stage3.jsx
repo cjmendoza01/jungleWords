@@ -3,7 +3,6 @@ import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import { useEffect, useRef, useState } from "react";
 import "./BeginnerStage1Boy.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import bgImage from "../assets/bs3/bgbs3.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
 
 import { randonItemGetter } from "../utils/imageAssetPicker";
@@ -31,7 +30,6 @@ export default function Stage3() {
 	const [openNextGameModal, setNextGameModal] = useState(false);
 
 	const navigate = useNavigate();
-
 	useEffect(() => {
 		if (correct) {
 			if (rightItems?.length === 1) {
@@ -226,9 +224,30 @@ export default function Stage3() {
 
 	return (
 		<div className="stage3-main main">
+			{/* Fullscreen background video */}
+			<video
+				autoPlay
+				muted
+				loop
+				style={{
+					position: "fixed",  // Ensures it stays in the background
+					top: 0,
+					left: 0,
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",  // Stretches the video to cover the whole screen
+					zIndex: "1",  // Places the video behind the game content
+				}}
+			>
+				<source src="/bgstage4.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
+			{/* Game content */}
 			<div
 				style={{
-					display: "block",
+					position: "relative",
+					zIndex: "1",  // Ensures the game is above the video
 					width: "100%",
 					height: "100%",
 					justifyContent: "center",
