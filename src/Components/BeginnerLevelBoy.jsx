@@ -18,12 +18,12 @@ const BeginnerLevelBoy = () => {
   
   const handleDoneClick = () => {
     if (selectedStage === 'BS1') {
-      navigate('/BeginnerStage1Boy');
+      navigate('/BoyBS1intro');
     } else {
       if (selectedStage === 'BS2') {
-        navigate('/stage2');
+        navigate('/BoyBS2intro');
       } else if (selectedStage === 'BS3') {
-        navigate('/stage3');
+        navigate('/BoyBS3intro');
       } else {
         alert('Please select a stage');
       }

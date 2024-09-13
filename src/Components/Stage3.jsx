@@ -299,15 +299,15 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
-			{/* {openNextGameModal ? ( */}
+			{openNextGameModal ? ( 
 			<NextGameModal
 				gender={gender}
 				route={nextRoute}
 				resetGame={() => setResetGame(true)}
 			/>
-			{/* ) : (
+			) : (
 				<></>
-			)} */}
+			)} 
 		</div>
 	);
 }

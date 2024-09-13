@@ -24,6 +24,13 @@ import Tester from "./Tester.jsx";
 import Stage3 from "./Stage3.jsx";
 import Tester2 from "./Tester2.jsx";
 import QRGame from "./QrGame.jsx";
+import BoyBS1intro from "./BoyBS1intro.jsx";
+import GirlBS1intro from "./GirlBS1intro.jsx";
+import BoyBS2intro from "./BoyBS2intro.jsx";
+import GirlBS2intro from "./GirlBS2intro.jsx";
+import BoyBS3intro from "./BoyBS3intro.jsx";
+import GirlBS3intro from "./GirlBS3intro.jsx";
+
 function App() {
 	return (
 		<Routes>
@@ -52,6 +59,13 @@ function App() {
 			<Route path="/QRGame" element={<QRGame />} />
 			<Route path="/Tester" element={<Tester />} />
 			<Route path="/Tester2" element={<Tester2 />} />
+			<Route path="/BoyBS1intro" element={<BoyBS1intro />} />
+			<Route path="/GirlBS1intro" element={<GirlBS1intro />} />
+			<Route path="/BoyBS2intro" element={<BoyBS2intro />} />
+			<Route path="/GirlBS2intro" element={<GirlBS2intro />} />
+			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
+			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
+
 		</Routes>
 	);
 }
