@@ -101,46 +101,40 @@
 .stage-2-button-div {
   display: flex;
   width: 50%;
-  padding: 20px;
   height: 50%;
-  background-color: rgba(203, 216, 201, 0.8); /* Transparent background */
-  border: 3px solid #034703;
+  background-image: url('../../src/assets/bs2/AEIOUBox.png'); /* Using your background image */
+  background-size: cover;
+  background-position: center;
+  justify-content: space-between;
+  padding: 10px;
   border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
 }
 
 .stage-2-button-div-item {
-  width: 20%;
-  height: 100%;
-  font-weight: bold;
-  font-size: 7vw;
-  color: #116213;
-  background-color: rgba(203, 216, 201, 0.8); /* Transparent background */
-  align-content: center;
+  width: 18%; /* Adjust the button size to fit within the AEIOU box */
+  height: auto;
+  font-size: 5vw;
+  background-color: #b9beb5; /* Transparent background */
   text-align: center;
   border: outset;
-  font-family: sans-serif;
   cursor: pointer;
-}
-
-.stage-2-button-div-item:first-child {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-}
-
-.stage-2-button-div-item:last-child {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
 .button-stage2-error {
-  background-color: #FF0000;
+  background-color: #ff0000;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .button-stage2-correct {
   background-color: #4caf50;
   color: white;
+  transition: background-color 0.3s ease;
 }
+
 
 .stage-2-character-div {
   width: 10%;
