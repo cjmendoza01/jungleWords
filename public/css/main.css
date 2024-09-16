@@ -91,36 +91,59 @@
 }
 
 .stage2-lower-div {
+  height: 40%;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  /* align-items: center; */
-  /* height: 220px;   */
-  height: 50%;
 }
+
 .stage-2-button-div {
+  display: flex;
+  width: 50%;
+  padding: 20px;
+  height: 50%;
+  background-color: rgba(203, 216, 201, 0.8);
+  border: 3px solid #034703;
+  border-radius: 10px;
+}
+
+.stage-2-button-div-item {
+  width: 20%;
+  height: 100%;
+  font-weight: bold;
+  font-size: 7vw;
+  color: #116213;
+  background-color: rgba(203, 216, 201, 0.8);
+  align-content: center;
+  text-align: center;
+  border: outset;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+/* .stage-2-button-div {
   display: flex;
     align-items: center;
     width: 40%;
     height: 50%;
     padding: 0;
-    background-image: url('../../src/assets/bs2/aeioubox.png'); /* Background image */
+    background-image: url('../../src/assets/bs2/aeioubox.png'); 
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-color: #ff0000; */
 }
 
 .stage-2-button-div-item {
-  width: 20%;  /* Adjust button size */
-  height: 100%; /* Adjust button size */
+  width: 20%; 
+  height: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: transparent;  /* Ensure transparency */
-  border: none;  /* Remove button borders */
+  background-color: transparent; 
+  border: none; 
   cursor: pointer;
-}
+} */
 
 .stage-2-button-div-item:first-child {
   border-top-left-radius: 16px;
