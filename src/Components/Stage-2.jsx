@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { randonItemGetter } from "../utils/imageAssetPicker";
+import { randomVowelGetter, randonItemGetter } from "../utils/imageAssetPicker";
 import { vowelChecker } from "../utils/checker";
 import { Qfilters } from "../utils/formatter";
 import { useLocation, useNavigate } from "react-router-dom"; // Ensure useNavigate and useLocation are imported
@@ -86,7 +86,7 @@ export default function Stage2() {
 				setGameComplete(false);
 				setNextGameModal(false);
 			}
-			const items = randonItemGetter(8, level);
+			const items = randomVowelGetter(8, level);
 			setQuestions(items);
 			setBananaCount(items.length);
 

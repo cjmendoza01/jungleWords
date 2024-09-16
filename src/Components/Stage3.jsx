@@ -127,7 +127,10 @@ export default function Stage3() {
 	}, [qGender, qLevel]);
 
 	useEffect(() => {
-		let iLevel = qLevel || 1;
+		let iLevel = 1;
+		if (qLevel) {
+			iLevel = Number(qLevel);
+		}
 		if (
 			(rightItems?.length === 0 && wrongItems?.length === 0 && !gameComplete) ||
 			resetGame
@@ -299,15 +302,15 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
-			{openNextGameModal ? ( 
-			<NextGameModal
-				gender={gender}
-				route={nextRoute}
-				resetGame={() => setResetGame(true)}
-			/>
+			{openNextGameModal ? (
+				<NextGameModal
+					gender={gender}
+					route={nextRoute}
+					resetGame={() => setResetGame(true)}
+				/>
 			) : (
 				<></>
-			)} 
+			)}
 		</div>
 	);
 }

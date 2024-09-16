@@ -255,6 +255,8 @@ import Wet from "../assets/bs3/bs3images/Wet.png";
 import Win from "../assets/bs3/bs3images/Win.png";
 import Zip from "../assets/bs3/bs3images/Zip.png";
 
+//intermidiate items
+// import Ball from "../assets/is2/is2Images/Ball.png";
 import Bell from "../assets/is2/is2Images/Bell.png";
 import Book from "../assets/is2/is2Images/Book.png";
 import Cart from "../assets/is2/is2Images/Cart.png";
@@ -263,6 +265,110 @@ import Kite from "../assets/is2/is2Images/Kite.png";
 import Lamp from "../assets/is2/is2Images/Lamp.png";
 import Lock from "../assets/is2/is2Images/Lock.png";
 import Mask from "../assets/is2/is2Images/Mask.png";
+import Barn from "../assets/is2/is2Images/Barn.png";
+import Belt from "../assets/is2/is2Images/Belt.png";
+import Clip from "../assets/is2/is2Images/Clip.png";
+import Coat from "../assets/is2/is2Images/Coat.png";
+import Coin from "../assets/is2/is2Images/Coin.png";
+import Fork from "../assets/is2/is2Images/Fork.png";
+import Plug from "../assets/is2/is2Images/Plug.png";
+import Ring from "../assets/is2/is2Images/Ring.png";
+import Ship from "../assets/is2/is2Images/Ship.png";
+import Sock from "../assets/is2/is2Images/Sock.png";
+import Tent from "../assets/is2/is2Images/Tent.png";
+
+//Long Vowels
+import Bake from "../assets/is1/Bake.png";
+import Base from "../assets/is1/Base.png";
+import Bead from "../assets/is1/Bead.png";
+import Bee from "../assets/is1/Bee.png";
+import Bike from "../assets/is1/Bike.png";
+import Bite from "../assets/is1/Bite.png";
+import Blue from "../assets/is1/Blue.png";
+import Boat from "../assets/is1/Boat.png";
+import Bone from "../assets/is1/Bone.png";
+import Bowl from "../assets/is1/Bowl.png";
+import Cage from "../assets/is1/Cage.png";
+import Coke from "../assets/is1/Coke.png";
+import Cube from "../assets/is1/Coke.png";
+import Cute from "../assets/is1/Cute.png";
+import Date from "../assets/is1/Date.png";
+import Dice from "../assets/is1/Dice.png";
+import Face from "../assets/is1/Face.png";
+import Feet from "../assets/is1/Feet.png";
+import Few from "../assets/is1/Few.png";
+import Fire from "../assets/is1/Fire.png";
+import Five from "../assets/is1/Five.png";
+import Fly from "../assets/is1/Fly.png";
+import Fruit from "../assets/is1/Bee.png";
+import Game from "../assets/is1/Game.png";
+import Gate from "../assets/is1/Gate.png";
+import Glue from "../assets/is1/Glue.png";
+import Go from "../assets/is1/Go.png";
+import Goal from "../assets/is1/Goal.png";
+import Group from "../assets/is1/Group.png";
+import Hide from "../assets/is1/Hide.png";
+import High from "../assets/is1/High.png";
+import Hole from "../assets/is1/Hole.png";
+import Home from "../assets/is1/Home.png";
+import Hope from "../assets/is1/Hope.png";
+import Hose from "../assets/is1/Hose.png";
+import Huge from "../assets/is1/Huge.png";
+import Ice from "../assets/is1/Ice.png";
+import Jeans from "../assets/is1/Jeans.png";
+// import Juice from "../assets/is1/Juice.png";
+import June from "../assets/is1/June.png";
+import Key from "../assets/is1/Key.png";
+// import Kite from "../assets/is1/Kite.png";
+import Knee from "../assets/is1/Knee.png";
+import Lake from "../assets/is1/Lake.png";
+import Late from "../assets/is1/Late.png";
+import Leaf from "../assets/is1/Leaf.png";
+import Light from "../assets/is1/Light.png";
+import Like from "../assets/is1/Like.png";
+import Line from "../assets/is1/Line.png";
+import Low from "../assets/is1/Low.png";
+import Male from "../assets/is1/Male.png";
+import Maze from "../assets/is1/Maze.png";
+import Meal from "../assets/is1/Meal.png";
+import Meat from "../assets/is1/Meat.png";
+import Name from "../assets/is1/Name.png";
+import Nine from "../assets/is1/Nine.png";
+import Nose from "../assets/is1/Nose.png";
+import Page from "../assets/is1/Page.png";
+import Pale from "../assets/is1/Pale.png";
+import Peace from "../assets/is1/Peace.png";
+import Peek from "../assets/is1/Peek.png";
+import Phone from "../assets/is1/Phone.png";
+import Pole from "../assets/is1/Pole.png";
+import Rate from "../assets/is1/Rate.png";
+import Read from "../assets/is1/Read.png";
+import Ride from "../assets/is1/Ride.png";
+import Right from "../assets/is1/Right.png";
+import Road from "../assets/is1/Road.png";
+import Rope from "../assets/is1/Rope.png";
+import Rose from "../assets/is1/Rose.png";
+import Same from "../assets/is1/Same.png";
+import Save from "../assets/is1/Save.png";
+import Sea from "../assets/is1/Sea.png";
+import Seal from "../assets/is1/Sea.png";
+import See from "../assets/is1/See.png";
+import Seed from "../assets/is1/Seed.png";
+import Size from "../assets/is1/Size.png";
+import Soap from "../assets/is1/Soap.png";
+import Soup from "../assets/is1/Soup.png";
+import Suit from "../assets/is1/Suit.png";
+import Tape from "../assets/is1/Tape.png";
+import Team from "../assets/is1/Team.png";
+import Tee from "../assets/is1/Tee.png";
+import Tie from "../assets/is1/Tie.png";
+import Time from "../assets/is1/Time.png";
+import Toad from "../assets/is1/Toad.png";
+import Toe from "../assets/is1/Toe.png";
+import Tree from "../assets/is1/Tree.png";
+import Wave from "../assets/is1/Wave.png";
+import Week from "../assets/is1/Week.png";
+import Wound from "../assets/is1/Wound.png";
 
 // Food items to display in the side and to be dragged
 export const foodItemsList = [
@@ -1262,7 +1368,7 @@ export const itemsList = [
 	{ image: Zip, id: "zip" },
 ];
 
-const itemsList2 = [
+export const itemsList2 = [
 	{ image: Bell, id: "bell" },
 	{ image: Book, id: "book" },
 	{ image: Cart, id: "cart" },
@@ -1271,9 +1377,116 @@ const itemsList2 = [
 	{ image: Lamp, id: "lamp" },
 	{ image: Lock, id: "lock" },
 	{ image: Mask, id: "mask" },
+	// { image: Ball, id: "ball" },
+	{ image: Barn, id: "barn" },
+	{ image: Belt, id: "belt" },
+	{ image: Clip, id: "clip" },
+	{ image: Coat, id: "coat" },
+	{ image: Coin, id: "coin" },
+	{ image: Fork, id: "fork" },
+	{ image: Plug, id: "plug" },
+	{ image: Ring, id: "ring" },
+	{ image: Ship, id: "ship" },
+	{ image: Sock, id: "sock" },
+	{ image: Tent, id: "tent" },
 ];
 
-const stage3Qs = [
+const longVowels = [
+	{ image: Bake, id: "bake" },
+	{ image: Base, id: "base" },
+	{ image: Bead, id: "bead" },
+	{ image: Bee, id: "bee" },
+	{ image: Bike, id: "bike" },
+	{ image: Bite, id: "bite" },
+	{ image: Blue, id: "blue" },
+	{ image: Boat, id: "boat" },
+	{ image: Bone, id: "bone" },
+	{ image: Bowl, id: "bowl" },
+	{ image: Cage, id: "cage" },
+	{ image: Coke, id: "coke" },
+	{ image: Cube, id: "cube" },
+	{ image: Cute, id: "cute" },
+	{ image: Date, id: "date" },
+	{ image: Dice, id: "dice" },
+	{ image: Face, id: "face" },
+	{ image: Feet, id: "feet" },
+	{ image: Few, id: "few" },
+	{ image: Fire, id: "fire" },
+	{ image: Five, id: "five" },
+	{ image: Fly, id: "fly" },
+	{ image: Fruit, id: "fruit" },
+	{ image: Game, id: "game" },
+	{ image: Gate, id: "gate" },
+	{ image: Glue, id: "glue" },
+	{ image: Go, id: "go" },
+	{ image: Goal, id: "goal" },
+	{ image: Group, id: "group" },
+	{ image: Hide, id: "hide" },
+	{ image: High, id: "high" },
+	{ image: Hole, id: "hole" },
+	{ image: Home, id: "home" },
+	{ image: Hope, id: "hope" },
+	{ image: Hose, id: "hose" },
+	{ image: Huge, id: "huge" },
+	{ image: Ice, id: "ice" },
+	{ image: Jeans, id: "jeans" },
+	{ image: Juice, id: "juice" },
+	{ image: June, id: "june" },
+	{ image: Key, id: "key" },
+	{ image: Kite, id: "kite" },
+	{ image: Knee, id: "knee" },
+	{ image: Lake, id: "lake" },
+	{ image: Late, id: "late" },
+	{ image: Leaf, id: "leaf" },
+	{ image: Light, id: "light" },
+	{ image: Like, id: "like" },
+	{ image: Line, id: "line" },
+	{ image: Low, id: "low" },
+	{ image: Male, id: "male" },
+	{ image: Maze, id: "maze" },
+	{ image: Meal, id: "meal" },
+	{ image: Meat, id: "meat" },
+	{ image: Name, id: "name" },
+	{ image: Nine, id: "nine" },
+	{ image: Nose, id: "nose" },
+	{ image: Page, id: "page" },
+	{ image: Pale, id: "pale" },
+	{ image: Peace, id: "peace" },
+	{ image: Peek, id: "peek" },
+	{ image: Phone, id: "phone" },
+	{ image: Pole, id: "pole" },
+	{ image: Rate, id: "rate" },
+	{ image: Read, id: "read" },
+	{ image: Rice, id: "rice" },
+	{ image: Ride, id: "ride" },
+	{ image: Right, id: "right" },
+	{ image: Road, id: "road" },
+	{ image: Rope, id: "rope" },
+	{ image: Rose, id: "rose" },
+	{ image: Same, id: "same" },
+	{ image: Save, id: "save" },
+	{ image: Sea, id: "sea" },
+	{ image: Seal, id: "seal" },
+	{ image: See, id: "see" },
+	{ image: Seed, id: "seed" },
+	{ image: Size, id: "size" },
+	{ image: Soap, id: "soap" },
+	{ image: Soup, id: "soup" },
+	{ image: Suit, id: "suit" },
+	{ image: Tape, id: "tape" },
+	{ image: Team, id: "team" },
+	{ image: Tee, id: "tee" },
+	{ image: Tie, id: "tie" },
+	{ image: Time, id: "time" },
+	{ image: Toad, id: "toad" },
+	{ image: Toe, id: "toe" },
+	{ image: Tree, id: "tree" },
+	{ image: Wave, id: "wave" },
+	{ image: Week, id: "week" },
+	{ image: Wound, id: "wound" },
+];
+
+export const stage3Qs = [
 	{ image: Bell, id: "bell", sentence: "The kid rang the bell." },
 	{ image: Book, id: "book", sentence: "The book is on the shelf." },
 	{ image: Cart, id: "cart", sentence: "The kid is pushing the cart away." },
@@ -1341,6 +1554,30 @@ export const randonItemGetter = (numElements, level, notIncluddedValues) => {
 	let items = itemsList;
 
 	if (level === 2) items = itemsList2;
+
+	if (notIncluddedValues?.length) {
+		console.log("notIncVals");
+		console.log(notIncluddedValues);
+		items = items.filter(
+			(item) =>
+				!notIncluddedValues.some((notIncluded) => notIncluded.id === item.id)
+		);
+	}
+
+	const shuffled = items.slice();
+	const selected = [];
+
+	for (let i = 0; i < numElements; i++) {
+		const randomIndex = Math.floor(Math.random() * (shuffled.length - i));
+		selected.push(shuffled.splice(randomIndex, 1)[0]);
+	}
+	return selected;
+};
+
+export const randomVowelGetter = (numElements, level, notIncluddedValues) => {
+	let items = itemsList;
+
+	if (level === 2) items = longVowels;
 
 	if (notIncluddedValues?.length) {
 		console.log("notIncVals");
