@@ -103,7 +103,7 @@
   width: 50%;
   padding: 20px;
   height: 50%;
-  background-color: rgba(203, 216, 201, 0.8); /* Transparent background */
+  background-color: rgba(203, 216, 201, 0.8);
   border: 3px solid #034703;
   border-radius: 10px;
 }
@@ -114,13 +114,36 @@
   font-weight: bold;
   font-size: 7vw;
   color: #116213;
-  background-color: rgba(203, 216, 201, 0.8); /* Transparent background */
+  background-color: rgba(203, 216, 201, 0.8);
   align-content: center;
   text-align: center;
   border: outset;
   font-family: sans-serif;
   cursor: pointer;
 }
+
+/* .stage-2-button-div {
+  display: flex;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    padding: 0;
+    background-image: url('../../src/assets/bs2/aeioubox.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.stage-2-button-div-item {
+  width: 20%; 
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+} */
 
 .stage-2-button-div-item:first-child {
   border-top-left-radius: 16px;
@@ -133,14 +156,17 @@
 }
 
 .button-stage2-error {
-  background-color: #FF0000;
+  background-color: #ff0000;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .button-stage2-correct {
   background-color: #4caf50;
   color: white;
+  transition: background-color 0.3s ease;
 }
+
 
 .stage-2-character-div {
   width: 10%;

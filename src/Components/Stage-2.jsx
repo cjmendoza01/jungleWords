@@ -231,37 +231,73 @@ export default function Stage2() {
 
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
+			<video
+				autoPlay
+				muted
+				loop
+				style={{
+					position: "fixed", // Ensures it stays in the background
+					top: 0,
+					left: 0,
+					width: "100%",
+					height: "100%",
+					objectFit: "cover", // Stretches the video to cover the whole screen
+					zIndex: "1", // Places the video behind the game content
+				}}
+			>
+				<source src="/bgstage2.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
 			{/* Back button in the upper left corner */}
 			<button className="backButton" onClick={handleBackClick}>
 				<img src={backButtonImage} alt="Back" />
 			</button>
 
-			<div className="stage2-upper-div">
-				<div className="stage2-upper2-div">
-					<div
-						style={{
-							width: "80%",
-							display: "flex",
-							alignItems: "end",
-							justifyContent: "right",
-						}}
-					>
-						<div className="stage-2-character-div">
-							<img
-								className="stage-2-char-div"
-								src={gender === "boy" ? Boy : Girl}
-								alt="Character"
-							/>
-						</div>
+			<div
+				style={{
+					width: "100vw",
+					height: "100vh",
+					position: "absolute",
+					zIndex: "2",
+				}}
+			>
+				<div className="stage2-upper-div">
+					<div className="stage2-upper2-div">
+						<div
+							style={{
+								width: "80%",
+								display: "flex",
+								alignItems: "end",
+								justifyContent: "right",
+							}}
+						>
+							<div className="stage-2-character-div">
+								<img
+									className="stage-2-char-div"
+									src={gender === "boy" ? Boy : Girl}
+									alt="Character"
+								/>
+							</div>
 
-						<div className="tester-image-container">
-							{Array.from({ length: bananaCount }, (_, index) => (
-								<React.Fragment key={index}>
-									{index === bananaCount - 1 ? (
-										<button
-											onClick={() => setOpenModal(true)}
-											style={{ background: "transparent", border: "none" }}
-										>
+							<div className="tester-image-container">
+								{Array.from({ length: bananaCount }, (_, index) => (
+									<React.Fragment key={index}>
+										{index === bananaCount - 1 ? (
+											<button
+												onClick={() => setOpenModal(true)}
+												style={{ background: "transparent", border: "none" }}
+											>
+												<img
+													className={`testr-img ${
+														index === bananaCount - 1 && removeBanana
+															? "animate-bananaFall"
+															: ""
+													}`}
+													src={getFoodLogo(index)}
+													alt="Banana"
+												/>
+											</button>
+										) : (
 											<img
 												className={`testr-img ${
 													index === bananaCount - 1 && removeBanana
@@ -271,48 +307,37 @@ export default function Stage2() {
 												src={getFoodLogo(index)}
 												alt="Banana"
 											/>
-										</button>
-									) : (
-										<img
-											className={`testr-img ${
-												index === bananaCount - 1 && removeBanana
-													? "animate-bananaFall"
-													: ""
-											}`}
-											src={getFoodLogo(index)}
-											alt="Banana"
-										/>
-									)}
-								</React.Fragment>
-							))}
+										)}
+									</React.Fragment>
+								))}
+							</div>
+						</div>
+
+						<div className="stage2-monkey-div">
+							<img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
 						</div>
 					</div>
+				</div>
 
-					<div className="stage2-monkey-div">
-						<img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
+				<div className="stage2-lower-div">
+					<div className="stage-2-button-div">
+						{choices.map((ch) => {
+							return (
+								<button
+									key={ch}
+									className={`stage-2-button-div-item ${
+										disabledChoices.includes(ch) ? "button-stage2-error" : ""
+									} ${correctButton === ch ? "button-stage2-correct" : ""}`}
+									onClick={() => handleButtonClick(ch)}
+									disabled={disabledChoices.includes(ch)}
+								>
+									{ch}
+								</button>
+							);
+						})}
 					</div>
 				</div>
 			</div>
-
-			<div className="stage2-lower-div">
-				<div className="stage-2-button-div">
-					{choices.map((ch) => {
-						return (
-							<button
-								key={ch}
-								className={`stage-2-button-div-item ${
-									disabledChoices.includes(ch) ? "button-stage2-error" : ""
-								} ${correctButton === ch ? "button-stage2-correct" : ""}`}
-								onClick={() => handleButtonClick(ch)}
-								disabled={disabledChoices.includes(ch)}
-							>
-								{ch}
-							</button>
-						);
-					})}
-				</div>
-			</div>
-
 			{openModal && (
 				<DisplayModal
 					item={questions[0]}
