@@ -91,36 +91,43 @@
 }
 
 .stage2-lower-div {
-  height: 40%;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-image: url('../../src/assets/bs2/aeioubox.png'); /* Background image */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 220px;  /* Adjust height if needed */
 }
-
 .stage-2-button-div {
   display: flex;
-  width: 50%;
-  height: 50%;
-  background-image: url('../../src/assets/bs2/AEIOUBox.png'); /* Using your background image */
-  background-size: cover;
-  background-position: center;
-  justify-content: space-between;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  justify-content: space-around; /* Reduce the space between buttons */
+  width: 55%;  /* Slightly reduce the container width */
+  max-width: 700px;  /* Set a maximum width */
+  padding: 0; 
 }
 
 .stage-2-button-div-item {
-  width: 18%; /* Adjust the button size to fit within the AEIOU box */
-  height: auto;
-  font-size: 5vw;
-  background-color: #b9beb5; /* Transparent background */
-  text-align: center;
-  border: outset;
+  width: 90px;  /* Adjust button size */
+  height: 90px; /* Adjust button size */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;  /* Ensure transparency */
+  border: none;  /* Remove button borders */
   cursor: pointer;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+}
+
+.stage-2-button-div-item:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.stage-2-button-div-item:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
 }
 
 .button-stage2-error {

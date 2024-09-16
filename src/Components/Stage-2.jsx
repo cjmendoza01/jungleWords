@@ -4,28 +4,13 @@ import { vowelChecker } from "../utils/checker";
 import { Qfilters } from "../utils/formatter";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import exitButton from "../assets/bs2/exitButton.png"; 
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
-
 import DisplayModal from "./Modals/DisplayModal";
 import NextGameModal from "./Modals/NextGameModal";
 import Banana from "../assets/bs2/banana.png";
-import Basketfull from "../assets/bs2/basketfull.png";
 import Girl from "../assets/bs2/girlBasketEmpty.png";
 import Boy from "../assets/bs2/boyBasketEmpty.png";
-import aeiouBox from '../assets/bs2/AEIOUBox.png';
-
-import CheckModal from "./Modals/CheckModal";
 import Gonzo from "../assets/bs2/Gonzo.png";
-
-import egg1 from "../assets/is1/egg1.png";
-import egg2 from "../assets/is1/egg2.png";
-import egg3 from "../assets/is1/egg3.png";
-import egg4 from "../assets/is1/egg4.png";
-import egg5 from "../assets/is1/egg5.png";
-import egg6 from "../assets/is1/egg6.png";
-import egg7 from "../assets/is1/egg7.png";
-import egg8 from "../assets/is1/egg8.png";
 
 import AImage from '../assets/bs2/A.png';
 import EImage from '../assets/bs2/E.png';
@@ -40,8 +25,6 @@ export default function Stage2() {
   const [questions, setQuestions] = useState([]);
   const [resetGame, setResetGame] = useState(false);
   const [nextRoute, setNextRoute] = useState("");
-  
-  const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
   
   const [openCheckModal, setOpenCheckModal] = useState(false);
   const [removeBanana, setRemoveBanana] = useState(false);
@@ -103,32 +86,6 @@ export default function Stage2() {
     setNextGameModal(false);
   }, [resetGame]);
 
-  useEffect(() => {
-    const gends = ["girl", "boy"];
-    if (qGender && gends.includes(qGender)) {
-      setGender(qGender);
-    }
-  }, [qGender]);
-
-  useEffect(() => {
-    if (openCheckModal) {
-      setTimeout(() => {
-        setCorrectButton("");
-      }, 1000);
-      setRemoveBanana(false);
-      setBananaCount((prevCount) => prevCount - 1);
-      setTimeout(() => {
-        setOpenCheckModal(false);
-      }, 2000);
-
-      if (bananaCount > 0) {
-        setTimeout(() => {
-          setOpenModal(true);
-        }, 2500);
-      }
-    }
-  }, [openCheckModal]);
-
   const handleButtonClick = async (ch) => {
     const rightAns = questions[0];
     const right = await vowelChecker(ch, rightAns);
@@ -155,17 +112,6 @@ export default function Stage2() {
     }
   };
 
-  const getFoodLogo = (index) => {
-    let level = 1;
-    if (qLevel) {
-      level = Number(qLevel);
-    }
-    if (level === 2) {
-      return eggs[index];
-    }
-    return Banana;
-  };
-
   const handleBackClick = () => {
     navigate(-1); 
   };
@@ -188,120 +134,94 @@ export default function Stage2() {
   };
 
   return (
-    <div className="stage2-main main" style={{ display: "block" }}>
-      <button className="backButton" onClick={handleBackClick}>
-        <img src={backButtonImage} alt="Back" />
-      </button>
+    <div className="stage2-main main">
+      {/* Fullscreen background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        style={{
+          position: "fixed", // Ensures it stays in the background
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover", // Stretches the video to cover the whole screen
+          zIndex: "1", // Places the video behind the game content
+        }}
+      >
+        <source src="/bgstage2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      <div className="stage2-upper-div">
-        <div className="stage2-upper2-div">
-          <div
-            style={{
-              width: "80%",
-              display: "flex",
-              alignItems: "end",
-              justifyContent: "right",
-            }}
-          >
-            <div className="stage-2-character-div">
-              <img
-                className="stage-2-char-div"
-                src={gender === "boy" ? Boy : Girl}
-                alt="Character"
-              />
-            </div>
+      {/* Game content */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: "1", // Ensures the game is above the video
+          width: "100%",
+          height: "100%",
+          justifyContent: "center",
+        }}
+      >
+        <button className="backButton" onClick={handleBackClick}>
+          <img src={backButtonImage} alt="Back" />
+        </button>
 
-            <div className="tester-image-container">
-              {Array.from({ length: bananaCount }, (_, index) => (
-                <React.Fragment key={index}>
-                  {index === bananaCount - 1 ? (
-                    <button
-                      onClick={() => setOpenModal(true)}
-                      style={{ background: "transparent", border: "none" }}
-                    >
-                      <img
-                        className={`testr-img ${
-                          index === bananaCount - 1 && removeBanana
-                            ? "animate-bananaFall"
-                            : ""
-                        }`}
-                        src={getFoodLogo(index)}
-                        alt="Banana"
-                      />
-                    </button>
-                  ) : (
+        <div className="stage2-upper-div">
+          <div className="stage2-upper2-div">
+            <div style={{ width: "80%", display: "flex", alignItems: "end", justifyContent: "right" }}>
+              <div className="stage-2-character-div">
+                <img className="stage-2-char-div" src={gender === "boy" ? Boy : Girl} alt="Character" />
+              </div>
+              <div className="tester-image-container">
+                {Array.from({ length: bananaCount }, (_, index) => (
+                  <React.Fragment key={index}>
                     <img
-                      className={`testr-img ${
-                        index === bananaCount - 1 && removeBanana
-                          ? "animate-bananaFall"
-                          : ""
-                      }`}
-                      src={getFoodLogo(index)}
+                      className={`testr-img ${index === bananaCount - 1 && removeBanana ? "animate-bananaFall" : ""}`}
+                      src={Banana}
                       alt="Banana"
                     />
-                  )}
-                </React.Fragment>
-              ))}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+
+            <div className="stage2-monkey-div">
+              <img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
             </div>
           </div>
+        </div>
 
-          <div className="stage2-monkey-div">
-            <img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
+        <div className="stage2-lower-div">
+          <div className="stage-2-button-div">
+            {choices.map((ch) => (
+              <button
+                key={ch}
+                className={`stage-2-button-div-item ${disabledChoices.includes(ch) ? "button-stage2-error" : ""} ${correctButton === ch ? "button-stage2-correct" : ""}`}
+                onClick={() => handleButtonClick(ch)}
+                disabled={disabledChoices.includes(ch)}
+                style={{
+                  backgroundImage: `url(${getImageForChoice(ch)})`,
+                  backgroundSize: "contain",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  border: "none",
+                  width: "80px",
+                  height: "80px",
+                }}
+              />
+            ))}
           </div>
         </div>
-      </div>
 
-      <div className="stage2-lower-div">
-        <div className="stage-2-button-div">
-          {choices.map((ch) => (
-            <button
-              key={ch}
-              className={`stage-2-button-div-item ${
-                disabledChoices.includes(ch) ? "button-stage2-error" : ""
-              } ${correctButton === ch ? "button-stage2-correct" : ""}`}
-              onClick={() => handleButtonClick(ch)}
-              disabled={disabledChoices.includes(ch)}
-              style={{
-                backgroundImage: `url(${getImageForChoice(ch)})`,
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                border: "none",
-                width: "80px",
-                height: "80px",
-              }}
-            />
-          ))}
-        </div>
+        {openModal && (
+          <DisplayModal item={questions[0]} closeModal={() => setOpenModal(false)} />
+        )}
+        {gameComplete && (
+          <NextGameModal gender={gender} route={nextRoute} resetGame={() => setResetGame(true)} />
+        )}
       </div>
-
-      {openModal && (
-        <DisplayModal item={questions[0]} closeModal={() => setOpenModal(false)} />
-      )}
-      {openCheckModal && <CheckModal />}
-      {gameComplete && (
-        <div className="modal">
-          <div className="modal-backdrop"></div>
-          <div style={{ width: "20%", height: "20%" }}>
-            <img
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "contain",
-              }}
-              src={Gonzo}
-              alt="Gonzo"
-            />
-          </div>
-        </div>
-      )}
-      {openNextGameModal && (
-        <NextGameModal
-          gender={gender}
-          route={nextRoute}
-          resetGame={() => setResetGame(true)}
-        />
-      )}
     </div>
   );
 }
