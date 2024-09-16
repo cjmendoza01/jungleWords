@@ -34,7 +34,7 @@ export default function Stage2() {
 	const [resetGame, setResetGame] = useState(false);
 
 	const [nextRoute, setNextRoute] = useState("");
-
+	const [tries, setTry] = useState(0);
 	const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
 
 	const [openCheckModal, setOpenCheckModal] = useState(false);
@@ -43,7 +43,7 @@ export default function Stage2() {
 	const [gameComplete, setGameComplete] = useState(false);
 	const [disabledChoices, setDisabledChoices] = useState([]);
 	const [correctButton, setCorrectButton] = useState("");
-	const [openNextGameModal, setNextGameModal] = useState(true);
+	const [openNextGameModal, setNextGameModal] = useState(false);
 
 	const [gender, setGender] = useState("boy");
 	const choices = ["A", "E", "I", "O", "U"];
@@ -53,6 +53,8 @@ export default function Stage2() {
 
 	const qGender = queryParams.get("gender");
 	const qLevel = queryParams.get("level");
+
+	const [numRight, setNumRight] = useState(0);
 
 	useEffect(() => {
 		let gd = "boy";
@@ -76,11 +78,19 @@ export default function Stage2() {
 		if (qLevel) {
 			level = Number(qLevel);
 		}
-		if (questions.length === 0 && !gameComplete) {
+		if ((questions.length === 0 && !gameComplete) || resetGame) {
+			setRemoveBanana(false);
+
+			if (resetGame) {
+				setResetGame(false);
+				setGameComplete(false);
+				setNextGameModal(false);
+			}
 			const items = randonItemGetter(8, level);
 			setQuestions(items);
 			setBananaCount(items.length);
 
+			console.log(items);
 			// setResetGame(false);
 			// setNextGameModal(false);
 
@@ -89,19 +99,19 @@ export default function Stage2() {
 			}, 5000);
 		}
 
-		if (gameComplete) {
+		if (gameComplete && !resetGame) {
 			setTimeout(() => {
 				// Gonzo animation
 				setNextGameModal(true);
 			}, 5000);
 		}
-	}, [questions, gameComplete]);
+	}, [questions, gameComplete, resetGame]);
 
-	useEffect(() => {
-		setGameComplete(false);
-		setResetGame(false);
-		setNextGameModal(false);
-	}, [resetGame]);
+	// useEffect(() => {
+	// 	setGameComplete(false);
+	// 	setResetGame(false);
+	// 	setNextGameModal(false);
+	// }, [resetGame]);
 
 	useEffect(() => {
 		const gends = ["girl", "boy"];
@@ -116,11 +126,9 @@ export default function Stage2() {
 			setTimeout(() => {
 				setCorrectButton("");
 			}, 1000);
+
 			setRemoveBanana(false);
-			setBananaCount((prevCount) => {
-				const newCount = prevCount - 1;
-				return newCount;
-			});
+
 			setTimeout(() => {
 				setOpenCheckModal(false);
 			}, 2000);
@@ -130,8 +138,32 @@ export default function Stage2() {
 					setOpenModal(true);
 				}, 2500);
 			}
+
+			if (!gameComplete) {
+				setBananaCount((prevCount) => {
+					const newCount = prevCount - 1;
+					return newCount;
+				});
+			}
 		}
 	}, [openCheckModal]);
+
+	const maxClick = async () => {
+		const rightAns = questions[0];
+
+		setTry(0);
+		setRemoveBanana(true);
+
+		const filtered = await Qfilters(rightAns, questions);
+
+		setQuestions(filtered);
+
+		if (bananaCount - 1 === 0) {
+			setGameComplete(true);
+		} else {
+			setDisabledChoices([]);
+		}
+	};
 
 	const handleButtonClick = async (ch) => {
 		const rightAns = questions[0];
@@ -146,17 +178,32 @@ export default function Stage2() {
 
 			setQuestions(filtered);
 
+			setDisabledChoices([]);
+
 			if (bananaCount - 1 === 0) {
 				setGameComplete(true);
+				setTimeout(() => {
+					setCorrectButton("");
+				}, 1000);
 			} else {
-				setDisabledChoices([]);
-
 				setTimeout(() => {
 					setOpenCheckModal(true);
 				}, 500);
 			}
+
+			let rs = numRight;
+			setNumRight(rs++);
 		} else {
 			setDisabledChoices([...disabledChoices, ch]);
+
+			let i = tries + 1;
+
+			setTry(i);
+			if (i >= 3) {
+				// setTimeout(() => {
+				maxClick();
+				// }, 500);
+			}
 		}
 	};
 
@@ -284,15 +331,15 @@ export default function Stage2() {
 					</div>
 				</div>
 			)}
-			{openNextGameModal ? ( 
-			<NextGameModal
-				gender={gender}
-				route={nextRoute}
-				resetGame={() => setResetGame(true)}
-			/>
+			{openNextGameModal ? (
+				<NextGameModal
+					gender={gender}
+					route={nextRoute}
+					resetGame={() => setResetGame(true)}
+				/>
 			) : (
 				<></>
-			)} 
+			)}
 		</div>
 	);
 }
