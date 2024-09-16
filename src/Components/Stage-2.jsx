@@ -90,10 +90,6 @@ export default function Stage2() {
 			setQuestions(items);
 			setBananaCount(items.length);
 
-			console.log(items);
-			// setResetGame(false);
-			// setNextGameModal(false);
-
 			setTimeout(() => {
 				setOpenModal(true);
 			}, 5000);
@@ -107,12 +103,6 @@ export default function Stage2() {
 		}
 	}, [questions, gameComplete, resetGame]);
 
-	// useEffect(() => {
-	// 	setGameComplete(false);
-	// 	setResetGame(false);
-	// 	setNextGameModal(false);
-	// }, [resetGame]);
-
 	useEffect(() => {
 		const gends = ["girl", "boy"];
 
@@ -120,6 +110,10 @@ export default function Stage2() {
 			setGender(qGender);
 		}
 	}, [qGender]);
+
+	const unRmvBanana = () => {
+		setRemoveBanana(false);
+	};
 
 	useEffect(() => {
 		if (openCheckModal) {
@@ -150,7 +144,6 @@ export default function Stage2() {
 
 	const maxClick = async () => {
 		const rightAns = questions[0];
-
 		setTry(0);
 		setRemoveBanana(true);
 
@@ -158,10 +151,22 @@ export default function Stage2() {
 
 		setQuestions(filtered);
 
+		setTimeout(() => {
+			unRmvBanana();
+			if (bananaCount - 1 !== 0)
+				setBananaCount((prevCount) => {
+					const newCount = prevCount - 1;
+					return newCount;
+				});
+		}, 500);
+
 		if (bananaCount - 1 === 0) {
 			setGameComplete(true);
 		} else {
 			setDisabledChoices([]);
+			setTimeout(() => {
+				setOpenModal(true);
+			}, 1000);
 		}
 	};
 
@@ -221,7 +226,7 @@ export default function Stage2() {
 	};
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate(-1);
 	};
 
 	return (
