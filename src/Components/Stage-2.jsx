@@ -26,7 +26,6 @@ import egg6 from "../assets/is1/egg6.gif";
 import egg7 from "../assets/is1/egg1.gif";
 import egg8 from "../assets/is1/egg2.gif";
 
-
 export default function Stage2() {
 	const navigate = useNavigate(); // Enable navigation
 
@@ -177,6 +176,7 @@ export default function Stage2() {
 		const right = await vowelChecker(ch, rightAns);
 
 		if (right) {
+			setTry(0);
 			setRemoveBanana(true);
 			setCorrectButton(ch);
 
