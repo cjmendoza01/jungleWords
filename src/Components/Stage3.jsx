@@ -8,8 +8,8 @@ import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Imp
 import { randonItemGetter } from "../utils/imageAssetPicker";
 import { Qfilters, shuffle } from "../utils/formatter";
 
-import Boy from "../assets/boy.png";
-import Girl from "../assets/girl.png";
+import Boy from "../assets/bs3/BOY.gif";
+import Girl from "../assets/bs3/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 
 export default function Stage3() {

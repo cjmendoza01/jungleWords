@@ -9,22 +9,23 @@ import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Imp
 
 import DisplayModal from "./Modals/DisplayModal";
 import NextGameModal from "./Modals/NextGameModal";
-import Banana from "../assets/bs2/banana.png";
+import Banana from "../assets/bs2/BananaGif.gif";
 import Basketfull from "../assets/bs2/basketfull.png";
-import Girl from "../assets/bs2/girlBasketEmpty.png";
-import Boy from "../assets/bs2/boyBasketEmpty.png";
+import Girl from "../assets/bs2/GirlBananas.gif";
+import Boy from "../assets/bs2/BoyBananas.gif";
 
 import CheckModal from "./Modals/CheckModal";
-import Gonzo from "../assets/bs2/Gonzo.png";
+import Gonzo from "../assets/bs2/Gonzo.gif";
 
-import egg1 from "../assets/is1/egg1.png";
-import egg2 from "../assets/is1/egg2.png";
-import egg3 from "../assets/is1/egg3.png";
-import egg4 from "../assets/is1/egg4.png";
-import egg5 from "../assets/is1/egg5.png";
-import egg6 from "../assets/is1/egg6.png";
-import egg7 from "../assets/is1/egg7.png";
-import egg8 from "../assets/is1/egg8.png";
+import egg1 from "../assets/is1/egg1.gif";
+import egg2 from "../assets/is1/egg2.gif";
+import egg3 from "../assets/is1/egg3.gif";
+import egg4 from "../assets/is1/egg4.gif";
+import egg5 from "../assets/is1/egg5.gif";
+import egg6 from "../assets/is1/egg6.gif";
+import egg7 from "../assets/is1/egg1.gif";
+import egg8 from "../assets/is1/egg2.gif";
+
 
 export default function Stage2() {
 	const navigate = useNavigate(); // Enable navigation
