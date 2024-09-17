@@ -1528,8 +1528,13 @@ export const qrQsGetter = (numElements, notIncluddedValues) => {
 	return selected;
 };
 
-export const randonFoodGetter = (numElements, notIncluddedValues) => {
+//stage1
+export const randonFoodGetter = (numElements, level, notIncluddedValues) => {
 	let items = foodItemsList;
+
+	if (level == 2) {
+		items = longVowels;
+	}
 
 	if (notIncluddedValues?.length) {
 		console.log("notIncVals");
@@ -1550,6 +1555,7 @@ export const randonFoodGetter = (numElements, notIncluddedValues) => {
 	return selected;
 };
 
+//stage2
 export const randonItemGetter = (numElements, level, notIncluddedValues) => {
 	let items = itemsList;
 
@@ -1574,10 +1580,12 @@ export const randonItemGetter = (numElements, level, notIncluddedValues) => {
 	return selected;
 };
 
+//stage3
 export const randomVowelGetter = (numElements, level, notIncluddedValues) => {
 	let items = itemsList;
 
-	if (level === 2) items = longVowels;
+	if (level === 2) items = itemsList;
+	// longVowels;
 
 	if (notIncluddedValues?.length) {
 		console.log("notIncVals");
