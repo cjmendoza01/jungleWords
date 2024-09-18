@@ -242,6 +242,8 @@
   justify-content: center; /* Center the buttons horizontally */
   align-items: flex-end; /* Align buttons at the bottom */
   padding-bottom: 40px; /* Space from the bottom */
+  gap:10%;
+  bottom: 5%;
 }
 
 .modal-nextGame-buttons{
@@ -351,7 +353,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 }
 
 .backButton img {

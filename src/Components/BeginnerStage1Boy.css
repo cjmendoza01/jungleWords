@@ -126,6 +126,29 @@
   top: 45%;
   right: 60%; /* Moved the girl further to the left */
 }
+.drag-n-drop-container .droppable-container .droppable-zone2 {
+  height: 350px;
+  width: 250px;
+  border: none;
+  /* background-image: url("../assets/girl.png"); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  transform-origin: bottom center;
+  transition: transform 0.1s ease-in-out;
+  position: absolute;
+  top: 45%;
+  right: 60%; /* Moved the girl further to the left */
+}
+.boyImg{
+  background-image: url("../assets/boy.png");
+}
+
+.girlImg{
+  background-image: url("../assets/girl.png");
+}
 
 .drag-n-drop-container .droppable-container .droppable-zone img {
   height: 100%;

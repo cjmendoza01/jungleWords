@@ -106,7 +106,7 @@ export default function Stage2() {
 	useEffect(() => {
 		const gends = ["girl", "boy"];
 
-		if (qGender && gends.includes(qGender)) {
+		if (qGender && gends.includes(qGender.toLowerCase())) {
 			setGender(qGender);
 		}
 	}, [qGender]);
@@ -250,7 +250,12 @@ export default function Stage2() {
 				Your browser does not support the video tag.
 			</video>
 			{/* Back button in the upper left corner */}
-			<button className="backButton" onClick={handleBackClick}>
+			<button
+				className="backButton"
+				onClick={() => {
+					handleBackClick();
+				}}
+			>
 				<img src={backButtonImage} alt="Back" />
 			</button>
 

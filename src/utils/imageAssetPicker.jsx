@@ -256,7 +256,7 @@ import Win from "../assets/bs3/bs3images/Win.png";
 import Zip from "../assets/bs3/bs3images/Zip.png";
 
 //intermidiate items
-// import Ball from "../assets/is2/is2Images/Ball.png";
+import Ball from "../assets/is2/is2Images/Ball.png";
 import Bell from "../assets/is2/is2Images/Bell.png";
 import Book from "../assets/is2/is2Images/Book.png";
 import Cart from "../assets/is2/is2Images/Cart.png";
@@ -380,7 +380,7 @@ import Bat from "../assets/is3/is3Words/Bat.png";
 // import Bell from "../assets/is3/is3Words/Bell.png";
 // import Big from "../assets/is3/is3Words/Big.png";
 import Bore from "../assets/is3/is3Words/Bore.png";
-// import Bow from "../assets/is3/is3Words/Bow.png";
+import Bow from "../assets/is3/is3Words/Bow.png";
 import Brake from "../assets/is3/is3Words/Brake.png";
 // import Bug from "../assets/is3/is3Words/Bug.png";
 import Bump from "../assets/is3/is3Words/Bump.png";
@@ -491,6 +491,7 @@ import Well from "../assets/is3/is3Words/Well.png";
 import Wig from "../assets/is3/is3Words/Wig.png";
 // import Win from "../assets/is3/is3Words/Win.png";
 // import Zip from "../assets/is3/is3Words/Zip.png";
+
 // Food items to display in the side and to be dragged
 export const foodItemsList = [
 	{
@@ -1431,7 +1432,7 @@ export const foodItemsList = [
 	},
 ];
 
-export const itemsList = [
+export const wordCvc3 = [
 	{ image: Bag, id: "bag" },
 	{ image: Ban, id: "ban" },
 	{ image: Bed, id: "bed" },
@@ -1489,7 +1490,7 @@ export const itemsList = [
 	{ image: Zip, id: "zip" },
 ];
 
-export const itemsList2 = [
+export const wordCvc4 = [
 	{ image: Bell, id: "bell" },
 	{ image: Book, id: "book" },
 	{ image: Cart, id: "cart" },
@@ -1498,7 +1499,7 @@ export const itemsList2 = [
 	{ image: Lamp, id: "lamp" },
 	{ image: Lock, id: "lock" },
 	{ image: Mask, id: "mask" },
-	// { image: Ball, id: "ball" },
+	{ image: Ball, id: "ball" },
 	{ image: Barn, id: "barn" },
 	{ image: Belt, id: "belt" },
 	{ image: Clip, id: "clip" },
@@ -1607,6 +1608,129 @@ const longVowels = [
 	{ image: Wound, id: "wound" },
 ];
 
+const wordFamily = [
+	{ image: Bag, id: "bag" },
+	{ image: Ball, id: "ball" },
+	{ image: Bark, id: "bark" },
+	{ image: Bat, id: "bat" },
+	{ image: Bed, id: "bed" },
+	{ image: Bee, id: "bee" },
+	{ image: Bell, id: "bell" },
+	{ image: Big, id: "big" },
+	{ image: Bore, id: "bore" },
+	{ image: Bow, id: "bow" },
+	{ image: Brake, id: "brake" },
+	{ image: Bug, id: "bug" },
+	{ image: Bump, id: "bump" },
+	{ image: Call, id: "call" },
+	{ image: Cane, id: "cane" },
+	{ image: Cap, id: "cap" },
+	{ image: Cat, id: "cat" },
+	{ image: Cave, id: "cave" },
+	{ image: Chain, id: "chain" },
+	{ image: Cob, id: "cob" },
+	{ image: Cold, id: "cold" },
+	{ image: Core, id: "core" },
+	{ image: Cow, id: "cow" },
+	{ image: Cut, id: "cut" },
+	{ image: Dad, id: "dad" },
+	{ image: Dark, id: "dark" },
+	{ image: Date, id: "date" },
+	{ image: Dip, id: "dip" },
+	{ image: Dog, id: "dog" },
+	{ image: Duck, id: "duck" },
+	{ image: Fair, id: "fair" },
+	{ image: Fan, id: "fan" },
+	{ image: Fed, id: "fed" },
+	{ image: Fill, id: "fill" },
+	{ image: Flake, id: "flake" },
+	{ image: Fog, id: "fog" },
+	{ image: Fun, id: "fun" },
+	{ image: Gold, id: "gold" },
+	{ image: Hair, id: "hair" },
+	{ image: Ham, id: "ham" },
+	{ image: Hat, id: "hat" },
+	{ image: Hen, id: "hen" },
+	{ image: Hide, id: "hide" },
+	{ image: Hill, id: "hill" },
+	{ image: Hold, id: "hold" },
+	{ image: Hop, id: "hop" },
+	{ image: Hot, id: "hot" },
+	{ image: How, id: "how" },
+	{ image: Hug, id: "hug" },
+	{ image: Hut, id: "hut" },
+	{ image: Jam, id: "jam" },
+	{ image: Jaw, id: "jaw" },
+	{ image: Jet, id: "jet" },
+	{ image: Job, id: "job" },
+	{ image: Jump, id: "jump" },
+	{ image: Kit, id: "kit" },
+	{ image: Lane, id: "lane" },
+	{ image: Late, id: "late" },
+	{ image: Line, id: "line" },
+	{ image: Lip, id: "lip" },
+	{ image: Lit, id: "lit" },
+	{ image: Log, id: "log" },
+	{ image: Luck, id: "luck" },
+	{ image: Lump, id: "lump" },
+	{ image: Mad, id: "mad" },
+	{ image: Man, id: "man" },
+	{ image: Mane, id: "mane" },
+	{ image: Map, id: "map" },
+	{ image: Mate, id: "mate" },
+	{ image: Mice, id: "mice" },
+	{ image: Mop, id: "mop" },
+	{ image: Mug, id: "mug" },
+	{ image: Nap, id: "nap" },
+	{ image: Net, id: "net" },
+	{ image: Nice, id: "nice" },
+	{ image: Nine, id: "nine" },
+	{ image: Not, id: "not" },
+	{ image: Nut, id: "nut" },
+	{ image: Pain, id: "pain" },
+	{ image: Pair, id: "pair" },
+	{ image: Pan, id: "pan" },
+	{ image: Park, id: "park" },
+	{ image: Paw, id: "paw" },
+	{ image: Pen, id: "pen" },
+	{ image: Pet, id: "pet" },
+	{ image: Pig, id: "pig" },
+	{ image: Pill, id: "pill" },
+	{ image: Pin, id: "pin" },
+	{ image: Pine, id: "pine" },
+	{ image: Pot, id: "pot" },
+	{ image: Rag, id: "rag" },
+	{ image: Rain, id: "rain" },
+	{ image: Ram, id: "ram" },
+	{ image: Red, id: "red" },
+	{ image: Rice, id: "rice" },
+	{ image: Ride, id: "ride" },
+	{ image: Run, id: "run" },
+	{ image: Sad, id: "sad" },
+	{ image: Save, id: "save" },
+	{ image: Saw, id: "saw" },
+	{ image: See, id: "see" },
+	{ image: Sell, id: "sell" },
+	{ image: Shake, id: "shake" },
+	{ image: Shore, id: "shore" },
+	{ image: Sit, id: "sit" },
+	{ image: Sob, id: "sob" },
+	{ image: Sun, id: "sun" },
+	{ image: Tag, id: "tag" },
+	{ image: Tall, id: "tall" },
+	{ image: Ten, id: "ten" },
+	{ image: Tide, id: "tide" },
+	{ image: Tin, id: "tin" },
+	{ image: Top, id: "top" },
+	{ image: Tree, id: "tree" },
+	{ image: Truck, id: "truck" },
+	{ image: Wave, id: "wave" },
+	{ image: Well, id: "well" },
+	{ image: Wig, id: "wig" },
+	{ image: Win, id: "win" },
+	{ image: Zip, id: "zip" },
+];
+
 export const stage3Qs = [
 	{ image: Bell, id: "bell", sentence: "The kid rang the bell." },
 	{ image: Book, id: "book", sentence: "The book is on the shelf." },
@@ -1654,7 +1778,7 @@ export const randonFoodGetter = (numElements, level, notIncluddedValues) => {
 	let items = foodItemsList;
 
 	if (level == 2) {
-		items = longVowels;
+		items = wordCvc4;
 	}
 
 	if (notIncluddedValues?.length) {
@@ -1678,9 +1802,9 @@ export const randonFoodGetter = (numElements, level, notIncluddedValues) => {
 
 //stage2
 export const randonItemGetter = (numElements, level, notIncluddedValues) => {
-	let items = itemsList;
+	let items = wordCvc3;
 
-	if (level === 2) items = itemsList2;
+	if (level === 2) items = longVowels;
 
 	if (notIncluddedValues?.length) {
 		console.log("notIncVals");
@@ -1703,9 +1827,9 @@ export const randonItemGetter = (numElements, level, notIncluddedValues) => {
 
 //stage3
 export const randomVowelGetter = (numElements, level, notIncluddedValues) => {
-	let items = itemsList;
+	let items = wordCvc3;
 
-	if (level === 2) items = itemsList;
+	if (level === 2) items = wordFamily;
 	// longVowels;
 
 	if (notIncluddedValues?.length) {
