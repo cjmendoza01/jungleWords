@@ -254,6 +254,7 @@ const ModalChoice = ({
 							setTry(tr);
 						}
 					} else {
+						setTry(0);
 						setStatus("right");
 						setIsModalAnswerCorrect(true);
 						setTimeout(() => {
