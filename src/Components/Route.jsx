@@ -31,7 +31,7 @@ import BoyBS2intro from "./BoyBS2intro.jsx";
 import GirlBS2intro from "./GirlBS2intro.jsx";
 import BoyBS3intro from "./BoyBS3intro.jsx";
 import GirlBS3intro from "./GirlBS3intro.jsx";
-import Stage1 from "./Stage1.jsx";
+import Stage1 from "./Stage-1.jsx";
 import BS2GJBoy from "./BS2GJBoy.jsx";
 import BS3GJBoy from "./BS3GJBoy.jsx";
 
@@ -75,8 +75,7 @@ function App() {
 			<Route path="/GirlBS2intro" element={<GirlBS2intro />} />
 			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
 			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
-			<Route path="/BS1GonzoTY" element={<BS1GonzoTY/>} />
-
+			<Route path="/BS1GonzoTY" element={<BS1GonzoTY />} />
 		</Routes>
 	);
 }
