@@ -34,15 +34,10 @@ const SanderTY = () => {
         onEnded={handleVideoEnd}
         className="video"
       >
-        <source src="/SanderTY.mp4" type="video/mp4" />
+        <source src="/bs1tyboy.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <img 
-        src={button} 
-        alt="Skip Button" 
-        className="button skip-button" 
-        onClick={handleSkip} 
-      />
+    
       <img
         src={isMuted ? unmuteButton : muteButton}
         alt="Mute/Unmute Button"

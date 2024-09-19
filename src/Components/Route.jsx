@@ -19,6 +19,7 @@ import BS1GJBoy from "./BS1GJBoy.jsx";
 import BS1GJGirl from "./BS1GJGirl.jsx";
 import BoyVideo from "./BoyVideo.jsx";
 import GirlVideo from "./GirlVideo.jsx";
+import BS1GonzoTY from "./BS1GonzoTY.jsx";
 import Stage2 from "./Stage-2.jsx";
 import Tester from "./Tester.jsx";
 import Stage3 from "./Stage3.jsx";
@@ -31,6 +32,8 @@ import GirlBS2intro from "./GirlBS2intro.jsx";
 import BoyBS3intro from "./BoyBS3intro.jsx";
 import GirlBS3intro from "./GirlBS3intro.jsx";
 import Stage1 from "./Stage1.jsx";
+import BS2GJBoy from "./BS2GJBoy.jsx";
+import BS3GJBoy from "./BS3GJBoy.jsx";
 
 function App() {
 	return (
@@ -55,6 +58,8 @@ function App() {
 			{/* <Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />  */}
 			<Route path="/SanderTY" element={<SanderTY />} />
 			<Route path="/BS1GJBoy" element={<BS1GJBoy />} />
+			<Route path="/BS2GJBoy" element={<BS2GJBoy />} />
+			<Route path="/BS3GJBoy" element={<BS3GJBoy />} />
 			<Route path="/BS1GJGirl" element={<BS1GJGirl />} />
 			<Route path="/boy-video" element={<BoyVideo />} />
 			<Route path="/girl-video" element={<GirlVideo />} />
@@ -70,6 +75,8 @@ function App() {
 			<Route path="/GirlBS2intro" element={<GirlBS2intro />} />
 			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
 			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
+			<Route path="/BS1GonzoTY" element={<BS1GonzoTY/>} />
+
 		</Routes>
 	);
 }
