@@ -75,12 +75,8 @@ function App() {
 			<Route path="/GirlBS2intro" element={<GirlBS2intro />} />
 			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
 			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
-<<<<<<< HEAD
-			<Route path="/BS2BoyGonzoTY" element={<BS2BoyGonzoTY/>} />
-
-=======
-			<Route path="/BS1GonzoTY" element={<BS1GonzoTY />} />
->>>>>>> b621598d07d19dafd18583c981470b35804697c1
+			<Route path="/BS2BoyGonzoTY" element={<BS2BoyGonzoTY />} />
+			{/* <Route path="/BS1GonzoTY" element={<BS1GonzoTY />} /> */}
 		</Routes>
 	);
 }
