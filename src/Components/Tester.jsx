@@ -92,7 +92,7 @@ export default function Tester() {
 		<main className="main">
 			<div
 				style={{
-					backgroundImage: url('../assets/bgbs1.png'), 
+					backgroundImage: "url('../assets/bgbs1.png')",
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					width: "100%",
@@ -162,16 +162,16 @@ export default function Tester() {
 			{/* {openCam ? ( */}
 			<div
 				style={{
-				  position: "absolute",  
-				  top: "20%",
-				  right: "15%", 
-				  width: "300px",
-				  height: "300px",
-				  display: "flex",
-				  justifyContent: "center",
-				  alignItems: "center",
+					position: "absolute",
+					top: "20%",
+					right: "15%",
+					width: "300px",
+					height: "300px",
+					display: "flex",
+					justifyContent: "center",
+					alignItems: "center",
 				}}
-			  >
+			>
 				{/* <div
 					// style={{ position: "absolute", top: "10px" }}
 					>

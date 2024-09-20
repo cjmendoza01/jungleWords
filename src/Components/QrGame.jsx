@@ -5,6 +5,7 @@ import { qrQsGetter, randonFoodGetter } from "../utils/imageAssetPicker";
 import startButtonImage from "../assets/buttons&dialogues/start.png";
 import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
+import { qrGameQsGetter } from "../utils/advAssets";
 
 export default function QRGame() {
 	const [gameStart, setGameStart] = useState(false);
@@ -17,6 +18,11 @@ export default function QRGame() {
 	const [showCorrectModal, setShowCorrectModal] = useState(false);
 	const [openCam, setOpenCam] = useState(false);
 	const [userAns, setUserAns] = useState("");
+
+	const queryParams = new URLSearchParams(location.search);
+
+	const qGender = queryParams.get("gender");
+	const qLevel = queryParams.get("level");
 
 	useEffect(() => {
 		if (showCorrectModal) {
@@ -39,13 +45,17 @@ export default function QRGame() {
 			questions.length === 0
 			// && gameStart
 		) {
-			const items = qrQsGetter(5);
+			let level = 1;
+			if (qLevel) {
+				level = Number(qLevel);
+			}
+			const items = qrGameQsGetter(5, level);
 			setQuestions(items);
-			const firstQ = items[0];
-			const splitString = firstQ.sentence.split(firstQ.id);
-			setStringArr(splitString);
-			console.log(items);
-			console.log(splitString);
+			// const firstQ = items[0];
+			// const splitString = firstQ.sentence.split(firstQ.id);
+			// setStringArr(splitString);
+			// console.log(items);
+			// console.log(splitString);
 		}
 
 		if (gameComplete) {
@@ -89,157 +99,120 @@ export default function QRGame() {
 	}, [camStatus]);
 
 	return (
-		<main className="main">
-			<div
+		<div className="qrGameDiv">
+			{/* <div
 				style={{
-					display: "flex",
+					// display: "flex",
 					width: "100%",
-					height: "100%",
+					height: "10%",
 					justifyContent: "center",
 					alignItems: "center",
 				}}
-			>
-				{/* {!gameStart ? (
-					<button onClick={() => setGameStart(true)} className="startButton">
-						<img
-							src={startButtonImage}
-							alt="Start"
-							className="startButtonImage"
-						/>
-					</button>
-				) : (
-					<></>
-				)}
-				{gameStart ? ( */}
-				<div style={{ display: "block", width: "60%", height: "60%" }}>
-					{questions?.length ? (
+			> */}
+
+			<div className="qrGame-div1">
+				<div className="qrGame-div-border">
+					<div className="qrGame-camDiv">
 						<div
 							style={{
-								display: "block",
 								width: "100%",
-								height: "90%",
-								// backgroundColor: "pink",
+								height: "100%",
+								display: "flex",
+								alignItems: "center",
+								justifyContent: "center",
+								// backgroundColor: "blue",
 							}}
 						>
-							<div style={{ width: "100%", height: "50%" }}>
-								<p>
-									{stringArr[0]}
-									<img
-										src={questions[0].image}
-										// alt={entry.item}
-										style={{ width: "100px" }}
-									/>
-									{stringArr[1]}
-								</p>
-								{/* <img
-										src={questions[0].image}
+							<div
+								style={{
+									display: "flex",
+									backgroundColor: "black",
+									width: "80%",
+									height: "100%",
+									justifyContent: "center",
+								}}
+							>
+								{camStatus !== "" ? (
+									<div
 										style={{
-											objectFit: "contain",
+											position: "absolute",
+											width: "100%",
+											height: "100%",
+											backgroundColor: `${
+												camStatus === "correct" ? "green" : "red"
+											}`,
+											opacity: "50%",
+											zIndex: 1,
 										}}
-									/> */}
-							</div>
-							{/* <div>
-								<button onClick={() => setOpenCam(true)}>Scan Qr</button>
-							</div> */}
-							{/* <div
-									style={
-										answerWrong
-											? { marginTop: "10px", color: "red" }
-											: { marginTop: "10px" }
-									}
+									></div>
+								) : (
+									<></>
+								)}
+
+								{camStatus === "correct" ? (
+									<div
+										style={{
+											position: "absolute",
+											width: "100%",
+											height: "100%",
+											backgroundColor: "red",
+											opacity: "50%",
+											zIndex: 1,
+										}}
+									></div>
+								) : (
+									<></>
+								)}
+
+								<div
+									style={{
+										// width: "250px",
+										height: "100%",
+										aspectRatio: "1/1",
+									}}
 								>
-									Answer: {userAns}
-								</div> */}
+									{!gameComplete && openCam ? (
+										<Scanner onScan={handleScan} />
+									) : (
+										<></>
+									)}
+								</div>
+							</div>
 						</div>
-					) : (
-						<></>
-					)}
+					</div>
 				</div>
-				{/* ) : (
-					<></>
-				)} */}
 			</div>
-			{/* {openCam ? ( */}
+
 			<div
 				style={{
 					display: "block",
-					width: "30%",
-					height: "30%",
+					width: "100%",
+					height: "50%",
+					display: "flex",
 					justifyContent: "center",
-					// position: "absolute",
 				}}
 			>
-				{/* <div
-					// style={{ position: "absolute", top: "10px" }}
-					>
-						<button onClick={() => setOpenCam(false)}>X</button>
+				{questions?.length ? (
+					<div style={{ width: "30%" }}>
+						<img
+							src={questions[0].image}
+							style={{
+								objectFit: "contain",
+								width: "100%",
+								height: "100%",
+							}}
+						/>
 					</div>
-					<div style={{ textAlign: "center" }}>Scan Qr</div> */}
-				<div
-					style={{
-						width: "100%",
-						height: "100%",
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						// backgroundColor: "blue",
-					}}
-				>
-					<div style={{ display: "block" }}>
-						{camStatus !== "" ? (
-							<div
-								style={{
-									position: "absolute",
-									width: "100%",
-									height: "100%",
-									backgroundColor: `${
-										camStatus === "correct" ? "green" : "red"
-									}`,
-									opacity: "50%",
-									zIndex: 1,
-								}}
-							></div>
-						) : (
-							<></>
-						)}
-
-						{camStatus === "correct" ? (
-							<div
-								style={{
-									position: "absolute",
-									width: "100%",
-									height: "100%",
-									backgroundColor: "red",
-									opacity: "50%",
-									zIndex: 1,
-								}}
-							></div>
-						) : (
-							<></>
-						)}
-
-						<div
-							style={
-								{
-									// width: "550px",
-									// height: "550px",
-								}
-							}
-						>
-							{!gameComplete && openCam ? (
-								<Scanner onScan={handleScan} />
-							) : (
-								<></>
-							)}
-						</div>
-					</div>
-				</div>
+				) : (
+					<></>
+				)}
 			</div>
 			{/* ) : (
-				<></>
-			)} */}
+					<></>
+				)} */}
+			{/* </div> */}
 
 			{showCorrectModal ? <CheckModal /> : <></>}
-		</main>
+		</div>
 	);
 }
