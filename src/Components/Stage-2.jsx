@@ -25,6 +25,7 @@ import egg5 from "../assets/is1/egg5.gif";
 import egg6 from "../assets/is1/egg6.gif";
 import egg7 from "../assets/is1/egg1.gif";
 import egg8 from "../assets/is1/egg2.gif";
+import BS1GonzoTY from "./BS1GonzoTY";
 
 export default function Stage2() {
 	const navigate = useNavigate(); // Enable navigation
@@ -44,7 +45,7 @@ export default function Stage2() {
 	const [disabledChoices, setDisabledChoices] = useState([]);
 	const [correctButton, setCorrectButton] = useState("");
 	const [openNextGameModal, setNextGameModal] = useState(false);
-
+	const [openThankyou, setOpenThankyou] = useState(false);
 	const [gender, setGender] = useState("boy");
 	const choices = ["A", "E", "I", "O", "U"];
 
@@ -92,13 +93,6 @@ export default function Stage2() {
 
 			setTimeout(() => {
 				setOpenModal(true);
-			}, 5000);
-		}
-
-		if (gameComplete && !resetGame) {
-			setTimeout(() => {
-				// Gonzo animation
-				setNextGameModal(true);
 			}, 5000);
 		}
 	}, [questions, gameComplete, resetGame]);
@@ -162,6 +156,7 @@ export default function Stage2() {
 
 		if (bananaCount - 1 === 0) {
 			setGameComplete(true);
+			setOpenThankyou(true);
 		} else {
 			setDisabledChoices([]);
 			setTimeout(() => {
@@ -188,6 +183,8 @@ export default function Stage2() {
 
 			if (bananaCount - 1 === 0) {
 				setGameComplete(true);
+				setOpenThankyou(true);
+
 				setTimeout(() => {
 					setCorrectButton("");
 				}, 1000);
@@ -228,6 +225,11 @@ export default function Stage2() {
 
 	const handleBackClick = () => {
 		navigate(-1);
+	};
+
+	const closeTyVideo = () => {
+		setOpenThankyou(false);
+		setNextGameModal(true);
 	};
 
 	return (
@@ -351,20 +353,9 @@ export default function Stage2() {
 				/>
 			)}
 			{openCheckModal && <CheckModal />}
-			{gameComplete && (
+			{gameComplete && openThankyou && (
 				<div className="modal">
-					<div className="modal-backdrop"></div>
-					<div style={{ width: "20%", height: "20%" }}>
-						<img
-							style={{
-								width: "100%",
-								height: "100%",
-								objectFit: "contain",
-							}}
-							src={Gonzo}
-							alt="Gonzo"
-						/>
-					</div>
+					<BS1GonzoTY closeTyVideo={closeTyVideo} />
 				</div>
 			)}
 			{openNextGameModal ? (
