@@ -19,7 +19,7 @@ import BS1GJBoy from "./BS1GJBoy.jsx";
 import BS1GJGirl from "./BS1GJGirl.jsx";
 import BoyVideo from "./BoyVideo.jsx";
 import GirlVideo from "./GirlVideo.jsx";
-import BS1GonzoTY from "./BS1GonzoTY.jsx";
+import BS2BoyGonzoTY from "./BS2BoyGonzoTY.jsx";
 import Stage2 from "./Stage-2.jsx";
 import Tester from "./Tester.jsx";
 import Stage3 from "./Stage3.jsx";
@@ -75,7 +75,7 @@ function App() {
 			<Route path="/GirlBS2intro" element={<GirlBS2intro />} />
 			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
 			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
-			<Route path="/BS1GonzoTY" element={<BS1GonzoTY/>} />
+			<Route path="/BS2BoyGonzoTY" element={<BS2BoyGonzoTY/>} />
 
 		</Routes>
 	);
