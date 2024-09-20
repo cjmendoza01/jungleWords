@@ -92,11 +92,11 @@ export default function Tester() {
 		<main className="main">
 			<div
 				style={{
-					display: "flex",
+					backgroundImage: url('../assets/bgbs1.png'), 
+					backgroundRepeat: "no-repeat",
+					backgroundSize: "cover",
 					width: "100%",
-					height: "100%",
-					justifyContent: "center",
-					alignItems: "center",
+					height: "100vh",
 				}}
 			>
 				{/* {!gameStart ? (
@@ -162,13 +162,16 @@ export default function Tester() {
 			{/* {openCam ? ( */}
 			<div
 				style={{
-					display: "block",
-					width: "30%",
-					height: "30%",
-					justifyContent: "center",
-					// position: "absolute",
+				  position: "absolute",  
+				  top: "20%",
+				  right: "15%", 
+				  width: "300px",
+				  height: "300px",
+				  display: "flex",
+				  justifyContent: "center",
+				  alignItems: "center",
 				}}
-			>
+			  >
 				{/* <div
 					// style={{ position: "absolute", top: "10px" }}
 					>
