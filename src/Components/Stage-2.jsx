@@ -75,7 +75,7 @@ export default function Stage2(props) {
 				lvl = stageLevel;
 			}
 		}
-		setStgLevel(lvl)
+		setStgLevel(lvl);
 
 		const nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
 		setNextRoute(nxtRt);
@@ -270,10 +270,7 @@ export default function Stage2(props) {
 			</video>
 
 			{/* Back button in the upper left corner */}
-			<button
-				className="backButton"
-				onClick={handleBackClick}
-			>
+			<button className="backButton" onClick={handleBackClick}>
 				<img src={backButtonImage} alt="Back" />
 			</button>
 
@@ -287,22 +284,22 @@ export default function Stage2(props) {
 			>
 				<div className="stage2-upper-div">
 					<div className="stage2-upper2-div">
+						<div className="stage-2-character-div">
+							<img
+								className="stage-2-char-div"
+								src={gender === "boy" ? Boy : Girl}
+								alt="Character"
+							/>
+						</div>
 						<div
 							style={{
 								width: "80%",
 								display: "flex",
 								alignItems: "end",
-								justifyContent: "right",
+								// justifyContent: "right",
 							}}
 						>
 							{/* Character display based on gender */}
-							<div className="stage-2-character-div">
-								<img
-									className="stage-2-char-div"
-									src={gender === "boy" ? Boy : Girl}
-									alt="Character"
-								/>
-							</div>
 
 							{/* Display food (Bananas or Eggs) */}
 							<div className="tester-image-container">
@@ -340,8 +337,15 @@ export default function Stage2(props) {
 						</div>
 
 						{/* Display HoneyBun or Gonzo based on stage */}
-						<div className="stage2-character-div">
-							<img className="stage2-char-div" src={getCharacter()} alt="Character" />
+						<div
+							className="stage-2-character-div"
+							style={{ justifyContent: "left" }}
+						>
+							<img
+								className="stage2-char-div"
+								src={getCharacter()}
+								alt="Character"
+							/>
 						</div>
 					</div>
 				</div>
