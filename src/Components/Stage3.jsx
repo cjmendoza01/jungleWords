@@ -107,19 +107,19 @@ export default function Stage3() {
 
 		let lvl = "1";
 
-		let nxtRt = `BegLevelPickerBoy`;
+		let nxtRt = `/BegLevelPickerBoy`;
 
 		if (qLevel && qLevel === "2") {
 			if (gd == "girl") {
-				nxtRt = `IntermediateLevelGirl`;
+				nxtRt = `/IntermediateLevelGirl`;
 			} else {
-				nxtRt = `IntermediateLevelBoy`;
+				nxtRt = `/IntermediateLevelBoy`;
 			}
 		} else {
 			if (gd == "girl") {
-				nxtRt = `BegLevelPickerGirl`;
+				nxtRt = `/BegLevelPickerGirl`;
 			} else {
-				nxtRt = `BegLevelPickerBoy`;
+				nxtRt = `/BegLevelPickerBoy`;
 			}
 		}
 

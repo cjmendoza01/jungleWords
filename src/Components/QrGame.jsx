@@ -7,29 +7,52 @@ import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
 import { qrGameQsGetter } from "../utils/advAssets";
 
+import Boy from "../assets/girl.png";
+import Girl from "../assets/boy.png";
+import NextGameModal from "./Modals/NextGameModal";
+import BS1GonzoTY from "./BS1GonzoTY";
+
 export default function QRGame() {
-	const [gameStart, setGameStart] = useState(false);
 	const [questions, setQuestions] = useState([]);
-	const [stringArr, setStringArr] = useState([]);
+
 	const [gameComplete, setGameComplete] = useState(false);
 	const [camStatus, setCamStatus] = useState("");
-	const [scannerOn, setScannerOn] = useState(false);
-	const [answerWrong, setAnswerWrong] = useState(false);
+
 	const [showCorrectModal, setShowCorrectModal] = useState(false);
 	const [openCam, setOpenCam] = useState(false);
-	const [userAns, setUserAns] = useState("");
 
+	const [openNextGameModal, setNextGameModal] = useState(false);
+	const [openThankyou, setOpenThankyou] = useState(false);
+	const [resetGame, setResetGame] = useState(false);
+
+	const [nextRoute, setNextRoute] = useState("");
+	const [gender, setGender] = useState("boy");
 	const queryParams = new URLSearchParams(location.search);
 
 	const qGender = queryParams.get("gender");
 	const qLevel = queryParams.get("level");
 
 	useEffect(() => {
+		let gend = "boy";
+		if (qGender) {
+			gend = qGender.toLowerCase();
+		}
+
+		let nxtRt = `/qrGame?gender=${gd}&level=2`;
+
+		if (qLevel === "2") {
+			nxtRt == `/qrGame?gender=${gd}&level=2`;
+		}
+
+		setNextRoute(nxtRt);
+		setGender(gend);
+	}, [qGender]);
+
+	useEffect(() => {
 		if (showCorrectModal) {
-			console.log("coorr");
 			setTimeout(() => {
 				setShowCorrectModal(false);
-			}, 5000);
+			}, 2000);
 		}
 	}, [showCorrectModal]);
 
@@ -40,11 +63,13 @@ export default function QRGame() {
 	}, [openCam, questions]);
 
 	useEffect(() => {
-		if (
-			!gameComplete &&
-			questions.length === 0
-			// && gameStart
-		) {
+		if ((!gameComplete && questions.length === 0) || resetGame) {
+			if (resetGame) {
+				setResetGame(false);
+				setGameComplete(false);
+				setNextGameModal(false);
+			}
+
 			let level = 1;
 			if (qLevel) {
 				level = Number(qLevel);
@@ -61,7 +86,7 @@ export default function QRGame() {
 		if (gameComplete) {
 			//route to next Game
 		}
-	}, [questions, gameComplete]);
+	}, [questions, gameComplete, setResetGame]);
 
 	const handleScan = (result) => {
 		console.log(result);
@@ -77,9 +102,14 @@ export default function QRGame() {
 				console.log("right");
 				setShowCorrectModal(true);
 				setCamStatus("correct");
-				if (questions?.length > 1) {
+				if (questions?.length === 1) {
 					setGameComplete(true);
+					setTimeout(() => {
+						setOpenThankyou(true);
+					}, 2000);
 				} else {
+					console.log("filter");
+					console.log(questions[0]);
 					const filterRight = Qfilters(questions[0], questions);
 					setQuestions(filterRight);
 				}
@@ -90,6 +120,11 @@ export default function QRGame() {
 		}
 	};
 
+	const closeTyVideo = () => {
+		setOpenThankyou(false);
+		setNextGameModal(true);
+	};
+
 	useEffect(() => {
 		if (camStatus !== "") {
 			setTimeout(() => {
@@ -98,42 +133,71 @@ export default function QRGame() {
 		}
 	}, [camStatus]);
 
+	useEffect(() => {
+		if (questions) {
+			console.log("qssss");
+			console.log(questions);
+		}
+	}, [questions]);
+
 	return (
 		<div className="qrGameDiv">
-			{/* <div
+			<div
 				style={{
-					// display: "flex",
-					width: "100%",
-					height: "10%",
-					justifyContent: "center",
-					alignItems: "center",
+					height: "100%",
+					width: "50%",
 				}}
-			> */}
-
-			<div className="qrGame-div1">
-				<div className="qrGame-div-border">
-					<div className="qrGame-camDiv">
-						<div
-							style={{
-								width: "100%",
-								height: "100%",
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-								// backgroundColor: "blue",
-							}}
-						>
+			>
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "right",
+						width: "100%",
+						height: "100%",
+					}}
+				>
+					<div style={{ width: "40%", height: "60%" }}>
+						<img
+							className="qr-Character"
+							src={
+								gender === "boy"
+									? "../src/assets/boy.png"
+									: "../src/assets/girl.png"
+							}
+						/>
+					</div>
+				</div>
+			</div>
+			<div style={{ height: "100%", width: "50%" }}>
+				<div className="qrGame-div1">
+					<div className="qrGame-div-border">
+						<div className="qrGame-camDiv">
 							<div
 								style={{
-									display: "flex",
-									backgroundColor: "black",
-									width: "80%",
+									width: "100%",
 									height: "100%",
+									display: "flex",
+									alignItems: "center",
 									justifyContent: "center",
+									// backgroundColor: "blue",
 								}}
 							>
-								{camStatus !== "" ? (
-									<div
+								<div
+									style={{
+										display: "flex",
+										backgroundColor: `${
+											camStatus
+												? `${camStatus === "correct" ? "green" : "red"}`
+												: "black"
+										}`,
+										width: "80%",
+										height: "100%",
+										justifyContent: "center",
+									}}
+								>
+									{/* {camStatus !== "" ? ( */}
+									{/* <div
 										style={{
 											position: "absolute",
 											width: "100%",
@@ -144,75 +208,84 @@ export default function QRGame() {
 											opacity: "50%",
 											zIndex: 1,
 										}}
-									></div>
-								) : (
-									<></>
-								)}
+									></div> */}
+									{/* ) : (
+										<></>
+									)} */}
 
-								{camStatus === "correct" ? (
-									<div
-										style={{
-											position: "absolute",
-											width: "100%",
-											height: "100%",
-											backgroundColor: "red",
-											opacity: "50%",
-											zIndex: 1,
-										}}
-									></div>
-								) : (
-									<></>
-								)}
-
-								<div
-									style={{
-										// width: "250px",
-										height: "100%",
-										aspectRatio: "1/1",
-									}}
-								>
-									{!gameComplete && openCam ? (
-										<Scanner onScan={handleScan} />
+									{/* {camStatus === "correct" ? (
+										<div
+											style={{
+												position: "absolute",
+												width: "100%",
+												height: "100%",
+												backgroundColor: "red",
+												opacity: "50%",
+												zIndex: 1,
+											}}
+										></div>
 									) : (
 										<></>
-									)}
+									)} */}
+
+									<div
+										style={{
+											// width: "250px",
+											height: "100%",
+											aspectRatio: "1/1",
+										}}
+									>
+										{!gameComplete && openCam ? (
+											<Scanner onScan={handleScan} />
+										) : (
+											<></>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div
-				style={{
-					display: "block",
-					width: "100%",
-					height: "50%",
-					display: "flex",
-					justifyContent: "center",
-				}}
-			>
-				{questions?.length ? (
-					<div style={{ width: "30%" }}>
-						<img
-							src={questions[0].image}
-							style={{
-								objectFit: "contain",
-								width: "100%",
-								height: "100%",
-							}}
-						/>
-					</div>
-				) : (
-					<></>
-				)}
+				<div
+					style={{
+						display: "block",
+						width: "100%",
+						height: "40%",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "start",
+					}}
+				>
+					{questions?.length ? (
+						<div style={{ width: "30%" }}>
+							<img
+								src={questions[0].image}
+								style={{
+									objectFit: "contain",
+									width: "100%",
+									height: "100%",
+								}}
+							/>
+						</div>
+					) : (
+						<></>
+					)}
+				</div>
 			</div>
-			{/* ) : (
-					<></>
-				)} */}
-			{/* </div> */}
-
 			{showCorrectModal ? <CheckModal /> : <></>}
+			{gameComplete && openThankyou && (
+				<div className="modal">
+					<BS1GonzoTY closeTyVideo={closeTyVideo} />
+				</div>
+			)}
+			{openNextGameModal && (
+				<NextGameModal
+					gender={gender}
+					route={nextRoute}
+					resetGame={() => setResetGame(true)}
+				/>
+			)}
 		</div>
 	);
 }

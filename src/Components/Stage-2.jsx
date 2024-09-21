@@ -62,6 +62,7 @@ export default function Stage2(props) {
 
 	useEffect(() => {
 		let gd = "boy";
+
 		if (qGender) {
 			gd = qGender.toLowerCase();
 		}
@@ -77,7 +78,16 @@ export default function Stage2(props) {
 		}
 		setStgLevel(lvl);
 
-		const nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
+		let nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
+
+		if (qLevel && qLevel === "2") {
+			if (gd == "girl") {
+				nxtRt = `/BS1GJGirl`;
+			} else {
+				nxtRt = `/BS1GJBoy`;
+			}
+		}
+
 		setNextRoute(nxtRt);
 	}, [qGender, qLevel, stageLevel]);
 
