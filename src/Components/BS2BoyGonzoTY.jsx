@@ -8,7 +8,7 @@ import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 const BS2BoyGonzoTY = ({ closeTyVideo }) => {
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState("1");
-	const [tyVid, setTyVid] = useState("/GonzoBS1TY.mp4");
+	const [tyVid, setTyVid] = useState("/GonzoBS2TY.mp4");
 
 	const navigate = useNavigate();
 	const videoRef = useRef(null);
@@ -28,10 +28,10 @@ const BS2BoyGonzoTY = ({ closeTyVideo }) => {
 
 		let vid = "";
 
-		const level1BoyVid = "/GonzoBS1TY.mp4";
-		const level1GirlVid = "/GonzoBS1TY.mp4";
-		const level2BoyVid = "/GonzoBS1TY.mp4";
-		const level2GirlVid = "/GonzoBS1TY.mp4";
+		const level1BoyVid = "/GonzoBS2TY.mp4";
+		const level1GirlVid = "/GonzoBS2TY.mp4";
+		const level2BoyVid = "/GonzoBS2TY.mp4";
+		const level2GirlVid = "/GonzoBS2TY.mp4";
 
 		let lvl = "1";
 
