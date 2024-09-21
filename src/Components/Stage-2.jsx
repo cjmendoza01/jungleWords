@@ -27,8 +27,10 @@ import egg7 from "../assets/is1/egg1.gif";
 import egg8 from "../assets/is1/egg2.gif";
 import BS1GonzoTY from "./BS1GonzoTY";
 
-export default function Stage2() {
+export default function Stage2(props) {
 	const navigate = useNavigate(); // Enable navigation
+
+	const stageLevel = props?.stageLevel || null;
 
 	const [bananaCount, setBananaCount] = useState(9);
 	const [questions, setQuestions] = useState([]);
@@ -63,21 +65,34 @@ export default function Stage2() {
 			gd = qGender.toLowerCase();
 		}
 
+		console.log("stageeeeLevel");
+		console.log(stageLevel);
+
+		console.log("Qllll");
+		console.log(qLevel);
 		let lvl = "1";
 
 		if (qLevel) {
 			lvl = qLevel;
+		} else {
+			if (stageLevel) {
+				lvl = stageLevel;
+			}
 		}
 
 		const nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
 
 		setNextRoute(nxtRt);
-	}, [qGender, qLevel]);
+	}, [qGender, qLevel, stageLevel]);
 
 	useEffect(() => {
 		let level = 1;
 		if (qLevel) {
 			level = Number(qLevel);
+		} else {
+			if (stageLevel) {
+				level = Number(stageLevel);
+			}
 		}
 		if ((questions.length === 0 && !gameComplete) || resetGame) {
 			setRemoveBanana(false);
@@ -213,7 +228,15 @@ export default function Stage2() {
 	const getFoodLogo = (index) => {
 		let level = 1;
 		if (qLevel) {
+			console.log("ql");
+			console.log(qLevel);
 			level = Number(qLevel);
+		} else {
+			if (stageLevel) {
+				console.log("assafffgel");
+				console.log(stageLevel);
+				level = Number(stageLevel);
+			}
 		}
 
 		if (level === 2) {
