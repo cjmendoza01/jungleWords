@@ -61,16 +61,26 @@
   
 }
 
-.stage2-monkey-div {
-  width: 20%;
-  height: 150px;
-  display: flex;
-  align-items: end;
-  justify-content: flex-start;
+/* Adjusting the container and image sizes for Gonzo and HoneyBun */
+.stage2-monkey-div, .stage2-honey-div {
+  width: 10%; /* Smaller size for HoneyBun and Monkey */
+  height: auto;
+  position: absolute;
+  bottom: 12%; /* Adjust this based on the alignment with the bottom box */
+  right: 5%; /* Adjust based on your design (to position on the right side) */
 }
 
-.stage2-monkey-img {
-  width: 80px;
+/* Adjust the image sizes for both Gonzo and HoneyBun */
+.stage2-monkey-img, .stage2-honey-img {
+  width: auto; /* Maintain aspect ratio with respect to height */
+  height: 20px; /* Set a fixed height that you can adjust */
+  object-fit: contain; /* Ensure the images fit well within the container */
+}
+
+/* General character styling, common to both */
+.stage2-char-div {
+  width: 120px; /* Adjust the size to fit better */
+  height: auto;
   object-fit: contain;
 }
 

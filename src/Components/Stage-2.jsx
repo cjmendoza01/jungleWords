@@ -16,7 +16,7 @@ import Boy from "../assets/bs2/BoyBananas.gif";
 
 import CheckModal from "./Modals/CheckModal";
 import Gonzo from "../assets/bs2/Gonzo.gif";
-
+import HoneyBun from "../assets/is1/Honeybun.gif";
 import egg1 from "../assets/is1/egg1.gif";
 import egg2 from "../assets/is1/egg2.gif";
 import egg3 from "../assets/is1/egg3.gif";
@@ -35,6 +35,7 @@ export default function Stage2(props) {
 	const [bananaCount, setBananaCount] = useState(9);
 	const [questions, setQuestions] = useState([]);
 	const [resetGame, setResetGame] = useState(false);
+	const [stgLevel, setStgLevel] = useState("1");
 
 	const [nextRoute, setNextRoute] = useState("");
 	const [tries, setTry] = useState(0);
@@ -65,11 +66,6 @@ export default function Stage2(props) {
 			gd = qGender.toLowerCase();
 		}
 
-		console.log("stageeeeLevel");
-		console.log(stageLevel);
-
-		console.log("Qllll");
-		console.log(qLevel);
 		let lvl = "1";
 
 		if (qLevel) {
@@ -79,9 +75,9 @@ export default function Stage2(props) {
 				lvl = stageLevel;
 			}
 		}
+		setStgLevel(lvl)
 
 		const nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
-
 		setNextRoute(nxtRt);
 	}, [qGender, qLevel, stageLevel]);
 
@@ -218,32 +214,30 @@ export default function Stage2(props) {
 
 			setTry(i);
 			if (i >= 3) {
-				// setTimeout(() => {
 				maxClick();
-				// }, 500);
 			}
 		}
 	};
 
+	// Function to get the character based on the stage level
+	const getCharacter = () => {
+		return stgLevel === "2" ? HoneyBun : Gonzo;
+	};
+
+	// Function to get the food logo (Banana or Eggs) based on the stage level
 	const getFoodLogo = (index) => {
 		let level = 1;
 		if (qLevel) {
-			console.log("ql");
-			console.log(qLevel);
 			level = Number(qLevel);
-		} else {
-			if (stageLevel) {
-				console.log("assafffgel");
-				console.log(stageLevel);
-				level = Number(stageLevel);
-			}
+		} else if (stageLevel) {
+			level = Number(stageLevel);
 		}
 
 		if (level === 2) {
-			return eggs[index];
+			return eggs[index]; // Show eggs for level 2
 		}
 
-		return Banana;
+		return Banana; // Show bananas for level 1
 	};
 
 	const handleBackClick = () => {
@@ -262,24 +256,23 @@ export default function Stage2(props) {
 				muted
 				loop
 				style={{
-					position: "fixed", // Ensures it stays in the background
+					position: "fixed",
 					top: 0,
 					left: 0,
 					width: "100%",
 					height: "100%",
-					objectFit: "cover", // Stretches the video to cover the whole screen
-					zIndex: "1", // Places the video behind the game content
+					objectFit: "cover",
+					zIndex: "1",
 				}}
 			>
 				<source src="/bgstage2.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
+
 			{/* Back button in the upper left corner */}
 			<button
 				className="backButton"
-				onClick={() => {
-					handleBackClick();
-				}}
+				onClick={handleBackClick}
 			>
 				<img src={backButtonImage} alt="Back" />
 			</button>
@@ -302,6 +295,7 @@ export default function Stage2(props) {
 								justifyContent: "right",
 							}}
 						>
+							{/* Character display based on gender */}
 							<div className="stage-2-character-div">
 								<img
 									className="stage-2-char-div"
@@ -310,6 +304,7 @@ export default function Stage2(props) {
 								/>
 							</div>
 
+							{/* Display food (Bananas or Eggs) */}
 							<div className="tester-image-container">
 								{Array.from({ length: bananaCount }, (_, index) => (
 									<React.Fragment key={index}>
@@ -325,7 +320,7 @@ export default function Stage2(props) {
 															: ""
 													}`}
 													src={getFoodLogo(index)}
-													alt="Banana"
+													alt="Food"
 												/>
 											</button>
 										) : (
@@ -336,7 +331,7 @@ export default function Stage2(props) {
 														: ""
 												}`}
 												src={getFoodLogo(index)}
-												alt="Banana"
+												alt="Food"
 											/>
 										)}
 									</React.Fragment>
@@ -344,8 +339,9 @@ export default function Stage2(props) {
 							</div>
 						</div>
 
-						<div className="stage2-monkey-div">
-							<img className="stage2-monkey-img" src={Gonzo} alt="Gonzo" />
+						{/* Display HoneyBun or Gonzo based on stage */}
+						<div className="stage2-character-div">
+							<img className="stage2-char-div" src={getCharacter()} alt="Character" />
 						</div>
 					</div>
 				</div>
@@ -369,6 +365,7 @@ export default function Stage2(props) {
 					</div>
 				</div>
 			</div>
+
 			{openModal && (
 				<DisplayModal
 					item={questions[0]}
@@ -381,14 +378,12 @@ export default function Stage2(props) {
 					<BS1GonzoTY closeTyVideo={closeTyVideo} />
 				</div>
 			)}
-			{openNextGameModal ? (
+			{openNextGameModal && (
 				<NextGameModal
 					gender={gender}
 					route={nextRoute}
 					resetGame={() => setResetGame(true)}
 				/>
-			) : (
-				<></>
 			)}
 		</div>
 	);
