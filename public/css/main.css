@@ -389,14 +389,15 @@
     justify-content: center;
 }
 .stage3-top-div-level2 {
-    width: 30%;
+    width: 20%;
     height: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 5%;
-    border: 2px  solid #225a25;
+    border: 5px  solid #225a25;
     background-color: #cedbcb;
+    border-radius: 2px;
 }
 
   .draggable-containers {
@@ -408,32 +409,48 @@
 
 .draggable-container2 {
     display: flex;
-    gap: 10px;
+    gap: 50px;
     justify-content: center;
     align-items: end;
     margin-bottom: 5%;
 }
 
 .stage3-option-div{
-    width: 200px;
+    width: 250px;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 100px;
+    padding-right: 100px;
     /* border: 2px dashed black; */
 }
 
 .stage3-option-label-div{
-    width: auto;
+    width: 90px;
     text-align: center;
     background-color: #00743f;
     padding: 10px;
     font-family: cursive;
     font-weight: bold;
     color: white;
-    text-transform: uppercase;
-    font-size: large;
+    text-transform: capitalize;
+    font-size: 30px;
+    border-radius: 2px;
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
