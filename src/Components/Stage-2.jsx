@@ -108,7 +108,7 @@ export default function Stage2(props) {
 				setGameComplete(false);
 				setNextGameModal(false);
 			}
-			const items = randomVowelGetter(1, level);
+			const items = randomVowelGetter(8, level);
 			setQuestions(items);
 			setBananaCount(items.length);
 
