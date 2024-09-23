@@ -261,6 +261,8 @@ export default function Stage2(props) {
 
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
+
+			{/* backgroun animation */}
 			<video
 				autoPlay
 				muted
