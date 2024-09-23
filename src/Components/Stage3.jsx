@@ -193,7 +193,12 @@ export default function Stage3() {
 		return (
 			<div ref={setNodeRef} style={style} {...listeners} {...attributes}>
 				<img
-					style={{ objectFit: "contain", width: "100%", height: "100%" }}
+					style={{  objectFit: "contain", 
+						width: "150%", 
+						height: "auto", 
+						display: "block",    // Ensures the image is treated as a block element
+						margin: "0 auto"     // Centers the image horizontally 
+				}}
 					src={gender === "boy" ? Boy : Girl}
 				/>
 			</div>

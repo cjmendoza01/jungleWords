@@ -86,7 +86,7 @@ function App() {
 			<Route path="/BS2BoyGonzoTY" element={<BS2BoyGonzoTY />} />
 			<Route path="/BS1GonzoTY" element={<BS1GonzoTY />} />
 			<Route path="/BeginnerStage2" element={<BeginnerStage2 />} />
-			<Route path="/IntermidiateStage1s" element={<IntermidiateStage1 />} />
+			<Route path="/IntermidiateStage1" element={<IntermidiateStage1 />} />
 		</Routes>
 	);
 }
