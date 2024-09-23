@@ -186,7 +186,7 @@ export default function Stage3() {
 				shuffleItems("center");
 			}
 
-			const items = randonItemGetter(2, iLevel);
+			const items = randonItemGetter(8, iLevel);
 			const wrnItems = randonItemGetter(16, iLevel, items);
 			// setQuestion(items[0]);
 			console.log("sdd");
