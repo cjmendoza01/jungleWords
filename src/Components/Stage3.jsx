@@ -11,6 +11,7 @@ import { Qfilters, shuffle } from "../utils/formatter";
 import Boy from "../assets/bs3/BOY.gif";
 import Girl from "../assets/bs3/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
+import S3TY from "./S3TY";
 
 export default function Stage3() {
 	const [rightItems, setItems] = useState([]);
@@ -22,15 +23,23 @@ export default function Stage3() {
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState(1);
 
+	const [openThankyou, setOpenThankyou] = useState(false);
 	const [gameComplete, setGameComplete] = useState(false);
 	const [dropItems, setDropItems] = useState(["right", "item", "wrong"]);
 	const [rightAnsPosition, setRightAnsPosition] = "right";
 	const [correct, setCorrect] = useState(false);
 	const [wrong, setWrong] = useState(false);
 	const [openNextGameModal, setNextGameModal] = useState(false);
+	const location = useLocation();
+
+	const queryParams = new URLSearchParams(location.search);
+
+	const qGender = queryParams.get("gender");
+	const qLevel = queryParams.get("level");
 
 	const navigate = useNavigate();
 	useEffect(() => {
+		const lvl = qLevel;
 		if (correct) {
 			if (rightItems?.length === 1) {
 				setGameComplete(true);
@@ -45,20 +54,40 @@ export default function Stage3() {
 				let pos = "center";
 				const drpItems = dropItems;
 				const indx = drpItems.findIndex((itm) => itm === "right");
+				console.log("lvl");
+				console.log(lvl);
+				if (lvl === "2") {
+					switch (indx) {
+						case 0:
+							pos = "left";
+							break;
+						case 3:
+							pos = "right";
+							break;
+						case 2:
+							pos = "center2";
+							break;
+						default:
+							pos = "center";
+							break;
+					}
 
-				switch (indx) {
-					case 0:
-						pos = "left";
-						break;
-					case 2:
-						pos = "right";
-						break;
-					default:
-						pos = "center";
-						break;
+					shuffleItems2(pos);
+				} else {
+					switch (indx) {
+						case 0:
+							pos = "left";
+							break;
+						case 2:
+							pos = "right";
+							break;
+						default:
+							pos = "center";
+							break;
+					}
+
+					shuffleItems(pos);
 				}
-
-				shuffleItems(pos);
 
 				setTimeout(() => {
 					setCorrect(false);
@@ -83,11 +112,24 @@ export default function Stage3() {
 		}
 	};
 
-	const location = useLocation();
-	const queryParams = new URLSearchParams(location.search);
-
-	const qGender = queryParams.get("gender");
-	const qLevel = queryParams.get("level");
+	const shuffleItems2 = (position) => {
+		const drps = ["right", "wrong", "wrong2"];
+		const shuffled = shuffle(drps);
+		switch (position) {
+			case "right":
+				setDropItems([shuffled[0], shuffled[1], shuffled[2], "item"]);
+				break;
+			case "center":
+				setDropItems([shuffled[0], "item", shuffled[1], shuffled[2]]);
+				break;
+			case "center2":
+				setDropItems([shuffled[0], shuffled[1], "item", shuffled[2]]);
+				break;
+			case "left":
+				setDropItems(["item", shuffled[0], shuffled[1], shuffled[2]]);
+				break;
+		}
+	};
 
 	useEffect(() => {
 		if (qGender) {
@@ -135,9 +177,17 @@ export default function Stage3() {
 			(rightItems?.length === 0 && wrongItems?.length === 0 && !gameComplete) ||
 			resetGame
 		) {
-			shuffleItems("center");
-			const items = randonItemGetter(8, iLevel);
-			const wrnItems = randonItemGetter(8, iLevel, items);
+			console.log("ilevel");
+			console.log(iLevel);
+			if (iLevel === 2) {
+				console.log("shuff2");
+				shuffleItems2("center");
+			} else {
+				shuffleItems("center");
+			}
+
+			const items = randonItemGetter(2, iLevel);
+			const wrnItems = randonItemGetter(16, iLevel, items);
 			// setQuestion(items[0]);
 			console.log("sdd");
 			console.log(items);
@@ -147,16 +197,23 @@ export default function Stage3() {
 		}
 
 		if (gameComplete) {
-			setTimeout(() => {
-				setNextGameModal(true);
-			}, 500);
+			// setTimeout(() => {
+
+			setOpenThankyou(true);
+			// }, 500);
 		}
 
 		if (resetGame) {
 			setGameComplete(false);
+			setNextGameModal(false);
 			setResetGame(false);
 		}
 	}, [rightItems, wrongItems, qLevel, gameComplete, resetGame]);
+
+	const closeTyVideo = () => {
+		setOpenThankyou(false);
+		setNextGameModal(true);
+	};
 
 	function handleDragEnd(event) {
 		const { over } = event;
@@ -193,12 +250,13 @@ export default function Stage3() {
 		return (
 			<div ref={setNodeRef} style={style} {...listeners} {...attributes}>
 				<img
-					style={{  objectFit: "contain", 
-						width: "150%", 
-						height: "auto", 
-						display: "block",    // Ensures the image is treated as a block element
-						margin: "0 auto"     // Centers the image horizontally 
-				}}
+					style={{
+						objectFit: "contain",
+						width: "150%",
+						height: "auto",
+						display: "block", // Ensures the image is treated as a block element
+						margin: "0 auto", // Centers the image horizontally
+					}}
 					src={gender === "boy" ? Boy : Girl}
 				/>
 			</div>
@@ -241,8 +299,8 @@ export default function Stage3() {
 					position: "fixed", // Ensures it stays in the background
 					top: 0,
 					left: 0,
-					width: "100%",
-					height: "100%",
+					width: "100vw",
+					height: "100vh",
 					objectFit: "cover", // Stretches the video to cover the whole screen
 					zIndex: "1", // Places the video behind the game content
 				}}
@@ -299,6 +357,15 @@ export default function Stage3() {
 										/>
 									);
 								}
+								if (drp === "wrong2") {
+									return (
+										<DroppableZone
+											id="wrong"
+											label={wrongItems[1]?.id || ""}
+											isActive={false}
+										/>
+									);
+								}
 								if (drp === "item") {
 									return <DraggableItem />;
 								}
@@ -307,11 +374,19 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
+			{gameComplete && openThankyou && (
+				<div className="modal">
+					<S3TY closeTyVideo={closeTyVideo} />
+				</div>
+			)}
 			{openNextGameModal ? (
 				<NextGameModal
 					gender={gender}
 					route={nextRoute}
-					resetGame={() => setResetGame(true)}
+					resetGame={() => {
+						console.log("reset");
+						setResetGame(true);
+					}}
 				/>
 			) : (
 				<></>
