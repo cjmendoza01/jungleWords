@@ -38,6 +38,7 @@ import RewardPageBoy from "./RewardPageBoy.jsx";
 import RewardPageGirl from "./RewardPageGirl.jsx";
 import BeginnerStage2 from "./BeginnerStage2.jsx";
 import IntermidiateStage1 from "./IntermidiateStage1.jsx";
+import BS1GonzoTY from "./BS1GonzoTY.jsx";
 
 function App() {
 	return (
@@ -83,7 +84,7 @@ function App() {
 			<Route path="/BoyBS3intro" element={<BoyBS3intro />} />
 			<Route path="/GirlBS3intro" element={<GirlBS3intro />} />
 			<Route path="/BS2BoyGonzoTY" element={<BS2BoyGonzoTY />} />
-			{/* <Route path="/BS1GonzoTY" element={<BS1GonzoTY />} /> */}
+			<Route path="/BS1GonzoTY" element={<BS1GonzoTY />} />
 			<Route path="/BeginnerStage2" element={<BeginnerStage2 />} />
 			<Route path="/IntermidiateStage1s" element={<IntermidiateStage1 />} />
 		</Routes>

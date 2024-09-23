@@ -8,7 +8,7 @@ import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 const BS1GonzoTY = ({ closeTyVideo }) => {
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState("1");
-	const [tyVid, setTyVid] = useState("/GonzoBS1TY.mp4");
+	const [tyVid, setTyVid] = useState("");
 
 	const navigate = useNavigate();
 	const videoRef = useRef(null);
@@ -28,10 +28,10 @@ const BS1GonzoTY = ({ closeTyVideo }) => {
 
 		let vid = "";
 
-		const level1BoyVid = "/GonzoBS1TY.mp4";
-		const level1GirlVid = "/GonzoBS1TY.mp4";
-		const level2BoyVid = "/GonzoBS1TY.mp4";
-		const level2GirlVid = "/GonzoBS1TY.mp4";
+		const level1BoyVid = "/GonzoBS2TY.mp4";
+		const level1GirlVid = "/GonzoBS2TYGirl.mp4";
+		const level2BoyVid = "/HoneyBunIS1TY.mp4";
+		const level2GirlVid = "/HoneyBunIS1TYGirl.mp4";
 
 		let lvl = "1";
 
@@ -40,13 +40,17 @@ const BS1GonzoTY = ({ closeTyVideo }) => {
 		}
 
 		if (lvl === "2") {
-			if (gender === "boy") vid = level2BoyVid;
+			if (gd === "boy") vid = level2BoyVid;
 			else vid = level2GirlVid;
 		} else {
-			if (gender === "boy") vid = level1BoyVid;
+			if (gd === "boy") vid = level1BoyVid;
 			else vid = level1GirlVid;
 		}
 
+		console.log("vid");
+		console.log(vid);
+		console.log(lvl);
+		console.log(gd);
 		setGender(gd);
 		setLevel(lvl);
 		setTyVid(vid);

@@ -108,7 +108,7 @@ export default function Stage2(props) {
 				setGameComplete(false);
 				setNextGameModal(false);
 			}
-			const items = randomVowelGetter(8, level);
+			const items = randomVowelGetter(1, level);
 			setQuestions(items);
 			setBananaCount(items.length);
 
@@ -294,24 +294,21 @@ export default function Stage2(props) {
 			>
 				<div className="stage2-upper-div">
 					<div className="stage2-upper2-div">
-						<div className="stage-2-character-div">
-							<img
-								className="stage-2-char-div"
-								src={gender === "boy" ? Boy : Girl}
-								alt="Character"
-							/>
-						</div>
 						<div
 							style={{
-								width: "80%",
+								width: "90%",
 								display: "flex",
 								alignItems: "end",
-								// justifyContent: "right",
+								justifyContent: "right",
 							}}
 						>
-							{/* Character display based on gender */}
-
-							{/* Display food (Bananas or Eggs) */}
+							<div className="stage-2-character-div">
+								<img
+									className="stage-2-char-div"
+									src={gender === "boy" ? Boy : Girl}
+									alt="Character"
+								/>
+							</div>
 							<div className="tester-image-container">
 								{Array.from({ length: bananaCount }, (_, index) => (
 									<React.Fragment key={index}>

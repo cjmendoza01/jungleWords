@@ -7,8 +7,8 @@ import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
 import { qrGameQsGetter } from "../utils/advAssets";
 
-import Boy from "../assets/girl.png";
-import Girl from "../assets/boy.png";
+import Boy from "../assets/boy.png";
+import Girl from "../assets/girl.png";
 import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
 
@@ -38,10 +38,10 @@ export default function QRGame() {
 			gend = qGender.toLowerCase();
 		}
 
-		let nxtRt = `/qrGame?gender=${gd}&level=2`;
+		let nxtRt = `/qrGame?gender=${gend}&level=2`;
 
 		if (qLevel === "2") {
-			nxtRt == `/qrGame?gender=${gd}&level=2`;
+			nxtRt == `/qrGame?gender=${gend}&level=2`;
 		}
 
 		setNextRoute(nxtRt);
@@ -158,14 +158,7 @@ export default function QRGame() {
 					}}
 				>
 					<div style={{ width: "40%", height: "60%" }}>
-						<img
-							className="qr-Character"
-							src={
-								gender === "boy"
-									? "../src/assets/boy.png"
-									: "../src/assets/girl.png"
-							}
-						/>
+						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
 					</div>
 				</div>
 			</div>
