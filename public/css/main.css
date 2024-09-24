@@ -477,7 +477,7 @@
 .qrGameDiv{
   width: 100vw;
   height: 100vh;
-  background-image: url('../../src/assets/bgbs1.png'); 
+  /* background-image: url('../../src/assets/bgs1.png');  */
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat;
@@ -488,31 +488,36 @@
   height: 60%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end; /* This will push the webcam down to the bottom */
+  margin-top: 150px; /* You can adjust this value to move it further down */
 
 
 }
-.qrGame-div-border{  
-  width: 600px;
-  height: 400px;
-  background-image: url('../../src/assets/border.png'); 
-  background-size: contain; 
+/* Adjust border size to make webcam larger */
+.qrGame-div-border {
+  width: 800px; /* Width of the webcam border */
+  height: 605px; /* Height of the webcam border */
+  background-image: url('../../src/assets/border.png');
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+  margin-bottom: 20px; /* This will create some space from the bottom if needed */
+  margin-left: -20px;
+}
 
-.qrGame-camDiv{
-  width: 75%;
-    height: 70%;
-    background-color: black;
-    border-radius: 9px;
+/* Webcam inside the border */
+.qrGame-camDiv {
+  width: 75%; /* Increase the size inside the border */
+  height: 65%;
+  background-color: black;
+  border-radius: 9px;
 }
 
 .qr-Character{
-  width: 100%;
-  height: 100%;
+  width: 55%;
+  height: 110%;
   object-fit: contain;
 }
