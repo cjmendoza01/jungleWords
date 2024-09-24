@@ -6,7 +6,7 @@ import startButtonImage from "../assets/buttons&dialogues/start.png";
 import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
 import { qrGameQsGetter } from "../utils/advAssets";
-
+import BGVid from "../assets/bgs1.mp4";
 import Boy from "../assets/boy.png";
 import Girl from "../assets/girl.png";
 import NextGameModal from "./Modals/NextGameModal";
@@ -14,7 +14,7 @@ import BS1GonzoTY from "./BS1GonzoTY";
 
 export default function QRGame() {
 	const [questions, setQuestions] = useState([]);
-
+	const [qIndex, setQIndex] = useState(0);
 	const [gameComplete, setGameComplete] = useState(false);
 	const [camStatus, setCamStatus] = useState("");
 
@@ -88,20 +88,16 @@ export default function QRGame() {
 		}
 	}, [questions, gameComplete, setResetGame]);
 
-	const handleScan = (result) => {
-		console.log(result);
-		if (result?.length) {
-			const { rawValue } = result[0];
-			const ans = rawValue || "";
-			console.log("raw");
-			console.log(rawValue);
-			const currQuestion = questions[0];
+	const level2Checker = (ans) => {
+		const currQuestion = questions[0];
 
-			console.log("Qs", currQuestion);
-			if (currQuestion?.id.toLowerCase() === ans.toLowerCase()) {
-				console.log("right");
-				setShowCorrectModal(true);
-				setCamStatus("correct");
+		console.log("Qs", currQuestion);
+
+		if (currQuestion.ans[qIndex].toLowerCase() === ans.toLowerCase()) {
+			console.log("right");
+			setShowCorrectModal(true);
+			setCamStatus("correct");
+			if (qIndex === 1) {
 				if (questions?.length === 1) {
 					setGameComplete(true);
 					setTimeout(() => {
@@ -113,9 +109,53 @@ export default function QRGame() {
 					const filterRight = Qfilters(questions[0], questions);
 					setQuestions(filterRight);
 				}
+				setQIndex(0);
 			} else {
-				setCamStatus("error");
+				setQIndex(1);
 			}
+		} else {
+			setCamStatus("error");
+		}
+	};
+
+	const level1Checker = (ans) => {
+		const currQuestion = questions[0];
+
+		console.log("Qs", currQuestion);
+		if (currQuestion?.id.toLowerCase() === ans.toLowerCase()) {
+			console.log("right");
+			setShowCorrectModal(true);
+			setCamStatus("correct");
+			if (questions?.length === 1) {
+				setGameComplete(true);
+				setTimeout(() => {
+					setOpenThankyou(true);
+				}, 2000);
+			} else {
+				console.log("filter");
+				console.log(questions[0]);
+				const filterRight = Qfilters(questions[0], questions);
+				setQuestions(filterRight);
+			}
+		} else {
+			setCamStatus("error");
+		}
+	};
+
+	const handleScan = async (result) => {
+		console.log(result);
+		if (result?.length) {
+			const { rawValue } = result[0];
+			const ans = rawValue || "";
+			console.log("raw");
+			console.log(rawValue);
+
+			if (qLevel === "2") {
+				level2Checker(ans);
+			} else {
+				level1Checker(ans);
+			}
+
 			setOpenCam(false);
 		}
 	};
@@ -145,29 +185,27 @@ export default function QRGame() {
 			<div
 				style={{
 					height: "100%",
-					width: "50%",
+					width: "40%",
 				}}
 			>
-			
-			{/* backgroun animation */}
-			<video
-				autoPlay
-				muted
-				loop
-				style={{
-					position: "fixed",
-					top: 0,
-					left: 0,
-					width: "100%",
-					height: "100%",
-					objectFit: "cover",
-					zIndex: "1",
-				}}
-			>
-				<source src="/bgs1.mp4" type="video/mp4" />
-				Your browser does not support the video tag.
-			</video>
-
+				{/* backgroun animation */}
+				<video
+					autoPlay
+					muted
+					loop
+					style={{
+						position: "fixed",
+						top: 0,
+						left: 0,
+						width: "100%",
+						height: "100%",
+						objectFit: "cover",
+						zIndex: "-1",
+					}}
+				>
+					<source src={BGVid} type="video/mp4" />
+					Your browser does not support the video tag.
+				</video>
 				<div
 					style={{
 						display: "flex",
@@ -182,7 +220,7 @@ export default function QRGame() {
 					</div>
 				</div>
 			</div>
-			<div style={{ height: "100%", width: "50%" }}>
+			<div style={{ height: "100%", width: "60%" }}>
 				<div className="qrGame-div1">
 					<div className="qrGame-div-border">
 						<div className="qrGame-camDiv">
@@ -209,38 +247,6 @@ export default function QRGame() {
 										justifyContent: "center",
 									}}
 								>
-									{/* {camStatus !== "" ? ( */}
-									{/* <div
-										style={{
-											position: "absolute",
-											width: "100%",
-											height: "100%",
-											backgroundColor: `${
-												camStatus === "correct" ? "green" : "red"
-											}`,
-											opacity: "50%",
-											zIndex: 1,
-										}}
-									></div> */}
-									{/* ) : (
-										<></>
-									)} */}
-
-									{/* {camStatus === "correct" ? (
-										<div
-											style={{
-												position: "absolute",
-												width: "100%",
-												height: "100%",
-												backgroundColor: "red",
-												opacity: "50%",
-												zIndex: 1,
-											}}
-										></div>
-									) : (
-										<></>
-									)} */}
-
 									<div
 										style={{
 											// width: "250px",
@@ -271,7 +277,7 @@ export default function QRGame() {
 					}}
 				>
 					{questions?.length ? (
-						<div style={{ width: "30%" }}>
+						<div style={{ width: "40%" }}>
 							<img
 								src={questions[0].image}
 								style={{

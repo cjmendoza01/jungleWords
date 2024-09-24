@@ -96,32 +96,32 @@ export const itemsListAdvs1 = [
 ];
 
 export const itemsListAdvs2 = [
-	{ image: bikeWheels, id: "bikeWheels" },
-	{ image: birdTrees, id: "birdTrees" },
-	{ image: bookShelf, id: "bookShelf" },
-	{ image: bowlMilk, id: "bowlMilk" },
-	{ image: carGreen, id: "carGreen" },
-	{ image: catHouse, id: "catHouse" },
-	{ image: chairSit, id: "chairSit" },
-	{ image: cleansRoom, id: "cleansRoom" },
-	{ image: clockWall, id: "clockWall" },
-	{ image: cookiesFriends, id: "cookiesFriends" },
-	{ image: cupChocolate, id: "cupChocolate" },
-	{ image: dogBall, id: "dogBall" },
-	{ image: dogDoor, id: "dogDoor" },
-	{ image: dogWalk, id: "dogWalk" },
-	{ image: drawsPencil, id: "drawsPencil" },
-	{ image: hatSun, id: "hatSun" },
-	{ image: icecreamSun, id: "icecreamSun" },
-	{ image: kicksBall, id: "kicksBall" },
-	{ image: momTable, id: "momTable" },
-	{ image: moonBlue, id: "moonBlue" },
-	{ image: picnicPark, id: "picnicPark" },
-	{ image: readBed, id: "readBed" },
-	{ image: runsBus, id: "runsBus" },
-	{ image: singsFamily, id: "singsFamily" },
-	{ image: starsSky, id: "starsSky" },
-	{ image: swingsSlides, id: "swingsSlides" },
+	{ image: bikeWheels, id: "bikeWheels", ans: ["bike", "wheels"] },
+	{ image: birdTrees, id: "birdTrees", ans: ["bird", "trees"] },
+	{ image: bookShelf, id: "bookShelf", ans: ["book", "shelf"] },
+	{ image: bowlMilk, id: "bowlMilk", ans: ["bowl", "milk"] },
+	{ image: carGreen, id: "carGreen", ans: ["car", "green"] },
+	{ image: catHouse, id: "catHouse", ans: ["cat", "house"] },
+	{ image: chairSit, id: "chairSit", ans: ["chair", "sit"] },
+	{ image: cleansRoom, id: "cleansRoom", ans: ["cleans", "room"] },
+	{ image: clockWall, id: "clockWall", ans: ["clock", "wall"] },
+	{ image: cookiesFriends, id: "cookiesFriends", ans: ["cookies", "friends"] },
+	{ image: cupChocolate, id: "cupChocolate", ans: ["cup", "chocolate"] },
+	{ image: dogBall, id: "dogBall", ans: ["dog", "ball"] },
+	{ image: dogDoor, id: "dogDoor", ans: ["dog", "door"] },
+	{ image: dogWalk, id: "dogWalk", ans: ["dog", "walk"] },
+	{ image: drawsPencil, id: "drawsPencil", ans: ["draws", "pencil"] },
+	{ image: hatSun, id: "hatSun", ans: ["hat", "sun"] },
+	{ image: icecreamSun, id: "icecreamSun", ans: ["icecream", "sun"] },
+	{ image: kicksBall, id: "kicksBall", ans: ["kicks", "ball"] },
+	{ image: momTable, id: "momTable", ans: ["mom", "table"] },
+	{ image: moonBlue, id: "moonBlue", ans: ["moon", "blue"] },
+	{ image: picnicPark, id: "picnicPark", ans: ["picnic", "park"] },
+	{ image: readBed, id: "readBed", ans: ["read", "bed"] },
+	{ image: runsBus, id: "runsBus", ans: ["runs", "bus"] },
+	{ image: singsFamily, id: "singsFamily", ans: ["sings", "family"] },
+	{ image: starsSky, id: "starsSky", ans: ["stars", "sky"] },
+	{ image: swingsSlides, id: "swingsSlides", ans: ["swings", "slides"] },
 ];
 
 export const qrGameQsGetter = (numElements, level, notIncluddedValues) => {
@@ -150,3 +150,5 @@ export const qrGameQsGetter = (numElements, level, notIncluddedValues) => {
 
 	return selected;
 };
+
+export const qrGameLevel2Checker = () => {};
