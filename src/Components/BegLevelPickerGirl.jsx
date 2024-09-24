@@ -30,11 +30,11 @@ const BegLevelPickerGirl = () => {
   };
 
   const handleDoneClick = () => {
-    if (selectedLevel === 'Beginner' && accessCode === '1234') {
+    if (selectedLevel === 'Beginner' && accessCode === 'SanDiegoJWBeg') {
       navigate('/BeginnerLevelGirl');
-    } else if (selectedLevel === 'Intermediate' && accessCode === '5678') {
+    } else if (selectedLevel === 'Intermediate' && accessCode === 'SanDiegoJWInt') {
       navigate('/IntermediateLevelGirl');
-    } else if (selectedLevel === 'Advanced' && accessCode === '91011') {
+    } else if (selectedLevel === 'Advanced' && accessCode === 'SanDiegoJWAdv') {
       navigate('/AdvancedPage');
     } else {
       alert('Please select a level and enter the correct access code');
