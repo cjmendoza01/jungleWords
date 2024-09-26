@@ -16,11 +16,11 @@ const AdvanceLevelBoy = () => {
   
   const handleDoneClick = () => {
     if (selectedStage === 'AS1') {
-      navigate('/AdvanceStage1Boy');
+      navigate('/QrGame');
     } else {
       // Navigate to different routes for other stages
       if (selectedStage === 'AS2') {
-        navigate('/stage2');
+        navigate('/QrGame');
       } else if (selectedStage === 'AS3') {
         navigate('/stage3');
       } else {
@@ -52,7 +52,6 @@ const AdvanceLevelBoy = () => {
           onClick={() => handleStageClick('AS3')}
           className={`advStage3 ${selectedStage === 'AS3' ? 'selected' : ''}`}
         >
-          <img src={advs3} alt="a3" />
         </button>
         <button onClick={handleDoneClick} className="buttonLevel done-button">
           <img src={doneButton} alt="Done" />
