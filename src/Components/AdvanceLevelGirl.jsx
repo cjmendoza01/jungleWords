@@ -15,7 +15,7 @@ const AdvanceLevelGirl = () => {
   };
   
   const handleDoneClick = () => {
-    if (selectedStage === 'AS1') {
+    if (selectedStage === 'AS1')  {
       navigate('/QrGame?gender=girl');
     } else {
       // Navigate to different routes for other stages
