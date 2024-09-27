@@ -83,89 +83,89 @@ import Yolk from "../assets/foods/Yolk.png";
 import ZestO from "../assets/foods/ZestO.png";
 
 // Import all sounds of food items
-import AdoboAudio from "../assets/foods/audio/Adobo.mp3";
-import AppleAudio from "../assets/foods/audio/Apple.mp3";
-import AtisAudio from "../assets/foods/audio/Atis.mp3";
-import BananaAudio from "../assets/foods/audio/Banana.mp3";
-import BeansAudio from "../assets/foods/audio/Beans.mp3";
-import BiscuitAudio from "../assets/foods/audio/Biscuit.mp3";
-import BreadAudio from "../assets/foods/audio/Bread.mp3";
-import CarrotsAudio from "../assets/foods/audio/Carrots.mp3";
-import ColaAudio from "../assets/foods/audio/Cola.mp3";
-import CookieAudio from "../assets/foods/audio/Cookie.mp3";
-import CornAudio from "../assets/foods/audio/Corn.mp3";
-import DonutAudio from "../assets/foods/audio/Donut.mp3";
-import DumplingAudio from "../assets/foods/audio/Dumpling.mp3";
-import DurianAudio from "../assets/foods/audio/Durian.mp3";
-import EggAudio from "../assets/foods/audio/Egg.mp3";
-import EggplantAudio from "../assets/foods/audio/Eggplant.mp3";
-import FishAudio from "../assets/foods/audio/Fish.mp3";
-import FlanAudio from "../assets/foods/audio/Flan.mp3";
-import GarlicAudio from "../assets/foods/audio/Garlic.mp3";
-import GrapesAudio from "../assets/foods/audio/Grapes.mp3";
-import GuavaAudio from "../assets/foods/audio/Guava.mp3";
-import HamAudio from "../assets/foods/audio/Ham.mp3";
-import HoneyAudio from "../assets/foods/audio/Honey.mp3";
-import JackfruitAudio from "../assets/foods/audio/Jackfruit.mp3";
-import JamAudio from "../assets/foods/audio/Jam.mp3";
-import JellyAudio from "../assets/foods/audio/Jelly.mp3";
-import JuiceAudio from "../assets/foods/audio/Juice.mp3";
-import KetchupAudio from "../assets/foods/audio/Ketchup.mp3";
-import KiwiAudio from "../assets/foods/audio/Kiwi.mp3";
-import LechonAudio from "../assets/foods/audio/Lechon.mp3";
-import LemonAudio from "../assets/foods/audio/Lemon.mp3";
-import LettuceAudio from "../assets/foods/audio/Lettuce.mp3";
-import LollipopAudio from "../assets/foods/audio/Lollipop.mp3";
-import LumpiaAudio from "../assets/foods/audio/Lumpia.mp3";
-import MangoAudio from "../assets/foods/audio/Mango.mp3";
-import MelonAudio from "../assets/foods/audio/Melon.mp3";
-import MilkAudio from "../assets/foods/audio/Milk.mp3";
-import MuffinAudio from "../assets/foods/audio/Muffin.mp3";
-import MushroomAudio from "../assets/foods/audio/Mushroom.mp3";
-import NachosAudio from "../assets/foods/audio/Nachos.mp3";
-import NoodlesAudio from "../assets/foods/audio/Noodles.mp3";
-import NutsAudio from "../assets/foods/audio/Nuts.mp3";
-import OatmealAudio from "../assets/foods/audio/Oatmeal.mp3";
-import OliveAudio from "../assets/foods/audio/Olive.mp3";
-import OmeletAudio from "../assets/foods/audio/Omelet.mp3";
-import OnionAudio from "../assets/foods/audio/Onion.mp3";
-import OrangeAudio from "../assets/foods/audio/Orange.mp3";
-import PapayaAudio from "../assets/foods/audio/Papaya.mp3";
-import PastaAudio from "../assets/foods/audio/Pasta.mp3";
-import PeaAudio from "../assets/foods/audio/Pea.mp3";
-import PeachAudio from "../assets/foods/audio/Peach.mp3";
-import PearAudio from "../assets/foods/audio/Pear.mp3";
-import PineappleAudio from "../assets/foods/audio/Pineapple.mp3";
-import PumpkinAudio from "../assets/foods/audio/Pumpkin.mp3";
-import QuailAudio from "../assets/foods/audio/Quail.mp3";
-import RadishAudio from "../assets/foods/audio/Radish.mp3";
-import RaisinAudio from "../assets/foods/audio/Raisin.mp3";
-import RambutanAudio from "../assets/foods/audio/Rambutan.mp3";
-import RiceAudio from "../assets/foods/audio/Rice.mp3";
-import SalmonAudio from "../assets/foods/audio/Salmon.mp3";
-import SaltAudio from "../assets/foods/audio/Salt.mp3";
-import SoupAudio from "../assets/foods/audio/Soup.mp3";
-import SpinachAudio from "../assets/foods/audio/Spinach.mp3";
-import SquashAudio from "../assets/foods/audio/Squash.mp3";
-import StrawberryAudio from "../assets/foods/audio/Strawberry.mp3";
-import TamarindAudio from "../assets/foods/audio/Tamarind.mp3";
-import TangerineAudio from "../assets/foods/audio/Tangerine.mp3";
-import TofuAudio from "../assets/foods/audio/Tofu.mp3";
-import TomatoAudio from "../assets/foods/audio/Cookie.mp3";
-import TunaAudio from "../assets/foods/audio/Tuna.mp3";
-import VanillaAudio from "../assets/foods/audio/Vanilla.mp3";
-import VegetableAudio from "../assets/foods/audio/Vegetable.mp3";
-import VinegarAudio from "../assets/foods/audio/Vinegar.mp3";
-import WaferAudio from "../assets/foods/audio/Wafer.mp3";
-import WaffleAudio from "../assets/foods/audio/Waffle.mp3";
-import WaterAudio from "../assets/foods/audio/Water.mp3";
-import WatermelonAudio from "../assets/foods/audio/Watermelon.mp3";
-import YakultAudio from "../assets/foods/audio/Yakult.mp3";
-import YamAudio from "../assets/foods/audio/Yam.mp3";
-import YemaAudio from "../assets/foods/audio/Yema.mp3";
-import YogurtAudio from "../assets/foods/audio/Yogurt.mp3";
-import YolkAudio from "../assets/foods/audio/Yolk.mp3";
-import ZestoAudio from "../assets/foods/audio/Zesto.mp3";
+import AdoboAudio from "../assets/foods/audio/Adobo.MP3";
+import AppleAudio from "../assets/foods/audio/Apple.MP3";
+import AtisAudio from "../assets/foods/audio/Atis.MP3";
+import BananaAudio from "../assets/foods/audio/Banana.MP3";
+import BeansAudio from "../assets/foods/audio/Beans.MP3";
+import BiscuitAudio from "../assets/foods/audio/Biscuit.MP3";
+import BreadAudio from "../assets/foods/audio/Bread.MP3";
+import CarrotsAudio from "../assets/foods/audio/Carrots.MP3";
+import ColaAudio from "../assets/foods/audio/Cola.MP3";
+import CookieAudio from "../assets/foods/audio/Cookie.MP3";
+import CornAudio from "../assets/foods/audio/Corn.MP3";
+import DonutAudio from "../assets/foods/audio/Donut.MP3";
+import DumplingAudio from "../assets/foods/audio/Dumpling.MP3";
+import DurianAudio from "../assets/foods/audio/Durian.MP3";
+import EggAudio from "../assets/foods/audio/Egg.MP3";
+import EggplantAudio from "../assets/foods/audio/Eggplant.MP3";
+import FishAudio from "../assets/foods/audio/Fish.MP3";
+import FlanAudio from "../assets/foods/audio/Flan.MP3";
+import GarlicAudio from "../assets/foods/audio/Garlic.MP3";
+import GrapesAudio from "../assets/foods/audio/Grapes.MP3";
+import GuavaAudio from "../assets/foods/audio/Guava.MP3";
+import HamAudio from "../assets/foods/audio/Ham.MP3";
+import HoneyAudio from "../assets/foods/audio/Honey.MP3";
+import JackfruitAudio from "../assets/foods/audio/Jackfruit.MP3";
+import JamAudio from "../assets/foods/audio/Jam.MP3";
+import JellyAudio from "../assets/foods/audio/Jelly.MP3";
+import JuiceAudio from "../assets/foods/audio/Juice.MP3";
+import KetchupAudio from "../assets/foods/audio/Ketchup.MP3";
+import KiwiAudio from "../assets/foods/audio/Kiwi.MP3";
+import LechonAudio from "../assets/foods/audio/Lechon.MP3";
+import LemonAudio from "../assets/foods/audio/Lemon.MP3";
+import LettuceAudio from "../assets/foods/audio/Lettuce.MP3";
+import LollipopAudio from "../assets/foods/audio/Lollipop.MP3";
+import LumpiaAudio from "../assets/foods/audio/Lumpia.MP3";
+import MangoAudio from "../assets/foods/audio/Mango.MP3";
+import MelonAudio from "../assets/foods/audio/Melon.MP3";
+import MilkAudio from "../assets/foods/audio/Milk.MP3";
+import MuffinAudio from "../assets/foods/audio/Muffin.MP3";
+import MushroomAudio from "../assets/foods/audio/Mushroom.MP3";
+import NachosAudio from "../assets/foods/audio/Nachos.MP3";
+import NoodlesAudio from "../assets/foods/audio/Noodles.MP3";
+import NutsAudio from "../assets/foods/audio/Nuts.MP3";
+import OatmealAudio from "../assets/foods/audio/Oatmeal.MP3";
+import OliveAudio from "../assets/foods/audio/Olive.MP3";
+import OmeletteAudio from "../assets/foods/audio/Omelette.MP3";
+import OnionAudio from "../assets/foods/audio/Onion.MP3";
+import OrangeAudio from "../assets/foods/audio/Orange.MP3";
+import PapayaAudio from "../assets/foods/audio/Papaya.MP3";
+import PastaAudio from "../assets/foods/audio/Pasta.MP3";
+import PeaAudio from "../assets/foods/audio/Pea.MP3";
+import PeachAudio from "../assets/foods/audio/Peach.MP3";
+import PearAudio from "../assets/foods/audio/Pear.MP3";
+import PineappleAudio from "../assets/foods/audio/Pineapple.MP3";
+import PumpkinAudio from "../assets/foods/audio/Pumpkin.MP3";
+import QuailAudio from "../assets/foods/audio/Quail.MP3";
+import RadishAudio from "../assets/foods/audio/Radish.MP3";
+import RaisinAudio from "../assets/foods/audio/Raisin.MP3";
+import RambutanAudio from "../assets/foods/audio/Rambutan.MP3";
+import RiceAudio from "../assets/foods/audio/Rice.MP3";
+import SalmonAudio from "../assets/foods/audio/Salmon.MP3";
+import SaltAudio from "../assets/foods/audio/Salt.MP3";
+import SoupAudio from "../assets/foods/audio/Soup.MP3";
+import SpinachAudio from "../assets/foods/audio/Spinach.MP3";
+import SquashAudio from "../assets/foods/audio/Squash.MP3";
+import StrawberryAudio from "../assets/foods/audio/Strawberry.MP3";
+import TamarindAudio from "../assets/foods/audio/Tamarind.MP3";
+import TangerineAudio from "../assets/foods/audio/Tangerine.MP3";
+import TofuAudio from "../assets/foods/audio/Tofu.MP3";
+import TomatoAudio from "../assets/foods/audio/Cookie.MP3";
+import TunaAudio from "../assets/foods/audio/Tuna.MP3";
+import VanillaAudio from "../assets/foods/audio/Vanilla.MP3";
+import VegetableAudio from "../assets/foods/audio/Vegetable.MP3";
+import VinegarAudio from "../assets/foods/audio/Vinegar.MP3";
+import WaferAudio from "../assets/foods/audio/Wafer.MP3";
+import WaffleAudio from "../assets/foods/audio/Waffle.MP3";
+import WaterAudio from "../assets/foods/audio/Water.MP3";
+import WatermelonAudio from "../assets/foods/audio/Watermelon.MP3";
+import YakultAudio from "../assets/foods/audio/Yakult.MP3";
+import YamAudio from "../assets/foods/audio/Yam.MP3";
+import YemaAudio from "../assets/foods/audio/Yema.MP3";
+import YogurtAudio from "../assets/foods/audio/Yogurt.MP3";
+import YolkAudio from "../assets/foods/audio/Yolk.MP3";
+import ZestoAudio from "../assets/foods/audio/Zesto.MP3";
 
 // Import all image letters
 import LetterA from "../assets/letters/A.png";
@@ -571,17 +571,17 @@ export const foodItemsList = [
 			{ image: LetterB, isCorrect: true },
 		],
 	},
-	// {
-	//   image: Butter,
-	//   audio: ButterAudio,
-	//   id: "butter",
-	//   isDisplayed: true,
-	//   modalChoices: [
-	//     { image: LetterK, isCorrect: false },
-	//     { image: LetterB, isCorrect: true },
-	//     { image: LetterG, isCorrect: false },
-	//   ],
-	// },
+	 {
+	   image: Butter,
+	   audio: ButterAudio,
+	   id: "butter",
+	   isDisplayed: true,
+	   modalChoices: [
+	     { image: LetterK, isCorrect: false },
+	     { image: LetterB, isCorrect: true },
+	     { image: LetterG, isCorrect: false },
+	   ],
+	 },
 	{
 		image: Carrots,
 		audio: CarrotsAudio,
@@ -759,17 +759,17 @@ export const foodItemsList = [
 			{ image: LetterD, isCorrect: false },
 		],
 	},
-	// {
-	//   image: Itlog,
-	//   audio: ItlogAudio,
-	//   id: "itlog",
-	//   isDisplayed: true,
-	//   modalChoices: [
-	//     { image: LetterI, isCorrect: true },
-	//     { image: LetterK, isCorrect: false },
-	//     { image: LetterW, isCorrect: false },
-	//   ],
-	// },
+	 {
+	  image: Itlog,
+	   audio: ItlogAudio,
+	  id: "itlog",
+	   isDisplayed: true,
+	  modalChoices: [
+	    { image: LetterI, isCorrect: true },
+	     { image: LetterK, isCorrect: false },
+	     { image: LetterW, isCorrect: false },
+	   ],
+	},
 	{
 		image: Jackfruit,
 		audio: JackfruitAudio,
@@ -869,17 +869,17 @@ export const foodItemsList = [
 			{ image: LetterU, isCorrect: false },
 		],
 	},
-	// {
-	//   image: Lollipop,
-	//   audio: LollipopAudio,
-	//   id: "lollipop",
-	//   isDisplayed: true,
-	//   modalChoices: [
-	//     { image: LetterL, isCorrect: true },
-	//     { image: LetterD, isCorrect: false },
-	//     { image: LetterU, isCorrect: false },
-	//   ],
-	// },
+	 {
+	   image: Lollipop,
+	   audio: LollipopAudio,
+	   id: "lollipop",
+	   isDisplayed: true,
+	   modalChoices: [
+	  	  { image: LetterL, isCorrect: true },
+	   	  { image: LetterD, isCorrect: false },
+	  	  { image: LetterU, isCorrect: false },
+	  ],
+	 },
 	{
 		image: Lumpia,
 		audio: LumpiaAudio,
@@ -1001,17 +1001,17 @@ export const foodItemsList = [
 			{ image: LetterA, isCorrect: false },
 		],
 	},
-	// {
-	//   image: Omelet,
-	//   audio: OmeletAudio,
-	//   id: "omelet",
-	//   isDisplayed: true,
-	//   modalChoices: [
-	//     { image: LetterO, isCorrect: true },
-	//     { image: LetterC, isCorrect: false },
-	//     { image: LetterA, isCorrect: false },
-	//   ],
-	// },
+	 {
+	   image: Omelette,
+	   audio: OmeletteAudio,
+	   id: "omelet",
+	   isDisplayed: true,
+	   modalChoices: [
+	     { image: LetterO, isCorrect: true },
+	     { image: LetterC, isCorrect: false },
+	     { image: LetterA, isCorrect: false },
+	   ],
+	 },
 	{
 		image: Onion,
 		audio: OnionAudio,
@@ -1188,17 +1188,17 @@ export const foodItemsList = [
 			{ image: LetterE, isCorrect: false },
 		],
 	},
-	// {
-	//   image: Soup,
-	//   audio: SoupAudio,
-	//   id: "soup",
-	//   isDisplayed: true,
-	//   modalChoices: [
-	//     { image: LetterS, isCorrect: true },
-	//     { image: LetterD, isCorrect: false },
-	//     { image: LetterE, isCorrect: false },
-	//   ],
-	// },
+	 {
+	   image: Soup,
+	   audio: SoupAudio,
+	   id: "soup",
+	   isDisplayed: true,
+	   modalChoices: [
+	     { image: LetterS, isCorrect: true },
+	     { image: LetterD, isCorrect: false },
+	     { image: LetterE, isCorrect: false },
+	   ],
+	 },
 	{
 		image: Spinach,
 		audio: SpinachAudio,
