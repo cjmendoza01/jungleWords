@@ -5,6 +5,7 @@ import girlImage from '../assets/girl.png';
 import advs1 from '../assets/buttons&dialogues/advs1.png';
 import advs2 from '../assets/buttons&dialogues/advs2.png';
 import doneButton from '../assets/buttons&dialogues/done.png';
+import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const AdvanceLevelGirl = () => {
   const navigate = useNavigate();
@@ -16,11 +17,11 @@ const AdvanceLevelGirl = () => {
   
   const handleDoneClick = () => {
     if (selectedStage === 'AS1')  {
-      navigate('/QrGame?gender=girl');
+      navigate('/GirlADV1intro');
     } else {
       // Navigate to different routes for other stages
       if (selectedStage === 'AS2') {
-        navigate('/QrGame?gender=girl');
+        navigate('/GirlADV2intro');
       } else if (selectedStage === 'AS3') {
         navigate('/stage3');
       } else {
@@ -28,6 +29,9 @@ const AdvanceLevelGirl = () => {
       }
     }
   };
+	const handleBackClick = () => {
+		navigate(-1); // Go back to the previous page
+	};
 
   return (
     <div className="advancelevelBoy">
@@ -35,7 +39,13 @@ const AdvanceLevelGirl = () => {
       <source src="/BGAnimationGirl.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
-      <div className="buttons">
+    <div className="back-button-container">
+				<button onClick={handleBackClick} className="back-button">
+					<img src={backButtonImage} alt="Back" />
+				</button>
+			</div>
+			<div className="buttons">
+
         <button
           onClick={() => handleStageClick('AS1')}
           className={`advStage1 ${selectedStage === 'AS1' ? 'selected' : ''}`}

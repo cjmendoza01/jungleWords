@@ -47,6 +47,10 @@ import GirlIS2intro from "./GirlIS2intro.jsx";
 import GirlIS3intro from "./GirlIS3intro.jsx";
 import AdvanceLevelBoy from "./AdvanceLevelBoy.jsx";
 import AdvanceLevelGirl from "./AdvanceLevelGirl.jsx";
+import BoyADV1intro from "./BoyADV1intro.jsx";
+import GirlADV1intro from "./GirlADV1intro.jsx";
+import BoyADV2intro from "./BoyADV2intro.jsx";
+import GirlADV2intro from "./GirlADV2intro.jsx";
 
 function App() {
 	return (
@@ -103,7 +107,10 @@ function App() {
 			<Route path="/GirlIS3intro" element={<GirlIS3intro />} />
 			<Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />
 			<Route path="/AdvanceLevelGirl" element={<AdvanceLevelGirl />} />
-
+			<Route path="/BoyADV1intro" element={<BoyADV1intro />} />
+			<Route path="/GirlADV1intro" element={<GirlADV1intro />} />
+			<Route path="/BoyADV2intro" element={<BoyADV2intro />} />
+			<Route path="/GirlADV2intro" element={<GirlADV2intro />} />
 		</Routes>
 	);
 }
