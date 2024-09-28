@@ -28,10 +28,10 @@ const S3TY = ({ closeTyVideo }) => {
 
 		let vid = "";
 
-		const level1BoyVid = "/GonzoBS2TY.mp4";
-		const level1GirlVid = "/GonzoBS2TYGirl.mp4";
-		const level2BoyVid = "/HoneyBunIS1TY.mp4";
-		const level2GirlVid = "/HoneyBunIS1TYGirl.mp4";
+		const level1BoyVid = "/GonzoBS3TY.mp4";
+		const level1GirlVid = "/GonzoBS3TYGirl.mp4";
+		const level2BoyVid = "/HoneybunIS3TY.mp4";
+		const level2GirlVid = "/HoneybunIS3TYGirl.mp4";
 
 		let lvl = "1";
 
@@ -89,7 +89,7 @@ const S3TY = ({ closeTyVideo }) => {
 			)}
 
 			<img
-				src={isMuted ? unmuteButton : muteButton}
+				src={isMuted ? muteButton : unmuteButton}
 				alt="Mute/Unmute Button"
 				className="button mute-button"
 				onClick={toggleMute}

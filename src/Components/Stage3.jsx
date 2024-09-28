@@ -13,6 +13,8 @@ import Girl from "../assets/bs3/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import S3TY from "./S3TY";
 
+import { restrictToParentElement } from "@dnd-kit/modifiers";
+
 export default function Stage3() {
 	const [rightItems, setItems] = useState([]);
 	const [wrongItems, setWrongItems] = useState([]);
@@ -40,6 +42,7 @@ export default function Stage3() {
 	const navigate = useNavigate();
 	useEffect(() => {
 		const lvl = qLevel;
+		console.log("correct Triggered");
 		if (correct) {
 			if (rightItems?.length === 1) {
 				setGameComplete(true);
@@ -88,11 +91,10 @@ export default function Stage3() {
 
 					shuffleItems(pos);
 				}
-
-				setTimeout(() => {
-					setCorrect(false);
-				}, 2000);
 			}
+			setTimeout(() => {
+				setCorrect(false);
+			}, 2000);
 		}
 	}, [correct]);
 
@@ -252,7 +254,7 @@ export default function Stage3() {
 				<img
 					style={{
 						objectFit: "contain",
-						width: "150%",
+						width: "100%",
 						height: "auto",
 						display: "block", // Ensures the image is treated as a block element
 						margin: "0 auto", // Centers the image horizontally
@@ -336,7 +338,10 @@ export default function Stage3() {
 					</div>
 				</div>
 				<div className="draggable-containers">
-					<DndContext onDragEnd={handleDragEnd}>
+					<DndContext
+						onDragEnd={handleDragEnd}
+						modifiers={[restrictToParentElement]}
+					>
 						<div className="draggable-container2">
 							{dropItems?.map((drp) => {
 								if (drp === "right") {
