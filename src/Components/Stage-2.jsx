@@ -261,7 +261,6 @@ export default function Stage2(props) {
 
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
-
 			{/* backgroun animation */}
 			<video
 				autoPlay
@@ -348,7 +347,7 @@ export default function Stage2(props) {
 						{/* Display HoneyBun or Gonzo based on stage */}
 						<div
 							className="stage-2-character-div"
-							style={{ justifyContent: "left" }}
+							style={{ justifyContent: "left", marginRight: "10%" }}
 						>
 							<img
 								className="stage2-char-div"

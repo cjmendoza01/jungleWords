@@ -12,7 +12,7 @@
   /* justify-content: space-between;
   direction: rtl; */
   flex-direction: row-reverse;
-  gap:3vw;
+  /* gap:3vw; */
 }
 
 .stage2-main {
