@@ -50,7 +50,7 @@
   height: 100vh; /* Ensures it fills the height of the viewport */
   width: 100vw; /* Ensures it fills the width of the viewport */
   background-color: #326901;
-  background-image: url('../assets/bgbs1.png'); /* Your background image */
+  background-image: url('../assets/bgs1.mp4'); /* Your background image */
   background-size: cover; /* Ensures the background covers the entire container */
   background-position: center;
   background-repeat: no-repeat;

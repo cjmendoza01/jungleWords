@@ -39,6 +39,14 @@ import RewardPageGirl from "./RewardPageGirl.jsx";
 import BeginnerStage2 from "./BeginnerStage2.jsx";
 import IntermidiateStage1 from "./IntermidiateStage1.jsx";
 import BS1GonzoTY from "./BS1GonzoTY.jsx";
+import BoyIS1introo from "./BoyIS1introo.jsx"
+import BoyIS2intro from "./BoyIS2intro.jsx";
+import BoyIS3intro from "./BoyIS3intro.jsx";
+import GirlIS1intro from "./GirlIS1intro.jsx";
+import GirlIS2intro from "./GirlIS2intro.jsx";
+import GirlIS3intro from "./GirlIS3intro.jsx";
+import AdvanceLevelBoy from "./AdvanceLevelBoy.jsx";
+import AdvanceLevelGirl from "./AdvanceLevelGirl.jsx";
 
 function App() {
 	return (
@@ -87,6 +95,15 @@ function App() {
 			<Route path="/BS1GonzoTY" element={<BS1GonzoTY />} />
 			<Route path="/BeginnerStage2" element={<BeginnerStage2 />} />
 			<Route path="/IntermidiateStage1" element={<IntermidiateStage1 />} />
+			<Route path="/BoyIS1introo" element={<BoyIS1introo />} />
+			<Route path="/BoyIS2intro" element={<BoyIS2intro />} />
+			<Route path="/BoyIS3intro" element={<BoyIS3intro />} />
+			<Route path="/GirlIS1intro" element={<GirlIS1intro />} />
+			<Route path="/GirlIS2intro" element={<GirlIS2intro />} />
+			<Route path="/GirlIS3intro" element={<GirlIS3intro />} />
+			<Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />
+			<Route path="/AdvanceLevelGirl" element={<AdvanceLevelGirl />} />
+
 		</Routes>
 	);
 }
