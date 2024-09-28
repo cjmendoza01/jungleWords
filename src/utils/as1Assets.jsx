@@ -1,4 +1,4 @@
-// Imports Advance Stage 1 items
+// Import Advance Stage 1 items
 import Apple from "../assets/advs1/Apple.png";
 import Ball from "../assets/advs1/Ball.png";
 import Banana from "../assets/advs1/Banana.png";
@@ -31,3 +31,4 @@ import Sun from "../assets/advs1/Sun.png";
 import Sweater from "../assets/advs1/Sweater.png";
 import Tree from "../assets/advs1/Tree.png";
 import Truck from "../assets/advs1/Truck.png";
+

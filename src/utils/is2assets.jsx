@@ -19,3 +19,28 @@ import Ring from "../assets/is2/is2images/Ring.png";
 import Ship from "../assets/is2/is2images/Ship.png";
 import Sock from "../assets/is2/is2images/Sock.png";
 import Tent from "../assets/is2/is2images/Tent.png";
+
+// import audio src>assets>is2>audio
+import ball from "../assets/is2/is2audio/Ball.MP3";
+import bell from "../assets/is2/is2audio/Bell.MP3";
+import belt from "../assets/is2/is2audio/Belt.MP3";
+import book from "../assets/is2/is2audio/Book.MP3";
+import born from "../assets/is2/is2audio/Born.MP3";
+import cart from "../assets/is2/is2audio/Cart.MP3";
+import clip from "../assets/is2/is2audio/Clip.MP3";
+import coat from "../assets/is2/is2audio/Coat.MP3";
+import coin from "../assets/is2/is2audio/Coin.MP3";
+import desk from "../assets/is2/is2audio/Desk.MP3";
+import drum from "../assets/is2/is2audio/Drum.MP3";
+import flag from "../assets/is2/is2audio/Flag.MP3";
+import fork from "../assets/is2/is2audio/Fork.MP3";
+import kite from "../assets/is2/is2audio/Kite.MP3";
+import lamp from "../assets/is2/is2audio/Lamp.MP3";
+import lock from "../assets/is2/is2audio/Lock.MP3";
+import mask from "../assets/is2/is2audio/Mask.MP3";
+import plug from "../assets/is2/is2audio/Plug.MP3";
+import ring from "../assets/is2/is2audio/Ring.MP3";
+import ship from "../assets/is2/is2audio/Ship.MP3";
+import sock from "../assets/is2/is2audio/Sock.MP3";
+import tent from "../assets/is2/is2audio/Tent.MP3";
+
