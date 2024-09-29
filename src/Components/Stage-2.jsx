@@ -78,13 +78,17 @@ export default function Stage2(props) {
 		}
 		setStgLevel(lvl);
 
-		let nxtRt = `/stage3?gender=${gd}&level=${lvl}`;
+		let nxtRt = `BoyBS3intro`;
 
 		if (qLevel && qLevel === "2") {
 			if (gd == "girl") {
-				nxtRt = `/BS1GJGirl`;
+				nxtRt = `/GirlIS2intro`;
 			} else {
-				nxtRt = `/BS1GJBoy`;
+				nxtRt = `/BoyIS2intro`;
+			}
+		} else {
+			if (gd == "girl") {
+				nxtRt = `/GirlBS2intro`;
 			}
 		}
 

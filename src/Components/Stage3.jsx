@@ -155,15 +155,15 @@ export default function Stage3() {
 
 		if (qLevel && qLevel === "2") {
 			if (gd == "girl") {
-				nxtRt = `/IntermediateLevelGirl`;
+				nxtRt = `/RewardPageGirl`;
 			} else {
-				nxtRt = `/IntermediateLevelBoy`;
+				nxtRt = `/RewardPageBoy`;
 			}
 		} else {
 			if (gd == "girl") {
-				nxtRt = `/BegLevelPickerGirl`;
+				nxtRt = `/RewardPageGirl`;
 			} else {
-				nxtRt = `/BegLevelPickerBoy`;
+				nxtRt = `/RewardPageBoy`;
 			}
 		}
 
@@ -244,8 +244,8 @@ export default function Stage3() {
 			transform: transform
 				? `translate3d(${transform.x}px, ${transform.y}px, 0)`
 				: "",
-			width: "100px",
-			height: "200px",
+			width: "200px",
+			height: "400px",
 			// backgroundColor: "lightblue",
 		};
 

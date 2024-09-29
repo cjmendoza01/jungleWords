@@ -30,9 +30,9 @@ const IntermidiateStage2 = () => {
 			return selected;
 		}
 
-		const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
+		const x = getRandomElements(foodItemsList, 6);
 		setFoodItems(x);
-	}, [wordCvc4]);
+	}, [foodItemsList]);
 
 	const [currentFoodItem, setCurrentFoodItem] = useState(null);
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);

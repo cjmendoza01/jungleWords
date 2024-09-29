@@ -494,6 +494,8 @@ import Wig from "../assets/is3/is3Words/Wig.png";
 // import Win from "../assets/is3/is3Words/Win.png";
 // import Zip from "../assets/is3/is3Words/Zip.png";
 
+// Inter  Audio Assets
+
 // Food items to display in the side and to be dragged
 export const foodItemsList = [
 	{
@@ -1434,6 +1436,241 @@ export const foodItemsList = [
 	},
 ];
 
+import BallAudio from "../assets/is2/audio/Ball.mp3";
+import BellAudio from "../assets/is2/audio/Bell.mp3";
+import belt from "../assets/is2/audio/Belt.mp3";
+import book from "../assets/is2/audio/Book.mp3";
+import barn from "../assets/is2/audio/Barn.mp3";
+import cart from "../assets/is2/audio/Cart.mp3";
+import clip from "../assets/is2/audio/Clip.mp3";
+import coat from "../assets/is2/audio/Coat.mp3";
+import coin from "../assets/is2/audio/Coin.mp3";
+import desk from "../assets/is2/audio/Desk.mp3";
+import drum from "../assets/is2/audio/Drum.mp3";
+import flag from "../assets/is2/audio/Flag.mp3";
+import fork from "../assets/is2/audio/Fork.mp3";
+import kite from "../assets/is2/audio/Kite.mp3";
+import lamp from "../assets/is2/audio/Lamp.mp3";
+import lock from "../assets/is2/audio/Lock.mp3";
+import mask from "../assets/is2/audio/Mask.mp3";
+import plug from "../assets/is2/audio/Plug.mp3";
+import ring from "../assets/is2/audio/Ring.mp3";
+import ship from "../assets/is2/audio/Ship.mp3";
+import sock from "../assets/is2/audio/Sock.mp3";
+import tent from "../assets/is2/audio/Tent.mp3";
+
+export const wordCvc4 = [
+	{
+		image: Bell,
+		audio: BellAudio,
+		id: "bell",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Book,
+		audio: book,
+		id: "book",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: true },
+		],
+	},
+	{
+		image: Cart,
+		audio: cart,
+		id: "cart",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Drum,
+		audio: drum,
+		id: "drum",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Kite,
+		audio: kite,
+		id: "kite",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Lamp,
+		audio: lamp,
+		id: "lamp",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Lock,
+		audio: lock,
+		id: "lock",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: true },
+		],
+	},
+	{
+		image: Mask,
+		audio: mask,
+		id: "mask",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Ball,
+		audio: BallAudio,
+		id: "ball",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Belt,
+		audio: belt,
+		id: "belt",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Clip,
+		audio: clip,
+		id: "clip",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: true },
+		],
+	},
+	{
+		image: Coat,
+		audio: coat,
+		id: "coat",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: true },
+		],
+	},
+	{
+		image: Coin,
+		audio: coin,
+		id: "coin",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Fork,
+		audio: fork,
+		id: "fork",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Plug,
+		audio: plug,
+		id: "plug",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Ring,
+		audio: ring,
+		id: "ring",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: true },
+		],
+	},
+	{
+		image: Ship,
+		audio: ship,
+		id: "ship",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Sock,
+		audio: sock,
+		id: "sock",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: false },
+			{ image: LetterG, isCorrect: true },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+	{
+		image: Tent,
+		audio: tent,
+		id: "tent",
+		isDisplayed: true,
+		modalChoices: [
+			{ image: LetterT, isCorrect: true },
+			{ image: LetterG, isCorrect: false },
+			{ image: LetterW, isCorrect: false },
+		],
+	},
+];
+
 export const wordCvc3 = [
 	{ image: Bag, id: "bag" },
 	{ image: Ban, id: "ban" },
@@ -1490,209 +1727,6 @@ export const wordCvc3 = [
 	{ image: Wet, id: "wet" },
 	{ image: Win, id: "win" },
 	{ image: Zip, id: "zip" },
-];
-
-export const wordCvc4 = [
-	{
-		image: Bell,
-		id: "bell",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Book,
-		id: "book",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Cart,
-		id: "cart",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Drum,
-		id: "drum",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Kite,
-		id: "kite",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Lamp,
-		id: "lamp",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Lock,
-		id: "lock",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Mask,
-		id: "mask",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Ball,
-		id: "ball",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Barn,
-		id: "barn",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Belt,
-		id: "belt",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Clip,
-		id: "clip",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Coat,
-		id: "coat",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Coin,
-		id: "coin",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Fork,
-		id: "fork",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Plug,
-		id: "plug",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Ring,
-		id: "ring",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Ship,
-		id: "ship",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Sock,
-		id: "sock",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
-	{
-		image: Tent,
-		id: "tent",
-		isDisplayed: true,
-		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
-		],
-	},
 ];
 
 const longVowels = [
