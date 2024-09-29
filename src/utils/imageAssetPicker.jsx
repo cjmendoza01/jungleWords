@@ -1,90 +1,7 @@
-import Adobo from "../assets/foods/Adobo.png";
-import Apple from "../assets/foods/Apple.png";
-import Atis from "../assets/foods/Atis.png";
-import Banana from "../assets/foods/Banana.png";
-import Beans from "../assets/foods/Beans.png";
-import Biscuit from "../assets/foods/Biscuit.png";
-import Bread from "../assets/foods/Bread.png";
-import Butter from "../assets/foods/Butter.png";
-import Carrots from "../assets/foods/Carrots.png";
-import Cola from "../assets/foods/Cola.png";
-import Cookie from "../assets/foods/Cookie.png";
-import Corn from "../assets/foods/Corn.png";
-import Donut from "../assets/foods/Donut.png";
-import Dumpling from "../assets/foods/Dumpling.png";
-import Durian from "../assets/foods/Durian.png";
-import Egg from "../assets/foods/Egg.png";
-import Eggplant from "../assets/foods/Eggplant.png";
-import Fish from "../assets/foods/Fish.png";
-import Flan from "../assets/foods/Flan.png";
-import Garlic from "../assets/foods/Garlic.png";
-import Grapes from "../assets/foods/Grapes.png";
-import Guava from "../assets/foods/Guava.png";
 import Ham from "../assets/foods/Ham.png";
-import Honey from "../assets/foods/Honey.png";
-import Itlog from "../assets/foods/Itlog.png";
-import Jackfruit from "../assets/foods/Jackfruit.png";
 import Jam from "../assets/foods/Jam.png";
-import Jelly from "../assets/foods/Jelly.png";
 import Juice from "../assets/foods/Juice.png";
-import Ketchup from "../assets/foods/Ketchup.png";
-import Kiwi from "../assets/foods/Kiwi.png";
-import Lechon from "../assets/foods/Lechon.png";
-import Lemon from "../assets/foods/Lemon.png";
-import Lettuce from "../assets/foods/Lettuce.png";
-import Lumpia from "../assets/foods/Lumpia.png";
-import Mango from "../assets/foods/Mango.png";
-import Melon from "../assets/foods/Melon.png";
-import Milk from "../assets/foods/Milk.png";
-import Muffin from "../assets/foods/Muffin.png";
-import Mushroom from "../assets/foods/Mushroom.png";
-import Nachos from "../assets/foods/Nachos.png";
-import Noodles from "../assets/foods/Noodles.png";
-import Nuts from "../assets/foods/Nuts.png";
-import Oatmeal from "../assets/foods/Oatmeal.png";
-import Olive from "../assets/foods/Olive.png";
-import Omelette from "../assets/foods/Omelette.png";
-import Onion from "../assets/foods/Onion.png";
-import Orange from "../assets/foods/Orange.png";
-import Papaya from "../assets/foods/Papaya.png";
-import Pasta from "../assets/foods/Pasta.png";
-import Pea from "../assets/foods/Pea.png";
-import Peach from "../assets/foods/Peach.png";
-import Pear from "../assets/foods/Pear.png";
-import Pineapple from "../assets/foods/Pineapple.png";
-import Pumpkin from "../assets/foods/Pumpkin.png";
-import Quail from "../assets/foods/Quail.png";
-import Radish from "../assets/foods/Radish.png";
-import Raisin from "../assets/foods/Raisin.png";
-import Rambutan from "../assets/foods/Rambutan.png";
 import Rice from "../assets/foods/Rice.png";
-import Salmon from "../assets/foods/Salmon.png";
-import Salt from "../assets/foods/Salt.png";
-import Spinach from "../assets/foods/Spinach.png";
-import Squash from "../assets/foods/Squash.png";
-import Strawberry from "../assets/foods/Strawberry.png";
-import Tamarind from "../assets/foods/Tamarind.png";
-import Tangerine from "../assets/foods/Tangerine.png";
-import Tofu from "../assets/foods/Tofu.png";
-import Tomato from "../assets/foods/Tomato.png";
-import Tuna from "../assets/foods/Tuna.png";
-import Vanilla from "../assets/foods/Vanilla.png";
-import Vegetable from "../assets/foods/Vegetable.png";
-import Vinegar from "../assets/foods/Vinegar.png";
-import Wafer from "../assets/foods/Wafer.png";
-import Waffle from "../assets/foods/Waffle.png";
-import Water from "../assets/foods/Water.png";
-import Watermelon from "../assets/foods/Watermelon.png";
-import Yakult from "../assets/foods/Yakult.png";
-import Yam from "../assets/foods/Yam.png";
-import Yema from "../assets/foods/Yema.png";
-import Yogurt from "../assets/foods/Yogurt.png";
-import Yolk from "../assets/foods/Yolk.png";
-import ZestO from "../assets/foods/ZestO.png";
-
-// Import all image of sound icon
-import soundicon from "../assets/Volume.png";
-
 //s2 Images
 import Bag from "../assets/bs3/bs3images/Bag.png";
 import Ban from "../assets/bs3/bs3images//Ban.png";
@@ -142,7 +59,6 @@ import Wet from "../assets/bs3/bs3images/Wet.png";
 import Win from "../assets/bs3/bs3images/Win.png";
 import Zip from "../assets/bs3/bs3images/Zip.png";
 
-//intermidiate items
 import Ball from "../assets/is2/is2Images/Ball.png";
 import Bell from "../assets/is2/is2Images/Bell.png";
 import Book from "../assets/is2/is2Images/Book.png";
@@ -152,17 +68,6 @@ import Kite from "../assets/is2/is2Images/Kite.png";
 import Lamp from "../assets/is2/is2Images/Lamp.png";
 import Lock from "../assets/is2/is2Images/Lock.png";
 import Mask from "../assets/is2/is2Images/Mask.png";
-import Barn from "../assets/is2/is2Images/Barn.png";
-import Belt from "../assets/is2/is2Images/Belt.png";
-import Clip from "../assets/is2/is2Images/Clip.png";
-import Coat from "../assets/is2/is2Images/Coat.png";
-import Coin from "../assets/is2/is2Images/Coin.png";
-import Fork from "../assets/is2/is2Images/Fork.png";
-import Plug from "../assets/is2/is2Images/Plug.png";
-import Ring from "../assets/is2/is2Images/Ring.png";
-import Ship from "../assets/is2/is2Images/Ship.png";
-import Sock from "../assets/is2/is2Images/Sock.png";
-import Tent from "../assets/is2/is2Images/Tent.png";
 
 //Long Vowels
 import Bake from "../assets/is1/Bake.png";
@@ -379,62 +284,161 @@ import Wig from "../assets/is3/is3Words/Wig.png";
 // import Win from "../assets/is3/is3Words/Win.png";
 // import Zip from "../assets/is3/is3Words/Zip.png";
 
+import bagAudio from "../assets/bs2/bs2Audio/Bag.mp3";
+import batAudio from "../assets/bs2/bs2Audio/Bat.mp3";
+import bedAudio from "../assets/bs2/bs2Audio/Bed.mp3";
+import begAudio from "../assets/bs2/bs2Audio/Beg.mp3";
+import bibAudio from "../assets/bs2/bs2Audio/Bib.mp3";
+import bigAudio from "../assets/bs2/bs2Audio/Big.mp3";
+import binAudio from "../assets/bs2/bs2Audio/Bin.mp3";
+import bitAudio from "../assets/bs2/bs2Audio/Bit.mp3";
+import boxAudio from "../assets/bs2/bs2Audio/Box.mp3";
+import bugAudio from "../assets/bs2/bs2Audio/Bug.mp3";
+import bunAudio from "../assets/bs2/bs2Audio/Bun.mp3";
+import canAudio from "../assets/bs2/bs2Audio/Can.mp3";
+import capAudio from "../assets/bs2/bs2Audio/Cap.mp3";
+import carAudio from "../assets/bs2/bs2Audio/Car.mp3";
+import catAudio from "../assets/bs2/bs2Audio/Cat.mp3";
+import copAudio from "../assets/bs2/bs2Audio/Cop.mp3";
+import cupAudio from "../assets/bs2/bs2Audio/Cup.mp3";
+import cutAudio from "../assets/bs2/bs2Audio/Cut.mp3";
+import dipAudio from "../assets/bs2/bs2Audio/Dip.mp3";
+import dogAudio from "../assets/bs2/bs2Audio/Dog.mp3";
+import dotAudio from "../assets/bs2/bs2Audio/Dot.mp3";
+import duckAudio from "../assets/bs2/bs2Audio/Duck.mp3";
+import fanAudio from "../assets/bs2/bs2Audio/Fan.mp3";
+import fedAudio from "../assets/bs2/bs2Audio/Fed.mp3";
+import figAudio from "../assets/bs2/bs2Audio/Fig.mp3";
+import finAudio from "../assets/bs2/bs2Audio/Fin.mp3";
+import fogAudio from "../assets/bs2/bs2Audio/Fog.mp3";
+import foxAudio from "../assets/bs2/bs2Audio/Fox.mp3";
+import fuAudio from "../assets/bs2/bs2Audio/Fu.mp3";
+import gasAudio from "../assets/bs2/bs2Audio/Gas.mp3";
+import gemAudio from "../assets/bs2/bs2Audio/Gem.mp3";
+import getAudio from "../assets/bs2/bs2Audio/Get.mp3";
+import gumAudio from "../assets/bs2/bs2Audio/Gum.mp3";
+import hamAudio from "../assets/bs2/bs2Audio/Ham.mp3";
+import hatAudio from "../assets/bs2/bs2Audio/Hat.mp3";
+import henAudio from "../assets/bs2/bs2Audio/Hen.mp3";
+import hipAudio from "../assets/bs2/bs2Audio/Hip.mp3";
+import hopAudio from "../assets/bs2/bs2Audio/Hop.mp3";
+import hotAudio from "../assets/bs2/bs2Audio/Hot.mp3";
+import hubAudio from "../assets/bs2/bs2Audio/Hub.mp3";
+import hugAudio from "../assets/bs2/bs2Audio/Hug.mp3";
+import humAudio from "../assets/bs2/bs2Audio/Hum.mp3";
+import hutAudio from "../assets/bs2/bs2Audio/Hut.mp3";
+import jamAudio from "../assets/bs2/bs2Audio/Jam.mp3";
+import jetAudio from "../assets/bs2/bs2Audio/Jet.mp3";
+import jobAudio from "../assets/bs2/bs2Audio/Job.mp3";
+import jogAudio from "../assets/bs2/bs2Audio/Jog.mp3";
+import jugAudio from "../assets/bs2/bs2Audio/Jug.mp3";
+import kidAudio from "../assets/bs2/bs2Audio/Kid.mp3";
+import kitAudio from "../assets/bs2/bs2Audio/Kit.mp3";
+import lapAudio from "../assets/bs2/bs2Audio/Lap.mp3";
+import legAudio from "../assets/bs2/bs2Audio/Leg.mp3";
+import lidAudio from "../assets/bs2/bs2Audio/Lid.mp3";
+import lipAudio from "../assets/bs2/bs2Audio/Lip.mp3";
+import logAudio from "../assets/bs2/bs2Audio/Log.mp3";
+import manAudio from "../assets/bs2/bs2Audio/Man.mp3";
+import mapAudio from "../assets/bs2/bs2Audio/Map.mp3";
+import menAudio from "../assets/bs2/bs2Audio/Men.mp3";
+import momAudio from "../assets/bs2/bs2Audio/Mom.mp3";
+import mopAudio from "../assets/bs2/bs2Audio/Mop.mp3";
+import mudAudio from "../assets/bs2/bs2Audio/Mud.mp3";
+import mugAudio from "../assets/bs2/bs2Audio/Mug.mp3";
+import napAudio from "../assets/bs2/bs2Audio/Nap.mp3";
+import netAudio from "../assets/bs2/bs2Audio/Net.mp3";
+import notAudio from "../assets/bs2/bs2Audio/Not.mp3";
+import nutAudio from "../assets/bs2/bs2Audio/Nut.mp3";
+import panAudio from "../assets/bs2/bs2Audio/Pan.mp3";
+import pegAudio from "../assets/bs2/bs2Audio/Peg.mp3";
+import penAudio from "../assets/bs2/bs2Audio/Pen.mp3";
+import petAudio from "../assets/bs2/bs2Audio/Pet.mp3";
+import pigAudio from "../assets/bs2/bs2Audio/Pig.mp3";
+import pinAudio from "../assets/bs2/bs2Audio/Pin.mp3";
+import podAudio from "../assets/bs2/bs2Audio/Pod.mp3";
+import popAudio from "../assets/bs2/bs2Audio/Pop.mp3";
+import potAudio from "../assets/bs2/bs2Audio/Pot.mp3";
+import ratAudio from "../assets/bs2/bs2Audio/Rat.mp3";
+import redAudio from "../assets/bs2/bs2Audio/Red.mp3";
+import ripAudio from "../assets/bs2/bs2Audio/Rip.mp3";
+import rodAudio from "../assets/bs2/bs2Audio/Rod.mp3";
+import rugAudio from "../assets/bs2/bs2Audio/Rug.mp3";
+import runAudio from "../assets/bs2/bs2Audio/Run.mp3";
+import sitAudio from "../assets/bs2/bs2Audio/Sit.mp3";
+import sunAudio from "../assets/bs2/bs2Audio/Sun.mp3";
+import tagAudio from "../assets/bs2/bs2Audio/Tag.mp3";
+import tenAudio from "../assets/bs2/bs2Audio/Ten.mp3";
+import tinAudio from "../assets/bs2/bs2Audio/Tin.mp3";
+import topAudio from "../assets/bs2/bs2Audio/Top.mp3";
+import tubAudio from "../assets/bs2/bs2Audio/Tub.mp3";
+import tugAudio from "../assets/bs2/bs2Audio/Tug.mp3";
+import vanAudio from "../assets/bs2/bs2Audio/Van.mp3";
+import vetAudio from "../assets/bs2/bs2Audio/Vet.mp3";
+import waxAudio from "../assets/bs2/bs2Audio/Wax.mp3";
+import webAudio from "../assets/bs2/bs2Audio/Web.mp3";
+import wedAudio from "../assets/bs2/bs2Audio/Wed.mp3";
+import wetAudio from "../assets/bs2/bs2Audio/Wet.mp3";
+import wigAudio from "../assets/bs2/bs2Audio/Wig.mp3";
+import winAudio from "../assets/bs2/bs2Audio/Win.mp3";
+import zipAudio from "../assets/bs2/bs2Audio/Zip.mp3";
+
 export const wordCvc3 = [
-	{ image: Bag, id: "bag" },
-	{ image: Ban, id: "ban" },
-	{ image: Bed, id: "bed" },
-	{ image: Beg, id: "beg" },
-	{ image: Big, id: "big" },
-	{ image: Bin, id: "bin" },
-	{ image: Bug, id: "bug" },
-	{ image: Cop, id: "cop" },
-	{ image: Cut, id: "cut" },
-	{ image: Dig, id: "dig" },
-	{ image: Dot, id: "dot" },
-	{ image: Fan, id: "fan" },
-	{ image: Far, id: "far" },
-	{ image: Fat, id: "fat" },
-	{ image: Gap, id: "gap" },
-	{ image: Hen, id: "hen" },
-	{ image: Hop, id: "hop" },
-	{ image: Hot, id: "hot" },
-	{ image: Hug, id: "hug" },
-	{ image: Hut, id: "hut" },
-	{ image: Jab, id: "jab" },
-	{ image: Jar, id: "jar" },
-	{ image: Jet, id: "jet" },
-	{ image: Leg, id: "leg" },
-	{ image: Mad, id: "mad" },
-	{ image: Man, id: "man" },
-	{ image: mat, id: "mat" },
-	{ image: Mop, id: "mop" },
-	{ image: Mug, id: "mug" },
-	{ image: Nap, id: "nap" },
-	{ image: Not, id: "not" },
-	{ image: Peg, id: "peg" },
-	{ image: Pen, id: "pen" },
-	{ image: Pet, id: "pet" },
-	{ image: Pig, id: "pig" },
-	{ image: Pin, id: "pin" },
-	{ image: Pop, id: "pop" },
-	{ image: Pot, id: "pot" },
-	{ image: Rag, id: "rag" },
-	{ image: Red, id: "red" },
-	{ image: Rub, id: "rub" },
-	{ image: Run, id: "run" },
-	{ image: Sad, id: "sad" },
-	{ image: Sit, id: "sit" },
-	{ image: Sun, id: "sun" },
-	{ image: Ten, id: "ten" },
-	{ image: Top, id: "top" },
-	{ image: Tub, id: "tub" },
-	{ image: Tug, id: "tug" },
-	{ image: Van, id: "van" },
-	{ image: War, id: "war" },
-	{ image: Wed, id: "wed" },
-	{ image: Wet, id: "wet" },
-	{ image: Win, id: "win" },
-	{ image: Zip, id: "zip" },
+	{ image: Bag, id: "bag", audio: bagAudio },
+	// { image: Ban, id: "ban", audio: batAudio }, // Assuming you meant "ban" as "bat"
+	{ image: Bed, id: "bed", audio: bedAudio },
+	{ image: Beg, id: "beg", audio: begAudio },
+	{ image: Big, id: "big", audio: bigAudio },
+	{ image: Bin, id: "bin", audio: binAudio },
+	{ image: Bug, id: "bug", audio: bugAudio },
+	{ image: Cop, id: "cop", audio: copAudio },
+	{ image: Cut, id: "cut", audio: cutAudio },
+	// { image: Dig, id: "dig", audio: dipAudio }, // Assuming "dig" is using "dipAudio"
+	{ image: Dot, id: "dot", audio: dotAudio },
+	{ image: Fan, id: "fan", audio: fanAudio },
+	// { image: Far, id: "far", audio: fedAudio }, // Assuming "far" uses fedAudio
+	// { image: Fat, id: "fat", audio: figAudio }, // Assuming "fat" uses figAudio
+	// { image: Gap, id: "gap", audio: gasAudio }, // Assuming "gap" uses gasAudio
+	{ image: Hen, id: "hen", audio: henAudio },
+	{ image: Hop, id: "hop", audio: hopAudio },
+	{ image: Hot, id: "hot", audio: hotAudio },
+	{ image: Hug, id: "hug", audio: hugAudio },
+	{ image: Hut, id: "hut", audio: hutAudio },
+	// { image: Jab, id: "jab", audio: jamAudio }, // Assuming "jab" uses jamAudio
+	// { image: Jar, id: "jar", audio: jobAudio }, // Assuming "jar" uses jobAudio
+	{ image: Jet, id: "jet", audio: jetAudio },
+	{ image: Leg, id: "leg", audio: legAudio },
+	// { image: Mad, id: "mad", audio: manAudio }, // Assuming "mad" uses manAudio
+	{ image: Man, id: "man", audio: manAudio },
+	// { image: Mat, id: "mat", audio: mapAudio }, // Assuming "mat" uses mapAudio
+	{ image: Mop, id: "mop", audio: mopAudio },
+	{ image: Mug, id: "mug", audio: mugAudio },
+	{ image: Nap, id: "nap", audio: napAudio },
+	{ image: Not, id: "not", audio: notAudio },
+	{ image: Peg, id: "peg", audio: pegAudio },
+	{ image: Pen, id: "pen", audio: penAudio },
+	{ image: Pet, id: "pet", audio: petAudio },
+	{ image: Pig, id: "pig", audio: pigAudio },
+	{ image: Pin, id: "pin", audio: pinAudio },
+	{ image: Pop, id: "pop", audio: popAudio },
+	{ image: Pot, id: "pot", audio: potAudio },
+	// { image: Rag, id: "rag", audio: ratAudio }, // Assuming "rag" uses ratAudio
+	{ image: Red, id: "red", audio: redAudio },
+	// { image: Rub, id: "rub", audio: rugAudio }, // Assuming "rub" uses rugAudio
+	{ image: Run, id: "run", audio: runAudio },
+	// { image: Sad, id: "sad", audio: sitAudio }, // Assuming "sad" uses sitAudio
+	{ image: Sit, id: "sit", audio: sitAudio },
+	{ image: Sun, id: "sun", audio: sunAudio },
+	{ image: Ten, id: "ten", audio: tenAudio },
+	{ image: Top, id: "top", audio: topAudio },
+	{ image: Tub, id: "tub", audio: tubAudio },
+	{ image: Tug, id: "tug", audio: tugAudio },
+	{ image: Van, id: "van", audio: vanAudio },
+	// { image: War, id: "war", audio: waxAudio }, // Assuming "war" uses waxAudio
+	{ image: Wed, id: "wed", audio: wedAudio },
+	{ image: Wet, id: "wet", audio: wetAudio },
+	{ image: Win, id: "win", audio: winAudio },
+	{ image: Zip, id: "zip", audio: zipAudio },
 ];
 
 const longVowels = [
