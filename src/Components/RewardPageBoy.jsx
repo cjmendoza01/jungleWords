@@ -26,7 +26,7 @@ const RewardPageBoy = () => {
         src={currentVideo}
         onEnded={handleVideoEnded}
         autoPlay
-        muted
+        unmuted
       />
      
     </div>

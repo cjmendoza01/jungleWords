@@ -108,6 +108,7 @@ function App() {
 			<Route path="/GirlIS3intro" element={<GirlIS3intro />} />
 			<Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />
 			<Route path="/AdvanceLevelGirl" element={<AdvanceLevelGirl />} />
+			<Route path="/IntermediateLevelGirl" element={<IntermediateLevelGirl />} />
 			<Route path="/BoyADV1intro" element={<BoyADV1intro />} />
 			<Route path="/GirlADV1intro" element={<GirlADV1intro />} />
 			<Route path="/BoyADV2intro" element={<BoyADV2intro />} />

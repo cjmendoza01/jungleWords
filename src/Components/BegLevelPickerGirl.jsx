@@ -35,7 +35,7 @@ const BegLevelPickerGirl = () => {
     } else if (selectedLevel === 'Intermediate' && accessCode === 'SanDiegoJWInt') {
       navigate('/IntermediateLevelGirl');
     } else if (selectedLevel === 'Advanced' && accessCode === 'SanDiegoJWAdv') {
-      navigate('/AdvancedPage');
+      navigate('/AdvanceLevelGirl');
     } else {
       alert('Please select a level and enter the correct access code');
     }
