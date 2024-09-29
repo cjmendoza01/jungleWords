@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
-import { wordCvc4 } from "../utils/imageAssetPicker";
+import { wordCvc4, foodItemsList } from "../utils/imageAssetPicker";
 
 const IntermidiateStage2 = () => {
 	const location = useLocation();
@@ -30,7 +30,7 @@ const IntermidiateStage2 = () => {
 			return selected;
 		}
 
-		const x = getRandomElements(wordCvc4, 6); // Adjust to select 6 items
+		const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
 		setFoodItems(x);
 	}, [wordCvc4]);
 
