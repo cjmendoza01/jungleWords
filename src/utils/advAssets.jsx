@@ -34,12 +34,11 @@ import Truck from "../assets/advs1/Truck.png";
 
 // Imports Advance Stage 1 audio
 
-
 // Imports Advance Stage 2 items
 import bikeWheels from "../assets/advs2/bikeWheels.png";
 import birdTrees from "../assets/advs2/birdTrees.png";
 import bookShelf from "../assets/advs2/bookShelf.png";
-import bowlMilk from "../assets/advs2/bowlMilk.png";   
+import bowlMilk from "../assets/advs2/bowlMilk.png";
 import carGreen from "../assets/advs2/carGreen.png";
 import catHouse from "../assets/advs2/catHouse.png";
 import chairSit from "../assets/advs2/chairSit.png";
@@ -53,46 +52,44 @@ import dogWalk from "../assets/advs2/dogWalk.png";
 import drawsPencil from "../assets/advs2/drawsPencil.png";
 import hatSun from "../assets/advs2/hatSun.png";
 import icecreamSun from "../assets/advs2/icecreamSun.png";
-import kicksBall from "../assets/advs2/kicksBall.png";  
+import kicksBall from "../assets/advs2/kicksBall.png";
 import momTable from "../assets/advs2/momTable.png";
-import sunBlue from "../assets/advs2/sunBlue.png"; 
+import sunBlue from "../assets/advs2/sunBlue.png";
 import picnicPark from "../assets/advs2/picnicPark.png";
 import readBed from "../assets/advs2/readBed.png";
-import runsBus from "../assets/advs2/runsBus.png";  
+import runsBus from "../assets/advs2/runsBus.png";
 import singsFamily from "../assets/advs2/singsFamily.png";
 import starsSky from "../assets/advs2/starsSky.png";
 import swingsSlides from "../assets/advs2/swingsSlides.png";
 
 // Imports Advance Stage 2 audio
 
-import BikeWheels from "../assets/advs2/adv2audio/BikeWheels.mp3";
-import BirdTrees from "../assets/advs2/BirdTrees.mp3";
-import BookShelf from "../assets/advs2/BookShelf.mp3";
-import BowlMilk from "../assets/advs2/BowlMilk.mp3";   
-import CarGreen from "../assets/advs2/arGreen.mp3";
-import CatHouse from "../assets/advs2/CatHouse.mp3";
-import ChairSit from "../assets/advs2/ChairSit.mp3";
-import CleansRoom from "../assets/advs2/CleansRoom.mp3";
-import ClockWall from "../assets/advs2/ClockWall.mp3";
-import CookiesFriends from "../assets/advs2/CookiesFriends.mp3";
-import CupChocolate from "../assets/advs2/CupChocolate.mp3";
-import DogBall from "../assets/advs2/DogBall.mp3";
-import DogDoor from "../assets/advs2/DogDoor.mp3";
-import DogWalk from "../assets/advs2/DogWalk.mp3";
-import DrawsPencil from "../assets/advs2/DrawsPencil.mp3";
-import HatSun from "../assets/advs2/HatSun.mp3";
-import IcecreamSun from "../assets/advs2/IcecreamSun.mp3";
-import KicksBall from "../assets/advs2/KicksBall.mp3";  
-import MomTable from "../assets/advs2/MomTable.mp3";
-import SunBlue from "../assets/advs2/SunBlue.mp3"; 
-import PicnicPark from "../assets/advs2/PicnicPark.mp3";
-import ReadBed from "../assets/advs2/ReadBed.mp3";
-import RunsBus from "../assets/advs2/RunsBus.mp3";  
-import SingsFamily from "../assets/advs2/SingsFamily.mp3";
-import StarsSky from "../assets/advs2/StarsSky.mp3";
-import SwingsSlides from "../assets/advs2/SwingsSlides.mp3";
-
-
+import BikeWheels from "../assets/advs2/audio/BikeWheels.mp3";
+import BirdTrees from "../assets/advs2/audio/BirdTrees.mp3";
+import BookShelf from "../assets/advs2/audio/BookShelf.mp3";
+import BowlMilk from "../assets/advs2/audio/BowlMilk.mp3";
+import CarGreen from "../assets/advs2/audio/CarGreen.mp3";
+import CatHouse from "../assets/advs2/audio/CatHouse.mp3";
+import ChairSit from "../assets/advs2/audio/ChairSit.mp3";
+import CleansRoom from "../assets/advs2/audio/CleansRoom.mp3";
+import ClockWall from "../assets/advs2/audio/ClockWall.mp3";
+import CookiesFriends from "../assets/advs2/audio/CookiesFriends.mp3";
+import CupChocolate from "../assets/advs2/audio/CupChocolate.mp3";
+import DogBall from "../assets/advs2/audio/DogBall.mp3";
+import DogDoor from "../assets/advs2/audio/DogDoor.mp3";
+import DogWalk from "../assets/advs2/audio/DogWalk.mp3";
+import DrawsPencil from "../assets/advs2/audio/DrawsPencil.mp3";
+import HatSun from "../assets/advs2/audio/HatSun.mp3";
+import IcecreamSun from "../assets/advs2/audio/IceCreamSun.mp3";
+import KicksBall from "../assets/advs2/audio/KicksBall.mp3";
+import MomTable from "../assets/advs2/audio/MomTable.mp3";
+import SunBlue from "../assets/advs2/audio/SunBlue.mp3";
+import PicnicPark from "../assets/advs2/audio/PicnicPark.mp3";
+import ReadBed from "../assets/advs2/audio/ReadBed.mp3";
+import RunsBus from "../assets/advs2/audio/RunsBus.mp3";
+import SingsFamily from "../assets/advs2/audio/SingsFamily.mp3";
+import StarsSky from "../assets/advs2/audio/StarsSky.mp3";
+import SwingsSlides from "../assets/advs2/audio/SwingsSlides.mp3";
 
 export const itemsListAdvs1 = [
 	{ image: Apple, id: "apple" },

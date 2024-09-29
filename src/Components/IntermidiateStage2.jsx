@@ -1,15 +1,18 @@
 import { DndContext, useDraggable, useDroppable } from "@dnd-kit/core";
 import { useEffect, useRef, useState } from "react";
-import "./BeginnerStage1Boy.css";
+import "./BeginnerStage1Girl.css";
 import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
-import { foodItemsList } from "../utils/imageAssetPicker";
+import { wordCvc4 } from "../utils/imageAssetPicker";
 
-const BeginnerStage1Boy = () => {
+const IntermidiateStage2 = () => {
+	const location = useLocation();
+	const queryParams = new URLSearchParams(location.search);
+	const qGender = queryParams.get("gender");
 	const navigate = useNavigate();
 	// Food items to display in the side and to be dragged
 
@@ -27,9 +30,9 @@ const BeginnerStage1Boy = () => {
 			return selected;
 		}
 
-		const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
+		const x = getRandomElements(wordCvc4, 6); // Adjust to select 6 items
 		setFoodItems(x);
-	}, [foodItemsList]);
+	}, [wordCvc4]);
 
 	const [currentFoodItem, setCurrentFoodItem] = useState(null);
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
@@ -76,7 +79,7 @@ const BeginnerStage1Boy = () => {
 
 			if (!wrongItem) {
 				setTimeout(() => {
-					setScale((scale) => scale + 0.05);
+					setScale((scale) => scale + 0.15);
 				}, 1000);
 
 				let right = rightCounter + 1;
@@ -92,7 +95,13 @@ const BeginnerStage1Boy = () => {
 
 			if (itD === 6) {
 				setTimeout(() => {
-					navigate("/SanderTY");
+					let gd = "boy";
+
+					if (qGender) {
+						gd = qGender.toLowerCase();
+					}
+
+					navigate(`/IS2TY?gender=${gd}`);
 				}, 1000);
 			}
 		}
@@ -133,10 +142,23 @@ const BeginnerStage1Boy = () => {
 						<DroppableZone scale={scale}>
 							{isFoodItemDropped && (
 								<div className="dropped-item">
-									<img src={currentFoodItem} alt="dropped-item" />
+									<img
+										src={currentFoodItem}
+										alt="dropped-item"
+										style={{
+											width: "100%",
+											height: "100%",
+											objectFit: "contain",
+										}}
+									/>
 								</div>
 							)}
 						</DroppableZone>
+						<div
+							className={
+								qGender === "girl" ? "droppable-zone-girl" : "droppable-zone"
+							}
+						></div>
 					</div>
 
 					{/* Container for the food items */}
@@ -194,7 +216,7 @@ const BeginnerStage1Boy = () => {
 	);
 };
 
-export default BeginnerStage1Boy;
+export default IntermidiateStage2;
 
 // Component for the food item
 const FoodItem = ({ id, modalChoices, children }) => {
@@ -231,7 +253,7 @@ const DroppableZone = (props) => {
 	};
 
 	return (
-		<div style={style} className="droppable-zone" ref={setNodeRef}>
+		<div style={style} className="droppable-zone-bunny" ref={setNodeRef}>
 			{props.children}
 		</div>
 	);

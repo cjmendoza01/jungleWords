@@ -94,8 +94,9 @@ import AtisAudio from "../assets/foods/audio/Atis.mp3";
 import BananaAudio from "../assets/foods/audio/Banana.mp3";
 import BeansAudio from "../assets/foods/audio/Beans.mp3";
 import BiscuitAudio from "../assets/foods/audio/Biscuit.mp3";
+import ButterAudio from "../assets/foods/audio/Butter.mp3";
 import BreadAudio from "../assets/foods/audio/Bread.mp3";
-import CarrotsAudio from "../assets/foods/audio/Carrots.mp3";
+import CarrotsAudio from "../assets/foods/audio/Carrot.mp3";
 import ColaAudio from "../assets/foods/audio/Cola.mp3";
 import CookieAudio from "../assets/foods/audio/Cookie.mp3";
 import CornAudio from "../assets/foods/audio/Corn.mp3";
@@ -107,7 +108,7 @@ import EggplantAudio from "../assets/foods/audio/Eggplant.mp3";
 import FishAudio from "../assets/foods/audio/Fish.mp3";
 import FlanAudio from "../assets/foods/audio/Flan.mp3";
 import GarlicAudio from "../assets/foods/audio/Garlic.mp3";
-import GrapesAudio from "../assets/foods/audio/Grapes.mp3";
+import GrapesAudio from "../assets/foods/audio/Grape.mp3";
 import GuavaAudio from "../assets/foods/audio/Guava.mp3";
 import HamAudio from "../assets/foods/audio/Ham.mp3";
 import HoneyAudio from "../assets/foods/audio/Honey.mp3";
@@ -132,7 +133,7 @@ import NoodlesAudio from "../assets/foods/audio/Noodles.mp3";
 import NutsAudio from "../assets/foods/audio/Nuts.mp3";
 import OatmealAudio from "../assets/foods/audio/Oatmeal.mp3";
 import OliveAudio from "../assets/foods/audio/Olive.mp3";
-import OmeletAudio from "../assets/foods/audio/Omelet.mp3";
+import OmeletteAudio from "../assets/foods/audio/Omelette.mp3";
 import OnionAudio from "../assets/foods/audio/Onion.mp3";
 import OrangeAudio from "../assets/foods/audio/Orange.mp3";
 import PapayaAudio from "../assets/foods/audio/Papaya.mp3";
@@ -143,7 +144,7 @@ import PearAudio from "../assets/foods/audio/Pear.mp3";
 import PineappleAudio from "../assets/foods/audio/Pineapple.mp3";
 import PumpkinAudio from "../assets/foods/audio/Pumpkin.mp3";
 import QuailAudio from "../assets/foods/audio/Quail.mp3";
-import RadishAudio from "../assets/foods/audio/Radish.mp3";
+import RadishAudio from "../assets/foods/audio/Raddish.mp3";
 import RaisinAudio from "../assets/foods/audio/Raisin.mp3";
 import RambutanAudio from "../assets/foods/audio/Rambutan.mp3";
 import RiceAudio from "../assets/foods/audio/Rice.mp3";
@@ -170,7 +171,7 @@ import YamAudio from "../assets/foods/audio/Yam.mp3";
 import YemaAudio from "../assets/foods/audio/Yema.mp3";
 import YogurtAudio from "../assets/foods/audio/Yogurt.mp3";
 import YolkAudio from "../assets/foods/audio/Yolk.mp3";
-import ZestoAudio from "../assets/foods/audio/Zesto.mp3";
+import ZestoAudio from "../assets/foods/audio/ZestO.mp3";
 
 // Import all image letters
 import LetterA from "../assets/letters/A.png";
@@ -283,17 +284,17 @@ const BeginnerStage1Boy = () => {
 				{ image: LetterB, isCorrect: true },
 			],
 		},
-		// {
-		// 	image: Butter,
-		// 	audio: ButterAudio,
-		// 	id: "butter",
-		// 	isDisplayed: true,
-		// 	modalChoices: [
-		// 		{ image: LetterK, isCorrect: false },
-		// 		{ image: LetterB, isCorrect: true },
-		// 		{ image: LetterG, isCorrect: false },
-		// 	],
-		// },
+		{
+			image: Butter,
+			audio: ButterAudio,
+			id: "butter",
+			isDisplayed: true,
+			modalChoices: [
+				{ image: LetterK, isCorrect: false },
+				{ image: LetterB, isCorrect: true },
+				{ image: LetterG, isCorrect: false },
+			],
+		},
 		{
 			image: Carrots,
 			audio: CarrotsAudio,
@@ -713,17 +714,17 @@ const BeginnerStage1Boy = () => {
 				{ image: LetterA, isCorrect: false },
 			],
 		},
-		// {
-		// 	image: Omelet,
-		// 	audio: OmeletAudio,
-		// 	id: "omelet",
-		// 	isDisplayed: true,
-		// 	modalChoices: [
-		// 		{ image: LetterO, isCorrect: true },
-		// 		{ image: LetterC, isCorrect: false },
-		// 		{ image: LetterA, isCorrect: false },
-		// 	],
-		// },
+		{
+			image: Omelette,
+			audio: OmeletteAudio,
+			id: "omelet",
+			isDisplayed: true,
+			modalChoices: [
+				{ image: LetterO, isCorrect: true },
+				{ image: LetterC, isCorrect: false },
+				{ image: LetterA, isCorrect: false },
+			],
+		},
 		{
 			image: Onion,
 			audio: OnionAudio,
@@ -1243,6 +1244,22 @@ const BeginnerStage1Boy = () => {
 
 	return (
 		<main className="main">
+			<video
+				autoPlay
+				muted
+				loop
+				style={{
+					position: "fixed",
+					top: 0,
+					left: 0,
+					width: "100%",
+					height: "100%",
+					objectFit: "cover",
+				}}
+			>
+				<source src="/bgstage1.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
 			<div className="drag-n-drop-container">
 				<DndContext onDragEnd={handleDragEnd}>
 					{/* Container for the droppable zone */}
@@ -1348,12 +1365,12 @@ const DroppableZone = (props) => {
 		id: "droppable-zone",
 	});
 	const style = {
-		backgroundColor: isOver ? "green" : undefined,
+		// backgroundColor: isOver ? "green" : undefined,
 		transform: "scale(" + props.scale + ")",
 	};
 
 	return (
-		<div style={style} className="droppable-zone" ref={setNodeRef}>
+		<div style={style} className="droppable-zone-girl" ref={setNodeRef}>
 			{props.children}
 		</div>
 	);
