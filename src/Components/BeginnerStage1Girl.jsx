@@ -1233,6 +1233,7 @@ const BeginnerStage1Boy = () => {
 		if (isModalAnswerCorrect && !modalActive) {
 			// Remove the dropped item from the droppable zone after 1 second
 			setTimeout(() => {
+				setModalData({ item: "", choices: [], audio: null });
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
 			}, 0.5 * 1000);

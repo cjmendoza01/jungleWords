@@ -72,6 +72,7 @@ const BeginnerStage1Boy = () => {
 	useEffect(() => {
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
 			setTimeout(() => {
+				setModalData({ item: "", choices: [], audio: null });
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
 			}, 500);
@@ -283,7 +284,7 @@ const ModalChoice = ({
 				}
 			}}
 		>
-			{image ? <img src={image} alt="letter" /> : label}
+			{image ? <img src={image} alt="letter" /> : null}
 		</div>
 	);
 };
