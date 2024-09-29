@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
-import { foodItemsList, randonFoodGetter } from "../utils/imageAssetPicker";
+import { foodItemsList, randonFoodGetter } from "../utils/dndItemsGame";
 
 import BoyImg from "../assets/boy.png";
 import GirlImg from "../assets/girl.png";

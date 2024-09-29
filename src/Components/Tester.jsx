@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Scanner } from "@yudiel/react-qr-scanner";
-import { qrQsGetter, randonFoodGetter } from "../utils/imageAssetPicker";
+import { qrQsGetter } from "../utils/imageAssetPicker";
 
 import startButtonImage from "../assets/buttons&dialogues/start.png";
 import CheckModal from "./Modals/CheckModal";

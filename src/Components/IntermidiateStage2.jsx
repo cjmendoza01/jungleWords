@@ -7,7 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
-import { wordCvc4, foodItemsList } from "../utils/imageAssetPicker";
+import { foodItemsList } from "../utils/dndItemsGame";
 
 const IntermidiateStage2 = () => {
 	const location = useLocation();

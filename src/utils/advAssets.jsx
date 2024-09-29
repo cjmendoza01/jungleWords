@@ -33,6 +33,38 @@ import Tree from "../assets/advs1/Tree.png";
 import Truck from "../assets/advs1/Truck.png";
 
 // Imports Advance Stage 1 audio
+// import appleAudio from "../assets/advs1/audio/Apple.mp3";
+// import ballAudio from "../assets/advs1/audio/Ball.mp3";
+import bananaAudio from "../assets/advs1/audio/banana.mp3";
+import bearAudio from "../assets/advs1/audio/bear.mp3";
+import birdAudio from "../assets/advs1/audio/bird.mp3";
+import blanketAudio from "../assets/advs1/audio/blanket.mp3";
+import blueBallAudio from "../assets/advs1/audio/blueball.mp3";
+import cakeAudio from "../assets/advs1/audio/cake.mp3";
+import carAudio from "../assets/advs1/audio/car.mp3";
+import catAudio from "../assets/advs1/audio/cat.mp3";
+import chairAudio from "../assets/advs1/audio/chair.mp3";
+import clownAudio from "../assets/advs1/audio/clown.mp3";
+import dogAudio from "../assets/advs1/audio/dog.mp3";
+import duckAudio from "../assets/advs1/audio/duck.mp3";
+import fishAudio from "../assets/advs1/audio/fish.mp3";
+import flowerAudio from "../assets/advs1/audio/flower.mp3";
+import frogAudio from "../assets/advs1/audio/frog.mp3";
+import grapesAudio from "../assets/advs1/audio/kite.mp3"; // Note: Make sure "kite.mp3" is intentional
+import miceAudio from "../assets/advs1/audio/mice.mp3";
+import monkeyAudio from "../assets/advs1/audio/monkey.mp3";
+import orangeAudio from "../assets/advs1/audio/orange.mp3";
+import pillowAudio from "../assets/advs1/audio/pillow.mp3";
+import rabbitAudio from "../assets/advs1/audio/rabbit.mp3";
+import saladAudio from "../assets/advs1/audio/salad.mp3";
+import shoesAudio from "../assets/advs1/audio/shoes.mp3";
+// import skyAudio from "../assets/advs1/audio/sky.mp3";
+import sockAudio from "../assets/advs1/audio/sock.mp3";
+import starAudio from "../assets/advs1/audio/star.mp3";
+// import sunAudio from "../assets/advs1/audio/sun.mp3";
+import sweaterAudio from "../assets/advs1/audio/sweater.mp3";
+import treeAudio from "../assets/advs1/audio/tree.mp3";
+import truckAudio from "../assets/advs1/audio/truck.mp3";
 
 // Imports Advance Stage 2 items
 import bikeWheels from "../assets/advs2/bikeWheels.png";
@@ -64,95 +96,190 @@ import swingsSlides from "../assets/advs2/swingsSlides.png";
 
 // Imports Advance Stage 2 audio
 
-import BikeWheels from "../assets/advs2/audio/BikeWheels.mp3";
-import BirdTrees from "../assets/advs2/audio/BirdTrees.mp3";
-import BookShelf from "../assets/advs2/audio/BookShelf.mp3";
-import BowlMilk from "../assets/advs2/audio/BowlMilk.mp3";
-import CarGreen from "../assets/advs2/audio/CarGreen.mp3";
-import CatHouse from "../assets/advs2/audio/CatHouse.mp3";
-import ChairSit from "../assets/advs2/audio/ChairSit.mp3";
-import CleansRoom from "../assets/advs2/audio/CleansRoom.mp3";
-import ClockWall from "../assets/advs2/audio/ClockWall.mp3";
-import CookiesFriends from "../assets/advs2/audio/CookiesFriends.mp3";
-import CupChocolate from "../assets/advs2/audio/CupChocolate.mp3";
-import DogBall from "../assets/advs2/audio/DogBall.mp3";
-import DogDoor from "../assets/advs2/audio/DogDoor.mp3";
-import DogWalk from "../assets/advs2/audio/DogWalk.mp3";
-import DrawsPencil from "../assets/advs2/audio/DrawsPencil.mp3";
-import HatSun from "../assets/advs2/audio/HatSun.mp3";
-import IcecreamSun from "../assets/advs2/audio/IceCreamSun.mp3";
-import KicksBall from "../assets/advs2/audio/KicksBall.mp3";
-import MomTable from "../assets/advs2/audio/MomTable.mp3";
-import SunBlue from "../assets/advs2/audio/SunBlue.mp3";
-import PicnicPark from "../assets/advs2/audio/PicnicPark.mp3";
-import ReadBed from "../assets/advs2/audio/ReadBed.mp3";
-import RunsBus from "../assets/advs2/audio/RunsBus.mp3";
-import SingsFamily from "../assets/advs2/audio/SingsFamily.mp3";
-import StarsSky from "../assets/advs2/audio/StarsSky.mp3";
-import SwingsSlides from "../assets/advs2/audio/SwingsSlides.mp3";
+import BikeWheelsAudio from "../assets/advs2/audio/BikeWheels.mp3";
+import BirdTreesAudio from "../assets/advs2/audio/BirdTrees.mp3";
+import BookShelfAudio from "../assets/advs2/audio/BookShelf.mp3";
+import BowlMilkAudio from "../assets/advs2/audio/BowlMilk.mp3";
+import CarGreenAudio from "../assets/advs2/audio/CarGreen.mp3";
+import CatHouseAudio from "../assets/advs2/audio/CatHouse.mp3";
+import ChairSitAudio from "../assets/advs2/audio/ChairSit.mp3";
+import CleansRoomAudio from "../assets/advs2/audio/CleansRoom.mp3";
+import ClockWallAudio from "../assets/advs2/audio/ClockWall.mp3";
+import CookiesFriendsAudio from "../assets/advs2/audio/CookiesFriends.mp3";
+import CupChocolateAudio from "../assets/advs2/audio/CupChocolate.mp3";
+import DogBallAudio from "../assets/advs2/audio/DogBall.mp3";
+import DogDoorAudio from "../assets/advs2/audio/DogDoor.mp3";
+import DogWalkAudio from "../assets/advs2/audio/DogWalk.mp3";
+import DrawsPencilAudio from "../assets/advs2/audio/DrawsPencil.mp3";
+import HatSunAudio from "../assets/advs2/audio/HatSun.mp3";
+import IcecreamSunAudio from "../assets/advs2/audio/IceCreamSun.mp3";
+import KicksBallAudio from "../assets/advs2/audio/KicksBall.mp3";
+import MomTableAudio from "../assets/advs2/audio/MomTable.mp3";
+import SunBlueAudio from "../assets/advs2/audio/SunBlue.mp3";
+import PicnicParkAudio from "../assets/advs2/audio/PicnicPark.mp3";
+import ReadBedAudio from "../assets/advs2/audio/ReadBed.mp3";
+import RunsBusAudio from "../assets/advs2/audio/RunsBus.mp3";
+import SingsFamilyAudio from "../assets/advs2/audio/SingsFamily.mp3";
+import StarsSkyAudio from "../assets/advs2/audio/StarsSky.mp3";
+import SwingsSlidesAudio from "../assets/advs2/audio/SwingsSlides.mp3";
 
 export const itemsListAdvs1 = [
-	{ image: Apple, id: "apple" },
-	{ image: Ball, id: "ball" },
-	{ image: Banana, id: "banana" },
-	{ image: Bear, id: "bear" },
-	{ image: Bird, id: "bird" },
-	{ image: Blanket, id: "blanket" },
-	{ image: BlueBall, id: "blue_ball" },
-	{ image: Cake, id: "cake" },
-	{ image: Car, id: "car" },
-	{ image: Cat, id: "cat" },
-	{ image: Chair, id: "chair" },
-	{ image: Clown, id: "clown" },
-	{ image: Dog, id: "dog" },
-	{ image: Duck, id: "duck" },
-	{ image: Fish, id: "fish" },
-	{ image: Flower, id: "flower" },
-	{ image: Frog, id: "frog" },
-	{ image: Grapes, id: "grapes" },
-	{ image: Mice, id: "mice" },
-	{ image: Monkey, id: "monkey" },
-	{ image: Orange, id: "orange" },
-	{ image: Pillow, id: "pillow" },
-	{ image: Rabbit, id: "rabbit" },
-	{ image: Salad, id: "salad" },
-	{ image: Shoes, id: "shoes" },
-	{ image: Sky, id: "sky" },
-	{ image: Sock, id: "sock" },
-	{ image: Star, id: "star" },
-	{ image: Sun, id: "sun" },
-	{ image: Sweater, id: "sweater" },
-	{ image: Tree, id: "tree" },
-	{ image: Truck, id: "truck" },
+	// { image: Apple, id: "apple", audio: appleAudio },
+	// { image: Ball, id: "ball", audio: ballAudio },
+	{ image: Banana, id: "banana", audio: bananaAudio },
+	{ image: Bear, id: "bear", audio: bearAudio },
+	{ image: Bird, id: "bird", audio: birdAudio },
+	{ image: Blanket, id: "blanket", audio: blanketAudio },
+	{ image: BlueBall, id: "blue_ball", audio: blueBallAudio },
+	{ image: Cake, id: "cake", audio: cakeAudio },
+	{ image: Car, id: "car", audio: carAudio },
+	{ image: Cat, id: "cat", audio: catAudio },
+	{ image: Chair, id: "chair", audio: chairAudio },
+	{ image: Clown, id: "clown", audio: clownAudio },
+	{ image: Dog, id: "dog", audio: dogAudio },
+	{ image: Duck, id: "duck", audio: duckAudio },
+	{ image: Fish, id: "fish", audio: fishAudio },
+	{ image: Flower, id: "flower", audio: flowerAudio },
+	{ image: Frog, id: "frog", audio: frogAudio },
+	{ image: Grapes, id: "grapes", audio: grapesAudio }, // Note: you imported "Kite" audio for grapes, ensure it's correct
+	{ image: Mice, id: "mice", audio: miceAudio },
+	{ image: Monkey, id: "monkey", audio: monkeyAudio },
+	{ image: Orange, id: "orange", audio: orangeAudio },
+	{ image: Pillow, id: "pillow", audio: pillowAudio },
+	{ image: Rabbit, id: "rabbit", audio: rabbitAudio },
+	{ image: Salad, id: "salad", audio: saladAudio },
+	{ image: Shoes, id: "shoes", audio: shoesAudio },
+	// { image: Sky, id: "sky", audio: skyAudio },
+	{ image: Sock, id: "sock", audio: sockAudio },
+	{ image: Star, id: "star", audio: starAudio },
+	// { image: Sun, id: "sun", audio: sunAudio },
+	{ image: Sweater, id: "sweater", audio: sweaterAudio },
+	{ image: Tree, id: "tree", audio: treeAudio },
+	{ image: Truck, id: "truck", audio: truckAudio },
 ];
 
 export const itemsListAdvs2 = [
-	{ image: bikeWheels, id: "bikeWheels", ans: ["bike", "wheels"] },
-	{ image: birdTrees, id: "birdTrees", ans: ["bird", "trees"] },
-	{ image: bookShelf, id: "bookShelf", ans: ["book", "shelf"] },
-	{ image: bowlMilk, id: "bowlMilk", ans: ["bowl", "milk"] },
-	{ image: carGreen, id: "carGreen", ans: ["car", "green"] },
-	{ image: catHouse, id: "catHouse", ans: ["cat", "house"] },
-	{ image: chairSit, id: "chairSit", ans: ["chair", "sit"] },
-	{ image: cleansRoom, id: "cleansRoom", ans: ["cleans", "room"] },
-	{ image: clockWall, id: "clockWall", ans: ["clock", "wall"] },
-	{ image: cookiesFriends, id: "cookiesFriends", ans: ["cookies", "friends"] },
-	{ image: cupChocolate, id: "cupChocolate", ans: ["cup", "chocolate"] },
-	{ image: dogBall, id: "dogBall", ans: ["dog", "ball"] },
-	{ image: dogDoor, id: "dogDoor", ans: ["dog", "door"] },
-	{ image: dogWalk, id: "dogWalk", ans: ["dog", "walk"] },
-	{ image: drawsPencil, id: "drawsPencil", ans: ["draws", "pencil"] },
-	{ image: hatSun, id: "hatSun", ans: ["hat", "sun"] },
-	{ image: icecreamSun, id: "icecreamSun", ans: ["icecream", "sun"] },
-	{ image: kicksBall, id: "kicksBall", ans: ["kicks", "ball"] },
-	{ image: momTable, id: "momTable", ans: ["mom", "table"] },
-	{ image: sunBlue, id: "sunBlue", ans: ["sun", "blue"] },
-	{ image: picnicPark, id: "picnicPark", ans: ["picnic", "park"] },
-	{ image: readBed, id: "readBed", ans: ["read", "bed"] },
-	{ image: runsBus, id: "runsBus", ans: ["runs", "bus"] },
-	{ image: singsFamily, id: "singsFamily", ans: ["sings", "family"] },
-	{ image: starsSky, id: "starsSky", ans: ["stars", "sky"] },
-	{ image: swingsSlides, id: "swingsSlides", ans: ["swings", "slides"] },
+	{
+		image: bikeWheels,
+		id: "bikeWheels",
+		ans: ["bike", "wheels"],
+		audio: BikeWheelsAudio,
+	},
+	{
+		image: birdTrees,
+		id: "birdTrees",
+		ans: ["bird", "trees"],
+		audio: BirdTreesAudio,
+	},
+	{
+		image: bookShelf,
+		id: "bookShelf",
+		ans: ["book", "shelf"],
+		audio: BookShelfAudio,
+	},
+	{
+		image: bowlMilk,
+		id: "bowlMilk",
+		ans: ["bowl", "milk"],
+		audio: BowlMilkAudio,
+	},
+	{
+		image: carGreen,
+		id: "carGreen",
+		ans: ["car", "green"],
+		audio: CarGreenAudio,
+	},
+	{
+		image: catHouse,
+		id: "catHouse",
+		ans: ["cat", "house"],
+		audio: CatHouseAudio,
+	},
+	{
+		image: chairSit,
+		id: "chairSit",
+		ans: ["chair", "sit"],
+		audio: ChairSitAudio,
+	},
+	{
+		image: cleansRoom,
+		id: "cleansRoom",
+		ans: ["cleans", "room"],
+		audio: CleansRoomAudio,
+	},
+	{
+		image: clockWall,
+		id: "clockWall",
+		ans: ["clock", "wall"],
+		audio: ClockWallAudio,
+	},
+	{
+		image: cookiesFriends,
+		id: "cookiesFriends",
+		ans: ["cookies", "friends"],
+		audio: CookiesFriendsAudio,
+	},
+	{
+		image: cupChocolate,
+		id: "cupChocolate",
+		ans: ["cup", "chocolate"],
+		audio: CupChocolateAudio,
+	},
+	{ image: dogBall, id: "dogBall", ans: ["dog", "ball"], audio: DogBallAudio },
+	{ image: dogDoor, id: "dogDoor", ans: ["dog", "door"], audio: DogDoorAudio },
+	{ image: dogWalk, id: "dogWalk", ans: ["dog", "walk"], audio: DogWalkAudio },
+	{
+		image: drawsPencil,
+		id: "drawsPencil",
+		ans: ["draws", "pencil"],
+		audio: DrawsPencilAudio,
+	},
+	{ image: hatSun, id: "hatSun", ans: ["hat", "sun"], audio: HatSunAudio },
+	{
+		image: icecreamSun,
+		id: "icecreamSun",
+		ans: ["icecream", "sun"],
+		audio: IcecreamSunAudio,
+	},
+	{
+		image: kicksBall,
+		id: "kicksBall",
+		ans: ["kicks", "ball"],
+		audio: KicksBallAudio,
+	},
+	{
+		image: momTable,
+		id: "momTable",
+		ans: ["mom", "table"],
+		audio: MomTableAudio,
+	},
+	{ image: sunBlue, id: "sunBlue", ans: ["sun", "blue"], audio: SunBlueAudio },
+	{
+		image: picnicPark,
+		id: "picnicPark",
+		ans: ["picnic", "park"],
+		audio: PicnicParkAudio,
+	},
+	{ image: readBed, id: "readBed", ans: ["read", "bed"], audio: ReadBedAudio },
+	{ image: runsBus, id: "runsBus", ans: ["runs", "bus"], audio: RunsBusAudio },
+	{
+		image: singsFamily,
+		id: "singsFamily",
+		ans: ["sings", "family"],
+		audio: SingsFamilyAudio,
+	},
+	{
+		image: starsSky,
+		id: "starsSky",
+		ans: ["stars", "sky"],
+		audio: StarsSkyAudio,
+	},
+	{
+		image: swingsSlides,
+		id: "swingsSlides",
+		ans: ["swings", "slides"],
+		audio: SwingsSlidesAudio,
+	},
 ];
 
 export const qrGameQsGetter = (numElements, level, notIncluddedValues) => {
