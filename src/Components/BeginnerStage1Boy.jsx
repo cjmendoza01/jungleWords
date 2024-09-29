@@ -62,7 +62,9 @@ const BeginnerStage1Boy = () => {
 				choices: item.modalChoices,
 				audio: item.audio,
 			});
-			setModalActive(true);
+			setTimeout(() => {
+				setModalActive(true);
+			}, 50);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -161,17 +163,18 @@ const BeginnerStage1Boy = () => {
 			</div>
 
 			{/* MODAL / POPUP */}
-			{modalActive && (
-				<div className="modal">
-					<div className="modal-backdrop"></div>
-					<div className="modal-container">
-						<div className="soundicon" onClick={() => audioRef.current.play()}>
-							<img src={soundicon} alt="soundicon" />
-						</div>
-						<audio ref={audioRef} src={modalData.audio} />
+			{/* {modalActive && ( */}
+			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+				<div className="modal-backdrop"></div>
+				<div className="modal-container">
+					<div className="soundicon" onClick={() => audioRef.current.play()}>
+						<img src={soundicon} alt="soundicon" />
+					</div>
+					<audio ref={audioRef} src={modalData.audio} />
 
-						<div className="choices">
-							{modalData.choices.map(({ image, isCorrect }, i) => {
+					<div className="choices">
+						{modalData?.choices?.length &&
+							modalData.choices.map(({ image, isCorrect }, i) => {
 								return (
 									<ModalChoice
 										key={i}
@@ -186,10 +189,10 @@ const BeginnerStage1Boy = () => {
 									/>
 								);
 							})}
-						</div>
 					</div>
 				</div>
-			)}
+			</div>
+			{/* )} */}
 		</main>
 	);
 };
