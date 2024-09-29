@@ -441,99 +441,192 @@ export const wordCvc3 = [
 	{ image: Zip, id: "zip", audio: zipAudio },
 ];
 
+// import audio src>assets>is1>audio
+
+import bakeAudio from "../assets/is1/is1Audio/Bake.mp3";
+import baseAudio from "../assets/is1/is1Audio/Base.mp3";
+import beadAudio from "../assets/is1/is1Audio/Bead.mp3";
+import beeAudio from "../assets/is1/is1Audio/Bee.mp3";
+import bikeAudio from "../assets/is1/is1Audio/Bike.mp3";
+import biteAudio from "../assets/is1/is1Audio/Bite.mp3";
+import blueAudio from "../assets/is1/is1Audio/Blue.mp3";
+import boatAudio from "../assets/is1/is1Audio/Boat.mp3";
+import boneAudio from "../assets/is1/is1Audio/Bone.mp3";
+import bowlAudio from "../assets/is1/is1Audio/Bowl.mp3";
+import cageAudio from "../assets/is1/is1Audio/Cage.mp3";
+import cokeAudio from "../assets/is1/is1Audio/Coke.mp3";
+import cubeAudio from "../assets/is1/is1Audio/Coke.mp3";
+import cuteAudio from "../assets/is1/is1Audio/Cute.mp3";
+import dateAudio from "../assets/is1/is1Audio/Date.mp3";
+import diceAudio from "../assets/is1/is1Audio/Dice.mp3";
+import faceAudio from "../assets/is1/is1Audio/Face.mp3";
+import feetAudio from "../assets/is1/is1Audio/Feet.mp3";
+import fewAudio from "../assets/is1/is1Audio/Few.mp3";
+import fireAudio from "../assets/is1/is1Audio/Fire.mp3";
+import fiveAudio from "../assets/is1/is1Audio/Five.mp3";
+import flyAudio from "../assets/is1/is1Audio/Fly.mp3";
+import fruitAudio from "../assets/is1/is1Audio/Bee.mp3";
+import gameAudio from "../assets/is1/is1Audio/Game.mp3";
+import gateAudio from "../assets/is1/is1Audio/Gate.mp3";
+import glueAudio from "../assets/is1/is1Audio/Glue.mp3";
+import goAudio from "../assets/is1/is1Audio/Go.mp3";
+import goalAudio from "../assets/is1/is1Audio/Goal.mp3";
+import groupAudio from "../assets/is1/is1Audio/Group.mp3";
+import hideAudio from "../assets/is1/is1Audio/Hide.mp3";
+import highAudio from "../assets/is1/is1Audio/High.mp3";
+import holeAudio from "../assets/is1/is1Audio/Hole.mp3";
+import homeAudio from "../assets/is1/is1Audio/Home.mp3";
+import hopeAudio from "../assets/is1/is1Audio/Hope.mp3";
+import hoseAudio from "../assets/is1/is1Audio/Hose.mp3";
+import hugeAudio from "../assets/is1/is1Audio/Huge.mp3";
+import iceAudio from "../assets/is1/is1Audio/Ice.mp3";
+import jeansAudio from "../assets/is1/is1Audio/Jeans.mp3";
+import juiceAudio from "../assets/is1/is1Audio/Juice.mp3";
+import juneAudio from "../assets/is1/is1Audio/June.mp3";
+// import keyAudio from "../assets/is1/is1Audio/Key.mp3";
+import kiteAudio from "../assets/is1/is1Audio/Kite.mp3";
+import kneeAudio from "../assets/is1/is1Audio/Knee.mp3";
+import lakeAudio from "../assets/is1/is1Audio/Lake.mp3";
+import lateAudio from "../assets/is1/is1Audio/Late.mp3";
+import leafAudio from "../assets/is1/is1Audio/Leaf.mp3";
+import lightAudio from "../assets/is1/is1Audio/Light.mp3";
+import likeAudio from "../assets/is1/is1Audio/Like.mp3";
+import lineAudio from "../assets/is1/is1Audio/Line.mp3";
+import lowAudio from "../assets/is1/is1Audio/Low.mp3";
+import maleAudio from "../assets/is1/is1Audio/Male.mp3";
+import mazeAudio from "../assets/is1/is1Audio/Maze.mp3";
+import mealAudio from "../assets/is1/is1Audio/Meal.mp3";
+import meatAudio from "../assets/is1/is1Audio/Meat.mp3";
+import nameAudio from "../assets/is1/is1Audio/Name.mp3";
+import nineAudio from "../assets/is1/is1Audio/Nine.mp3";
+import noseAudio from "../assets/is1/is1Audio/Nose.mp3";
+import pageAudio from "../assets/is1/is1Audio/Page.mp3";
+import paleAudio from "../assets/is1/is1Audio/Pale.mp3";
+import peaceAudio from "../assets/is1/is1Audio/Peace.mp3";
+import phoneAudio from "../assets/is1/is1Audio/Phone.mp3";
+import poleAudio from "../assets/is1/is1Audio/Pole.mp3";
+import rateAudio from "../assets/is1/is1Audio/Rate.mp3";
+import readAudio from "../assets/is1/is1Audio/Read.mp3";
+import riceAudio from "../assets/is1/is1Audio/Rice.mp3";
+import rideAudio from "../assets/is1/is1Audio/Ride.mp3";
+import rightAudio from "../assets/is1/is1Audio/Right.mp3";
+import roadAudio from "../assets/is1/is1Audio/Road.mp3";
+import ropeAudio from "../assets/is1/is1Audio/Rope.mp3";
+import roseAudio from "../assets/is1/is1Audio/Rose.mp3";
+import sameAudio from "../assets/is1/is1Audio/Same.mp3";
+import saveAudio from "../assets/is1/is1Audio/Save.mp3";
+import seaAudio from "../assets/is1/is1Audio/Sea.mp3";
+import sealAudio from "../assets/is1/is1Audio/Seal.mp3";
+import seeAudio from "../assets/is1/is1Audio/See.mp3";
+import seedAudio from "../assets/is1/is1Audio/Seed.mp3";
+import sizeAudio from "../assets/is1/is1Audio/Size.mp3";
+import soapAudio from "../assets/is1/is1Audio/Soap.mp3";
+import soupAudio from "../assets/is1/is1Audio/Soup.mp3";
+import suitAudio from "../assets/is1/is1Audio/Suit.mp3";
+import tapeAudio from "../assets/is1/is1Audio/Tape.mp3";
+import teamAudio from "../assets/is1/is1Audio/Team.mp3";
+import teeAudio from "../assets/is1/is1Audio/Tee.mp3";
+import tieAudio from "../assets/is1/is1Audio/Tie.mp3";
+import timeAudio from "../assets/is1/is1Audio/Time.mp3";
+import toadAudio from "../assets/is1/is1Audio/Toad.mp3";
+import toeAudio from "../assets/is1/is1Audio/Toe.mp3";
+import treeAudio from "../assets/is1/is1Audio/Tree.mp3";
+import waveAudio from "../assets/is1/is1Audio/Wave.mp3";
+import weekAudio from "../assets/is1/is1Audio/Week.mp3";
+import woundAudio from "../assets/is1/is1Audio/Wound.mp3";
 const longVowels = [
-	{ image: Bake, id: "bake" },
-	{ image: Base, id: "base" },
-	{ image: Bead, id: "bead" },
-	{ image: Bee, id: "bee" },
-	{ image: Bike, id: "bike" },
-	{ image: Bite, id: "bite" },
-	{ image: Blue, id: "blue" },
-	{ image: Boat, id: "boat" },
-	{ image: Bone, id: "bone" },
-	{ image: Bowl, id: "bowl" },
-	{ image: Cage, id: "cage" },
-	{ image: Coke, id: "coke" },
-	{ image: Cube, id: "cube" },
-	{ image: Cute, id: "cute" },
-	{ image: Date, id: "date" },
-	{ image: Dice, id: "dice" },
-	{ image: Face, id: "face" },
-	{ image: Feet, id: "feet" },
-	{ image: Few, id: "few" },
-	{ image: Fire, id: "fire" },
-	{ image: Five, id: "five" },
-	{ image: Fly, id: "fly" },
-	{ image: Fruit, id: "fruit" },
-	{ image: Game, id: "game" },
-	{ image: Gate, id: "gate" },
-	{ image: Glue, id: "glue" },
-	{ image: Go, id: "go" },
-	{ image: Goal, id: "goal" },
-	{ image: Group, id: "group" },
-	{ image: Hide, id: "hide" },
-	{ image: High, id: "high" },
-	{ image: Hole, id: "hole" },
-	{ image: Home, id: "home" },
-	{ image: Hope, id: "hope" },
-	{ image: Hose, id: "hose" },
-	{ image: Huge, id: "huge" },
-	{ image: Ice, id: "ice" },
-	{ image: Jeans, id: "jeans" },
-	{ image: Juice, id: "juice" },
-	{ image: June, id: "june" },
-	{ image: Key, id: "key" },
-	{ image: Kite, id: "kite" },
-	{ image: Knee, id: "knee" },
-	{ image: Lake, id: "lake" },
-	{ image: Late, id: "late" },
-	{ image: Leaf, id: "leaf" },
-	{ image: Light, id: "light" },
-	{ image: Like, id: "like" },
-	{ image: Line, id: "line" },
-	{ image: Low, id: "low" },
-	{ image: Male, id: "male" },
-	{ image: Maze, id: "maze" },
-	{ image: Meal, id: "meal" },
-	{ image: Meat, id: "meat" },
-	{ image: Name, id: "name" },
-	{ image: Nine, id: "nine" },
-	{ image: Nose, id: "nose" },
-	{ image: Page, id: "page" },
-	{ image: Pale, id: "pale" },
-	{ image: Peace, id: "peace" },
-	{ image: Peek, id: "peek" },
-	{ image: Phone, id: "phone" },
-	{ image: Pole, id: "pole" },
-	{ image: Rate, id: "rate" },
-	{ image: Read, id: "read" },
-	{ image: Rice, id: "rice" },
-	{ image: Ride, id: "ride" },
-	{ image: Right, id: "right" },
-	{ image: Road, id: "road" },
-	{ image: Rope, id: "rope" },
-	{ image: Rose, id: "rose" },
-	{ image: Same, id: "same" },
-	{ image: Save, id: "save" },
-	{ image: Sea, id: "sea" },
-	{ image: Seal, id: "seal" },
-	{ image: See, id: "see" },
-	{ image: Seed, id: "seed" },
-	{ image: Size, id: "size" },
-	{ image: Soap, id: "soap" },
-	{ image: Soup, id: "soup" },
-	{ image: Suit, id: "suit" },
-	{ image: Tape, id: "tape" },
-	{ image: Team, id: "team" },
-	{ image: Tee, id: "tee" },
-	{ image: Tie, id: "tie" },
-	{ image: Time, id: "time" },
-	{ image: Toad, id: "toad" },
-	{ image: Toe, id: "toe" },
-	{ image: Tree, id: "tree" },
-	{ image: Wave, id: "wave" },
-	{ image: Week, id: "week" },
-	{ image: Wound, id: "wound" },
+	{ image: Bake, id: "bake", audio: bakeAudio },
+	{ image: Base, id: "base", audio: baseAudio },
+	{ image: Bead, id: "bead", audio: beadAudio },
+	{ image: Bee, id: "bee", audio: beeAudio },
+	{ image: Bike, id: "bike", audio: bikeAudio },
+	{ image: Bite, id: "bite", audio: biteAudio },
+	{ image: Blue, id: "blue", audio: blueAudio },
+	{ image: Boat, id: "boat", audio: boatAudio },
+	{ image: Bone, id: "bone", audio: boneAudio },
+	{ image: Bowl, id: "bowl", audio: bowlAudio },
+	{ image: Cage, id: "cage", audio: cageAudio },
+	{ image: Coke, id: "coke", audio: cokeAudio },
+	{ image: Cube, id: "cube", audio: cubeAudio },
+	{ image: Cute, id: "cute", audio: cuteAudio },
+	{ image: Date, id: "date", audio: dateAudio },
+	{ image: Dice, id: "dice", audio: diceAudio },
+	{ image: Face, id: "face", audio: faceAudio },
+	{ image: Feet, id: "feet", audio: feetAudio },
+	{ image: Few, id: "few", audio: fewAudio },
+	{ image: Fire, id: "fire", audio: fireAudio },
+	{ image: Five, id: "five", audio: fiveAudio },
+	{ image: Fly, id: "fly", audio: flyAudio },
+	{ image: Fruit, id: "fruit", audio: fruitAudio },
+	{ image: Game, id: "game", audio: gameAudio },
+	{ image: Gate, id: "gate", audio: gateAudio },
+	{ image: Glue, id: "glue", audio: glueAudio },
+	{ image: Go, id: "go", audio: goAudio },
+	{ image: Goal, id: "goal", audio: goalAudio },
+	{ image: Group, id: "group", audio: groupAudio },
+	{ image: Hide, id: "hide", audio: hideAudio },
+	{ image: High, id: "high", audio: highAudio },
+	{ image: Hole, id: "hole", audio: holeAudio },
+	{ image: Home, id: "home", audio: homeAudio },
+	{ image: Hope, id: "hope", audio: hopeAudio },
+	{ image: Hose, id: "hose", audio: hoseAudio },
+	{ image: Huge, id: "huge", audio: hugeAudio },
+	{ image: Ice, id: "ice", audio: iceAudio },
+	{ image: Jeans, id: "jeans", audio: jeansAudio },
+	{ image: Juice, id: "juice", audio: juiceAudio },
+	{ image: June, id: "june", audio: juneAudio },
+	// { image: Key, id: "key", audio: keyAudio },
+	{ image: Kite, id: "kite", audio: kiteAudio },
+	{ image: Knee, id: "knee", audio: kneeAudio },
+	{ image: Lake, id: "lake", audio: lakeAudio },
+	{ image: Late, id: "late", audio: lateAudio },
+	{ image: Leaf, id: "leaf", audio: leafAudio },
+	{ image: Light, id: "light", audio: lightAudio },
+	{ image: Like, id: "like", audio: likeAudio },
+	{ image: Line, id: "line", audio: lineAudio },
+	{ image: Low, id: "low", audio: lowAudio },
+	{ image: Male, id: "male", audio: maleAudio },
+	{ image: Maze, id: "maze", audio: mazeAudio },
+	{ image: Meal, id: "meal", audio: mealAudio },
+	{ image: Meat, id: "meat", audio: meatAudio },
+	{ image: Name, id: "name", audio: nameAudio },
+	{ image: Nine, id: "nine", audio: nineAudio },
+	{ image: Nose, id: "nose", audio: noseAudio },
+	{ image: Page, id: "page", audio: pageAudio },
+	{ image: Pale, id: "pale", audio: paleAudio },
+	{ image: Peace, id: "peace", audio: peaceAudio },
+	// { image: Peek, id: "peek", audio: peaceAudio }, // Assuming "peek" uses "peaceAudio"
+	{ image: Phone, id: "phone", audio: phoneAudio },
+	{ image: Pole, id: "pole", audio: poleAudio },
+	{ image: Rate, id: "rate", audio: rateAudio },
+	{ image: Read, id: "read", audio: readAudio },
+	{ image: Rice, id: "rice", audio: riceAudio },
+	{ image: Ride, id: "ride", audio: rideAudio },
+	{ image: Right, id: "right", audio: rightAudio },
+	{ image: Road, id: "road", audio: roadAudio },
+	{ image: Rope, id: "rope", audio: ropeAudio },
+	{ image: Rose, id: "rose", audio: roseAudio },
+	{ image: Same, id: "same", audio: sameAudio },
+	{ image: Save, id: "save", audio: saveAudio },
+	{ image: Sea, id: "sea", audio: seaAudio },
+	{ image: Seal, id: "seal", audio: sealAudio },
+	{ image: See, id: "see", audio: seeAudio },
+	{ image: Seed, id: "seed", audio: seedAudio },
+	{ image: Size, id: "size", audio: sizeAudio },
+	{ image: Soap, id: "soap", audio: soapAudio },
+	{ image: Soup, id: "soup", audio: soupAudio },
+	{ image: Suit, id: "suit", audio: suitAudio },
+	{ image: Tape, id: "tape", audio: tapeAudio },
+	{ image: Team, id: "team", audio: teamAudio },
+	{ image: Tee, id: "tee", audio: teeAudio },
+	{ image: Tie, id: "tie", audio: tieAudio },
+	{ image: Time, id: "time", audio: timeAudio },
+	{ image: Toad, id: "toad", audio: toadAudio },
+	{ image: Toe, id: "toe", audio: toeAudio },
+	{ image: Tree, id: "tree", audio: treeAudio },
+	{ image: Wave, id: "wave", audio: waveAudio },
+	{ image: Week, id: "week", audio: weekAudio },
+	{ image: Wound, id: "wound", audio: woundAudio },
 ];
 
 const wordFamily = [
