@@ -40,12 +40,19 @@ const BS1TY = () => {
 		}
 
 		if (lvl === "2") {
-			if (gender === "boy") vid = level2BoyVid;
+			if (gd === "boy") vid = level2BoyVid;
 			else vid = level2GirlVid;
 		} else {
-			if (gender === "boy") vid = level1BoyVid;
-			else vid = level1GirlVid;
+			if (gd === "boy") {
+				vid = level1BoyVid;
+			} else {
+				vid = level1GirlVid;
+			}
 		}
+
+		console.log("vid", vid);
+		console.log(lvl);
+		console.log();
 
 		setGender(gd);
 		setLevel(lvl);
@@ -67,10 +74,10 @@ const BS1TY = () => {
 	};
 
 	useEffect(() => {
-		if (tyVid) {
+		if (tyVid !== null && videoRef.current) {
 			videoRef.current.play();
 		}
-	}, [tyVid]);
+	}, [tyVid, videoRef]);
 
 	const toggleMute = () => {
 		setIsMuted(!isMuted);
