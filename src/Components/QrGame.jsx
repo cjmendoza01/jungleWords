@@ -37,15 +37,19 @@ export default function QRGame() {
 			gend = qGender.toLowerCase();
 		}
 
-		let nxtRt = `/qrGame?gender=${gend}&level=2`;
+		let nxtRt = `/QrGame2?gender=${gend}&level=2`;
 
 		if (qLevel === "2") {
-			nxtRt == `/qrGame?gender=${gend}&level=2`;
+			if (gend === "girl") {
+				nxtRt == "RewardPageGirl";
+			}
+			nxtRt == "RewardPageBoy";
+			// nxtRt == `/QrGame2?gender=${gend}&level=2`;
 		}
 
 		setNextRoute(nxtRt);
 		setGender(gend);
-	}, [qGender]);
+	}, [qGender, qLevel]);
 
 	useEffect(() => {
 		if (showCorrectModal) {
@@ -190,7 +194,6 @@ export default function QRGame() {
 				{/* backgroun animation */}
 				<video
 					autoPlay
-					muted
 					loop
 					style={{
 						position: "fixed",

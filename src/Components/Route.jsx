@@ -56,6 +56,7 @@ import IS2GJ from "./IS2GJ.jsx";
 import IS2TY from "./IS2TY.jsx";
 import BS1TY from "./BS1TY.jsx";
 import BS1GJ from "./BS1GJ.jsx";
+import QRGame2 from "./QRGame2.jsx";
 function App() {
 	return (
 		<Routes>
@@ -120,6 +121,7 @@ function App() {
 			<Route path="/GirlADV2intro" element={<GirlADV2intro />} />
 			<Route path="/BS1GJ" element={<BS1GJ />} />
 			<Route path="/BS1TY" element={<BS1TY />} />
+			<Route path="/QRGame2" element={<QRGame2 />} />
 		</Routes>
 	);
 }
