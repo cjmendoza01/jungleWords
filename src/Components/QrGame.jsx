@@ -8,6 +8,7 @@ import { qrGameQsGetter } from "../utils/advAssets";
 import BGVid from "../assets/bgs1.mp4";
 import Boy from "../assets/boy.png";
 import Girl from "../assets/GIRL.gif";
+import Girl from "../assets/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
 
@@ -37,15 +38,19 @@ export default function QRGame() {
 			gend = qGender.toLowerCase();
 		}
 
-		let nxtRt = ``;
+		let nxtRt = `/QrGame2?gender=${gend}&level=2`;
 
 		if (qLevel === "2") {
-			nxtRt == `/qrGame?gender=${gend}&level=2`;
+			if (gend === "girl") {
+				nxtRt == "RewardPageGirl";
+			}
+			nxtRt == "RewardPageBoy";
+			// nxtRt == `/QrGame2?gender=${gend}&level=2`;
 		}
 
 		setNextRoute(nxtRt);
 		setGender(gend);
-	}, [qGender]);
+	}, [qGender, qLevel]);
 
 	useEffect(() => {
 		if (showCorrectModal) {
@@ -190,7 +195,6 @@ export default function QRGame() {
 				{/* backgroun animation */}
 				<video
 					autoPlay
-					muted
 					loop
 					style={{
 						position: "fixed",
