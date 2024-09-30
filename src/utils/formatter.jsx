@@ -15,3 +15,13 @@ export const shuffle = (array) => {
 	}
 	return array;
 };
+
+export const reShuffle = (arr) => {
+	if (arr.length === 0) {
+		return arr; // If the array is empty, return it as is
+	}
+
+	const firstElement = arr.shift();
+	arr.push(firstElement);
+	return arr;
+};

@@ -114,7 +114,6 @@ const IntermidiateStage2 = () => {
 		<main className="main">
 			<video
 				autoPlay
-				muted
 				loop
 				style={{
 					position: "fixed",

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { randomVowelGetter, randonItemGetter } from "../utils/imageAssetPicker";
 import { vowelChecker } from "../utils/checker";
-import { Qfilters } from "../utils/formatter";
+import { Qfilters, reShuffle } from "../utils/formatter";
 import { useLocation, useNavigate } from "react-router-dom"; // Ensure useNavigate and useLocation are imported
 import ErrorSound from "/Wrong.mp3";
 
@@ -175,30 +175,30 @@ export default function Stage2(props) {
 	const maxClick = async () => {
 		const rightAns = questions[0];
 		setTry(0);
-		setRemoveBanana(true);
+		// setRemoveBanana(true);
 
-		const filtered = await Qfilters(rightAns, questions);
+		const filtered = await reShuffle(questions);
 
 		setQuestions(filtered);
 
-		setTimeout(() => {
-			unRmvBanana();
-			if (bananaCount - 1 !== 0)
-				setBananaCount((prevCount) => {
-					const newCount = prevCount - 1;
-					return newCount;
-				});
-		}, 500);
+		// setTimeout(() => {
+		// 	unRmvBanana();
+		// 	if (bananaCount - 1 !== 0)
+		// 		setBananaCount((prevCount) => {
+		// 			const newCount = prevCount - 1;
+		// 			return newCount;
+		// 		});
+		// }, 500);
 
-		if (bananaCount - 1 === 0) {
-			setGameComplete(true);
-			setOpenThankyou(true);
-		} else {
-			setDisabledChoices([]);
-			setTimeout(() => {
-				setOpenModal(true);
-			}, 1000);
-		}
+		// if (bananaCount - 1 === 0) {
+		// 	setGameComplete(true);
+		// 	setOpenThankyou(true);
+		// } else {
+		setDisabledChoices([]);
+		setTimeout(() => {
+			setOpenModal(true);
+		}, 1000);
+		// }
 	};
 
 	const handleButtonClick = async (ch) => {
