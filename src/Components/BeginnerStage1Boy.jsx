@@ -78,10 +78,6 @@ const BeginnerStage1Boy = () => {
 	};
 
 	useEffect(() => {
-		console.log("modalData", modalData);
-	}, [modalData]);
-
-	useEffect(() => {
 		console.log("modalActive", modalActive);
 		console.log("wrongItem", wrongItem);
 		const ft = [...foodItems] || [];
@@ -157,7 +153,7 @@ const BeginnerStage1Boy = () => {
 			<audio ref={audioRef3} src={rightSound} />
 			<video
 				autoPlay
-				muted
+				muted={false}
 				loop
 				style={{
 					position: "fixed",

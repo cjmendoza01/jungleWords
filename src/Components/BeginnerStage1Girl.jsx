@@ -36,7 +36,9 @@ const BeginnerStage1Boy = () => {
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
 	const [modalData, setModalData] = useState({
 		item: "",
-		choices: [],
+		modalChoices: [],
+		image: null,
+		isDisplayed: false,
 		audio: null,
 	});
 	const [modalActive, setModalActive] = useState(false);
@@ -47,6 +49,7 @@ const BeginnerStage1Boy = () => {
 	const [itemDone, setItemDone] = useState(0);
 	const audioRef = useRef();
 	const audioRef2 = useRef();
+	const audioRef3 = useRef();
 
 	const handleDragEnd = (event) => {
 		if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
@@ -64,8 +67,10 @@ const BeginnerStage1Boy = () => {
 				setModalActive(true);
 				setModalData({
 					id: item.id,
-					choices: item.modalChoices,
+					modalChoices: item.modalChoices,
 					audio: item.audio,
+					isDisplayed: item.isDisplayed,
+					image: item.image,
 				});
 			}, 50);
 			setIsModalAnswerCorrect(false);
@@ -73,9 +78,34 @@ const BeginnerStage1Boy = () => {
 	};
 
 	useEffect(() => {
-		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
+		console.log("modalActive", modalActive);
+		console.log("wrongItem", wrongItem);
+		const ft = [...foodItems] || [];
+		let right = rightCounter;
+
+		if (modalActive && wrongItem) {
+			console.log("mddddd");
+			const md = modalData;
+
+			setFoodItems((foodItems) =>
+				foodItems.map((f) => (f.id === md.id ? { ...f, isDisplayed: true } : f))
+			);
 			setTimeout(() => {
-				setModalData({ item: "", choices: [], audio: null });
+				setModalData({
+					item: "",
+					modalChoices: [],
+					audio: null,
+					image: null,
+					isDisplayed: false,
+				});
+			}, 150);
+			setTry(0);
+		}
+		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
+			if (isModalAnswerCorrect) {
+				playRightSound();
+			}
+			setTimeout(() => {
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
 			}, 500);
@@ -84,9 +114,7 @@ const BeginnerStage1Boy = () => {
 				setTimeout(() => {
 					setScale((scale) => scale + 0.05);
 				}, 1000);
-
-				let right = rightCounter + 1;
-
+				right = right + 1;
 				setRightCounter(right);
 			}
 
@@ -96,9 +124,9 @@ const BeginnerStage1Boy = () => {
 
 			setItemDone(itD);
 
-			if (itD === 6) {
+			if (right === 6) {
 				setTimeout(() => {
-					navigate("/bs1tyboy");
+					navigate("/BS1TY?gender=girl&level=1");
 				}, 1000);
 			}
 		}
@@ -113,12 +141,19 @@ const BeginnerStage1Boy = () => {
 			audioRef2.current.play();
 		}
 	};
+
+	const playRightSound = () => {
+		if (audioRef3.current) {
+			audioRef3.current.play();
+		}
+	};
 	return (
 		<main className="main">
 			<audio ref={audioRef2} src={ErrorSound} />
+			<audio ref={audioRef3} src={rightSound} />
 			<video
 				autoPlay
-				muted
+				muted={false}
 				loop
 				style={{
 					position: "fixed",
@@ -184,23 +219,22 @@ const BeginnerStage1Boy = () => {
 					<audio ref={audioRef} src={modalData.audio} />
 
 					<div className="choices">
-						{modalData?.choices?.length &&
-							modalData.choices.map(({ image, isCorrect }, i) => {
-								return (
-									<ModalChoice
-										key={i}
-										image={image}
-										isCorrect={isCorrect}
-										setModalActive={setModalActive}
-										isModalAnswerCorrect={isModalAnswerCorrect}
-										setIsModalAnswerCorrect={setIsModalAnswerCorrect}
-										tries={tries}
-										setTry={setTry}
-										setWrongItem={setWrongItem}
-										playWrongSound={playWrongSound}
-									/>
-								);
-							})}
+						{modalData.modalChoices.map(({ image, isCorrect }, i) => {
+							return (
+								<ModalChoice
+									key={i}
+									image={image}
+									isCorrect={isCorrect}
+									setModalActive={setModalActive}
+									isModalAnswerCorrect={isModalAnswerCorrect}
+									setIsModalAnswerCorrect={setIsModalAnswerCorrect}
+									tries={tries}
+									setTry={setTry}
+									setWrongItem={setWrongItem}
+									playWrongSound={playWrongSound}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			</div>
