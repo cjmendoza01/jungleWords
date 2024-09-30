@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import NextGameImg from "../../assets/buttons&dialogues/nextStage.png";
 import PlayAgainImg from "../../assets/buttons&dialogues/playAgain.png";
 import BoyAnimation from "/vgoodBoy.mp4";
-import GirlAnimation from "/BGAnimationGirl.mp4";
+import GirlAnimation from "/vgoodGirl.mp4";
 
 export default function NextGameModal({ gender, route, resetGame }) {
   const navigate = useNavigate();

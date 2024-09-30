@@ -6,11 +6,11 @@ const GirlBegStage3Intro = () => {
   const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    navigate('/Stage3?level=2&gender=girl');
+    navigate('/Stage3?level=1&gender=girl');
   };
 
   const handleSkip = () => {
-    navigate('/Stage3?level=2&gender=girl');
+    navigate('/Stage3?level=1&gender=girl');
   };
 
   return (
