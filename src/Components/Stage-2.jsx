@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { randomVowelGetter, randonItemGetter } from "../utils/imageAssetPicker";
 import { vowelChecker } from "../utils/checker";
 import { Qfilters } from "../utils/formatter";
 import { useLocation, useNavigate } from "react-router-dom"; // Ensure useNavigate and useLocation are imported
+import ErrorSound from "/Wrong.mp3";
 
 import exitButton from "../assets/bs2/exitButton.png"; // Example import for the back button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
@@ -41,6 +42,8 @@ export default function Stage2(props) {
 	const [tries, setTry] = useState(0);
 	const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
 
+	const audioRef2 = useRef();
+
 	const [openCheckModal, setOpenCheckModal] = useState(false);
 	const [removeBanana, setRemoveBanana] = useState(false);
 	const [openModal, setOpenModal] = useState(false);
@@ -59,6 +62,12 @@ export default function Stage2(props) {
 	const qLevel = queryParams.get("level");
 
 	const [numRight, setNumRight] = useState(0);
+
+	const playWrongSound = () => {
+		if (audioRef2.current) {
+			audioRef2.current.play();
+		}
+	};
 
 	useEffect(() => {
 		let gd = "boy";
@@ -228,6 +237,7 @@ export default function Stage2(props) {
 
 			setTry(i);
 			if (i >= 3) {
+				playWrongSound();
 				maxClick();
 			}
 		}
@@ -265,6 +275,7 @@ export default function Stage2(props) {
 
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
+			<audio ref={audioRef2} src={ErrorSound} />
 			{/* backgroun animation */}
 			<video
 				autoPlay

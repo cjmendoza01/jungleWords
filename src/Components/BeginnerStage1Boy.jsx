@@ -83,6 +83,8 @@ const BeginnerStage1Boy = () => {
 		console.log("modalActive", modalActive);
 		console.log("wrongItem", wrongItem);
 		const ft = [...foodItems] || [];
+		let right = rightCounter;
+
 		if (modalActive && wrongItem) {
 			console.log("mddddd");
 			const md = modalData;
@@ -111,9 +113,7 @@ const BeginnerStage1Boy = () => {
 				setTimeout(() => {
 					setScale((scale) => scale + 0.05);
 				}, 1000);
-
-				let right = rightCounter + 1;
-
+				right = right + 1;
 				setRightCounter(right);
 			}
 
