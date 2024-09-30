@@ -6,11 +6,11 @@ const BoyIntStage3Intro = () => {
   const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    navigate('/QrGame');
+    navigate('/QrGame?gender=girl');
   };
 
   const handleSkip = () => {
-    navigate('/QrGame');
+    navigate('/QrGame?gender=girl');
   };
 
   return (

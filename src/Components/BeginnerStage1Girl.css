@@ -69,7 +69,7 @@
     width: 150px;
     object-fit: contain;
   }
-
+  
  
   .drag-n-drop-container .droppable-container .droppable-zone-boy {
     height: 350px;
@@ -88,7 +88,7 @@
     right: 60%; /* Moved the girl further to the left */
   }
   /* Position the girl to the left */
-  .drag-n-drop-container .droppable-container .droppable-zone {
+  .drag-n-drop-container .droppable-container .droppable-zone-girl{
     height: 350px;
     width: 250px;
     border: none;
@@ -135,7 +135,7 @@
     transform-origin: bottom center;
     transition: transform 0.1s ease-in-out;
     position: absolute;
-    right: 65%;
+    right: 75%;
 		width: 100px;
 		height: 200px;
 		top: 60%;
@@ -157,7 +157,7 @@
     transition: transform 0.1s ease-in-out;
     position: absolute;
     top: 45%;
-    right: 70%; /* Moved the girl further to the left */
+    right: 60%; /* Moved the girl further to the left */
   }
   
   .drag-n-drop-container .droppable-container .droppable-zone-boy-int {
@@ -174,13 +174,19 @@
     transition: transform 0.1s ease-in-out;
     position: absolute;
     top: 45%;
-    right: 70%; /* Moved the girl further to the left */
+    right: 60%; /* Moved the girl further to the left */
   }
 
   .drag-n-drop-container .droppable-container .droppable-zone img {
     height: 100%;
     width: 100%;
     object-fit: contain;
+  }.boyImg{
+    background-image: url("../assets/BOY.gif");
+  }
+  
+  .girlImg{
+    background-image: url("../assets/GIRL.gif");
   }
   
   .drag-n-drop-container .droppable-container .droppable-zone .dropped-item {

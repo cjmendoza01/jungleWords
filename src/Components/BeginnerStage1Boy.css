@@ -143,11 +143,11 @@
   right: 60%; /* Moved the girl further to the left */
 }
 .boyImg{
-  background-image: url("../assets/boy.png");
+  background-image: url("../assets/BOY.gif");
 }
 
 .girlImg{
-  background-image: url("../assets/girl.png");
+  background-image: url("../assets/GIRL.gif");
 }
 
 .drag-n-drop-container .droppable-container .droppable-zone img {
