@@ -8,7 +8,6 @@ import { qrGameQsGetter } from "../utils/advAssets";
 import BGVid from "../assets/bgs1.mp4";
 import Boy from "../assets/boy.png";
 import Girl from "../assets/GIRL.gif";
-import Girl from "../assets/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
 
