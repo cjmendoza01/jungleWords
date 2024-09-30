@@ -4,7 +4,7 @@ import "./BeginnerStage1Boy.css";
 import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useNavigate } from "react-router-dom";
-import ErrorSound from "/wrong.mp3";
+import ErrorSound from "/Wrong.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";
@@ -35,7 +35,9 @@ const BeginnerStage1Boy = () => {
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
 	const [modalData, setModalData] = useState({
 		item: "",
-		choices: [],
+		modalChoices: [],
+		image: null,
+		isDisplayed: false,
 		audio: null,
 	});
 	const [modalActive, setModalActive] = useState(false);
@@ -63,8 +65,10 @@ const BeginnerStage1Boy = () => {
 				setModalActive(true);
 				setModalData({
 					id: item.id,
-					choices: item.modalChoices,
+					modalChoices: item.modalChoices,
 					audio: item.audio,
+					isDisplayed: item.isDisplayed,
+					image: item.image,
 				});
 			}, 50);
 			setIsModalAnswerCorrect(false);
@@ -72,9 +76,33 @@ const BeginnerStage1Boy = () => {
 	};
 
 	useEffect(() => {
+		console.log("modalData", modalData);
+	}, [modalData]);
+
+	useEffect(() => {
+		console.log("modalActive", modalActive);
+		console.log("wrongItem", wrongItem);
+		const ft = [...foodItems] || [];
+		if (modalActive && wrongItem) {
+			console.log("mddddd");
+			const md = modalData;
+
+			setFoodItems((foodItems) =>
+				foodItems.map((f) => (f.id === md.id ? { ...f, isDisplayed: true } : f))
+			);
+			setTimeout(() => {
+				setModalData({
+					item: "",
+					modalChoices: [],
+					audio: null,
+					image: null,
+					isDisplayed: false,
+				});
+			}, 150);
+			setTry(0);
+		}
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
 			setTimeout(() => {
-				setModalData({ item: "", choices: [], audio: null });
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
 			}, 500);
@@ -95,7 +123,7 @@ const BeginnerStage1Boy = () => {
 
 			setItemDone(itD);
 
-			if (itD === 6) {
+			if (right === 6) {
 				setTimeout(() => {
 					navigate("/bs1tyboy");
 				}, 1000);
@@ -183,23 +211,22 @@ const BeginnerStage1Boy = () => {
 					<audio ref={audioRef} src={modalData.audio} />
 
 					<div className="choices">
-						{modalData?.choices?.length &&
-							modalData.choices.map(({ image, isCorrect }, i) => {
-								return (
-									<ModalChoice
-										key={i}
-										image={image}
-										isCorrect={isCorrect}
-										setModalActive={setModalActive}
-										isModalAnswerCorrect={isModalAnswerCorrect}
-										setIsModalAnswerCorrect={setIsModalAnswerCorrect}
-										tries={tries}
-										setTry={setTry}
-										setWrongItem={setWrongItem}
-										playWrongSound={playWrongSound}
-									/>
-								);
-							})}
+						{modalData.modalChoices.map(({ image, isCorrect }, i) => {
+							return (
+								<ModalChoice
+									key={i}
+									image={image}
+									isCorrect={isCorrect}
+									setModalActive={setModalActive}
+									isModalAnswerCorrect={isModalAnswerCorrect}
+									setIsModalAnswerCorrect={setIsModalAnswerCorrect}
+									tries={tries}
+									setTry={setTry}
+									setWrongItem={setWrongItem}
+									playWrongSound={playWrongSound}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			</div>
@@ -264,6 +291,10 @@ const ModalChoice = ({
 	playWrongSound,
 }) => {
 	const [status, setStatus] = useState("");
+
+	const statCH = () => {
+		setStatus("");
+	};
 	return (
 		<div
 			className={`choice ${status}`}
@@ -278,6 +309,7 @@ const ModalChoice = ({
 						if (tr === 2) {
 							playWrongSound();
 							setTimeout(() => {
+								statCH();
 								setModalActive(false);
 							}, 1000);
 							setWrongItem(true);
@@ -290,6 +322,7 @@ const ModalChoice = ({
 						setStatus("right");
 						setIsModalAnswerCorrect(true);
 						setTimeout(() => {
+							statCH();
 							setModalActive(false);
 						}, 2000);
 					}
