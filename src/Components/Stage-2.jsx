@@ -4,7 +4,7 @@ import { vowelChecker } from "../utils/checker";
 import { Qfilters, reShuffle } from "../utils/formatter";
 import { useLocation, useNavigate } from "react-router-dom"; // Ensure useNavigate and useLocation are imported
 import ErrorSound from "/Wrong.mp3";
-
+import rightSound from "/Corect.mp3";
 import exitButton from "../assets/bs2/exitButton.png"; // Example import for the back button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
 
@@ -27,6 +27,7 @@ import egg6 from "../assets/is1/egg6.gif";
 import egg7 from "../assets/is1/egg1.gif";
 import egg8 from "../assets/is1/egg2.gif";
 import BS1GonzoTY from "./BS1GonzoTY";
+import { randomFoodItemGetter } from "../utils/gonzoBunny";
 
 export default function Stage2(props) {
 	const navigate = useNavigate(); // Enable navigation
@@ -43,6 +44,7 @@ export default function Stage2(props) {
 	const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
 
 	const audioRef2 = useRef();
+	const audioRef3 = useRef();
 
 	const [openCheckModal, setOpenCheckModal] = useState(false);
 	const [removeBanana, setRemoveBanana] = useState(false);
@@ -69,6 +71,12 @@ export default function Stage2(props) {
 		}
 	};
 
+	const playRightSound = () => {
+		if (audioRef3.current) {
+			audioRef3.current.play();
+		}
+	};
+
 	useEffect(() => {
 		let gd = "boy";
 
@@ -89,7 +97,7 @@ export default function Stage2(props) {
 
 		let nxtRt = `BoyBS3intro`;
 
-		if (qLevel && qLevel === "2") {
+		if ((qLevel && qLevel === "2") || (stageLevel && stageLevel === "2")) {
 			if (gd == "girl") {
 				nxtRt = `/GirlIS2intro`;
 			} else {
@@ -123,7 +131,7 @@ export default function Stage2(props) {
 				setGameComplete(false);
 				setNextGameModal(false);
 			}
-			const items = randomVowelGetter(8, level);
+			const items = randomFoodItemGetter(8, level);
 			setQuestions(items);
 			setBananaCount(items.length);
 
@@ -218,6 +226,7 @@ export default function Stage2(props) {
 			setDisabledChoices([]);
 
 			if (bananaCount - 1 === 0) {
+				playRightSound();
 				setGameComplete(true);
 				setOpenThankyou(true);
 
@@ -226,6 +235,7 @@ export default function Stage2(props) {
 				}, 1000);
 			} else {
 				setTimeout(() => {
+					playRightSound();
 					setOpenCheckModal(true);
 				}, 500);
 			}
@@ -278,6 +288,7 @@ export default function Stage2(props) {
 	return (
 		<div className="stage2-main main" style={{ display: "block" }}>
 			<audio ref={audioRef2} src={ErrorSound} />
+			<audio ref={audioRef3} src={rightSound} />
 			{/* backgroun animation */}
 			<video
 				autoPlay
@@ -404,7 +415,7 @@ export default function Stage2(props) {
 			{openCheckModal && <CheckModal />}
 			{gameComplete && openThankyou && (
 				<div className="modal">
-					<BS1GonzoTY closeTyVideo={closeTyVideo} />
+					<BS1GonzoTY closeTyVideo={closeTyVideo} gameLevel={stgLevel} />
 				</div>
 			)}
 			{openNextGameModal && (

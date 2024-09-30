@@ -13,6 +13,9 @@ import Girl from "../assets/bs3/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import S3TY from "./S3TY";
 
+import ErrorSound from "/Wrong.mp3";
+import rightSound from "/Corect.mp3";
+
 import { restrictToParentElement } from "@dnd-kit/modifiers";
 
 export default function Stage3() {
@@ -45,13 +48,31 @@ export default function Stage3() {
 		console.log("rightItems", rightItems);
 	}, [rightItems]);
 
+	const audioRef2 = useRef();
+	const audioRef3 = useRef();
+
+	const playWrongSound = () => {
+		if (audioRef2.current) {
+			audioRef2.current.play();
+		}
+	};
+
+	const playRightSound = () => {
+		if (audioRef3.current) {
+			audioRef3.current.play();
+		}
+	};
+
 	useEffect(() => {
 		const lvl = qLevel;
 		console.log("correct Triggered");
 		if (correct) {
 			if (rightItems?.length === 1) {
+				console.log("complete");
+				setCorrect(false);
 				setGameComplete(true);
 			} else {
+				console.log("!complete");
 				setWrong(false);
 				const filterRight = Qfilters(rightItems[0], rightItems);
 				setItems(filterRight);
@@ -96,10 +117,11 @@ export default function Stage3() {
 
 					shuffleItems(pos);
 				}
-			}
-			setTimeout(() => {
 				setCorrect(false);
-			}, 2000);
+			}
+			// setTimeout(() => {
+			// 	setCorrect(false);
+			// }, 2000);
 		}
 	}, [correct]);
 
@@ -229,10 +251,11 @@ export default function Stage3() {
 			if (over.id === "right") {
 				console.log("Dropped in Zone 1: Item accepted");
 
+				playRightSound();
 				setCorrect(true);
 			} else if (over.id === "wrong") {
 				console.log("Dropped in Zone 2: Item rejected");
-
+				playWrongSound();
 				setWrong(true);
 			}
 		} else {
@@ -294,11 +317,36 @@ export default function Stage3() {
 	const handleBackClick = () => {
 		navigate(-1); // Go back to the previous page
 	};
+	const videoRef = useRef();
+	useEffect(() => {
+		if (videoRef?.current) {
+			videoRef.current.load();
+			videoRef.current.play();
+		}
+	}, []);
 
 	return (
 		<div className="stage3-main main">
 			{/* Fullscreen background video */}
+			<audio ref={audioRef2} src={ErrorSound} />
+			<audio ref={audioRef3} src={rightSound} />
 			<video
+				ref={videoRef}
+				loop
+				src={"/bgstage4.mp4"}
+				autoPlay
+				muted={false}
+				style={{
+					position: "absolute", // Ensures it stays in the background
+					top: 0,
+					left: 0,
+					width: "100vw",
+					height: "100vh",
+					objectFit: "cover", // Stretches the video to cover the whole screen
+					zIndex: "1", // Places the video behind the game content
+				}}
+			/>
+			{/* <video
 				autoPlay
 				muted
 				loop
@@ -314,7 +362,7 @@ export default function Stage3() {
 			>
 				<source src="/bgstage4.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
-			</video>
+			</video> */}
 
 			{/* Game content */}
 			<div

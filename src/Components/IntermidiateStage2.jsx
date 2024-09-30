@@ -9,7 +9,7 @@ import ErrorSound from "/Wrong.mp3";
 import rightSound from "/Corect.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
-import { foodItemsList } from "../utils/dndItemsGame";
+import { wordCvc4 } from "../utils/dndItemsGame";
 
 const IntermidiateStage2 = () => {
 	const location = useLocation();
@@ -32,9 +32,9 @@ const IntermidiateStage2 = () => {
 			return selected;
 		}
 
-		const x = getRandomElements(foodItemsList, 6);
+		const x = getRandomElements(wordCvc4, 6);
 		setFoodItems(x);
-	}, [foodItemsList]);
+	}, [wordCvc4]);
 
 	const [currentFoodItem, setCurrentFoodItem] = useState(null);
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
@@ -66,16 +66,16 @@ const IntermidiateStage2 = () => {
 					"food-" + f.id === active.id ? { ...f, isDisplayed: false } : f
 				)
 			);
+			setModalData({
+				id: item.id,
+				modalChoices: item.modalChoices,
+				audio: item.audio,
+				isDisplayed: item.isDisplayed,
+				image: item.image,
+			});
 			setTimeout(() => {
 				setModalActive(true);
-				setModalData({
-					id: item.id,
-					modalChoices: item.modalChoices,
-					audio: item.audio,
-					isDisplayed: item.isDisplayed,
-					image: item.image,
-				});
-			}, 100);
+			}, 90);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -228,36 +228,36 @@ const IntermidiateStage2 = () => {
 			</div>
 
 			{/* MODAL / POPUP */}
-			{modalActive && (
-				<div className="modal">
-					<div className="modal-backdrop"></div>
-					<div className="modal-container">
-						<div className="soundicon" onClick={() => audioRef.current.play()}>
-							<img src={soundicon} alt="soundicon" />
-						</div>
-						<audio ref={audioRef} src={modalData.audio} />
+			{/* {modalActive && ( */}
+			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+				<div className="modal-backdrop"></div>
+				<div className="modal-container">
+					<div className="soundicon" onClick={() => audioRef.current.play()}>
+						<img src={soundicon} alt="soundicon" />
+					</div>
+					<audio ref={audioRef} src={modalData.audio} />
 
-						<div className="choices">
-							{modalData.modalChoices.map(({ image, isCorrect }, i) => {
-								return (
-									<ModalChoice
-										key={i}
-										image={image}
-										isCorrect={isCorrect}
-										setModalActive={setModalActive}
-										isModalAnswerCorrect={isModalAnswerCorrect}
-										setIsModalAnswerCorrect={setIsModalAnswerCorrect}
-										tries={tries}
-										setTry={setTry}
-										setWrongItem={setWrongItem}
-										playWrongSound={playWrongSound}
-									/>
-								);
-							})}
-						</div>
+					<div className="choices">
+						{modalData.modalChoices.map(({ image, isCorrect }, i) => {
+							return (
+								<ModalChoice
+									key={i}
+									image={image}
+									isCorrect={isCorrect}
+									setModalActive={setModalActive}
+									isModalAnswerCorrect={isModalAnswerCorrect}
+									setIsModalAnswerCorrect={setIsModalAnswerCorrect}
+									tries={tries}
+									setTry={setTry}
+									setWrongItem={setWrongItem}
+									playWrongSound={playWrongSound}
+								/>
+							);
+						})}
 					</div>
 				</div>
-			)}
+			</div>
+			{/* )} */}
 		</main>
 	);
 };

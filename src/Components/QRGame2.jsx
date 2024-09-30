@@ -2,7 +2,7 @@ import React from "react";
 import Stage2 from "./Stage-2";
 import QRGame from "./QrGame";
 
-function IntermidiateStage1() {
+function QRGame2() {
 	return (
 		<div>
 			<QRGame stageLevel={"2"} />
@@ -10,4 +10,4 @@ function IntermidiateStage1() {
 	);
 }
 
-export default IntermidiateStage1;
+export default QRGame2;

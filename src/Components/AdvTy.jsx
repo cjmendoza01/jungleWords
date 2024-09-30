@@ -5,7 +5,7 @@ import button from "../assets/buttons&dialogues/skip.png";
 import muteButton from "../assets/buttons&dialogues/muteButton.png";
 import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 
-const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
+const AdvTy = ({ closeTyVideo, gameLevel }) => {
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState("1");
 	const [tyVid, setTyVid] = useState("");
@@ -28,10 +28,10 @@ const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 
 		let vid = "";
 
-		const level1BoyVid = "/GonzoBS2TY.mp4";
-		const level1GirlVid = "/GonzoBS2TYGirl.mp4";
-		const level2BoyVid = "/HoneyBunIS1TY.mp4";
-		const level2GirlVid = "/HoneyBunIS1TYGirl.mp4";
+		const level1BoyVid = "/AdvEndTalkiesSANDER.mp4";
+		const level1GirlVid = "/AdvEndTalkiesSANDY.mp4";
+		const level2BoyVid = "/AdvEndTalkiesSANDER.mp4";
+		const level2GirlVid = "/AdvEndTalkiesSANDY.mp4";
 
 		let lvl = "1";
 
@@ -99,4 +99,4 @@ const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 	);
 };
 
-export default BS1GonzoTY;
+export default AdvTy;

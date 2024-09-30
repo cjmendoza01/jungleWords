@@ -1179,6 +1179,26 @@ import ship from "../assets/is2/is2Audio/Ship.mp3";
 import sock from "../assets/is2/is2Audio/Sock.mp3";
 import tent from "../assets/is2/is2Audio/Tent.mp3";
 
+import BallCard from "../assets/is2/is2Words/Ball.png";
+import BellCard from "../assets/is2/is2Words/Bell.png";
+import BookCard from "../assets/is2/is2Words/Book.png";
+import CartCard from "../assets/is2/is2Words/Cart.png";
+import DrumCard from "../assets/is2/is2Words/Drum.png";
+import KiteCard from "../assets/is2/is2Words/Kite.png";
+import LampCard from "../assets/is2/is2Words/Lamp.png";
+import LockCard from "../assets/is2/is2Words/Lock.png";
+import MaskCard from "../assets/is2/is2Words/Mask.png";
+import BarnCard from "../assets/is2/is2Words/Barn.png";
+import BeltCard from "../assets/is2/is2Words/Belt.png";
+import ClipCard from "../assets/is2/is2Words/Clip.png";
+import CoatCard from "../assets/is2/is2Words/Coat.png";
+import CoinCard from "../assets/is2/is2Words/Coin.png";
+import ForkCard from "../assets/is2/is2Words/Fork.png";
+import PlugCard from "../assets/is2/is2Words/Plug.png";
+import RingCard from "../assets/is2/is2Words/Ring.png";
+import ShipCard from "../assets/is2/is2Words/Ship.png";
+import SockCard from "../assets/is2/is2Words/Sock.png";
+import TentCard from "../assets/is2/is2Words/Tent.png";
 export const wordCvc4 = [
 	{
 		image: Bell,
@@ -1186,9 +1206,9 @@ export const wordCvc4 = [
 		id: "bell",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: BellCard, isCorrect: true },
+			{ image: BallCard, isCorrect: false },
+			{ image: BeltCard, isCorrect: false },
 		],
 	},
 	{
@@ -1197,9 +1217,9 @@ export const wordCvc4 = [
 		id: "book",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: true },
+			{ image: LockCard, isCorrect: false },
+			{ image: ForkCard, isCorrect: false },
+			{ image: BookCard, isCorrect: true },
 		],
 	},
 	{
@@ -1208,9 +1228,9 @@ export const wordCvc4 = [
 		id: "cart",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: CartCard, isCorrect: true },
+			{ image: KiteCard, isCorrect: false },
+			{ image: CoatCard, isCorrect: false },
 		],
 	},
 	{
@@ -1219,9 +1239,9 @@ export const wordCvc4 = [
 		id: "drum",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: BallCard, isCorrect: false },
+			{ image: DrumCard, isCorrect: true },
+			{ image: RingCard, isCorrect: false },
 		],
 	},
 	{
@@ -1230,9 +1250,9 @@ export const wordCvc4 = [
 		id: "kite",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: CoatCard, isCorrect: false },
+			{ image: KiteCard, isCorrect: true },
+			{ image: SockCard, isCorrect: false },
 		],
 	},
 	{
@@ -1241,9 +1261,9 @@ export const wordCvc4 = [
 		id: "lamp",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: LampCard, isCorrect: true },
+			{ image: BeltCard, isCorrect: false },
+			{ image: MaskCard, isCorrect: false },
 		],
 	},
 	{
@@ -1252,9 +1272,9 @@ export const wordCvc4 = [
 		id: "lock",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: true },
+			{ image: BookCard, isCorrect: false },
+			{ image: ForkCard, isCorrect: false },
+			{ image: LockCard, isCorrect: true },
 		],
 	},
 	{
@@ -1263,9 +1283,9 @@ export const wordCvc4 = [
 		id: "mask",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: ClipCard, isCorrect: false },
+			{ image: MaskCard, isCorrect: true },
+			{ image: TentCard, isCorrect: false },
 		],
 	},
 	{
@@ -1274,9 +1294,9 @@ export const wordCvc4 = [
 		id: "ball",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: BallCard, isCorrect: true },
+			{ image: BellCard, isCorrect: false },
+			{ image: BarnCard, isCorrect: false },
 		],
 	},
 	{
@@ -1285,9 +1305,9 @@ export const wordCvc4 = [
 		id: "belt",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: BellCard, isCorrect: true },
+			{ image: ShipCard, isCorrect: false },
+			{ image: LampCard, isCorrect: false },
 		],
 	},
 	{
@@ -1296,9 +1316,9 @@ export const wordCvc4 = [
 		id: "clip",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: true },
+			{ image: CoinCard, isCorrect: false },
+			{ image: CartCard, isCorrect: false },
+			{ image: ClipCard, isCorrect: true },
 		],
 	},
 	{
@@ -1307,9 +1327,9 @@ export const wordCvc4 = [
 		id: "coat",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: true },
+			{ image: MaskCard, isCorrect: false },
+			{ image: KiteCard, isCorrect: false },
+			{ image: CoatCard, isCorrect: true },
 		],
 	},
 	{
@@ -1318,9 +1338,9 @@ export const wordCvc4 = [
 		id: "coin",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: CartCard, isCorrect: false },
+			{ image: CoinCard, isCorrect: true },
+			{ image: ClipCard, isCorrect: false },
 		],
 	},
 	{
@@ -1329,9 +1349,9 @@ export const wordCvc4 = [
 		id: "fork",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: ForkCard, isCorrect: true },
+			{ image: BarnCard, isCorrect: false },
+			{ image: BookCard, isCorrect: false },
 		],
 	},
 	{
@@ -1340,9 +1360,9 @@ export const wordCvc4 = [
 		id: "plug",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: RingCard, isCorrect: false },
+			{ image: PlugCard, isCorrect: true },
+			{ image: LockCard, isCorrect: false },
 		],
 	},
 	{
@@ -1351,9 +1371,9 @@ export const wordCvc4 = [
 		id: "ring",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: true },
+			{ image: DrumCard, isCorrect: false },
+			{ image: ShipCard, isCorrect: false },
+			{ image: RingCard, isCorrect: true },
 		],
 	},
 	{
@@ -1362,9 +1382,9 @@ export const wordCvc4 = [
 		id: "ship",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: SockCard, isCorrect: false },
+			{ image: ShipCard, isCorrect: true },
+			{ image: TentCard, isCorrect: false },
 		],
 	},
 	{
@@ -1373,9 +1393,9 @@ export const wordCvc4 = [
 		id: "sock",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: false },
-			{ image: LetterG, isCorrect: true },
-			{ image: LetterW, isCorrect: false },
+			{ image: BeltCard, isCorrect: false },
+			{ image: SockCard, isCorrect: true },
+			{ image: ClipCard, isCorrect: false },
 		],
 	},
 	{
@@ -1384,9 +1404,9 @@ export const wordCvc4 = [
 		id: "tent",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: LetterT, isCorrect: true },
-			{ image: LetterG, isCorrect: false },
-			{ image: LetterW, isCorrect: false },
+			{ image: TentCard, isCorrect: true },
+			{ image: CoinCard, isCorrect: false },
+			{ image: MaskCard, isCorrect: false },
 		],
 	},
 ];

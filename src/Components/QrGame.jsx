@@ -10,6 +10,8 @@ import Boy from "../assets/boy.png";
 import Girl from "../assets/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
+import AdvTy from "./AdvTy";
+import LastNextGameModal from "./Modals/LastNextGameModal";
 
 export default function QRGame() {
 	const [questions, setQuestions] = useState([]);
@@ -26,6 +28,7 @@ export default function QRGame() {
 
 	const [nextRoute, setNextRoute] = useState("");
 	const [gender, setGender] = useState("boy");
+	const [stageLvl, setStageLvl] = useState("1");
 	const queryParams = new URLSearchParams(location.search);
 
 	const qGender = queryParams.get("gender");
@@ -33,6 +36,7 @@ export default function QRGame() {
 
 	useEffect(() => {
 		let gend = "boy";
+		let lvl = "1";
 		if (qGender) {
 			gend = qGender.toLowerCase();
 		}
@@ -40,6 +44,7 @@ export default function QRGame() {
 		let nxtRt = `/QrGame2?gender=${gend}&level=2`;
 
 		if (qLevel === "2") {
+			lvl = 2;
 			if (gend === "girl") {
 				nxtRt == "RewardPageGirl";
 			}
@@ -49,6 +54,7 @@ export default function QRGame() {
 
 		setNextRoute(nxtRt);
 		setGender(gend);
+		setStageLvl(lvl);
 	}, [qGender, qLevel]);
 
 	useEffect(() => {
@@ -297,15 +303,25 @@ export default function QRGame() {
 			{showCorrectModal ? <CheckModal /> : <></>}
 			{gameComplete && openThankyou && (
 				<div className="modal">
-					<BS1GonzoTY closeTyVideo={closeTyVideo} />
+					<AdvTy closeTyVideo={closeTyVideo} gameLevel={stageLvl} />
 				</div>
 			)}
 			{openNextGameModal && (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => setResetGame(true)}
-				/>
+				<>
+					{stageLvl === 2 ? (
+						<LastNextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => setResetGame(true)}
+						/>
+					) : (
+						<NextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => setResetGame(true)}
+						/>
+					)}
+				</>
 			)}
 		</div>
 	);
