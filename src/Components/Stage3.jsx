@@ -16,6 +16,7 @@ import S3TY from "./S3TY";
 import { restrictToParentElement } from "@dnd-kit/modifiers";
 
 export default function Stage3() {
+	const audioRef = useRef();
 	const [rightItems, setItems] = useState([]);
 	const [wrongItems, setWrongItems] = useState([]);
 	const [resetGame, setResetGame] = useState(false);
@@ -40,6 +41,10 @@ export default function Stage3() {
 	const qLevel = queryParams.get("level");
 
 	const navigate = useNavigate();
+	useEffect(() => {
+		console.log("rightItems", rightItems);
+	}, [rightItems]);
+
 	useEffect(() => {
 		const lvl = qLevel;
 		console.log("correct Triggered");
@@ -331,12 +336,21 @@ export default function Stage3() {
 							<img
 								style={{ objectFit: "contain", width: "90%", height: "90%" }}
 								src={rightItems[0]?.image}
+								onClick={() => {
+									if (rightItems[0]?.audio) {
+										audioRef.current.play();
+									}
+								}}
 							/>
 						) : (
 							<></>
 						)}
+						{rightItems[0]?.audio && (
+							<audio ref={audioRef} src={rightItems[0]?.audio} />
+						)}
 					</div>
 				</div>
+
 				<div className="draggable-containers">
 					<DndContext
 						onDragEnd={handleDragEnd}

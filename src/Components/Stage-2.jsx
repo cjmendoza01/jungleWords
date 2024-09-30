@@ -97,7 +97,9 @@ export default function Stage2(props) {
 			}
 		} else {
 			if (gd == "girl") {
-				nxtRt = `/GirlBS2intro`;
+				nxtRt = `/GirlBS3intro`;
+			} else {
+				nxtRt = `/BoyBS3intro`;
 			}
 		}
 
