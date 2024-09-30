@@ -4,12 +4,13 @@ import "./BeginnerStage1Girl.css";
 import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useNavigate } from "react-router-dom";
+import ErrorSound from "/Wrong.mp3";
 
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";
 
-const BeginnerStage1Girl = () => {
+const BeginnerStage1Boy = () => {
 	const navigate = useNavigate();
 	// Food items to display in the side and to be dragged
 
@@ -45,6 +46,7 @@ const BeginnerStage1Girl = () => {
 	const [wrongItem, setWrongItem] = useState(false);
 	const [itemDone, setItemDone] = useState(0);
 	const audioRef = useRef();
+	const audioRef2 = useRef();
 
 	const handleDragEnd = (event) => {
 		if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
@@ -57,13 +59,14 @@ const BeginnerStage1Girl = () => {
 					"food-" + f.id === active.id ? { ...f, isDisplayed: false } : f
 				)
 			);
-			setModalData({
-				id: item.id,
-				choices: item.modalChoices,
-				audio: item.audio,
-			});
+
 			setTimeout(() => {
 				setModalActive(true);
+				setModalData({
+					id: item.id,
+					choices: item.modalChoices,
+					audio: item.audio,
+				});
 			}, 50);
 			setIsModalAnswerCorrect(false);
 		}
@@ -95,7 +98,7 @@ const BeginnerStage1Girl = () => {
 
 			if (itD === 6) {
 				setTimeout(() => {
-					navigate("/bs1tygirl");
+					navigate("/bs1tyboy");
 				}, 1000);
 			}
 		}
@@ -104,8 +107,15 @@ const BeginnerStage1Girl = () => {
 	const handleBackClick = () => {
 		navigate(-1); // Go back to the previous page
 	};
+
+	const playWrongSound = () => {
+		if (audioRef2.current) {
+			audioRef2.current.play();
+		}
+	};
 	return (
 		<main className="main">
+			<audio ref={audioRef2} src={ErrorSound} />
 			<video
 				autoPlay
 				muted
@@ -187,6 +197,7 @@ const BeginnerStage1Girl = () => {
 										tries={tries}
 										setTry={setTry}
 										setWrongItem={setWrongItem}
+										playWrongSound={playWrongSound}
 									/>
 								);
 							})}
@@ -198,7 +209,7 @@ const BeginnerStage1Girl = () => {
 	);
 };
 
-export default BeginnerStage1Girl;
+export default BeginnerStage1Boy;
 
 // Component for the food item
 const FoodItem = ({ id, modalChoices, children }) => {
@@ -251,6 +262,7 @@ const ModalChoice = ({
 	tries,
 	setTry,
 	setWrongItem,
+	playWrongSound,
 }) => {
 	const [status, setStatus] = useState("");
 	return (
@@ -265,6 +277,7 @@ const ModalChoice = ({
 						const tr = tries + 1;
 						console.log(tr);
 						if (tr === 2) {
+							playWrongSound();
 							setTimeout(() => {
 								setModalActive(false);
 							}, 1000);

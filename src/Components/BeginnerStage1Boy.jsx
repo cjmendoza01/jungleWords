@@ -4,7 +4,8 @@ import "./BeginnerStage1Boy.css";
 import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useNavigate } from "react-router-dom";
-import ErrorSound from "/wrong.mp3";
+import ErrorSound from "/Wrong.mp3";
+
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";

@@ -23,7 +23,7 @@ const BeginnerStage1Complete = () => {
 
 	const handleSkip = () => {
 		let level = 1;
-		let gender = "boy";
+		let gender = "girl";
 
 		if (qLevel) {
 			level = Number(qLevel);

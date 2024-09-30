@@ -34,7 +34,7 @@ const BoyVideo = () => {
         onEnded={handleVideoEnd}
         className="video"
       >
-        <source src="/boy.mp4" type="video/mp4" />
+        <source src="/Boy.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <img 
