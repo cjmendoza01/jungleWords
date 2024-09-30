@@ -280,7 +280,7 @@ const DroppableZone = (props) => {
 	};
 
 	return (
-		<div style={style} className="droppable-zone" ref={setNodeRef}>
+		<div style={style} className="droppable-zone-girl" ref={setNodeRef}>
 			{props.children}
 		</div>
 	);

@@ -37,7 +37,7 @@ export default function QRGame() {
 			gend = qGender.toLowerCase();
 		}
 
-		let nxtRt = `/qrGame?gender=${gend}&level=2`;
+		let nxtRt = ``;
 
 		if (qLevel === "2") {
 			nxtRt == `/qrGame?gender=${gend}&level=2`;

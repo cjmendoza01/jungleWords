@@ -6,7 +6,7 @@ import muteButton from "../assets/buttons&dialogues/muteButton.png";
 import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 
 import boyVid from "../assets/is2/boyI2Thank.mp4";
-import girlVid from "../assets/is2/girlI2Honey.mp4";
+import girlVid from "../assets/is2/girlI2Thank.mp4";
 
 const IS2TY = () => {
 	const navigate = useNavigate();
