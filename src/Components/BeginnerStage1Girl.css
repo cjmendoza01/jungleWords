@@ -136,7 +136,7 @@
     transform-origin: bottom center;
     transition: transform 0.1s ease-in-out;
     position: absolute;
-    right: 75%;
+    right: 65%;
 		width: 100px;
 		height: 200px;
 		top: 60%;
@@ -148,7 +148,7 @@
     height: 350px;
     width: 250px;
     border: none;
-    background-image: url("../assets/girl.png");
+    background-image: url("../assets/GIRL.gif");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -158,7 +158,7 @@
     transition: transform 0.1s ease-in-out;
     position: absolute;
     top: 45%;
-    right: 60%; /* Moved the girl further to the left */
+    right: 70%; /* Moved the girl further to the left */
   }
   
   .drag-n-drop-container .droppable-container .droppable-zone-boy-int {
@@ -175,7 +175,7 @@
     transition: transform 0.1s ease-in-out;
     position: absolute;
     top: 45%;
-    right: 60%; /* Moved the girl further to the left */
+    right: 70%; /* Moved the girl further to the left */
   }
 
   .drag-n-drop-container .droppable-container .droppable-zone img {
