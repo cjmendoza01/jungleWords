@@ -200,8 +200,8 @@ const IntermidiateStage2 = () => {
 						<div
 							className={
 								qGender === "girl"
-									? "droppable-zone-girl"
-									: "droppable-zone-boy"
+									? "droppable-zone-girl-int"
+									: "droppable-zone-boy-int"
 							}
 						></div>
 					</div>

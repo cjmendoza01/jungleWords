@@ -69,7 +69,7 @@
     width: 150px;
     object-fit: contain;
   }
-  
+
  
   .drag-n-drop-container .droppable-container .droppable-zone-boy {
     height: 350px;
@@ -135,12 +135,48 @@
     transform-origin: bottom center;
     transition: transform 0.1s ease-in-out;
     position: absolute;
-    right: 75%;
+    right: 65%;
 		width: 100px;
 		height: 200px;
 		top: 60%;
 		background-image: url("../assets/is1/Honeybun.gif");
   }
+
+  
+  .drag-n-drop-container .droppable-container .droppable-zone-girl-int {
+    height: 350px;
+    width: 250px;
+    border: none;
+    background-image: url("../assets/girl.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom center;
+    transition: transform 0.1s ease-in-out;
+    position: absolute;
+    top: 45%;
+    right: 70%; /* Moved the girl further to the left */
+  }
+  
+  .drag-n-drop-container .droppable-container .droppable-zone-boy-int {
+    height: 350px;
+    width: 250px;
+    border: none;
+    background-image: url("../assets/BOY.gif");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    transform-origin: bottom center;
+    transition: transform 0.1s ease-in-out;
+    position: absolute;
+    top: 45%;
+    right: 70%; /* Moved the girl further to the left */
+  }
+
   .drag-n-drop-container .droppable-container .droppable-zone img {
     height: 100%;
     width: 100%;
