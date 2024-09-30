@@ -6,11 +6,11 @@ const GirlBegStage1Intro = () => {
   const navigate = useNavigate();
 
   const handleVideoEnd = () => {
-    navigate('/BeginnerStage1Boy');
+    navigate('/BeginnerStage1Girl');
   };
 
   const handleSkip = () => {
-    navigate('/BeginnerStage1Boy');
+    navigate('/BeginnerStage1Girl');
   };
 
   return (

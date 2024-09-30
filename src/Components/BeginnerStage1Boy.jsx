@@ -95,7 +95,7 @@ const BeginnerStage1Boy = () => {
 
 			if (itD === 6) {
 				setTimeout(() => {
-					navigate("/SanderTY");
+					navigate("/bs1tyboy");
 				}, 1000);
 			}
 		}
