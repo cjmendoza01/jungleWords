@@ -27,7 +27,8 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 				videoRef.current.play();
 			}, 10000);
 		} else {
-			navigate("/BegLevelPickerBoy");
+			if (gender === "girl") navigate("/BegLevelPickerGirl");
+			else navigate("/BegLevelPickerBoy");
 		}
 	};
 
