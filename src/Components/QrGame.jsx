@@ -41,7 +41,7 @@ export default function QRGame() {
 			gend = qGender.toLowerCase();
 		}
 
-		let nxtRt = `/QrGame2?gender=${gend}&level=2`;
+		let nxtRt = `/BoyADV2intro`;
 
 		if (qLevel === "2") {
 			lvl = 2;
@@ -50,6 +50,10 @@ export default function QRGame() {
 			}
 			nxtRt == "RewardPageBoy";
 			// nxtRt == `/QrGame2?gender=${gend}&level=2`;
+		} else {
+			if (gend === "girl") {
+				nxtRt = `/GirlADV2intro`;
+			}
 		}
 
 		setNextRoute(nxtRt);
