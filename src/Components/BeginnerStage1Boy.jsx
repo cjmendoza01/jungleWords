@@ -125,7 +125,7 @@ const BeginnerStage1Boy = () => {
 
 			if (right === 6) {
 				setTimeout(() => {
-					navigate("/bs1tyboy");
+					navigate("/BS1TY?gender=boy&level=1");
 				}, 1000);
 			}
 		}
