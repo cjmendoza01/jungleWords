@@ -12,7 +12,7 @@ const IS2TY = () => {
 	const navigate = useNavigate();
 	const videoRef = useRef(null);
 	const [isMuted, setIsMuted] = useState(false); // Start unmuted
-	const [tyVId, setTyVid] = useState(boyVid);
+	const [tyVId, setTyVid] = useState(null);
 	const location = useLocation();
 	const queryParams = new URLSearchParams(location.search);
 	const qGender = queryParams.get("gender");
