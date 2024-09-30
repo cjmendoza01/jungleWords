@@ -71,6 +71,7 @@ const BS1TY = () => {
 			videoRef.current.play();
 		}
 	}, [tyVid]);
+
 	const toggleMute = () => {
 		setIsMuted(!isMuted);
 		if (videoRef.current) {

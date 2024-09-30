@@ -5,6 +5,7 @@ import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useNavigate } from "react-router-dom";
 import ErrorSound from "/Wrong.mp3";
+import rightSound from "/Corect.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";
@@ -48,6 +49,7 @@ const BeginnerStage1Boy = () => {
 	const [itemDone, setItemDone] = useState(0);
 	const audioRef = useRef();
 	const audioRef2 = useRef();
+	const audioRef3 = useRef();
 
 	const handleDragEnd = (event) => {
 		if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
@@ -104,6 +106,9 @@ const BeginnerStage1Boy = () => {
 			setTry(0);
 		}
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
+			if (isModalAnswerCorrect) {
+				playRightSound();
+			}
 			setTimeout(() => {
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
@@ -140,9 +145,16 @@ const BeginnerStage1Boy = () => {
 			audioRef2.current.play();
 		}
 	};
+
+	const playRightSound = () => {
+		if (audioRef3.current) {
+			audioRef3.current.play();
+		}
+	};
 	return (
 		<main className="main">
 			<audio ref={audioRef2} src={ErrorSound} />
+			<audio ref={audioRef3} src={rightSound} />
 			<video
 				autoPlay
 				muted
@@ -172,8 +184,16 @@ const BeginnerStage1Boy = () => {
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>
 							{isFoodItemDropped && (
-								<div className="dropped-item">
-									<img src={currentFoodItem} alt="dropped-item" />
+								<div className="">
+									<img
+										src={currentFoodItem}
+										alt="dropped-item"
+										style={{
+											width: "60%",
+											height: "60%",
+											objectFit: "contain",
+										}}
+									/>
 								</div>
 							)}
 						</DroppableZone>

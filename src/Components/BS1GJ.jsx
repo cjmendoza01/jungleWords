@@ -8,11 +8,26 @@ const BS1GJ = () => {
 	const navigate = useNavigate();
 	const videoRef = useRef(null);
 	const [isMuted, setIsMuted] = useState(false); // Start unmuted
-	const [videoSource, setVideoSource] = useState("");
+	const [videoSource, setVideoSource] = useState(null);
 
+	useEffect(() => {
+		if (videoRef.current && videoSource) {
+			console.log("play vid");
+			setTimeout(() => {
+				videoRef.current.play();
+			}, 1000);
+		}
+	}, [videoSource]);
 	// Randomly select a video source when the component mounts
 	useEffect(() => {
-		const videos = ["/vgoodBoy.mp4", "/goodBoy.mp4", "/excellentBoy.mp4"];
+		let gd = "boy";
+		if (qGender) {
+			gd = qGender.toLowerCase();
+		}
+		let videos = ["/vgoodBoy.mp4", "/goodBoy.mp4", "/excellentBoy.mp4"];
+		if (gd === "girl") {
+			videos = ["/vgoodGirl.mp4", "/goodGirl.mp4", "/excellentGirl.mp4"];
+		}
 		const randomVideo = videos[Math.floor(Math.random() * videos.length)];
 		const uniqueVideoSource = `${randomVideo}?t=${new Date().getTime()}`; // Cache busting to force reload
 		setVideoSource(uniqueVideoSource);
