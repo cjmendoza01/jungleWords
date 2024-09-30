@@ -15,7 +15,12 @@ const BoyIntStage2Intro = () => {
 
 	return (
 		<div className="BoyIntStage1Intro">
-			<video autoPlay muted={false} onEnded={handleVideoEnd} className="video">
+			<video
+				autoPlay
+				muted={false}
+				onEnded={handleVideoEnd}
+				style={{ width: "100vw", height: "100vh", objectFit: "cover" }}
+			>
 				<source src="/sanderis2instruc.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>

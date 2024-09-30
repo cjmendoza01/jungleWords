@@ -78,8 +78,6 @@ const BeginnerStage1Boy = () => {
 	};
 
 	useEffect(() => {
-		console.log("modalActive", modalActive);
-		console.log("wrongItem", wrongItem);
 		const ft = [...foodItems] || [];
 		let right = rightCounter;
 

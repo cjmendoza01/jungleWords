@@ -5,6 +5,8 @@ import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useLocation, useNavigate } from "react-router-dom";
 
+import ErrorSound from "/Wrong.mp3";
+import rightSound from "/Corect.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";
@@ -38,7 +40,9 @@ const IntermidiateStage2 = () => {
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
 	const [modalData, setModalData] = useState({
 		item: "",
-		choices: [],
+		modalChoices: [],
+		image: null,
+		isDisplayed: false,
 		audio: null,
 	});
 	const [modalActive, setModalActive] = useState(false);
@@ -48,6 +52,8 @@ const IntermidiateStage2 = () => {
 	const [wrongItem, setWrongItem] = useState(false);
 	const [itemDone, setItemDone] = useState(0);
 	const audioRef = useRef();
+	const audioRef2 = useRef();
+	const audioRef3 = useRef();
 
 	const handleDragEnd = (event) => {
 		if (event.over && event.over.id === "droppable-zone" && !currentFoodItem) {
@@ -60,18 +66,46 @@ const IntermidiateStage2 = () => {
 					"food-" + f.id === active.id ? { ...f, isDisplayed: false } : f
 				)
 			);
-			setModalData({
-				id: item.id,
-				choices: item.modalChoices,
-				audio: item.audio,
-			});
-			setModalActive(true);
+			setTimeout(() => {
+				setModalActive(true);
+				setModalData({
+					id: item.id,
+					modalChoices: item.modalChoices,
+					audio: item.audio,
+					isDisplayed: item.isDisplayed,
+					image: item.image,
+				});
+			}, 100);
 			setIsModalAnswerCorrect(false);
 		}
 	};
 
 	useEffect(() => {
+		const ft = [...foodItems] || [];
+		let right = rightCounter;
+
+		if (modalActive && wrongItem) {
+			console.log("mddddd");
+			const md = modalData;
+
+			setFoodItems((foodItems) =>
+				foodItems.map((f) => (f.id === md.id ? { ...f, isDisplayed: true } : f))
+			);
+			setTimeout(() => {
+				setModalData({
+					item: "",
+					modalChoices: [],
+					audio: null,
+					image: null,
+					isDisplayed: false,
+				});
+			}, 150);
+			setTry(0);
+		}
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
+			if (isModalAnswerCorrect) {
+				playRightSound();
+			}
 			setTimeout(() => {
 				setCurrentFoodItem("");
 				setIsFoodItemDropped(false);
@@ -81,9 +115,7 @@ const IntermidiateStage2 = () => {
 				setTimeout(() => {
 					setScale((scale) => scale + 0.15);
 				}, 1000);
-
-				let right = rightCounter + 1;
-
+				right = right + 1;
 				setRightCounter(right);
 			}
 
@@ -93,7 +125,7 @@ const IntermidiateStage2 = () => {
 
 			setItemDone(itD);
 
-			if (itD === 6) {
+			if (right === 6) {
 				setTimeout(() => {
 					let gd = "boy";
 
@@ -109,6 +141,18 @@ const IntermidiateStage2 = () => {
 
 	const handleBackClick = () => {
 		navigate(-1); // Go back to the previous page
+	};
+
+	const playWrongSound = () => {
+		if (audioRef2.current) {
+			audioRef2.current.play();
+		}
+	};
+
+	const playRightSound = () => {
+		if (audioRef3.current) {
+			audioRef3.current.play();
+		}
 	};
 	return (
 		<main className="main">
@@ -155,7 +199,9 @@ const IntermidiateStage2 = () => {
 						</DroppableZone>
 						<div
 							className={
-								qGender === "girl" ? "droppable-zone-girl" : "droppable-zone"
+								qGender === "girl"
+									? "droppable-zone-girl"
+									: "droppable-zone-boy"
 							}
 						></div>
 					</div>
@@ -192,7 +238,7 @@ const IntermidiateStage2 = () => {
 						<audio ref={audioRef} src={modalData.audio} />
 
 						<div className="choices">
-							{modalData.choices.map(({ image, isCorrect }, i) => {
+							{modalData.modalChoices.map(({ image, isCorrect }, i) => {
 								return (
 									<ModalChoice
 										key={i}
@@ -204,6 +250,7 @@ const IntermidiateStage2 = () => {
 										tries={tries}
 										setTry={setTry}
 										setWrongItem={setWrongItem}
+										playWrongSound={playWrongSound}
 									/>
 								);
 							})}
@@ -268,8 +315,13 @@ const ModalChoice = ({
 	tries,
 	setTry,
 	setWrongItem,
+	playWrongSound,
 }) => {
 	const [status, setStatus] = useState("");
+
+	const statCH = () => {
+		setStatus("");
+	};
 	return (
 		<div
 			className={`choice ${status}`}
@@ -282,7 +334,9 @@ const ModalChoice = ({
 						const tr = tries + 1;
 						console.log(tr);
 						if (tr === 2) {
+							playWrongSound();
 							setTimeout(() => {
+								statCH();
 								setModalActive(false);
 							}, 1000);
 							setWrongItem(true);
@@ -295,13 +349,14 @@ const ModalChoice = ({
 						setStatus("right");
 						setIsModalAnswerCorrect(true);
 						setTimeout(() => {
+							statCH();
 							setModalActive(false);
 						}, 2000);
 					}
 				}
 			}}
 		>
-			{image ? <img src={image} alt="letter" /> : label}
+			{image ? <img src={image} alt="letter" /> : null}
 		</div>
 	);
 };
