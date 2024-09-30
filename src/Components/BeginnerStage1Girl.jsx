@@ -299,6 +299,10 @@ const ModalChoice = ({
 	playWrongSound,
 }) => {
 	const [status, setStatus] = useState("");
+
+	const statCH = () => {
+		setStatus("");
+	};
 	return (
 		<div
 			className={`choice ${status}`}
@@ -313,6 +317,7 @@ const ModalChoice = ({
 						if (tr === 2) {
 							playWrongSound();
 							setTimeout(() => {
+								statCH();
 								setModalActive(false);
 							}, 1000);
 							setWrongItem(true);
@@ -325,6 +330,7 @@ const ModalChoice = ({
 						setStatus("right");
 						setIsModalAnswerCorrect(true);
 						setTimeout(() => {
+							statCH();
 							setModalActive(false);
 						}, 2000);
 					}
