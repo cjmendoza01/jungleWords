@@ -98,7 +98,7 @@ const BeginnerStage1Boy = () => {
 
 			if (itD === 6) {
 				setTimeout(() => {
-					navigate("/BS1TY?gender=girl&level=2");
+					navigate("/BS1TY?gender=girl&level=1");
 				}, 1000);
 			}
 		}
