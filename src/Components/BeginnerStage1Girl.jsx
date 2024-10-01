@@ -63,16 +63,19 @@ const BeginnerStage1Boy = () => {
 				)
 			);
 
+			setModalData({
+				id: item.id,
+				modalChoices: item.modalChoices,
+				audio: item.audio,
+				isDisplayed: item.isDisplayed,
+				image: item.image,
+			});
 			setTimeout(() => {
 				setModalActive(true);
-				setModalData({
-					id: item.id,
-					modalChoices: item.modalChoices,
-					audio: item.audio,
-					isDisplayed: item.isDisplayed,
-					image: item.image,
-				});
-			}, 50);
+				setTimeout(() => {
+					audioRef.current.play();
+				}, 190);
+			}, 190);
 			setIsModalAnswerCorrect(false);
 		}
 	};

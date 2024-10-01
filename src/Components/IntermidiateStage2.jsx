@@ -75,7 +75,11 @@ const IntermidiateStage2 = () => {
 			});
 			setTimeout(() => {
 				setModalActive(true);
+				setTimeout(() => {
+					audioRef.current.play();
+				}, 100);
 			}, 90);
+
 			setIsModalAnswerCorrect(false);
 		}
 	};

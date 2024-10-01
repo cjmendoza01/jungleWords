@@ -5,15 +5,30 @@ import soundicon from "../../assets/Volume.png";
 export default function DisplayModal({ item, closeModal }) {
 	const audioRef = useRef();
 
+	useEffect(() => {
+		if (audioRef?.current) {
+			audioRef.current.play();
+		}
+	}, []);
 	return (
 		<div className="modal">
 			<div className="modal-backdrop"></div>
 			<div className="modal-container">
+				<div style={{ position: "relative" }}>
+					<div
+						className="soundicon"
+						style={{ position: "absolute", top: "0px", left: "-20px" }}
+						onClick={() => audioRef.current.play()}
+					>
+						<img src={soundicon} alt="soundicon" />
+					</div>
+				</div>
 				<div className="modalCloseBtnDiv">
 					<div className="modalCloseBtn" onClick={() => closeModal()}>
 						X
 					</div>
 				</div>
+
 				<audio ref={audioRef} src={item?.audio} />
 				{/* SOUND ICON */}
 				{/* {item?.audio ? (

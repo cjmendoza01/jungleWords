@@ -90,11 +90,9 @@ export default function QRGame() {
 			}
 			const items = qrGameQsGetter(5, level);
 			setQuestions(items);
-			// const firstQ = items[0];
-			// const splitString = firstQ.sentence.split(firstQ.id);
-			// setStringArr(splitString);
-			// console.log(items);
-			// console.log(splitString);
+			setTimeout(() => {
+				audioRef.current.play();
+			}, 1000);
 		}
 
 		if (gameComplete) {
@@ -150,6 +148,9 @@ export default function QRGame() {
 				console.log(questions[0]);
 				const filterRight = Qfilters(questions[0], questions);
 				setQuestions(filterRight);
+				setTimeout(() => {
+					audioRef.current.play();
+				}, 1000);
 			}
 		} else {
 			setCamStatus("error");

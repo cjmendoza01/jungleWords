@@ -402,6 +402,7 @@
     border: 5px  solid #225a25;
     background-color: #cedbcb;
     border-radius: 2px;
+    position: relative;
 }
 
   .draggable-containers {

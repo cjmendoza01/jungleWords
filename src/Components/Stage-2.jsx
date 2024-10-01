@@ -202,8 +202,8 @@ export default function Stage2(props) {
 		// 	setGameComplete(true);
 		// 	setOpenThankyou(true);
 		// } else {
-		setDisabledChoices([]);
 		setTimeout(() => {
+			setDisabledChoices([]);
 			setOpenModal(true);
 		}, 1000);
 		// }
@@ -223,7 +223,9 @@ export default function Stage2(props) {
 
 			setQuestions(filtered);
 
-			setDisabledChoices([]);
+			setTimeout(() => {
+				setDisabledChoices([]);
+			}, 1000);
 
 			if (bananaCount - 1 === 0) {
 				playRightSound();
@@ -244,12 +246,12 @@ export default function Stage2(props) {
 			setNumRight(rs++);
 		} else {
 			setDisabledChoices([...disabledChoices, ch]);
+			playWrongSound();
 
 			let i = tries + 1;
 
 			setTry(i);
 			if (i >= 3) {
-				playWrongSound();
 				maxClick();
 			}
 		}

@@ -18,6 +18,7 @@ import rightSound from "/Corect.mp3";
 
 import { restrictToParentElement } from "@dnd-kit/modifiers";
 import CheckModal from "./Modals/CheckModal";
+import soundicon from "../assets/Volume.png";
 
 export default function Stage3() {
 	const audioRef = useRef();
@@ -89,6 +90,9 @@ export default function Stage3() {
 				const filterWrong = Qfilters(wrongItem[0], wrongItem);
 				setWrongItems(filterWrong);
 
+				setTimeout(() => {
+					audioRef.current.play();
+				}, 1000);
 				let pos = "center";
 				const drpItems = dropItems;
 				const indx = drpItems.findIndex((itm) => itm === "right");
@@ -232,6 +236,9 @@ export default function Stage3() {
 			console.log(wrnItems);
 			setItems(items);
 			setWrongItems(wrnItems);
+			setTimeout(() => {
+				audioRef.current.play();
+			}, 1000);
 		}
 
 		if (gameComplete) {
@@ -391,15 +398,30 @@ export default function Stage3() {
 				<div className="stage3-top-div">
 					<div className="stage3-top-div-level2">
 						{rightItems?.length ? (
-							<img
-								style={{ objectFit: "contain", width: "90%", height: "90%" }}
-								src={rightItems[0]?.image}
-								onClick={() => {
-									if (rightItems[0]?.audio) {
-										audioRef.current.play();
-									}
-								}}
-							/>
+							<>
+								<div
+									className="soundicon"
+									style={{
+										position: "absolute",
+										top: "0px",
+										left: "0px",
+										width: "30px",
+										height: "30px",
+									}}
+									onClick={() => audioRef.current.play()}
+								>
+									<img src={soundicon} alt="soundicon" />
+								</div>
+								<img
+									style={{ objectFit: "contain", width: "90%", height: "90%" }}
+									src={rightItems[0]?.image}
+									onClick={() => {
+										if (rightItems[0]?.audio) {
+											audioRef.current.play();
+										}
+									}}
+								/>
+							</>
 						) : (
 							<></>
 						)}

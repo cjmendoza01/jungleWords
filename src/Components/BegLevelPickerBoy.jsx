@@ -33,7 +33,10 @@ const BegLevelPickerBoy = () => {
 	const handleDoneClick = () => {
 		if (selectedLevel === "Beginner" && accessCode === "SanDiegoJWBeg") {
 			navigate("/BeginnerLevelBoy");
-		} else if (selectedLevel === "Intermediate" && accessCode === "SanDiegoJWInt") {
+		} else if (
+			selectedLevel === "Intermediate" &&
+			accessCode === "SanDiegoJWInt"
+		) {
 			navigate("/IntermediateLevelBoy");
 		} else if (selectedLevel === "Advanced" && accessCode === "SanDiegoJWAdv") {
 			navigate("/AdvanceLevelBoy");
@@ -62,7 +65,7 @@ const BegLevelPickerBoy = () => {
 				<source src="/BGAnimationBoy.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
-
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			{/* Back and Next Buttons in the upper left corner */}
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">
@@ -112,23 +115,27 @@ const BegLevelPickerBoy = () => {
 
 			{/* Access Code Input */}
 			{showAccessCodeInput && (
-  <div className="access-code-container">
-    <img src={accessCodeImage} alt="Access Code" className="access-code-image" />
-    <input 
-      type="password"  // Change this from "text" to "password"
-      value={accessCode} 
-      onChange={(e) => setAccessCode(e.target.value)} 
-      className="access-code-input" 
-      placeholder="Enter Access Code"
-    />
-    <button onClick={handleDoneClick} className="done-button-overlay">
-      <img src={doneButton} alt="Done" />
-    </button>
-    <button onClick={handleCloseClick} className="close-button">
-      <img src={beginX} alt="Close" />
-    </button>
-  </div>
-)}
+				<div className="access-code-container">
+					<img
+						src={accessCodeImage}
+						alt="Access Code"
+						className="access-code-image"
+					/>
+					<input
+						type="password" // Change this from "text" to "password"
+						value={accessCode}
+						onChange={(e) => setAccessCode(e.target.value)}
+						className="access-code-input"
+						placeholder="Enter Access Code"
+					/>
+					<button onClick={handleDoneClick} className="done-button-overlay">
+						<img src={doneButton} alt="Done" />
+					</button>
+					<button onClick={handleCloseClick} className="close-button">
+						<img src={beginX} alt="Close" />
+					</button>
+				</div>
+			)}
 		</div>
 	);
 };
