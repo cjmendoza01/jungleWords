@@ -7,7 +7,7 @@ import chooseIcon from '../assets/buttons&dialogues/choosecharac.png';
 import doneButtonImage from '../assets/buttons&dialogues/done.png';
 import termsAndConImage from '../assets/buttons&dialogues/termsAndcon.png';
 import agreeButtonImage from '../assets/buttons&dialogues/agreeButton.png';
-import disagreeButtonImage from '../assets/buttons&dialogues/disButton.png'; // Import the "Disagree" button image
+import disagreeButtonImage from '../assets/buttons&dialogues/disButton.png'; 
 
 const CharacterPicker = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
@@ -41,7 +41,7 @@ const CharacterPicker = () => {
   };
 
   const handleTermsDisagree = () => {
-    navigate('/'); // Redirect to the homepage
+    navigate('/'); 
   };
 
   return (
