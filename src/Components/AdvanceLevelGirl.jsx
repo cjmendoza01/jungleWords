@@ -4,7 +4,7 @@ import "./AdvanceLevelGirl.css";
 import girlImage from "../assets/girl.png";
 import advs1 from "../assets/buttons&dialogues/advs1.png";
 import advs2 from "../assets/buttons&dialogues/advs2.png";
-import doneButton from "../assets/buttons&dialogues/done.png";
+import doneButton from "../assets/buttons&dialogues/beginNext.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const AdvanceLevelGirl = () => {

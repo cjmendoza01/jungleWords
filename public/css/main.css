@@ -393,12 +393,12 @@
     justify-content: center;
 }
 .stage3-top-div-level2 {
-    width: 20%;
-    height: 40%;
+    width: 25%;
+    height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5%;
+    margin-top: 2%;
     border: 5px  solid #225a25;
     background-color: #cedbcb;
     border-radius: 2px;
@@ -434,7 +434,7 @@
 }
 
 .stage3-option-label-div{
-    width: 90px;
+    width: 130px;
     text-align: center;
     background-color: #00743f;
     padding: 10px;
@@ -442,8 +442,8 @@
     font-weight: bold;
     color: white;
     text-transform: capitalize;
-    font-size: 30px;
-    border-radius: 2px;
+    font-size: 50px;
+    border-radius: 3px;
     
 }
 
