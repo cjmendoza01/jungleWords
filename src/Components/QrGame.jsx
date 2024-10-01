@@ -6,7 +6,7 @@ import CheckModal from "./Modals/CheckModal";
 import { Qfilters } from "../utils/formatter";
 import { qrGameQsGetter } from "../utils/advAssets";
 import BGVid from "../assets/bgs1.mp4";
-import Boy from "../assets/boy.png";
+import Boy from "../assets/BOY.gif";
 import Girl from "../assets/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
@@ -228,7 +228,7 @@ export default function QRGame() {
 						height: "100%",
 					}}
 				>
-					<div style={{ width: "40%", height: "60%" }}>
+					<div style={{ width: "40%", height: "60%", }}>
 						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
 					</div>
 				</div>
