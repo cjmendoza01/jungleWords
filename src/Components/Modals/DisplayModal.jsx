@@ -1,15 +1,16 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import soundicon from "../../assets/Volume.png";
 
 export default function DisplayModal({ item, closeModal }) {
 	const audioRef = useRef();
 
+	const [playSound, setPlaySound] = useState(false);
 	useEffect(() => {
 		if (audioRef?.current) {
 			audioRef.current.play();
 		}
-	}, []);
+	}, [playSound]);
 	return (
 		<div className="modal">
 			<div className="modal-backdrop"></div>
