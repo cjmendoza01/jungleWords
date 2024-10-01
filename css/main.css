@@ -1,0 +1,555 @@
+.tester-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tester-image-container {
+  display: flex;
+  height: 100%;
+  align-items: end;
+  /* justify-content: space-between;
+  direction: rtl; */
+  flex-direction: row-reverse;
+  /* gap:3vw; */
+}
+
+.stage2-main {
+  background-color: #326901;
+  background-image: url('../../src/assets/bs2/bg.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.stage3-main {
+  background-color: #326901;
+  background-image: url('../../src/assets/bs3/bgbs3.png'); 
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.testr-img {
+  width: 80px;
+  height: 80px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-right: 10px;
+  
+}
+
+.tester-Button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent; /* Transparent background */
+  outline: none; /* Remove default button outline */
+  color: white; /* Text color for button */
+  font-weight: bold;
+}
+
+.tester-Button:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Hover effect with slight transparency */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+  
+}
+
+.animate-bananaFall {
+  transform: translateY(30px);
+  opacity: 0;
+  
+}
+
+/* Adjusting the container and image sizes for Gonzo and HoneyBun */
+.stage2-monkey-div, .stage2-honey-div {
+  width: 10%; /* Smaller size for HoneyBun and Monkey */
+  height: auto;
+  position: absolute;
+  bottom: 12%; /* Adjust this based on the alignment with the bottom box */
+  right: 5%; /* Adjust based on your design (to position on the right side) */
+}
+
+/* Adjust the image sizes for both Gonzo and HoneyBun */
+.stage2-monkey-img, .stage2-honey-img {
+  width: auto; /* Maintain aspect ratio with respect to height */
+  height: 20px; /* Set a fixed height that you can adjust */
+  object-fit: contain; /* Ensure the images fit well within the container */
+}
+
+/* General character styling, common to both */
+.stage2-char-div {
+  width: 120px; /* Adjust the size to fit better */
+  height: auto;
+  object-fit: contain;
+}
+
+.stage2-upper-div {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.stage2-upper2-div {
+  width: 90%;
+  display: flex;
+  align-items: end;
+  /* justify-content: right; */
+  margin-bottom: 3%;
+}
+
+.stage2-lower-div {
+  height: 40%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-2-button-div {
+  display: flex;
+  width: 50%;
+  padding: 20px;
+  height: 50%;
+  background-color: #cbdac8;
+  border: 3px solid #034703;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); /* Outer shadow */
+}
+
+.stage-2-button-div-item {
+  width: 20%;
+  height: 100%;
+  font-size: 7vw;
+  color: #116213;
+  background-color: #bdc6ba;
+  align-content: center;
+  text-align: center;
+  border: outset;
+  font-family: 'Lilita One', sans-serif;
+  cursor: pointer;
+
+}
+
+/* .stage-2-button-div {
+  display: flex;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    padding: 0;
+    background-image: url('../../src/assets/bs2/aeioubox.png'); 
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.stage-2-button-div-item {
+  width: 20%; 
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer;
+} */
+
+.stage-2-button-div-item:first-child {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.stage-2-button-div-item:last-child {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.button-stage2-error {
+  background-color: #ff0000;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.button-stage2-correct {
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+
+.stage-2-character-div {
+  width: 10%;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+}
+
+.stage-2-char-div {
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Modal Styles */
+.modal {
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal .modal-backdrop {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(52, 64, 84, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+.modal .modal-container {
+  background-color: lightgray;
+  width: 440px;
+  border: 10px solid green;
+  margin: auto;
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+
+.modal-video-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  color: #fff;
+  position: relative; /* Ensure child elements can be positioned absolutely */
+  overflow: hidden; /* Prevent overflow issues */
+
+}
+
+/* next game mcss */
+.modal-buttons-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  align-items: flex-end; /* Align buttons at the bottom */
+  padding-bottom: 35px; /* Space from the bottom */
+  gap:5%;
+  bottom: 5%;
+  padding-left: 20%;
+}
+
+.modal-nextGame-buttons{
+  bottom: 40px;
+  right: 400px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+.modal-playAgain-buttons {
+  bottom: 40px;
+  right: 800px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+.modal-nextGame-img,
+.modal-playAgain-img {
+  bottom: 40px;
+  right: 700px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+
+
+.modal-nextGame-buttons:hover img,
+.modal-playAgain-buttons:hover img {
+  transform: scale(1.1); /* Hover scaling effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Specific hover effect for Play Again */
+.modal-playAgain-buttons:hover img {
+  transform: scale(1.1); /* Ensure hover effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.flipVid {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.soundicon,
+.choice {
+  height: 100px;
+  width: 100px;
+  border: 2px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+}
+
+.soundicon img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.choices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.choice img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.choice.right {
+  background-color: green;
+}
+
+.choice.wrong {
+  background-color: red;
+}
+
+.modal .soundicon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.modal .soundicon img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.soundicon:hover img {
+  transform: scale(1.1);
+}
+
+.choice:hover img {
+  transform: scale(1.1);
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+    left: 30px;
+  z-index: 1000; /* Ensures it stays on top */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.backButton img {
+  width: 80px; /* Set an appropriate size */
+  height: auto;
+}
+
+.backButton:hover img {
+  transform: scale(1.1);
+}
+
+
+
+  
+  /* //Stage3/ */
+
+.stage3-top-div {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    justify-content: center;
+}
+.stage3-top-div-level2 {
+    width: 25%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    border: 5px  solid #225a25;
+    background-color: #cedbcb;
+    border-radius: 2px;
+    position: relative;
+}
+
+  .draggable-containers {
+    width: 100%;
+    height: 50%;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.draggable-container2 {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 5%;
+    width: 100%;
+    height: 100%;    
+}
+
+.stage3-option-div{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-left: 100px;
+    padding-right: 100px; */
+    /* border: 2px dashed black; */
+}
+
+.stage3-option-label-div{
+    width: 130px;
+    text-align: center;
+    background-color: #00743f;
+    padding: 10px;
+    font-family: cursive;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    font-size: 50px;
+    border-radius: 3px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modalCloseBtnDiv{
+  display: flex;
+  width: 100%;
+  justify-content: right;
+  cursor: pointer;
+}
+
+.modalCloseBtn{
+  height: 50px;
+  width: 50px;
+  background-color: green;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.qrGameDiv{
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url('../../src/assets/bgs1.png');  */
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+.qrGame-div1{
+  width: 100%;
+  height: 60%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: flex-end; /* This will push the webcam down to the bottom */
+  margin-top: 150px; /* You can adjust this value to move it further down */
+
+
+}
+/* Adjust border size to make webcam larger */
+.qrGame-div-border {
+  width: 800px; /* Width of the webcam border */
+  height: 605px; /* Height of the webcam border */
+  background-image: url('../../src/assets/border.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px; /* This will create some space from the bottom if needed */
+  margin-left: -20px;
+}
+
+/* Webcam inside the border */
+.qrGame-camDiv {
+  width: 75%; /* Increase the size inside the border */
+  height: 65%;
+  background-color: black;
+  border-radius: 9px;
+}
+
+.qr-Character{
+  width: 55%;
+  height: 110%;
+  object-fit: contain;
+}
+
+.nextStage-button {
+  position: absolute;
+  cursor: pointer;
+  bottom: 40px;
+  right: 350px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+.buttonPlay-button {
+  position: absolute;
+  cursor: pointer;
+  bottom: 40px;
+  right: 650px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+
+.nextStage-button:hover,
+.buttonPlay-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+
+}
