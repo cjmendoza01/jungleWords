@@ -5,7 +5,7 @@ import girlImage from '../assets/girl.png';
 import begs1 from '../assets/buttons&dialogues/begs1.png';
 import begs2 from '../assets/buttons&dialogues/begs2.png';
 import begs3 from '../assets/buttons&dialogues/begs3.png';
-import doneButton from '../assets/buttons&dialogues/done.png';
+import doneButton from '../assets/buttons&dialogues/beginNext.png';
 import backButtonImage from '../assets/buttons&dialogues/backButton.png'; // New back button import
 
 const BeginnerLevelGirl = () => {

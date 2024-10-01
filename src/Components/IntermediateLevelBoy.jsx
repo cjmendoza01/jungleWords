@@ -5,7 +5,7 @@ import girlImage from "../assets/girl.png";
 import ints1 from "../assets/buttons&dialogues/ints1.png";
 import ints2 from "../assets/buttons&dialogues/ints2.png";
 import ints3 from "../assets/buttons&dialogues/ints3.png";
-import doneButton from "../assets/buttons&dialogues/done.png";
+import doneButton from "../assets/buttons&dialogues/beginNext.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const IntermediateLevelBoy = () => {
