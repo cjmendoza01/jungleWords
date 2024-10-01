@@ -43,8 +43,8 @@
     max-width: 700px; /* Adjust width as needed */
     max-height: 400px; /* Adjust height as needed */
     border: 2px solid green;
-    border-radius: 20px;
-    padding: 70px; /* Adjust padding as needed */
+    border-radius: 40px;
+    padding: 60px; /* Adjust padding as needed */
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns for layout */
     grid-auto-rows: 120px; /* Adjusted height for bigger items */
@@ -52,7 +52,7 @@
     row-gap: 20px; /* Added gap between rows */
     justify-items: center; /* Centers items horizontally */
     min-height: 400px;  /* Ensures the container has a minimum height */
-    min-width: 700px;   /* Ensures the container has a minimum width */
+    min-width: 200px;   /* Ensures the container has a minimum width */
     box-sizing: border-box;
   }
   
@@ -110,7 +110,7 @@
     height: 350px;
     width: 250px;
     border: none;
-    background-image: url("../assets/girl.png");
+    background-image: url("../assets/GIRL.gif");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -85,23 +85,24 @@ const BegLevelPickerGirl = () => {
         </button>
       </div>
       {showAccessCodeInput && (
-        <div className="access-code-container">
-          <img src={accessCodeImage} alt="Access Code" className="access-code-image" />
-          <input 
-            type="text" 
-            value={accessCode} 
-            onChange={(e) => setAccessCode(e.target.value)} 
-            className="access-code-input" 
-            placeholder="Enter Access Code"
-          />
-          <button onClick={handleDoneClick} className="done-button-overlay">
-            <img src={doneButton} alt="Done" />
-          </button>
-          <button onClick={handleCloseClick} className="close-button">
-            <img src={beginX} alt="Close" />
-          </button>
-        </div>
-      )}
+  <div className="access-code-container">
+    <img src={accessCodeImage} alt="Access Code" className="access-code-image" />
+    <input 
+      type="password"  // Change this from "text" to "password"
+      value={accessCode} 
+      onChange={(e) => setAccessCode(e.target.value)} 
+      className="access-code-input" 
+      placeholder="Enter Access Code"
+    />
+    <button onClick={handleDoneClick} className="done-button-overlay">
+      <img src={doneButton} alt="Done" />
+    </button>
+    <button onClick={handleCloseClick} className="close-button">
+      <img src={beginX} alt="Close" />
+    </button>
+  </div>
+)}
+
     </div>
   );
 };

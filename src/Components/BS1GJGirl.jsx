@@ -50,13 +50,13 @@ const GirlVideo = () => {
       <img 
         src={button} 
         alt="nextStage Button" 
-        className="button nextStage-button" 
+        className="buttonz nextStage-buttonz" 
         onClick={handleNextStage} 
       />
       <img 
         src={buttonPlay} 
         alt="Play Again Button" 
-        className="button buttonPlay-button" 
+        className="buttonz buttonPlay-buttonz" 
         onClick={handleStart} 
       />
     </div>

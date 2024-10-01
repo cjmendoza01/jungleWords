@@ -254,9 +254,10 @@
   display: flex;
   justify-content: center; /* Center the buttons horizontally */
   align-items: flex-end; /* Align buttons at the bottom */
-  padding-bottom: 40px; /* Space from the bottom */
-  gap:10%;
+  padding-bottom: 35px; /* Space from the bottom */
+  gap:5%;
   bottom: 5%;
+  padding-left: 20%;
 }
 
 .modal-nextGame-buttons{
@@ -279,6 +280,8 @@
   width: 250px; /* Adjust size as needed */
   height: 90px; /* Adjust size as needed */
 }
+
+
 
 .modal-nextGame-buttons:hover img,
 .modal-playAgain-buttons:hover img {
