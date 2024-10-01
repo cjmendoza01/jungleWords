@@ -177,7 +177,7 @@ const IntermidiateStage2 = () => {
 					<img src={backButtonImage} alt="Back" />
 				</button>
 			</div>
-
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			<div className="drag-n-drop-container">
 				<DndContext onDragEnd={handleDragEnd}>
 					{/* Container for the droppable zone */}

@@ -289,6 +289,7 @@ export default function Stage2(props) {
 		<div className="stage2-main main" style={{ display: "block" }}>
 			<audio ref={audioRef2} src={ErrorSound} />
 			<audio ref={audioRef3} src={rightSound} />
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			{/* backgroun animation */}
 			<video
 				autoPlay

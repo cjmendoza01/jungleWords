@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Scanner } from "@yudiel/react-qr-scanner";
 
 import startButtonImage from "../assets/buttons&dialogues/start.png";
@@ -34,6 +34,7 @@ export default function QRGame() {
 	const qGender = queryParams.get("gender");
 	const qLevel = queryParams.get("level");
 
+	const audioRef = useRef(null);
 	useEffect(() => {
 		let gend = "boy";
 		let lvl = "1";
@@ -232,6 +233,7 @@ export default function QRGame() {
 					</div>
 				</div>
 			</div>
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			<div style={{ height: "100%", width: "60%" }}>
 				<div className="qrGame-div1">
 					<div className="qrGame-div-border">
@@ -297,7 +299,13 @@ export default function QRGame() {
 									width: "100%",
 									height: "100%",
 								}}
+								onClick={() => {
+									if (audioRef?.current) {
+										audioRef.current.play();
+									}
+								}}
 							/>
+							<audio ref={audioRef} src={questions[0]?.audio} />
 						</div>
 					) : (
 						<></>

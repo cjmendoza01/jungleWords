@@ -253,7 +253,7 @@ export default function Stage3() {
 
 				playRightSound();
 				setCorrect(true);
-			} else if (over.id === "wrong") {
+			} else if (over.id === "wrong" || over.id === "wrong2") {
 				console.log("Dropped in Zone 2: Item rejected");
 				playWrongSound();
 				setWrong(true);
@@ -330,6 +330,7 @@ export default function Stage3() {
 			{/* Fullscreen background video */}
 			<audio ref={audioRef2} src={ErrorSound} />
 			<audio ref={audioRef3} src={rightSound} />
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			<video
 				ref={videoRef}
 				loop
@@ -427,7 +428,7 @@ export default function Stage3() {
 								if (drp === "wrong2") {
 									return (
 										<DroppableZone
-											id="wrong"
+											id="wrong2"
 											label={wrongItems[1]?.id || ""}
 											isActive={false}
 										/>

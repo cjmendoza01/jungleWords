@@ -149,6 +149,7 @@ const BeginnerStage1Boy = () => {
 		<main className="main">
 			<audio ref={audioRef2} src={ErrorSound} />
 			<audio ref={audioRef3} src={rightSound} />
+			<audio autoPlay loop src={"/BgMusic.mp3"} />
 			<video
 				autoPlay
 				muted={false}

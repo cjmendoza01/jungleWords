@@ -16,7 +16,7 @@ import Duck from "../assets/advs1/Duck.png";
 import Fish from "../assets/advs1/Fish.png";
 import Flower from "../assets/advs1/Flower.png";
 import Frog from "../assets/advs1/Frog.png";
-import Grapes from "../assets/advs1/Kite.png";
+import Grapes from "../assets/advs1/Grapes.png";
 import Mice from "../assets/advs1/Mice.png";
 import Monkey from "../assets/advs1/Monkey.png";
 import Orange from "../assets/advs1/Orange.png";
@@ -50,7 +50,7 @@ import duckAudio from "../assets/advs1/audio/duck.mp3";
 import fishAudio from "../assets/advs1/audio/fish.mp3";
 import flowerAudio from "../assets/advs1/audio/flower.mp3";
 import frogAudio from "../assets/advs1/audio/frog.mp3";
-import grapesAudio from "../assets/advs1/audio/kite.mp3"; // Note: Make sure "kite.mp3" is intentional
+import grapesAudio from "../assets/advs1/audio/grapes.mp3";
 import miceAudio from "../assets/advs1/audio/mice.mp3";
 import monkeyAudio from "../assets/advs1/audio/monkey.mp3";
 import orangeAudio from "../assets/advs1/audio/orange.mp3";
