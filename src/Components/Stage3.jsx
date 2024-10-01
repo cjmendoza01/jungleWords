@@ -17,6 +17,7 @@ import ErrorSound from "/Wrong.mp3";
 import rightSound from "/Corect.mp3";
 
 import { restrictToParentElement } from "@dnd-kit/modifiers";
+import CheckModal from "./Modals/CheckModal";
 
 export default function Stage3() {
 	const audioRef = useRef();
@@ -25,7 +26,7 @@ export default function Stage3() {
 	const [resetGame, setResetGame] = useState(false);
 
 	const [nextRoute, setNextRoute] = useState("");
-
+	const [openCheckModal, setOpenCheckModal] = useState(false);
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState(1);
 
@@ -64,15 +65,23 @@ export default function Stage3() {
 	};
 
 	useEffect(() => {
+		if (openCheckModal) {
+			setTimeout(() => {
+				setOpenCheckModal(false);
+			}, 2000);
+		}
+	}, [openCheckModal]);
+
+	useEffect(() => {
 		const lvl = qLevel;
 		console.log("correct Triggered");
 		if (correct) {
 			if (rightItems?.length === 1) {
-				console.log("complete");
 				setCorrect(false);
 				setGameComplete(true);
 			} else {
-				console.log("!complete");
+				setOpenCheckModal(true);
+
 				setWrong(false);
 				const filterRight = Qfilters(rightItems[0], rightItems);
 				setItems(filterRight);
@@ -442,6 +451,7 @@ export default function Stage3() {
 					</DndContext>
 				</div>
 			</div>
+			{openCheckModal && <CheckModal />}
 			{gameComplete && openThankyou && (
 				<div className="modal">
 					<S3TY closeTyVideo={closeTyVideo} />
