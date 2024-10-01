@@ -181,8 +181,16 @@ const BeginnerStage1Boy = () => {
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>
 							{isFoodItemDropped && (
-								<div className="dropped-item">
-									<img src={currentFoodItem} alt="dropped-item" />
+								<div className="">
+									<img
+										src={currentFoodItem}
+										alt="dropped-item"
+										style={{
+											width: "60%",
+											height: "60%",
+											objectFit: "contain",
+										}}
+									/>
 								</div>
 							)}
 						</DroppableZone>
