@@ -11,11 +11,12 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 	useEffect(() => {
 		if (gender === "boy") setVid("/vGoodboy.mp3");
 		else setVid("/vgoodGirl.mp4");
+
 		if (videoRef?.current) {
 			videoRef.current.load();
 			videoRef.current.play();
 		}
-	}, [gender, videoRef]);
+	}, [gender, videoRef.current]);
 
 	const handleVideoEnded = () => {
 		if (vid !== "/starBoy.mp4" && vid !== "/starGirl.mp4") {
