@@ -199,7 +199,8 @@ export default function QRGame() {
 			<div
 				style={{
 					height: "100%",
-					width: "40%",
+					width: "40%",	
+					paddingLeft: "10%",
 				}}
 			>
 				{/* backgroun animation */}
@@ -226,9 +227,10 @@ export default function QRGame() {
 						justifyContent: "right",
 						width: "100%",
 						height: "100%",
+						paddingLeft: "30%",
 					}}
 				>
-					<div style={{ width: "40%", height: "60%", }}>
+					<div style={{ width: "90%", height: "100%", }}>
 						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
 					</div>
 				</div>
@@ -288,6 +290,7 @@ export default function QRGame() {
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "start",
+						
 					}}
 				>
 					{questions?.length ? (
@@ -298,6 +301,7 @@ export default function QRGame() {
 									objectFit: "contain",
 									width: "100%",
 									height: "100%",
+
 								}}
 								onClick={() => {
 									if (audioRef?.current) {
