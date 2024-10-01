@@ -1206,9 +1206,9 @@ export const wordCvc4 = [
 		id: "bell",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: BeltCard, isCorrect: true },
+			{ image: BellCard, isCorrect: true },
 			{ image: BallCard, isCorrect: false },
-			{ image: BellCard, isCorrect: false },
+			{ image: BeltCard, isCorrect: false },
 		],
 	},
 	{
@@ -1305,7 +1305,7 @@ export const wordCvc4 = [
 		id: "belt",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: BellCard, isCorrect: true },
+			{ image: BeltCard, isCorrect: true },
 			{ image: ShipCard, isCorrect: false },
 			{ image: LampCard, isCorrect: false },
 		],

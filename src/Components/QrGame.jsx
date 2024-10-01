@@ -199,7 +199,7 @@ export default function QRGame() {
 			<div
 				style={{
 					height: "100%",
-					width: "40%",	
+					width: "40%",
 					paddingLeft: "10%",
 				}}
 			>
@@ -230,7 +230,7 @@ export default function QRGame() {
 						paddingLeft: "30%",
 					}}
 				>
-					<div style={{ width: "90%", height: "100%", }}>
+					<div style={{ width: "90%", height: "100%" }}>
 						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
 					</div>
 				</div>
@@ -287,33 +287,41 @@ export default function QRGame() {
 						display: "block",
 						width: "100%",
 						height: "40%",
+						// backgroundColor: "blue",
 						display: "flex",
 						justifyContent: "center",
 						alignItems: "start",
-						
 					}}
 				>
-					{questions?.length ? (
-						<div style={{ width: "40%" }}>
-							<img
-								src={questions[0].image}
+					<div style={{ width: "100%", height: "100%", position: "relative" }}>
+						{questions?.length ? (
+							<div
 								style={{
-									objectFit: "contain",
-									width: "100%",
-									height: "100%",
-
+									width: "800px",
+									position: "absolute",
+									top: "-100px",
+									// left: "-20px",
 								}}
-								onClick={() => {
-									if (audioRef?.current) {
-										audioRef.current.play();
-									}
-								}}
-							/>
-							<audio ref={audioRef} src={questions[0]?.audio} />
-						</div>
-					) : (
-						<></>
-					)}
+							>
+								<img
+									src={questions[0].image}
+									style={{
+										objectFit: "contain",
+										width: "100%",
+										height: "100%",
+									}}
+									onClick={() => {
+										if (audioRef?.current) {
+											audioRef.current.play();
+										}
+									}}
+								/>
+								<audio ref={audioRef} src={questions[0]?.audio} />
+							</div>
+						) : (
+							<></>
+						)}
+					</div>
 				</div>
 			</div>
 			{showCorrectModal ? <CheckModal /> : <></>}

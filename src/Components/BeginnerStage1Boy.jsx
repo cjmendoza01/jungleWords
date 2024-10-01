@@ -325,6 +325,8 @@ const ModalChoice = ({
 							playWrongSound();
 							setTimeout(() => {
 								statCH();
+							}, 500);
+							setTimeout(() => {
 								setModalActive(false);
 							}, 1000);
 							setWrongItem(true);
@@ -338,8 +340,11 @@ const ModalChoice = ({
 						setIsModalAnswerCorrect(true);
 						setTimeout(() => {
 							statCH();
+						}, 500);
+
+						setTimeout(() => {
 							setModalActive(false);
-						}, 2000);
+						}, 1000);
 					}
 				}
 			}}

@@ -526,3 +526,29 @@
   height: 110%;
   object-fit: contain;
 }
+
+.nextStage-button {
+  position: absolute;
+  cursor: pointer;
+  bottom: 40px;
+  right: 350px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+.buttonPlay-button {
+  position: absolute;
+  cursor: pointer;
+  bottom: 40px;
+  right: 650px;
+  width: 250px; /* Adjust size as needed */
+  height: 90px; /* Adjust size as needed */
+}
+
+
+.nextStage-button:hover,
+.buttonPlay-button:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+
+}

@@ -78,13 +78,13 @@ const IS2GJ = () => {
 			<img
 				src={button}
 				alt="nextStage Button"
-				className="button nextStage-button"
+				className="nextStage-button"
 				onClick={handleNextStage}
 			/>
 			<img
 				src={buttonPlay}
 				alt="Play Again Button"
-				className="button buttonPlay-button"
+				className="buttonPlay-button"
 				onClick={handleStart}
 			/>
 		</div>
