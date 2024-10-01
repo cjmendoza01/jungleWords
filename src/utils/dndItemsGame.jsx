@@ -152,7 +152,7 @@ import StrawberryAudio from "../assets/foods/foodsAudio/Strawberry.mp3";
 import TamarindAudio from "../assets/foods/foodsAudio/Tamarind.mp3";
 import TangerineAudio from "../assets/foods/foodsAudio/Tangerine.mp3";
 import TofuAudio from "../assets/foods/foodsAudio/Tofu.mp3";
-import TomatoAudio from "../assets/foods/foodsAudio/Cookie.mp3";
+import TomatoAudio from "../assets/foods/foodsAudio/Tomato.mp3";
 import TunaAudio from "../assets/foods/foodsAudio/Tuna.mp3";
 import VanillaAudio from "../assets/foods/foodsAudio/Vanilla.mp3";
 import VegetableAudio from "../assets/foods/foodsAudio/Vegetable.mp3";
@@ -1206,9 +1206,9 @@ export const wordCvc4 = [
 		id: "bell",
 		isDisplayed: true,
 		modalChoices: [
-			{ image: BellCard, isCorrect: true },
+			{ image: BeltCard, isCorrect: true },
 			{ image: BallCard, isCorrect: false },
-			{ image: BeltCard, isCorrect: false },
+			{ image: BellCard, isCorrect: false },
 		],
 	},
 	{
