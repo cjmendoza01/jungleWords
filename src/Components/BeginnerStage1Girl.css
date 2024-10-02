@@ -252,11 +252,11 @@
     align-items: center;
   }
   
-  .soundicon,
+  
   .choice {
     height: 100px;
-    width: 100px;
-    border: 2px solid green;
+    width: 107px;
+    border: 3px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,17 +264,21 @@
     background-color: white;
   }
   
-  .soundicon img {
+  .soundicon  {
     height: 100%;
     width: 100%;
     object-fit: contain;
+    background-color: lightgray; 
+		border: none;
+    background: none;
   }
   
+ 
   .choices {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 45px;
     margin-top: 20px;
     cursor: pointer;
   }
