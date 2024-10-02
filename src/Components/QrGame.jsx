@@ -285,7 +285,7 @@ export default function QRGame() {
 
 				<div
 					style={{
-						display: "block",
+						// display: "block",
 						width: "100%",
 						height: "40%",
 						// backgroundColor: "blue",
