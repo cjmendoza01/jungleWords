@@ -58,7 +58,7 @@ const BegLevelPickerGirl = () => {
 				<source src="/BGAnimationGirl.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
-			<audio autoPlay loop src={"/BgMusic.mp3"} />
+			<audio autoPlay loop src={"/Music.mp3"} />
 			{/* Back and Next Buttons in the upper left corner */}
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">

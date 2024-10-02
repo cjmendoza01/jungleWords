@@ -39,7 +39,7 @@ const AdvanceLevelBoy = () => {
 				<source src="/BGAnimationBoy.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
-			<audio autoPlay loop src={"/BgMusic.mp3"} />
+			<audio autoPlay loop src={"/Music.mp3"} />
 			<div className="back-button-container">
 				<button onClick={handleBackClick} className="back-button">
 					<img src={backButtonImage} alt="Back" />

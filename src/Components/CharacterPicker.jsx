@@ -49,7 +49,7 @@ const CharacterPicker = () => {
 			{showTerms && (
 				<div className="terms-popup">
 					<div className="terms-content">
-						<audio autoPlay loop src={"/BgMusic.mp3"} />
+						<audio autoPlay loop src={"/Music.mp3"} />
 						<img
 							src={termsAndConImage}
 							alt="Terms and Conditions"

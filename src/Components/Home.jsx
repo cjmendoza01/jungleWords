@@ -15,7 +15,7 @@ function Home() {
 			<header>
 				<nav>
 					<div className="logo">
-						<audio autoPlay loop src={"/BgMusic.mp3"} />
+						<audio autoPlay loop src={"/Music.mp3"} />
 						<img src="/Logo.png" alt="JW Logo" />
 					</div>
 					<div className="nav-links">
