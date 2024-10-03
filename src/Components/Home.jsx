@@ -33,10 +33,15 @@ function Home() {
 					<source src="/main.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
+				
 				<div className="jungle-background">
 					<div className="content">
+						
 						<img src="/Title.png" alt="Your Image Alt Text" />
+						<br></br>
+
 						<div className="wooden-sign">
+							
 							<button onClick={handleClick} className="startButton">
 								<img
 									src={startButtonImage}
