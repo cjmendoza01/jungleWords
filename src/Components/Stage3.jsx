@@ -5,7 +5,7 @@ import "./BeginnerStage1Boy.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Importing back button image
 
-import { randonItemGetter } from "../utils/imageAssetPicker";
+import { randomVowelGetter, randonItemGetter } from "../utils/imageAssetPicker";
 import { Qfilters, shuffle } from "../utils/formatter";
 
 import Boy from "../assets/bs3/BOY.gif";
@@ -19,6 +19,7 @@ import rightSound from "/Corect.mp3";
 import { restrictToParentElement } from "@dnd-kit/modifiers";
 import CheckModal from "./Modals/CheckModal";
 import soundicon from "../assets/Volume.png";
+import { getSimilarWords } from "../utils/is3Assets";
 
 export default function Stage3() {
 	const audioRef = useRef();
@@ -78,8 +79,11 @@ export default function Stage3() {
 		console.log("correct Triggered");
 		if (correct) {
 			if (rightItems?.length === 1) {
+				setOpenCheckModal(true);
 				setCorrect(false);
-				setGameComplete(true);
+				setTimeout(() => {
+					setGameComplete(true);
+				}, 2000);
 			} else {
 				setOpenCheckModal(true);
 
@@ -87,9 +91,14 @@ export default function Stage3() {
 				const filterRight = Qfilters(rightItems[0], rightItems);
 				setItems(filterRight);
 				const wrongItem = wrongItems;
-				const filterWrong = Qfilters(wrongItem[0], wrongItem);
-				setWrongItems(filterWrong);
-
+				if (lvl === "2") {
+					const simlarWords = getSimilarWords(filterRight[0].id);
+					console.log("simlarWords", simlarWords);
+					setWrongItems(simlarWords);
+				} else {
+					const filterWrong = Qfilters(wrongItem[0], wrongItem);
+					setWrongItems(filterWrong);
+				}
 				setTimeout(() => {
 					audioRef.current.play();
 				}, 2200);
@@ -228,14 +237,19 @@ export default function Stage3() {
 				shuffleItems("center");
 			}
 
-			const items = randonItemGetter(8, iLevel);
-			const wrnItems = randonItemGetter(16, iLevel, items);
-			// setQuestion(items[0]);
-			console.log("sdd");
-			console.log(items);
-			console.log(wrnItems);
+			let items = randonItemGetter(8, iLevel);
+
+			if (iLevel === 2) {
+				items = randomVowelGetter(8, iLevel);
+				const simlarWords = getSimilarWords(items[0].id);
+				console.log("simlarWords", simlarWords);
+				setWrongItems(simlarWords);
+			} else {
+				const wrnItems = randonItemGetter(16, iLevel, items);
+				setWrongItems(wrnItems);
+			}
+
 			setItems(items);
-			setWrongItems(wrnItems);
 			setTimeout(() => {
 				audioRef.current.play();
 			}, 1000);

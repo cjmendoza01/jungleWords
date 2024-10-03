@@ -57,7 +57,7 @@ import Job from "../assets/is3/is3Images/Job.png";
 import Jump from "../assets/is3/is3Images/Jump.png";
 import Kit from "../assets/is3/is3Images/Kit.png";
 import Lane from "../assets/is3/is3Images/Lane.png";
-import Late from "../assets/is3/is3Images/ate.png";
+import Late from "../assets/is3/is3Images/Late.png";
 import Line from "../assets/is3/is3Images/Line.png";
 import Lip from "../assets/is3/is3Images/Lip.png";
 import Lit from "../assets/is3/is3Images/Lit.png";
@@ -121,7 +121,6 @@ import Wig from "../assets/is3/is3Images/Wig.png";
 import Win from "../assets/is3/is3Images/Win.png";
 import Zip from "../assets/is3/is3Images/Zip.png";
 
-
 // Import all words/assets for intermediate stage 3
 
 import bag from "../assets/is3/is3Words/Bag.png";
@@ -129,7 +128,7 @@ import ball from "../assets/is3/is3Words/Ball.png";
 import bark from "../assets/is3/is3Words/Bark.png";
 import bat from "../assets/is3/is3Words/Bat.png";
 import bed from "../assets/is3/is3Words/Bed.png";
-import Bee from "../assets/is3/is3Words/Bee.png";
+// import Bee from "../assets/is3/is3Words/Bee.png";
 import bell from "../assets/is3/is3Words/Bell.png";
 import big from "../assets/is3/is3Words/Big.png";
 import bore from "../assets/is3/is3Words/Bore.png";
@@ -245,126 +244,265 @@ import wig from "../assets/is3/is3Words/Wig.png";
 import win from "../assets/is3/is3Words/Win.png";
 import zip from "../assets/is3/is3Words/Zip.png";
 
-
 // import audio src>assets>is3>audio
 
-import BagAudio from "../assets/is3/is3audio/Bag.MP3"; 
-import BallAudio from "../assets/is3/is3audio/Ball.MP3"; 
-import BarkAudio from "../assets/is3/is3audio/Bark.MP3"; 
-import BatAudio from "../assets/is3/is3audio/Bat.MP3"; 
-import BedAudio from "../assets/is3/is3audio/Bed.MP3"; 
-import BeeAudio from "../assets/is3/is3audio/Bee.MP3"; 
-import BellAudio from "../assets/is3/is3audio/Bell.MP3"; 
-import BigAudio from "../assets/is3/is3audio/Big.MP3"; 
-import BoreAudio from "../assets/is3/is3audio/Bore.MP3"; 
-import BowAudio from "../assets/is3/is3audio/Bow.MP3"; 
-import BrakeAudio from "../assets/is3/is3audio/Brake.MP3"; 
-import BugAudio from "../assets/is3/is3audio/Bug.MP3"; 
-import BumpAudio from "../assets/is3/is3audio/Bump.MP3"; 
-import CallAudio from "../assets/is3/is3audio/Call.MP3"; 
-import CaneAudio from "../assets/is3/is3audio/Cane.MP3"; 
-import CapAudio from "../assets/is3/is3audio/Cap.MP3"; 
-import CatAudio from "../assets/is3/is3audio/Cat.MP3"; 
-import CaveAudio from "../assets/is3/is3audio/Cave.MP3"; 
-import ChainAudio from "../assets/is3/is3audio/Chain.MP3"; 
-import CobAudio from "../assets/is3/is3audio/Cob.MP3"; 
-import ColdAudio from "../assets/is3/is3audio/Cold.MP3"; 
-import CoreAudio from "../assets/is3/is3audio/Core.MP3"; 
-import CowAudio from "../assets/is3/is3audio/Cow.MP3"; 
-import CutAudio from "../assets/is3/is3audio/Cut.MP3"; 
-import DadAudio from "../assets/is3/is3audio/Dad.MP3"; 
-import DarkAudio from "../assets/is3/is3audio/Dark.MP3"; 
-import DateAudio from "../assets/is3/is3audio/Date.MP3"; 
-import DipAudio from "../assets/is3/is3audio/Dip.MP3"; 
-import DogAudio from "../assets/is3/is3audio/Dog.MP3"; 
-import DuckAudio from "../assets/is3/is3audio/Duck.MP3"; 
-import FairAudio from "../assets/is3/is3audio/Fair.MP3"; 
-import FanAudio from "../assets/is3is3audio/Fan.MP3"; 
-import FedAudio from "../assets/is3/is3audio/Fed.MP3"; 
-import FillAudio from "../assets/is3/is3audio/Fill.MP3"; 
-import FlakeAudio from "../assets/is3/is3audio/Flake.MP3"; 
-import FogAudio from "../assets/is3/is3audio/Fog.MP3"; 
-import FunAudio from "../assets/is3/is3audio/Fun.MP3"; 
-import GoldAudio from "../assets/is3/is3audio/Gold.MP3"; 
-import HairAudio from "../assets/is3/is3audio/Hair.MP3"; 
-import HamAudio from "../assets/is3/is3audio/Ham.MP3"; 
-import HatAudio from "../assets/is3/is3audio/Hat.MP3"; 
-import HenAudio from "../assets/is3/is3audio/Hen.MP3"; 
-import HideAudio from "../assets/is3/is3audio/Hide.MP3"; 
-import HillAudio from "../assets/is3/is3audio/Hill.MP3"; 
-import HoldAudio from "../assets/is3/is3audio/Hold.MP3"; 
-import HopAudio from "../assets/is3/is3audio/Hop.MP3"; 
-import HotAudio from "../assets/is3/is3audio/Hot.MP3"; 
-import HowAudio from "../assets/is3/is3audio/How.MP3"; 
-import HugAudio from "../assets/is3/is3audio/Hug.MP3"; 
-import HutAudio from "../assets/is3/is3audio/Hut.MP3"; 
-import JamAudio from "../assets/is3/is3audio/Jam.MP3"; 
-import JawAudio from "../assets/is3/is3audio/Jaw.MP3"; 
-import JetAudio from "../assets/is3/is3audio/Jet.MP3"; 
-import JobAudio from "../assets/is3/is3audio/Job.MP3"; 
-import JumpAudio from "../assets/is3/is3audio/Jump.MP3"; 
-import KitAudio from "../assets/is3/is3audio/Kit.MP3"; 
-import LaneAudio from "../assets/is3/is3audio/Lane.MP3"; 
-import LateAudio from "../assets/is3/is3audio/Late.MP3"; 
-import LineAudio from "../assets/is3/is3audio/Line.MP3"; 
-import LipAudio from "../assets/is3/is3audio/Lip.MP3"; 
-import LitAudio from "../assets/is3/is3audio/Lit.MP3"; 
-import LogAudio from "../assets/is3/is3audio/Log.MP3"; 
-import LuckAudio from "../assets/is3/is3audio/Luck.MP3"; 
-import LumpAudio from "../assets/is3/is3audio/Lump.MP3"; 
-import MadAudio from "../assets/is3/is3audio/Mad.MP3"; 
-import ManAudio from "../assets/is3/is3audio/Man.MP3"; 
-import ManeAudio from "../assets/is3/is3audio/Mane.MP3"; 
-import MapAudio from "../assets/is3/is3audio/Map.MP3"; 
-import MateAudio from "../assets/is3/is3audio/Mate.MP3"; 
-import MiceAudio from "../assets/is3/is3audio/Mice.MP3"; 
-import MopAudio from "../assets/is3/is3audio/Mop.MP3"; 
-import MugAudio from "../assets/is3/is3audio/Mug.MP3"; 
-import NapAudio from "../assets/is3/is3audio/Nap.MP3"; 
-import NetAudio from "../assets/is3/is3audio/Net.MP3"; 
-import NiceAudio from "../assets/is3/is3audio/Nice.MP3"; 
-import NineAudio from "../assets/is3/is3audio/Nine.MP3"; 
-import NotAudio from "../assets/is3/is3audio/Not.MP3"; 
-import NutAudio from "../assets/is3/is3audio/Nut.MP3"; 
-import PainAudio from "../assets/is3/is3audio/Pain.MP3"; 
-import PairAudio from "../assets/is3/is3audio/Pair.MP3"; 
-import PanAudio from "../assets/is3/is3audio/Pan.MP3"; 
-import ParkAudio from "../assets/is3/is3audio/Park.MP3"; 
-import PawAudio from "../assets/is3/is3audio/Paw.MP3"; 
-import PenAudio from "../assets/is3/is3audio/Pen.MP3"; 
-import PetAudio from "../assets/is3/is3audio/Pet.MP3"; 
-import PigAudio from "../assets/is3/is3audio/Pig.MP3"; 
-import PillAudio  from "../assets/is3/is3audio/Pill.MP3";
-import PinAudio  from "../assets/is3/is3audio/Pin.MP3";
-import PineAudio  from "../assets/is3/is3audio/Pine.MP3";
-import PotAudio  from "../assets/is3/is3audio/Pot.MP3";
-import RagAudio  from "../assets/is3/is3audio/Rag.MP3";
-import RainAudio  from "../assets/is3/is3audio/Rain.MP3";
-import RamAudio  from "../assets/is3/is3audio/Ram.MP3";
-import RedAudio  from "../assets/is3/is3audio/Red.MP3";
-import RiceAudio  from "../assets/is3/is3audio/Rice.MP3";
-import RideAudio  from "../assets/is3/is3audio/Ride.MP3";
-import RunAudio  from "../assets/is3/is3audio/Run.MP3";
-import SadAudio  from "../assets/is3/is3audio/Sad.MP3";
-import SaveAudio  from "../assets/is3/is3audio/Save.MP3";
-import SawAudio  from "../assets/is3/is3audio/Saw.MP3";
-import SeeAudio  from "../assets/is3/is3audio/See.MP3";
-import SellAudio  from "../assets/is3/is3audio/Sell.MP3";
-import ShakeAudio  from "../assets/is3/is3audio/Shake.MP3";
-import ShoreAudio from "../assets/is3/is3audio/Shore.MP3";
-import SitAudio  from "../assets/is3/is3audio/Sit.MP3";
-import SobAudio  from "../assets/is3/is3audio/Sob.MP3";
-import SunAudio  from "../assets/is3/is3audio/Sun.MP3";
-import TagAudio from "../assets/is3/is3audio/Tag.MP3";
-import TallAudio from "../assets/is3/is3audio/Tall.MP3";
-import TenAudio from "../assets/is3/is3audio/Ten.MP3";
-import TideAudio from "../assets/is3/is3audio/Tide.MP3";
-import TinAudio from "../assets/is3/is3audio/Tin.MP3";
-import TopAudio from "../assets/is3/is3audio/Top.MP3";
-import TreeAudio from "../assets/is3/is3audio/Tree.MP3";
-import TruckAudio from "../assets/is3/is3audio/Truck.MP3";
-import WaveAudio from "../assets/is3/is3audio/Wave.MP3";
-import WellAudio from "../assets/is3/is3audio/Well.MP3";
-import WigAudio from "../assets/is3/is3audio/Wig.MP3";
-import WinAudio from "../assets/is3/is3audio/Win.MP3";
-import ZipAudio from "../assets/is3/is3audio/Zip.MP3";
+import BagAudio from "../assets/is3/is3Audio/Bag.mp3";
+import BallAudio from "../assets/is3/is3Audio/Ball.mp3";
+import BarkAudio from "../assets/is3/is3Audio/Bark.mp3";
+import BatAudio from "../assets/is3/is3Audio/Bat.mp3";
+import BedAudio from "../assets/is3/is3Audio/Bed.mp3";
+import BeeAudio from "../assets/is3/is3Audio/Bee.mp3";
+import BellAudio from "../assets/is3/is3Audio/Bell.mp3";
+import BigAudio from "../assets/is3/is3Audio/Big.mp3";
+import BoreAudio from "../assets/is3/is3Audio/Bore.mp3";
+import BowAudio from "../assets/is3/is3Audio/Bow.mp3";
+import BrakeAudio from "../assets/is3/is3Audio/Brake.mp3";
+import BugAudio from "../assets/is3/is3Audio/Bug.mp3";
+import BumpAudio from "../assets/is3/is3Audio/Bump.mp3";
+import CallAudio from "../assets/is3/is3Audio/Call.mp3";
+import CaneAudio from "../assets/is3/is3Audio/Cane.mp3";
+import CapAudio from "../assets/is3/is3Audio/Cap.mp3";
+import CatAudio from "../assets/is3/is3Audio/Cat.mp3";
+import CaveAudio from "../assets/is3/is3Audio/Cave.mp3";
+import ChainAudio from "../assets/is3/is3Audio/Chain.mp3";
+import CobAudio from "../assets/is3/is3Audio/Cob.mp3";
+import ColdAudio from "../assets/is3/is3Audio/Cold.mp3";
+import CoreAudio from "../assets/is3/is3Audio/Core.mp3";
+import CowAudio from "../assets/is3/is3Audio/Cow.mp3";
+import CutAudio from "../assets/is3/is3Audio/Cut.mp3";
+import DadAudio from "../assets/is3/is3Audio/Dad.mp3";
+import DarkAudio from "../assets/is3/is3Audio/Dark.mp3";
+import DateAudio from "../assets/is3/is3Audio/Date.mp3";
+import DipAudio from "../assets/is3/is3Audio/Dip.mp3";
+import DogAudio from "../assets/is3/is3Audio/Dog.mp3";
+import DuckAudio from "../assets/is3/is3Audio/Duck.mp3";
+import FairAudio from "../assets/is3/is3Audio/Fair.mp3";
+import FanAudio from "../assets/is3/is3Audio/Fan.mp3";
+import FedAudio from "../assets/is3/is3Audio/Fed.mp3";
+import FillAudio from "../assets/is3/is3Audio/Fill.mp3";
+import FlakeAudio from "../assets/is3/is3Audio/Flake.mp3";
+import FogAudio from "../assets/is3/is3Audio/Fog.mp3";
+import FunAudio from "../assets/is3/is3Audio/Fun.mp3";
+import GoldAudio from "../assets/is3/is3Audio/Gold.mp3";
+import HairAudio from "../assets/is3/is3Audio/Hair.mp3";
+import HamAudio from "../assets/is3/is3Audio/Ham.mp3";
+import HatAudio from "../assets/is3/is3Audio/Hat.mp3";
+import HenAudio from "../assets/is3/is3Audio/Hen.mp3";
+import HideAudio from "../assets/is3/is3Audio/Hide.mp3";
+import HillAudio from "../assets/is3/is3Audio/Hill.mp3";
+import HoldAudio from "../assets/is3/is3Audio/Hold.mp3";
+import HopAudio from "../assets/is3/is3Audio/Hop.mp3";
+import HotAudio from "../assets/is3/is3Audio/Hot.mp3";
+import HowAudio from "../assets/is3/is3Audio/How.mp3";
+import HugAudio from "../assets/is3/is3Audio/Hug.mp3";
+import HutAudio from "../assets/is3/is3Audio/Hut.mp3";
+import JamAudio from "../assets/is3/is3Audio/Jam.mp3";
+import JawAudio from "../assets/is3/is3Audio/Jaw.mp3";
+import JetAudio from "../assets/is3/is3Audio/Jet.mp3";
+import JobAudio from "../assets/is3/is3Audio/Job.mp3";
+import JumpAudio from "../assets/is3/is3Audio/Jump.mp3";
+import KitAudio from "../assets/is3/is3Audio/Kit.mp3";
+import LaneAudio from "../assets/is3/is3Audio/Lane.mp3";
+import LateAudio from "../assets/is3/is3Audio/Late.mp3";
+import LineAudio from "../assets/is3/is3Audio/Line.mp3";
+import LipAudio from "../assets/is3/is3Audio/Lip.mp3";
+import LitAudio from "../assets/is3/is3Audio/Lit.mp3";
+import LogAudio from "../assets/is3/is3Audio/Log.mp3";
+import LuckAudio from "../assets/is3/is3Audio/Luck.mp3";
+import LumpAudio from "../assets/is3/is3Audio/Lump.mp3";
+import MadAudio from "../assets/is3/is3Audio/Mad.mp3";
+import ManAudio from "../assets/is3/is3Audio/Man.mp3";
+import ManeAudio from "../assets/is3/is3Audio/Mane.mp3";
+import MapAudio from "../assets/is3/is3Audio/Map.mp3";
+import MateAudio from "../assets/is3/is3Audio/Mate.mp3";
+import MiceAudio from "../assets/is3/is3Audio/Mice.mp3";
+import MopAudio from "../assets/is3/is3Audio/Mop.mp3";
+import MugAudio from "../assets/is3/is3Audio/Mug.mp3";
+import NapAudio from "../assets/is3/is3Audio/Nap.mp3";
+import NetAudio from "../assets/is3/is3Audio/Net.mp3";
+import NiceAudio from "../assets/is3/is3Audio/Nice.mp3";
+import NineAudio from "../assets/is3/is3Audio/Nine.mp3";
+import NotAudio from "../assets/is3/is3Audio/Not.mp3";
+import NutAudio from "../assets/is3/is3Audio/Nut.mp3";
+import PainAudio from "../assets/is3/is3Audio/Pain.mp3";
+import PairAudio from "../assets/is3/is3Audio/Pair.mp3";
+import PanAudio from "../assets/is3/is3Audio/Pan.mp3";
+import ParkAudio from "../assets/is3/is3Audio/Park.mp3";
+import PawAudio from "../assets/is3/is3Audio/Paw.mp3";
+import PenAudio from "../assets/is3/is3Audio/Pen.mp3";
+import PetAudio from "../assets/is3/is3Audio/Pet.mp3";
+import PigAudio from "../assets/is3/is3Audio/Pig.mp3";
+import PillAudio from "../assets/is3/is3Audio/Pill.mp3";
+import PinAudio from "../assets/is3/is3Audio/Pin.mp3";
+import PineAudio from "../assets/is3/is3Audio/Pine.mp3";
+import PotAudio from "../assets/is3/is3Audio/Pot.mp3";
+import RagAudio from "../assets/is3/is3Audio/Rag.mp3";
+import RainAudio from "../assets/is3/is3Audio/Rain.mp3";
+import RamAudio from "../assets/is3/is3Audio/Ram.mp3";
+import RedAudio from "../assets/is3/is3Audio/Red.mp3";
+import RiceAudio from "../assets/is3/is3Audio/Rice.mp3";
+import RideAudio from "../assets/is3/is3Audio/Ride.mp3";
+import RunAudio from "../assets/is3/is3Audio/Run.mp3";
+import SadAudio from "../assets/is3/is3Audio/Sad.mp3";
+import SaveAudio from "../assets/is3/is3Audio/Save.mp3";
+import SawAudio from "../assets/is3/is3Audio/Saw.mp3";
+import SeeAudio from "../assets/is3/is3Audio/See.mp3";
+import SellAudio from "../assets/is3/is3Audio/Sell.mp3";
+import ShakeAudio from "../assets/is3/is3Audio/Shake.mp3";
+import ShoreAudio from "../assets/is3/is3Audio/Shore.mp3";
+import SitAudio from "../assets/is3/is3Audio/Sit.mp3";
+import SobAudio from "../assets/is3/is3Audio/Sob.mp3";
+import SunAudio from "../assets/is3/is3Audio/Sun.mp3";
+import TagAudio from "../assets/is3/is3Audio/Tag.mp3";
+import TallAudio from "../assets/is3/is3Audio/Tall.mp3";
+import TenAudio from "../assets/is3/is3Audio/Ten.mp3";
+import TideAudio from "../assets/is3/is3Audio/Tide.mp3";
+import TinAudio from "../assets/is3/is3Audio/Tin.mp3";
+import TopAudio from "../assets/is3/is3Audio/Top.mp3";
+import TreeAudio from "../assets/is3/is3Audio/Tree.mp3";
+import TruckAudio from "../assets/is3/is3Audio/Truck.mp3";
+import WaveAudio from "../assets/is3/is3Audio/Wave.mp3";
+import WellAudio from "../assets/is3/is3Audio/Well.mp3";
+import WigAudio from "../assets/is3/is3Audio/Wig.mp3";
+import WinAudio from "../assets/is3/is3Audio/Win.mp3";
+import ZipAudio from "../assets/is3/is3Audio/Zip.mp3";
+
+export const wordFamily = [
+	{ image: Bag, id: "bag", audio: BagAudio },
+	{ image: Ball, id: "ball", audio: BallAudio },
+	{ image: Bark, id: "bark", audio: BarkAudio },
+	{ image: Bat, id: "bat", audio: BatAudio },
+	{ image: Bed, id: "bed", audio: BedAudio },
+	{ image: Bee, id: "bee", audio: BeeAudio },
+	{ image: Bell, id: "bell", audio: BellAudio },
+	{ image: Big, id: "big", audio: BigAudio },
+	{ image: Bore, id: "bore", audio: BoreAudio },
+	{ image: Bow, id: "bow", audio: BowAudio },
+	{ image: Brake, id: "brake", audio: BrakeAudio },
+	{ image: Bug, id: "bug", audio: BugAudio },
+	{ image: Bump, id: "bump", audio: BumpAudio },
+	{ image: Call, id: "call", audio: CallAudio },
+	{ image: Cane, id: "cane", audio: CaneAudio },
+	{ image: Cap, id: "cap", audio: CapAudio },
+	{ image: Cat, id: "cat", audio: CatAudio },
+	{ image: Cave, id: "cave", audio: CaveAudio },
+	{ image: Chain, id: "chain", audio: ChainAudio },
+	{ image: Cob, id: "cob", audio: CobAudio },
+	{ image: Cold, id: "cold", audio: ColdAudio },
+	{ image: Core, id: "core", audio: CoreAudio },
+	{ image: Cow, id: "cow", audio: CowAudio },
+	{ image: Cut, id: "cut", audio: CutAudio },
+	{ image: Dad, id: "dad", audio: DadAudio },
+	{ image: Dark, id: "dark", audio: DarkAudio },
+	{ image: Date, id: "date", audio: DateAudio },
+	{ image: Dip, id: "dip", audio: DipAudio },
+	{ image: Dog, id: "dog", audio: DogAudio },
+	{ image: Duck, id: "duck", audio: DuckAudio },
+	{ image: Fair, id: "fair", audio: FairAudio },
+	{ image: Fan, id: "fan", audio: FanAudio },
+	{ image: Fed, id: "fed", audio: FedAudio },
+	{ image: Fill, id: "fill", audio: FillAudio },
+	{ image: Flake, id: "flake", audio: FlakeAudio },
+	{ image: Fog, id: "fog", audio: FogAudio },
+	{ image: Fun, id: "fun", audio: FunAudio },
+	{ image: Gold, id: "gold", audio: GoldAudio },
+	{ image: Hair, id: "hair", audio: HairAudio },
+	{ image: Ham, id: "ham", audio: HamAudio },
+	{ image: Hat, id: "hat", audio: HatAudio },
+	{ image: Hen, id: "hen", audio: HenAudio },
+	{ image: Hide, id: "hide", audio: HideAudio },
+	{ image: Hill, id: "hill", audio: HillAudio },
+	{ image: Hold, id: "hold", audio: HoldAudio },
+	{ image: Hop, id: "hop", audio: HopAudio },
+	{ image: Hot, id: "hot", audio: HotAudio },
+	{ image: How, id: "how", audio: HowAudio },
+	{ image: Hug, id: "hug", audio: HugAudio },
+	{ image: Hut, id: "hut", audio: HutAudio },
+	{ image: Jam, id: "jam", audio: JamAudio },
+	{ image: Jaw, id: "jaw", audio: JawAudio },
+	{ image: Jet, id: "jet", audio: JetAudio },
+	{ image: Job, id: "job", audio: JobAudio },
+	{ image: Jump, id: "jump", audio: JumpAudio },
+	{ image: Kit, id: "kit", audio: KitAudio },
+	{ image: Lane, id: "lane", audio: LaneAudio },
+	{ image: Late, id: "late", audio: LateAudio },
+	{ image: Line, id: "line", audio: LineAudio },
+	{ image: Lip, id: "lip", audio: LipAudio },
+	{ image: Lit, id: "lit", audio: LitAudio },
+	{ image: Log, id: "log", audio: LogAudio },
+	{ image: Luck, id: "luck", audio: LuckAudio },
+	{ image: Lump, id: "lump", audio: LumpAudio },
+	{ image: Mad, id: "mad", audio: MadAudio },
+	{ image: Man, id: "man", audio: ManAudio },
+	{ image: Mane, id: "mane", audio: ManeAudio },
+	{ image: Map, id: "map", audio: MapAudio },
+	{ image: Mate, id: "mate", audio: MateAudio },
+	{ image: Mice, id: "mice", audio: MiceAudio },
+	{ image: Mop, id: "mop", audio: MopAudio },
+	{ image: Mug, id: "mug", audio: MugAudio },
+	{ image: Nap, id: "nap", audio: NapAudio },
+	{ image: Net, id: "net", audio: NetAudio },
+	{ image: Nice, id: "nice", audio: NiceAudio },
+	{ image: Nine, id: "nine", audio: NineAudio },
+	{ image: Not, id: "not", audio: NotAudio },
+	{ image: Nut, id: "nut", audio: NutAudio },
+	{ image: Pain, id: "pain", audio: PainAudio },
+	{ image: Pair, id: "pair", audio: PairAudio },
+	{ image: Pan, id: "pan", audio: PanAudio },
+	{ image: Park, id: "park", audio: ParkAudio },
+	{ image: Paw, id: "paw", audio: PawAudio },
+	{ image: Pen, id: "pen", audio: PenAudio },
+	{ image: Pet, id: "pet", audio: PetAudio },
+	{ image: Pig, id: "pig", audio: PigAudio },
+	{ image: Pill, id: "pill", audio: PillAudio },
+	{ image: Pin, id: "pin", audio: PinAudio },
+	{ image: Pine, id: "pine", audio: PineAudio },
+	{ image: Pot, id: "pot", audio: PotAudio },
+	{ image: Rag, id: "rag", audio: RagAudio },
+	{ image: Rain, id: "rain", audio: RainAudio },
+	{ image: Ram, id: "ram", audio: RamAudio },
+	{ image: Red, id: "red", audio: RedAudio },
+	{ image: Rice, id: "rice", audio: RiceAudio },
+	{ image: Ride, id: "ride", audio: RideAudio },
+	{ image: Run, id: "run", audio: RunAudio },
+	{ image: Sad, id: "sad", audio: SadAudio },
+	{ image: Save, id: "save", audio: SaveAudio },
+	{ image: Saw, id: "saw", audio: SawAudio },
+	{ image: See, id: "see", audio: SeeAudio },
+	{ image: Sell, id: "sell", audio: SellAudio },
+	{ image: Shake, id: "shake", audio: ShakeAudio },
+	{ image: Shore, id: "shore", audio: ShoreAudio },
+	{ image: Sit, id: "sit", audio: SitAudio },
+	{ image: Sob, id: "sob", audio: SobAudio },
+	{ image: Sun, id: "sun", audio: SunAudio },
+	{ image: Tag, id: "tag", audio: TagAudio },
+	{ image: Tall, id: "tall", audio: TallAudio },
+	{ image: Ten, id: "ten", audio: TenAudio },
+	{ image: Tide, id: "tide", audio: TideAudio },
+	{ image: Tin, id: "tin", audio: TinAudio },
+	{ image: Top, id: "top", audio: TopAudio },
+	{ image: Tree, id: "tree", audio: TreeAudio },
+	{ image: Truck, id: "truck", audio: TruckAudio },
+	{ image: Wave, id: "wave", audio: WaveAudio },
+	{ image: Well, id: "well", audio: WellAudio },
+	{ image: Wig, id: "wig", audio: WigAudio },
+	{ image: Win, id: "win", audio: WinAudio },
+	{ image: Zip, id: "zip", audio: ZipAudio },
+];
+
+function isSimilar(word1, word2) {
+	return word1.slice(1) === word2.slice(1);
+}
+
+export const getSimilarWords = (string) => {
+	console.log(string, "string");
+	const similarItems = wordFamily.filter(
+		(item) => item.id !== string && isSimilar(string, item.id)
+	);
+
+	console.log("similarItemssssssss", similarItems);
+
+	const randomItems = similarItems.sort(() => 0.5 - Math.random()).slice(0, 2);
+
+	return randomItems;
+};
