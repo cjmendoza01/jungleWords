@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CharacterPicker.css";
-import boyImage from "../assets/boy.png";
-import girlImage from "../assets/girl.png";
+import boyImage from "../assets/BOY.gif";
+import girlImage from "../assets/GIRL.gif";
 import chooseIcon from "../assets/buttons&dialogues/choosecharac.png";
 import doneButtonImage from "../assets/buttons&dialogues/done.png";
 import termsAndConImage from "../assets/buttons&dialogues/termsAndcon.png";

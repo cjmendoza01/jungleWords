@@ -408,6 +408,7 @@ export default function Stage3() {
 										width: "50px",
 										height: "50px",
 										backgroundColor: "lightgray", 
+										cursor: "pointer",
 										border: "none"
 									}}
 									onClick={() => audioRef.current.play()}
