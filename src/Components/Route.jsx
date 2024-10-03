@@ -58,6 +58,9 @@ import BS1TY from "./BS1TY.jsx";
 import BS1GJ from "./BS1GJ.jsx";
 import QRGame2 from "./QRGame2.jsx";
 import LastNextGameModal from "./Modals/LastNextGameModal.jsx";
+import AdvanceGJGirl from "./AdvanceGJGirl.jsx";
+import AdvanceGJBoy from "./AdvanceGJBoy.jsx";
+
 function App() {
 	return (
 		<Routes>
@@ -125,6 +128,9 @@ function App() {
 			<Route path="/LastGame" element={<LastNextGameModal />} />
 
 			<Route path="/QRGame2" element={<QRGame2 />} />
+			<Route path="/AdvanceGJGirl" element={<AdvanceGJGirl />} />
+			<Route path="/AdvanceGJBoy" element={<AdvanceGJBoy />} />
+
 		</Routes>
 	);
 }
