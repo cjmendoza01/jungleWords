@@ -12,6 +12,7 @@ import NextGameModal from "./Modals/NextGameModal";
 import BS1GonzoTY from "./BS1GonzoTY";
 import AdvTy from "./AdvTy";
 import LastNextGameModal from "./Modals/LastNextGameModal";
+import { useNavigate } from "react-router-dom";
 
 export default function QRGame() {
 	const [questions, setQuestions] = useState([]);
@@ -33,6 +34,8 @@ export default function QRGame() {
 
 	const qGender = queryParams.get("gender");
 	const qLevel = queryParams.get("level");
+
+	const navigate = useNavigate();
 
 	const audioRef = useRef(null);
 	useEffect(() => {
@@ -77,6 +80,30 @@ export default function QRGame() {
 	}, [openCam, questions]);
 
 	useEffect(() => {
+		let level = 1;
+		if (qLevel) {
+			level = Number(qLevel);
+		}
+		console.log("qlevel", level);
+		let gend = "boy";
+
+		if (qGender) {
+			gend = qGender.toLowerCase();
+		}
+		console.log("qlevel", gend);
+
+		if (gameComplete && level === 2) {
+			let nxtRt = "/AdvanceGJBoy";
+
+			if (gend === "girl") {
+				nxtRt = "/AdvanceGJGirl";
+			}
+
+			console.log(nxtRt);
+			navigate(nxtRt);
+
+			//route to next Game
+		}
 		if ((!gameComplete && questions.length === 0) || resetGame) {
 			if (resetGame) {
 				setResetGame(false);
@@ -84,19 +111,11 @@ export default function QRGame() {
 				setNextGameModal(false);
 			}
 
-			let level = 1;
-			if (qLevel) {
-				level = Number(qLevel);
-			}
 			const items = qrGameQsGetter(5, level);
 			setQuestions(items);
 			setTimeout(() => {
 				audioRef.current.play();
 			}, 1000);
-		}
-
-		if (gameComplete) {
-			//route to next Game
 		}
 	}, [questions, gameComplete, setResetGame]);
 
