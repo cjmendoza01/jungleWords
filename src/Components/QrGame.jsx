@@ -120,6 +120,9 @@ export default function QRGame() {
 					console.log(questions[0]);
 					const filterRight = Qfilters(questions[0], questions);
 					setQuestions(filterRight);
+					setTimeout(() => {
+						audioRef.current.play();
+					}, 1000);
 				}
 				setQIndex(0);
 			} else {

@@ -171,7 +171,7 @@ export default function Stage2(props) {
 				}, 2500);
 			}
 
-			if (!gameComplete) {
+			if (!gameComplete && bananaCount > 0) {
 				setBananaCount((prevCount) => {
 					const newCount = prevCount - 1;
 					return newCount;
@@ -229,12 +229,13 @@ export default function Stage2(props) {
 
 			if (bananaCount - 1 === 0) {
 				playRightSound();
-				setGameComplete(true);
-				setOpenThankyou(true);
+
+				setOpenCheckModal(true);
 
 				setTimeout(() => {
-					setCorrectButton("");
-				}, 1000);
+					setGameComplete(true);
+					setOpenThankyou(true);
+				}, 2000);
 			} else {
 				setTimeout(() => {
 					playRightSound();

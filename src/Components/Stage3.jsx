@@ -92,7 +92,7 @@ export default function Stage3() {
 
 				setTimeout(() => {
 					audioRef.current.play();
-				}, 1000);
+				}, 2200);
 				let pos = "center";
 				const drpItems = dropItems;
 				const indx = drpItems.findIndex((itm) => itm === "right");
@@ -407,16 +407,16 @@ export default function Stage3() {
 										left: "15px",
 										width: "50px",
 										height: "50px",
-										backgroundColor: "lightgray", 
+										backgroundColor: "lightgray",
 										cursor: "pointer",
-										border: "none"
+										border: "none",
 									}}
 									onClick={() => audioRef.current.play()}
 								>
 									<img src={soundicon} alt="soundicon" />
 								</div>
 								<img
-									style={{ objectFit: "contain", width: "90%", height: "90%", }}
+									style={{ objectFit: "contain", width: "90%", height: "90%" }}
 									src={rightItems[0]?.image}
 									onClick={() => {
 										if (rightItems[0]?.audio) {

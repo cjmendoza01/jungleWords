@@ -244,6 +244,7 @@ const BeginnerStage1Boy = () => {
 									setTry={setTry}
 									setWrongItem={setWrongItem}
 									playWrongSound={playWrongSound}
+									wrongItem={wrongItem}
 								/>
 							);
 						})}
@@ -309,12 +310,18 @@ const ModalChoice = ({
 	setTry,
 	setWrongItem,
 	playWrongSound,
+	wrongItem,
 }) => {
 	const [status, setStatus] = useState("");
 
-	const statCH = () => {
-		setStatus("");
-	};
+	useEffect(() => {
+		if (isModalAnswerCorrect || wrongItem) {
+			setTimeout(() => {
+				setStatus("");
+			}, 700);
+		}
+	}, [isModalAnswerCorrect, wrongItem]);
+
 	return (
 		<div
 			className={`choice ${status}`}
@@ -326,11 +333,12 @@ const ModalChoice = ({
 						setStatus("wrong");
 						const tr = tries + 1;
 						console.log(tr);
+
+						playWrongSound();
 						if (tr === 2) {
-							playWrongSound();
-							setTimeout(() => {
-								statCH();
-							}, 500);
+							// setTimeout(() => {
+							// 	statCH();
+							// }, 500);
 							setTimeout(() => {
 								setModalActive(false);
 							}, 1000);
@@ -343,9 +351,9 @@ const ModalChoice = ({
 						setTry(0);
 						setStatus("right");
 						setIsModalAnswerCorrect(true);
-						setTimeout(() => {
-							statCH();
-						}, 500);
+						// setTimeout(() => {
+						// 	statCH();
+						// }, 500);
 						setTimeout(() => {
 							setModalActive(false);
 						}, 1000);
