@@ -22,7 +22,7 @@ export default function QRGame() {
 	const [showCorrectModal, setShowCorrectModal] = useState(false);
 	const [openCam, setOpenCam] = useState(false);
 
-	const [openNextGameModal, setNextGameModal] = useState(true);
+	const [openNextGameModal, setNextGameModal] = useState(false);
 	const [openThankyou, setOpenThankyou] = useState(false);
 	const [resetGame, setResetGame] = useState(false);
 
