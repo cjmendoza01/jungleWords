@@ -9,8 +9,14 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 	const [vid, setVid] = useState(null);
 	const [showBtn, setShowBtn] = useState(true);
 	useEffect(() => {
-		if (gender === "boy") setVid("/vgoodBoy.mp4");
-		else setVid("/vgoodGirl.mp4");
+		if (gender === "boy") {
+			setVid("/vgoodBoy.mp4");
+			videoRef.current.src = "/vgoodBoy.mp4";
+		} else {
+			setVid("/vgoodGirl.mp4");
+
+			videoRef.current.src = "/vgoodGirl.mp4";
+		}
 
 		if (videoRef?.current) {
 			videoRef.current.load();
@@ -22,9 +28,15 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 		if (vid !== "/starBoy.mp4" && vid !== "/starGirl.mp4") {
 			setTimeout(() => {
 				setShowBtn(false);
-				if (gender === "boy") setVid("/starBoy.mp4");
-				else setVid("/starGirl.mp4");
+				if (gender === "boy") {
+					videoRef.current.src = "/starBoy.mp4";
+					setVid("/starBoy.mp4");
+				} else {
+					videoRef.current.src = "/starGirl.mp4";
+					setVid("/starGirl.mp4");
+				}
 				setTimeout(() => {
+					// videoRef.current.
 					videoRef.current.load();
 					videoRef.current.play();
 				}, 200);
@@ -55,7 +67,7 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 							className="background-video"
 							onEnded={handleVideoEnded}
 						>
-							<source src={vid} type="video/mp4" />
+							{/* <source src={vid} type="video/mp4" /> */}
 						</video>
 						{/* )} */}
 					</div>

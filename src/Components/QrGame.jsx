@@ -22,7 +22,7 @@ export default function QRGame() {
 	const [showCorrectModal, setShowCorrectModal] = useState(false);
 	const [openCam, setOpenCam] = useState(false);
 
-	const [openNextGameModal, setNextGameModal] = useState(false);
+	const [openNextGameModal, setNextGameModal] = useState(true);
 	const [openThankyou, setOpenThankyou] = useState(false);
 	const [resetGame, setResetGame] = useState(false);
 
@@ -88,7 +88,7 @@ export default function QRGame() {
 			if (qLevel) {
 				level = Number(qLevel);
 			}
-			const items = qrGameQsGetter(1, level);
+			const items = qrGameQsGetter(5, level);
 			setQuestions(items);
 			setTimeout(() => {
 				audioRef.current.play();
