@@ -18,7 +18,7 @@ export default function DisplayModal({ item, closeModal }) {
 				<div style={{ position: "relative" }}>
 					<div
 						className="soundicon"
-						style={{ position: "absolute", top: "0px", left: "-20px" }}
+						style={{ position: "absolute", top: "0px", left: "-40px",height: "80px", width: "100px", backgroundColor: "lightgray", border: "none"}}
 						onClick={() => audioRef.current.play()}
 					>
 						<img src={soundicon} alt="soundicon" />
@@ -53,8 +53,9 @@ export default function DisplayModal({ item, closeModal }) {
 							}
 						}}
 					>
+						<br></br>
 						<img
-							style={{ width: "100%", height: "100%", objectFit: "contain" }}
+							style={{ width: "100%", height: "100%", objectFit: "contain"}}
 							src={item.image}
 						/>
 					</div>

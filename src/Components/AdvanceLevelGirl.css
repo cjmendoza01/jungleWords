@@ -30,7 +30,7 @@
   .advStage1 {
     margin: 5px;
     cursor: pointer;
-    width: 250px;
+    width: 300px;
     background-color: transparent; /* Ensure buttons are transparent */
     border: none; /* Ensure no border */
   }
@@ -38,7 +38,7 @@
   .advStage2 {
     margin: 5px;
     cursor: pointer;
-    width: 250px;
+    width: 300px;
     background-color: transparent; /* Ensure buttons are transparent */
     border: none; /* Ensure no border */
   }

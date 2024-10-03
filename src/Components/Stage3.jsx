@@ -403,17 +403,20 @@ export default function Stage3() {
 									className="soundicon"
 									style={{
 										position: "absolute",
-										top: "0px",
-										left: "0px",
-										width: "30px",
-										height: "30px",
+										top: "15px",
+										left: "15px",
+										width: "50px",
+										height: "50px",
+										backgroundColor: "lightgray", 
+										cursor: "pointer",
+										border: "none"
 									}}
 									onClick={() => audioRef.current.play()}
 								>
 									<img src={soundicon} alt="soundicon" />
 								</div>
 								<img
-									style={{ objectFit: "contain", width: "90%", height: "90%" }}
+									style={{ objectFit: "contain", width: "90%", height: "90%", }}
 									src={rightItems[0]?.image}
 									onClick={() => {
 										if (rightItems[0]?.audio) {
