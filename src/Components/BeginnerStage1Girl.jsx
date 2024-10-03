@@ -74,8 +74,8 @@ const BeginnerStage1Boy = () => {
 				setModalActive(true);
 				setTimeout(() => {
 					audioRef.current.play();
-				}, 190);
-			}, 190);
+				}, 500);
+			}, 100);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -361,7 +361,7 @@ const ModalChoice = ({
 				}
 			}}
 		>
-			{image ? <img src={image} alt="letter" /> : null}
+			{image ? <img src={image} alt="letter" loading="lazy" /> : null}
 		</div>
 	);
 };

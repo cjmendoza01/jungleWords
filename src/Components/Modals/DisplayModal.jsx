@@ -5,10 +5,12 @@ import soundicon from "../../assets/Volume.png";
 export default function DisplayModal({ item, closeModal }) {
 	const audioRef = useRef();
 
-	const [playSound, setPlaySound] = useState(false);
+	const [playSound, setPlaySound] = useState(true);
 	useEffect(() => {
-		if (audioRef?.current) {
+		if (playSound && audioRef?.current) {
 			audioRef.current.play();
+
+			setPlaySound(false);
 		}
 	}, [playSound]);
 	return (
@@ -18,8 +20,16 @@ export default function DisplayModal({ item, closeModal }) {
 				<div style={{ position: "relative" }}>
 					<div
 						className="soundicon"
-						style={{ position: "absolute", top: "0px", left: "-40px",height: "80px", width: "100px", backgroundColor: "lightgray", border: "none"}}
-						onClick={() => audioRef.current.play()}
+						style={{
+							position: "absolute",
+							top: "0px",
+							left: "-40px",
+							height: "80px",
+							width: "100px",
+							backgroundColor: "lightgray",
+							border: "none",
+						}}
+						onClick={() => setPlaySound(true)}
 					>
 						<img src={soundicon} alt="soundicon" />
 					</div>
@@ -55,7 +65,7 @@ export default function DisplayModal({ item, closeModal }) {
 					>
 						<br></br>
 						<img
-							style={{ width: "100%", height: "100%", objectFit: "contain"}}
+							style={{ width: "100%", height: "100%", objectFit: "contain" }}
 							src={item.image}
 						/>
 					</div>
