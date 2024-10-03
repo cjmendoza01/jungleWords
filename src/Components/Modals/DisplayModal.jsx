@@ -66,7 +66,7 @@ export default function DisplayModal({ item, closeModal }) {
 						<br></br>
 						<img
 							style={{ width: "100%", height: "100%", objectFit: "contain" }}
-							src={item.image}
+							src={item?.image}
 						/>
 					</div>
 				</div>

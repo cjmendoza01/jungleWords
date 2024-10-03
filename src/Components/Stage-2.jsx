@@ -123,6 +123,9 @@ export default function Stage2(props) {
 				level = Number(stageLevel);
 			}
 		}
+		console.log("ql", questions.length);
+		console.log("gamecomplete", gameComplete);
+		console.log("resetgamecomplete", resetGame);
 		if ((questions.length === 0 && !gameComplete) || resetGame) {
 			setRemoveBanana(false);
 
@@ -131,11 +134,14 @@ export default function Stage2(props) {
 				setGameComplete(false);
 				setNextGameModal(false);
 			}
-			const items = randomFoodItemGetter(8, level);
+
+			const items = randomFoodItemGetter(1, level);
+			console.log("items", items);
 			setQuestions(items);
 			setBananaCount(items.length);
 
 			setTimeout(() => {
+				console.log("opeeeen modal");
 				setOpenModal(true);
 			}, 5000);
 		}
@@ -230,10 +236,10 @@ export default function Stage2(props) {
 			if (bananaCount - 1 === 0) {
 				playRightSound();
 
+				setGameComplete(true);
 				setOpenCheckModal(true);
 
 				setTimeout(() => {
-					setGameComplete(true);
 					setOpenThankyou(true);
 				}, 2000);
 			} else {
