@@ -8,15 +8,15 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 	const videoRef = useRef(null);
 	const [vid, setVid] = useState(null);
 	const [showBtn, setShowBtn] = useState(true);
-	// useEffect(() => {
-	// 	if (gender === "boy") setVid("/vGoodboy.mp3");
-	// 	else setVid("/vgoodGirl.mp4");
+	useEffect(() => {
+		if (gender === "boy") setVid("/vgoodBoy.mp4");
+		else setVid("/vgoodGirl.mp4");
 
-	// 	if (videoRef?.current) {
-	// 		videoRef.current.load();
-	// 		videoRef.current.play();
-	// 	}
-	// }, [gender, videoRef.current]);
+		if (videoRef?.current) {
+			videoRef.current.load();
+			videoRef.current.play();
+		}
+	}, [gender, videoRef.current]);
 
 	const handleVideoEnded = () => {
 		if (vid !== "/starBoy.mp4" && vid !== "/starGirl.mp4") {
@@ -24,9 +24,11 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 				setShowBtn(false);
 				if (gender === "boy") setVid("/starBoy.mp4");
 				else setVid("/starGirl.mp4");
-				videoRef.current.load();
-				videoRef.current.play();
-			}, 10000);
+				setTimeout(() => {
+					videoRef.current.load();
+					videoRef.current.play();
+				}, 200);
+			}, 1000);
 		} else {
 			if (gender === "girl") navigate("/BegLevelPickerGirl");
 			else navigate("/BegLevelPickerBoy");
@@ -51,12 +53,9 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 							// loop
 
 							className="background-video"
-							// onEnded={handleVideoEnded}
+							onEnded={handleVideoEnded}
 						>
-							<source
-								src={gender === "boy" ? "/vgoodBoy.mp4" : "/vgoodGirl.mp4"}
-								type="video/mp4"
-							/>
+							<source src={vid} type="video/mp4" />
 						</video>
 						{/* )} */}
 					</div>

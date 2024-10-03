@@ -47,9 +47,9 @@ export default function QRGame() {
 		if (qLevel === "2") {
 			lvl = 2;
 			if (gend === "girl") {
-				nxtRt == "RewardPageGirl";
+				nxtRt == "/RewardPageGirl";
 			}
-			nxtRt == "RewardPageBoy";
+			nxtRt == "/RewardPageBoy";
 			// nxtRt == `/QrGame2?gender=${gend}&level=2`;
 		} else {
 			if (gend === "girl") {
@@ -88,7 +88,7 @@ export default function QRGame() {
 			if (qLevel) {
 				level = Number(qLevel);
 			}
-			const items = qrGameQsGetter(5, level);
+			const items = qrGameQsGetter(1, level);
 			setQuestions(items);
 			setTimeout(() => {
 				audioRef.current.play();

@@ -47,7 +47,15 @@ function Tester2() {
 						<button onClick={() => setShowQr(true)}>Create qr code</button>
 					</label>
 				</div>
-				<div style={{ width: "100%", height: "80%" }}>
+				<div
+					style={{
+						width: "100%",
+						height: "80%",
+						display: "flex",
+						justifyContent: "center",
+						alignItems: "center",
+					}}
+				>
 					<div>
 						{showQr ? <QRCode value={answer} ref={qrCodeRef} /> : <></>}
 					</div>
