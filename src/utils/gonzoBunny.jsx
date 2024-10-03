@@ -94,7 +94,7 @@ import Pot from "../assets/is3/is3Words/Pot.png";
 // import Rain from "../assets/is3/is3Words/Rain.png";
 // import Ram from "../assets/is3/is3Words/Ram.png";
 import Red from "../assets/is3/is3Words/Red.png";
-import Rice from "../assets/is3/is3Words/Ride.png";
+import Rice from "../assets/is3/is3Words/Rice.png";
 import Ride from "../assets/is3/is3Words/Ride.png";
 import Run from "../assets/is3/is3Words/Run.png";
 import Sad from "../assets/is3/is3Words/Sad.png";

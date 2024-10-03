@@ -8,6 +8,7 @@ export default function DisplayModal({ item, closeModal }) {
 	const [playSound, setPlaySound] = useState(true);
 	useEffect(() => {
 		if (playSound && audioRef?.current) {
+			audioRef.current.src = item?.audio;
 			audioRef.current.play();
 
 			setPlaySound(false);
@@ -40,7 +41,7 @@ export default function DisplayModal({ item, closeModal }) {
 					</div>
 				</div>
 
-				<audio ref={audioRef} src={item?.audio} />
+				<audio ref={audioRef} />
 				{/* SOUND ICON */}
 				{/* {item?.audio ? (
 					<>
