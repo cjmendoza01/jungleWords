@@ -124,8 +124,8 @@ import StarsSkyAudio from "../assets/advs2/audio/StarsSky.mp3";
 import SwingsSlidesAudio from "../assets/advs2/audio/SwingsSlides.mp3";
 
 export const itemsListAdvs1 = [
-	// { image: Apple, id: "apple", audio: appleAudio },
-	// { image: Ball, id: "ball", audio: ballAudio },
+	{ image: Apple, id: "apple", audio: appleAudio },
+	{ image: Ball, id: "ball", audio: ballAudio },
 	{ image: Banana, id: "banana", audio: bananaAudio },
 	{ image: Bear, id: "bear", audio: bearAudio },
 	{ image: Bird, id: "bird", audio: birdAudio },
@@ -149,10 +149,10 @@ export const itemsListAdvs1 = [
 	{ image: Rabbit, id: "rabbit", audio: rabbitAudio },
 	{ image: Salad, id: "salad", audio: saladAudio },
 	{ image: Shoes, id: "shoes", audio: shoesAudio },
-	// { image: Sky, id: "sky", audio: skyAudio },
+	{ image: Sky, id: "sky", audio: skyAudio },
 	{ image: Sock, id: "sock", audio: sockAudio },
 	{ image: Star, id: "star", audio: starAudio },
-	// { image: Sun, id: "sun", audio: sunAudio },
+	{ image: Sun, id: "sun", audio: sunAudio },
 	{ image: Sweater, id: "sweater", audio: sweaterAudio },
 	{ image: Tree, id: "tree", audio: treeAudio },
 	{ image: Truck, id: "truck", audio: truckAudio },
