@@ -86,11 +86,11 @@ export default function Stage2(props) {
 
 		let lvl = "1";
 
-		if (qLevel) {
-			lvl = qLevel;
+		if (stageLevel) {
+			lvl = stageLevel;
 		} else {
-			if (stageLevel) {
-				lvl = stageLevel;
+			if (qLevel) {
+				lvl = qLevel;
 			}
 		}
 		setStgLevel(lvl);

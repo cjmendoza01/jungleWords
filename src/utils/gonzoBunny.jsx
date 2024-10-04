@@ -306,7 +306,7 @@ import Bone from "../assets/is1/Bone.png";
 import Bowl from "../assets/is1/Bowl.png";
 import Cage from "../assets/is1/Cage.png";
 import Coke from "../assets/is1/Coke.png";
-import Cube from "../assets/is1/Coke.png";
+import Cube from "../assets/is1/Cube.png";
 import Cute from "../assets/is1/Cute.png";
 // import Date from "../assets/is1/Date.png";
 import Dice from "../assets/is1/Dice.png";

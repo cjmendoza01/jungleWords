@@ -10,6 +10,7 @@ import { Qfilters, shuffle } from "../utils/formatter";
 
 import Boy from "../assets/bs3/BOY.gif";
 import Girl from "../assets/bs3/GIRL.gif";
+import wrChoice from "../assets/wrongChoice.png";
 import NextGameModal from "./Modals/NextGameModal";
 import S3TY from "./S3TY";
 
@@ -39,6 +40,7 @@ export default function Stage3() {
 	const [correct, setCorrect] = useState(false);
 	const [wrong, setWrong] = useState(false);
 	const [openNextGameModal, setNextGameModal] = useState(false);
+
 	const location = useLocation();
 
 	const queryParams = new URLSearchParams(location.search);
@@ -58,6 +60,9 @@ export default function Stage3() {
 		if (audioRef2.current) {
 			audioRef2.current.play();
 		}
+		setTimeout(() => {
+			setWrong(false);
+		}, 1000);
 	};
 
 	const playRightSound = () => {
@@ -304,11 +309,23 @@ export default function Stage3() {
 				: "",
 			width: "200px",
 			height: "400px",
+			position: "relative",
 			// backgroundColor: "lightblue",
 		};
 
 		return (
 			<div ref={setNodeRef} style={style} {...listeners} {...attributes}>
+				{wrong && (
+					<img
+						src={wrChoice}
+						style={{
+							objectFit: "contain",
+							width: "100%",
+							position: "absolute",
+							top: "-35%",
+						}}
+					/>
+				)}
 				<img
 					style={{
 						objectFit: "contain",

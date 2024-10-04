@@ -55,7 +55,10 @@ const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 		setGender(gd);
 		setLevel(lvl);
 		setTyVid(vid);
-	}, [qGender, qLevel]);
+		if (videoRef.current) {
+			videoRef.current.src = vid;
+		}
+	}, [qGender, qLevel, gameLevel, videoRef]);
 
 	const handleVideoEnd = () => {
 		closeTyVideo();
@@ -76,18 +79,18 @@ const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 
 	return (
 		<div className="BS1GonzoTY">
-			{tyVid && (
-				<video
-					ref={videoRef}
-					autoPlay
-					muted={isMuted}
-					onEnded={handleVideoEnd}
-					className="video"
-				>
-					<source src={tyVid} type="video/mp4" />
-					Your browser does not support the video tag.
-				</video>
-			)}
+			{/* {tyVid && ( */}
+			<video
+				ref={videoRef}
+				autoPlay
+				muted={isMuted}
+				onEnded={handleVideoEnd}
+				className="video"
+			>
+				{/* <source src={tyVid} type="video/mp4" /> */}
+				{/* Your browser does not support the video tag. */}
+			</video>
+			{/* // )} */}
 
 			<img
 				src={isMuted ? unmuteButton : muteButton}
