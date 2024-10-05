@@ -41,7 +41,15 @@ export default function Stage3() {
 	const [wrong, setWrong] = useState(false);
 	const [openNextGameModal, setNextGameModal] = useState(false);
 
+	const [dropRefs, setDropRefs] = useState([]);
+	const [position, setPosition] = useState({ x: 0, y: 0 });
 	const location = useLocation();
+
+	const rightRef = useRef(null);
+
+	const itemRef = useRef(null);
+	const wrongRef = useRef(null);
+	const wrongRef2 = useRef(null);
 
 	const queryParams = new URLSearchParams(location.search);
 
@@ -274,6 +282,81 @@ export default function Stage3() {
 		}
 	}, [rightItems, wrongItems, qLevel, gameComplete, resetGame]);
 
+	const checkForCollision = (dropzoneRefs) => {
+		console.log("drop zonesss", dropzoneRefs);
+		if (dropzoneRefs?.length) {
+			for (const dropzone of dropzoneRefs) {
+				const rect = dropzone.current.getBoundingClientRect();
+				const itemRect = itemRef.current.getBoundingClientRect();
+
+				if (itemRect.x >= rect.left && itemRect.x <= rect.right) {
+					return dropzone;
+				}
+			}
+			return null;
+		}
+	};
+
+	useEffect(() => {
+		// Handle key press to move the item using W, A, S, D
+		const handleKeyPress = (event) => {
+			const step = 20; // Movement step size
+			let newPos = { ...position };
+
+			switch (event.key.toLowerCase()) {
+				case "w": // Move up
+					newPos.y = newPos.y - step;
+					break;
+				case "a": // Move left
+					newPos.x = newPos.x - step;
+					break;
+				case "s": // Move down
+					newPos.y = newPos.y + step;
+					break;
+				case "d": // Move right
+					newPos.x = newPos.x + step;
+					break;
+				default:
+					return;
+			}
+
+			// Update the position state
+			setPosition(newPos);
+
+			// After the move, check if the draggable item is inside any droppable zone
+			const dropableRefs = [rightRef, wrongRef];
+			const lvl = qLevel;
+
+			if (lvl === "2") dropableRefs.push(wrongRef2);
+			const collision = checkForCollision(dropableRefs);
+
+			// Manually trigger the logic in handleDragEnd if collision is detected
+			if (collision) {
+				if (collision.current.id === "right") {
+					console.log("Dropped in the right zone!");
+
+					playRightSound();
+					setCorrect(true);
+					setPosition({ x: 0, y: 0 });
+				} else {
+					console.log("Dropped in the wrong zone!");
+					playWrongSound();
+					setWrong(true);
+				}
+			}
+		};
+
+		window.addEventListener("keydown", handleKeyPress);
+		return () => {
+			window.removeEventListener("keydown", handleKeyPress);
+		};
+	}, [position, dropRefs]);
+
+	// useEffect(() => {
+	// 	const refs = ["right", "wrong", "wrong2"].map(() => React.createRef());
+	// 	setDropRefs(refs);
+	// }, []);
+
 	const closeTyVideo = () => {
 		setOpenThankyou(false);
 		setNextGameModal(true);
@@ -304,9 +387,7 @@ export default function Stage3() {
 		});
 
 		const style = {
-			transform: transform
-				? `translate3d(${transform.x}px, ${transform.y}px, 0)`
-				: "",
+			transform: `translate(${position.x}px, ${position.y}px)`,
 			width: "200px",
 			height: "400px",
 			position: "relative",
@@ -327,6 +408,7 @@ export default function Stage3() {
 					/>
 				)}
 				<img
+					ref={itemRef}
 					style={{
 						objectFit: "contain",
 						width: "100%",
@@ -340,7 +422,7 @@ export default function Stage3() {
 		);
 	}
 
-	function DroppableZone({ id, label }) {
+	function DroppableZone({ id, label, index, refData }) {
 		const { setNodeRef } = useDroppable({
 			id: id,
 		});
@@ -355,7 +437,7 @@ export default function Stage3() {
 		};
 
 		return (
-			<div ref={setNodeRef} className="stage3-option-div">
+			<div ref={refData} id={id} className="stage3-option-div">
 				<div className="stage3-option-label-div">{label}</div>
 			</div>
 		);
@@ -385,34 +467,15 @@ export default function Stage3() {
 				autoPlay
 				muted={false}
 				style={{
-					position: "absolute", // Ensures it stays in the background
+					position: "absolute",
 					top: 0,
 					left: 0,
 					width: "100vw",
 					height: "100vh",
-					objectFit: "cover", // Stretches the video to cover the whole screen
-					zIndex: "1", // Places the video behind the game content
+					objectFit: "cover",
+					zIndex: "1",
 				}}
 			/>
-			{/* <video
-				autoPlay
-				muted
-				loop
-				style={{
-					position: "fixed", // Ensures it stays in the background
-					top: 0,
-					left: 0,
-					width: "100vw",
-					height: "100vh",
-					objectFit: "cover", // Stretches the video to cover the whole screen
-					zIndex: "1", // Places the video behind the game content
-				}}
-			>
-				<source src="/bgstage4.mp4" type="video/mp4" />
-				Your browser does not support the video tag.
-			</video> */}
-
-			{/* Game content */}
 			<div
 				style={{
 					position: "relative",
@@ -471,13 +534,15 @@ export default function Stage3() {
 						modifiers={[restrictToParentElement]}
 					>
 						<div className="draggable-container2">
-							{dropItems?.map((drp) => {
+							{dropItems?.map((drp, index) => {
 								if (drp === "right") {
 									return (
 										<DroppableZone
 											id="right"
 											label={rightItems[0]?.id || ""}
 											isActive={true}
+											index={index}
+											refData={rightRef}
 										/>
 									);
 								}
@@ -487,6 +552,8 @@ export default function Stage3() {
 											id="wrong"
 											label={wrongItems[0]?.id || ""}
 											isActive={false}
+											index={index}
+											refData={wrongRef}
 										/>
 									);
 								}
@@ -496,6 +563,8 @@ export default function Stage3() {
 											id="wrong2"
 											label={wrongItems[1]?.id || ""}
 											isActive={false}
+											index={index}
+											refData={wrongRef2}
 										/>
 									);
 								}
