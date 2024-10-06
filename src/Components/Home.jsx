@@ -16,14 +16,18 @@ function Home() {
 				<nav>
 					<div className="logo">
 						<audio autoPlay loop src={"/Music.mp3"} />
-						<img src="/Logo.png" alt="JW Logo" />
+						<img src="/Logo.png" alt="JW Logo" style={{ userSelect: "none" }} />
 					</div>
 					<div className="nav-links">
 						<a href="/" className="home-link">
-							<img src="/home.png" alt="Home" />
+							<img src="/home.png" alt="Home" style={{ userSelect: "none" }} />
 						</a>
 						<a href="/about-us" className="aboutus-link">
-							<img src="/aboutuss.png" alt="About Us" />
+							<img
+								src="/aboutuss.png"
+								alt="About Us"
+								style={{ userSelect: "none" }}
+							/>
 						</a>
 					</div>
 				</nav>
@@ -33,20 +37,23 @@ function Home() {
 					<source src="/main.mp4" type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
-				
+
 				<div className="jungle-background">
 					<div className="content">
-						
-						<img src="/Title.png" alt="Your Image Alt Text" />
+						<img
+							src="/Title.png"
+							alt="Your Image Alt Text"
+							style={{ userSelect: "none" }}
+						/>
 						<br></br>
 
 						<div className="wooden-sign">
-							
 							<button onClick={handleClick} className="startButton">
 								<img
 									src={startButtonImage}
 									alt="Start"
 									className="startButtonImage"
+									style={{ userSelect: "none" }}
 								/>
 							</button>
 						</div>
