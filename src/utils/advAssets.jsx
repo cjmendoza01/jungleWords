@@ -33,8 +33,8 @@ import Tree from "../assets/advs1/Tree.png";
 import Truck from "../assets/advs1/Truck.png";
 
 // Imports Advance Stage 1 audio
-// import appleAudio from "../assets/advs1/audio/Apple.mp3";
-// import ballAudio from "../assets/advs1/audio/Ball.mp3";
+import appleAudio from "../assets/advs1/audio/apple.mp3";
+import ballAudio from "../assets/advs1/audio/ball.mp3";
 import bananaAudio from "../assets/advs1/audio/banana.mp3";
 import bearAudio from "../assets/advs1/audio/bear.mp3";
 import birdAudio from "../assets/advs1/audio/bird.mp3";
@@ -58,10 +58,10 @@ import pillowAudio from "../assets/advs1/audio/pillow.mp3";
 import rabbitAudio from "../assets/advs1/audio/rabbit.mp3";
 import saladAudio from "../assets/advs1/audio/salad.mp3";
 import shoesAudio from "../assets/advs1/audio/shoes.mp3";
-// import skyAudio from "../assets/advs1/audio/sky.mp3";
+import skyAudio from "../assets/advs1/audio/sky.mp3";
 import sockAudio from "../assets/advs1/audio/sock.mp3";
 import starAudio from "../assets/advs1/audio/star.mp3";
-// import sunAudio from "../assets/advs1/audio/sun.mp3";
+import sunAudio from "../assets/advs1/audio/sun.mp3";
 import sweaterAudio from "../assets/advs1/audio/sweater.mp3";
 import treeAudio from "../assets/advs1/audio/tree.mp3";
 import truckAudio from "../assets/advs1/audio/truck.mp3";
@@ -95,7 +95,6 @@ import starsSky from "../assets/advs2/starsSky.png";
 import swingsSlides from "../assets/advs2/swingsSlides.png";
 
 // Imports Advance Stage 2 audio
-
 import BikeWheelsAudio from "../assets/advs2/audio/BikeWheels.mp3";
 import BirdTreesAudio from "../assets/advs2/audio/BirdTrees.mp3";
 import BookShelfAudio from "../assets/advs2/audio/BookShelf.mp3";
@@ -141,7 +140,7 @@ export const itemsListAdvs1 = [
 	{ image: Fish, id: "fish", audio: fishAudio },
 	{ image: Flower, id: "flower", audio: flowerAudio },
 	{ image: Frog, id: "frog", audio: frogAudio },
-	{ image: Grapes, id: "grapes", audio: grapesAudio }, // Note: you imported "Kite" audio for grapes, ensure it's correct
+	{ image: Grapes, id: "grapes", audio: grapesAudio }, 
 	{ image: Mice, id: "mice", audio: miceAudio },
 	{ image: Monkey, id: "monkey", audio: monkeyAudio },
 	{ image: Orange, id: "orange", audio: orangeAudio },
