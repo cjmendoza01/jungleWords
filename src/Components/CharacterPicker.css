@@ -8,7 +8,7 @@ body {
 
 .CharacterPicker {
   text-align: center;
-  /* background: url('junglebg.png') no-repeat center bottom/cover; */
+  background: url('junglebg.png') no-repeat center bottom/cover;
   height: 100vh;
   display: flex;
   flex-direction: column;

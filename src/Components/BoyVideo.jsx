@@ -31,7 +31,7 @@ const BoyVideo = () => {
 				ref={videoRef}
 				autoPlay
 				muted={isMuted}
-				src="/Boy.mp4"
+				src="/boy.mp4"
 				onEnded={handleVideoEnd}
 				className="video"
 			>
