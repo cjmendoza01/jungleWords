@@ -10,6 +10,7 @@ import rightSound from "/Corect.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { wordCvc4 } from "../utils/dndItemsGame";
+import ModalChoice from "./Modals/ModalChoice";
 
 const IntermidiateStage2 = () => {
 	const location = useLocation();
@@ -51,6 +52,7 @@ const IntermidiateStage2 = () => {
 	const [tries, setTry] = useState(0);
 	const [wrongItem, setWrongItem] = useState(false);
 	const [itemDone, setItemDone] = useState(0);
+	const [modalClosing, setModalClosing] = useState(false);
 	const audioRef = useRef();
 	const audioRef2 = useRef();
 	const audioRef3 = useRef();
@@ -73,12 +75,12 @@ const IntermidiateStage2 = () => {
 				isDisplayed: item.isDisplayed,
 				image: item.image,
 			});
+			// setTimeout(() => {
+			setModalActive(true);
 			setTimeout(() => {
-				setModalActive(true);
-				setTimeout(() => {
-					audioRef.current.play();
-				}, 100);
-			}, 90);
+				audioRef.current.play();
+			}, 500);
+			// }, 100);
 
 			setIsModalAnswerCorrect(false);
 		}
@@ -235,7 +237,11 @@ const IntermidiateStage2 = () => {
 
 			{/* MODAL / POPUP */}
 			{/* {modalActive && ( */}
-			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+			<div
+				className={`modal ${modalActive ? `modal-active` : `modal-notActive`} ${
+					modalClosing ? "modal-closing" : ``
+				}`}
+			>
 				<div className="modal-backdrop"></div>
 				<div className="modal-container">
 					<div className="soundicon" onClick={() => audioRef.current.play()}>
@@ -258,6 +264,7 @@ const IntermidiateStage2 = () => {
 									setWrongItem={setWrongItem}
 									playWrongSound={playWrongSound}
 									wrongItem={wrongItem}
+									setModalClosing={setModalClosing}
 								/>
 							);
 						})}
@@ -308,72 +315,6 @@ const DroppableZone = (props) => {
 	return (
 		<div style={style} className="droppable-zone-bunny" ref={setNodeRef}>
 			{props.children}
-		</div>
-	);
-};
-
-// Component for the modal/popup choices
-const ModalChoice = ({
-	image,
-	isCorrect,
-	setModalActive,
-	isModalAnswerCorrect,
-	setIsModalAnswerCorrect,
-	tries,
-	setTry,
-	setWrongItem,
-	playWrongSound,
-	wrongItem,
-}) => {
-	const [status, setStatus] = useState("");
-
-	useEffect(() => {
-		if (isModalAnswerCorrect || wrongItem) {
-			setTimeout(() => {
-				setStatus("");
-			}, 700);
-		}
-	}, [isModalAnswerCorrect, wrongItem]);
-
-	return (
-		<div
-			className={`choice ${status}`}
-			onClick={(e) => {
-				if (isModalAnswerCorrect) {
-					e.preventDefault();
-				} else {
-					if (!isCorrect) {
-						setStatus("wrong");
-						const tr = tries + 1;
-						console.log(tr);
-						playWrongSound();
-						if (tr === 2) {
-							// setTimeout(() => {
-							// 	statCH();
-							// }, 500);
-							setTimeout(() => {
-								setModalActive(false);
-							}, 1000);
-							setWrongItem(true);
-							setTry(0);
-						} else {
-							setTry(tr);
-						}
-					} else {
-						setTry(0);
-						setStatus("right");
-						setIsModalAnswerCorrect(true);
-						// setTimeout(() => {
-						// 	statCH();
-						// }, 500);
-						setTimeout(() => {
-							setModalActive(false);
-						}, 1000);
-					}
-				}
-			}}
-		>
-			{image ? <img src={image} alt="letter" /> : null}
 		</div>
 	);
 };
