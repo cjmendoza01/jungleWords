@@ -304,14 +304,8 @@ export default function Stage3() {
 			let newPos = { ...position };
 
 			switch (event.key.toLowerCase()) {
-				case "w": // Move up
-					newPos.y = newPos.y - step;
-					break;
 				case "a": // Move left
 					newPos.x = newPos.x - step;
-					break;
-				case "s": // Move down
-					newPos.y = newPos.y + step;
 					break;
 				case "d": // Move right
 					newPos.x = newPos.x + step;
