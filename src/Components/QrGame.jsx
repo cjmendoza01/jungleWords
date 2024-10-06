@@ -9,7 +9,7 @@ import BGVid from "../assets/bgs1.mp4";
 import Boy from "../assets/BOY.gif";
 import Girl from "../assets/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
-import BS1GonzoTY from "./BS1GonzoTY";
+// import BS1GonzoTY from "./BS1GonzoTY";
 import AdvTy from "./AdvTy";
 import LastNextGameModal from "./Modals/LastNextGameModal";
 import { useNavigate } from "react-router-dom";
