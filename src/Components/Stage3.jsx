@@ -289,7 +289,12 @@ export default function Stage3() {
 				const rect = dropzone.current.getBoundingClientRect();
 				const itemRect = itemRef.current.getBoundingClientRect();
 
-				if (itemRect.x >= rect.left && itemRect.x <= rect.right) {
+				console.log("itemrect", itemRect?.x);
+				console.log("rectx", rect?.x);
+				console.log("rectL", rect?.left);
+				console.log("rectR", rect?.right);
+				const cent = (itemRect?.left + itemRect?.right) / 2;
+				if (cent >= rect.left && cent <= rect.right) {
 					return dropzone;
 				}
 			}
@@ -298,7 +303,6 @@ export default function Stage3() {
 	};
 
 	useEffect(() => {
-		// Handle key press to move the item using W, A, S, D
 		const handleKeyPress = (event) => {
 			const step = 20; // Movement step size
 			let newPos = { ...position };
@@ -314,17 +318,17 @@ export default function Stage3() {
 					return;
 			}
 
-			// Update the position state
 			setPosition(newPos);
+		};
 
-			// After the move, check if the draggable item is inside any droppable zone
+		function handleKeyRelease() {
+			console.log("release");
 			const dropableRefs = [rightRef, wrongRef];
 			const lvl = qLevel;
 
 			if (lvl === "2") dropableRefs.push(wrongRef2);
 			const collision = checkForCollision(dropableRefs);
 
-			// Manually trigger the logic in handleDragEnd if collision is detected
 			if (collision) {
 				if (collision.current.id === "right") {
 					console.log("Dropped in the right zone!");
@@ -338,11 +342,14 @@ export default function Stage3() {
 					setWrong(true);
 				}
 			}
-		};
+		}
 
 		window.addEventListener("keydown", handleKeyPress);
+		window.addEventListener("keyup", handleKeyRelease);
+
 		return () => {
 			window.removeEventListener("keydown", handleKeyPress);
+			window.removeEventListener("keyup", handleKeyRelease);
 		};
 	}, [position, dropRefs]);
 
