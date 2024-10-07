@@ -381,7 +381,9 @@ export default function Stage3() {
 		});
 
 		const style = {
-			transform: `translate(${position.x}px, ${position.y}px)`,
+			transform: transform
+				? `translate3d(${transform.x}px, ${transform.y}px, 0)`
+				: `translate(${position.x}px, ${position.y}px)`,
 			width: "200px",
 			height: "400px",
 			position: "relative",
@@ -431,8 +433,10 @@ export default function Stage3() {
 		};
 
 		return (
-			<div ref={refData} id={id} className="stage3-option-div">
-				<div className="stage3-option-label-div">{label}</div>
+			<div ref={setNodeRef} id={id} className="stage3-option-div">
+				<div ref={refData} id={id} className="stage3-option-label-div">
+					{label}
+				</div>
 			</div>
 		);
 	}
