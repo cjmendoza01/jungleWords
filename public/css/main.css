@@ -477,8 +477,11 @@
 .modalCloseBtn{
   height: 50px;
   width: 50px;
-  background-color: green;
-  color: white;
+  background-image: url('../../src/assets/buttons&dialogues/closeButton.png'); 
+  background-size: cover; 
+  background-position: center;
+  /* background-color: green;
+  color: white; */
   display: flex;
   justify-content: center;
   align-items: center;

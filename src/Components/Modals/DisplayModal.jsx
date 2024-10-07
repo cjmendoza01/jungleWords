@@ -37,7 +37,7 @@ export default function DisplayModal({ item, closeModal }) {
 				</div>
 				<div className="modalCloseBtnDiv">
 					<div className="modalCloseBtn" onClick={() => closeModal()}>
-						X
+						{/* X */}
 					</div>
 				</div>
 
