@@ -230,7 +230,7 @@ export const itemsListAdvs2 = [
 	{
 		image: drawsPencil,
 		id: "drawsPencil",
-		ans: ["draws", "pencil"],
+		ans: ["draws", "pencils"],
 		audio: DrawsPencilAudio,
 	},
 	{ image: hatSun, id: "hatSun", ans: ["hat", "sun"], audio: HatSunAudio },
