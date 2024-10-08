@@ -64,11 +64,12 @@ const BeginnerStage1Boy = () => {
 			);
 
 			setModalData({
-				id: item.id,
-				modalChoices: item.modalChoices,
-				audio: item.audio,
-				isDisplayed: item.isDisplayed,
-				image: item.image,
+				...item,
+				// id: item.id,
+				// modalChoices: item.modalChoices,
+				// audio: item.audio,
+				// isDisplayed: item.isDisplayed,
+				// image: item.image,
 			});
 			setTimeout(() => {
 				setModalActive(true);
@@ -320,7 +321,7 @@ const ModalChoice = ({
 		if (isModalAnswerCorrect || wrongItem) {
 			setTimeout(() => {
 				setStatus("");
-			}, 800);
+			}, 300);
 		}
 	}, [isModalAnswerCorrect, wrongItem]);
 
@@ -343,7 +344,7 @@ const ModalChoice = ({
 							// }, 500);
 							setTimeout(() => {
 								setModalActive(false);
-							}, 1000);
+							}, 200);
 							setWrongItem(true);
 							setTry(0);
 						} else {
@@ -359,7 +360,7 @@ const ModalChoice = ({
 
 						setTimeout(() => {
 							setModalActive(false);
-						}, 1000);
+						}, 200);
 					}
 				}
 			}}

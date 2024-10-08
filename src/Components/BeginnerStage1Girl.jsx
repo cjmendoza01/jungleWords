@@ -341,7 +341,7 @@ const ModalChoice = ({
 							// }, 500);
 							setTimeout(() => {
 								setModalActive(false);
-							}, 1000);
+							}, 300);
 							setWrongItem(true);
 							setTry(0);
 						} else {
@@ -356,7 +356,7 @@ const ModalChoice = ({
 						// }, 500);
 						setTimeout(() => {
 							setModalActive(false);
-						}, 1000);
+						}, 300);
 					}
 				}
 			}}
