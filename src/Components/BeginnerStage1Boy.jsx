@@ -63,20 +63,20 @@ const BeginnerStage1Boy = () => {
 				)
 			);
 
-			setModalData({
-				...item,
-				// id: item.id,
-				// modalChoices: item.modalChoices,
-				// audio: item.audio,
-				// isDisplayed: item.isDisplayed,
-				// image: item.image,
-			});
+			// setModalData({
+			// 	...item,
+			// 	// id: item.id,
+			// 	// modalChoices: item.modalChoices,
+			// 	// audio: item.audio,
+			// 	// isDisplayed: item.isDisplayed,
+			// 	// image: item.image,
+			// });
+			// setTimeout(() => {
+			setModalActive(true);
 			setTimeout(() => {
-				setModalActive(true);
-				setTimeout(() => {
-					audioRef.current.play();
-				}, 190);
+				audioRef.current.play();
 			}, 190);
+			// }, 190);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -115,7 +115,7 @@ const BeginnerStage1Boy = () => {
 			if (!wrongItem) {
 				setTimeout(() => {
 					setScale((scale) => scale + 0.05);
-				}, 1000);
+				}, 500);
 				right = right + 1;
 				setRightCounter(right);
 			}
@@ -179,7 +179,6 @@ const BeginnerStage1Boy = () => {
 
 			<div className="drag-n-drop-container">
 				<DndContext onDragEnd={handleDragEnd}>
-					{/* Container for the droppable zone */}
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>
 							{isFoodItemDropped && (
@@ -198,7 +197,6 @@ const BeginnerStage1Boy = () => {
 						</DroppableZone>
 					</div>
 
-					{/* Container for the food items */}
 					<div className="draggable-container">
 						<div className="foods-container">
 							{foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
@@ -208,7 +206,13 @@ const BeginnerStage1Boy = () => {
 										id={"food-" + id}
 										modalChoices={modalChoices}
 									>
-										<img src={image} alt={id} />
+										<img
+											src={image}
+											alt={id}
+											onMouseDown={() => {
+												setModalData(foodItems[[i]]);
+											}}
+										/>
 									</FoodItem>
 								) : (
 									<div key={i}></div>
@@ -344,7 +348,7 @@ const ModalChoice = ({
 							// }, 500);
 							setTimeout(() => {
 								setModalActive(false);
-							}, 200);
+							}, 100);
 							setWrongItem(true);
 							setTry(0);
 						} else {
@@ -360,7 +364,7 @@ const ModalChoice = ({
 
 						setTimeout(() => {
 							setModalActive(false);
-						}, 200);
+						}, 100);
 					}
 				}
 			}}

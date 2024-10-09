@@ -63,19 +63,19 @@ const BeginnerStage1Boy = () => {
 				)
 			);
 
-			setModalData({
-				id: item.id,
-				modalChoices: item.modalChoices,
-				audio: item.audio,
-				isDisplayed: item.isDisplayed,
-				image: item.image,
-			});
+			// setModalData({
+			// 	id: item.id,
+			// 	modalChoices: item.modalChoices,
+			// 	audio: item.audio,
+			// 	isDisplayed: item.isDisplayed,
+			// 	image: item.image,
+			// });
+			// setTimeout(() => {
+			setModalActive(true);
 			setTimeout(() => {
-				setModalActive(true);
-				setTimeout(() => {
-					audioRef.current.play();
-				}, 500);
-			}, 100);
+				audioRef.current.play();
+			}, 190);
+			// }, 100);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -209,7 +209,14 @@ const BeginnerStage1Boy = () => {
 										id={"food-" + id}
 										modalChoices={modalChoices}
 									>
-										<img src={image} alt={id} />
+										<img
+											src={image}
+											alt={id}
+											onMouseDown={() => {
+												setModalData(foodItems[[i]]);
+												console.log(foodItems[i]);
+											}}
+										/>
 									</FoodItem>
 								) : (
 									<div key={i}></div>
@@ -222,7 +229,10 @@ const BeginnerStage1Boy = () => {
 
 			{/* MODAL / POPUP */}
 			{/* {modalActive && ( */}
-			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+			<div
+				className="modal"
+				style={modalActive ? {} : { visibility: "hidden" }}
+			>
 				<div className="modal-backdrop"></div>
 				<div className="modal-container">
 					<div className="soundicon" onClick={() => audioRef.current.play()}>
@@ -341,7 +351,7 @@ const ModalChoice = ({
 							// }, 500);
 							setTimeout(() => {
 								setModalActive(false);
-							}, 300);
+							}, 100);
 							setWrongItem(true);
 							setTry(0);
 						} else {
@@ -356,7 +366,7 @@ const ModalChoice = ({
 						// }, 500);
 						setTimeout(() => {
 							setModalActive(false);
-						}, 300);
+						}, 100);
 					}
 				}
 			}}

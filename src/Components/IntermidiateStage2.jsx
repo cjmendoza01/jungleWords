@@ -224,7 +224,13 @@ const IntermidiateStage2 = () => {
 										id={"food-" + id}
 										modalChoices={modalChoices}
 									>
-										<img src={image} alt={id} />
+										<img
+											src={image}
+											alt={id}
+											onMouseDown={() => {
+												setModalData(foodItems[[i]]);
+											}}
+										/>
 									</FoodItem>
 								) : (
 									<div key={i}></div>
