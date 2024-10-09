@@ -225,7 +225,10 @@ const BeginnerStage1Boy = () => {
 
 			{/* MODAL / POPUP */}
 			{/* {modalActive && ( */}
-			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+			<div
+				className="modal"
+				style={modalActive ? {} : { visibility: "hidden" }}
+			>
 				<div className="modal-backdrop"></div>
 				<div className="modal-container">
 					<div className="soundicon" onClick={() => audioRef.current.play()}>
