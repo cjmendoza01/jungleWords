@@ -19,11 +19,11 @@
   }
   
 
-  .buttons {
+  .buttonsss {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px; /* Adjust based on desired position */
+    margin-top: 230px; /* Adjust based on desired position */
     margin-right: 500px;
   }
   
@@ -36,7 +36,7 @@
   }
   
   .advStage2 {
-    margin: 5px;
+    margin: 32px;
     cursor: pointer;
     width: 300px;
     background-color: transparent; /* Ensure buttons are transparent */

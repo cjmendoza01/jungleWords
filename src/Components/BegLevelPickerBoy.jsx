@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BegLevelPickerBoy.css";
-import girlImage from "../assets/girl.png";
 import begButton from "../assets/buttons&dialogues/begButton.png";
 import intButton from "../assets/buttons&dialogues/intButton.png";
 import advButton from "../assets/buttons&dialogues/advButton.png";
-import bnextButton from "../assets/buttons&dialogues/beginNext.png";
 import lockImage from "../assets/buttons&dialogues/lock.png";
 import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
-import beginX from "../assets/buttons&dialogues/beginX.png";
+import beginX from "../assets/buttons&dialogues/beginX.png"; // Import the X button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const BegLevelPickerBoy = () => {
@@ -20,14 +18,7 @@ const BegLevelPickerBoy = () => {
 
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
-	};
-
-	const handleNextClick = () => {
-		if (selectedLevel) {
-			setShowAccessCodeInput(true);
-		} else {
-			alert("Please select a level");
-		}
+		setShowAccessCodeInput(true); // Automatically show access code input
 	};
 
 	const handleDoneClick = () => {
@@ -55,10 +46,6 @@ const BegLevelPickerBoy = () => {
 		navigate(-1); // Go back to the previous page
 	};
 
-	const handleNextButtonClick = () => {
-		alert("Next button clicked"); // Logic for the next button
-	};
-
 	return (
 		<div className="chooselevelBoy">
 			<video autoPlay muted loop className="background-video">
@@ -66,14 +53,12 @@ const BegLevelPickerBoy = () => {
 				Your browser does not support the video tag.
 			</video>
 			<audio autoPlay loop src={"/Music.mp3"} />
-			{/* Back and Next Buttons in the upper left corner */}
+			{/* Back button in the upper left corner */}
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">
 					<img src={backButtonImage} alt="Back" />
 				</button>
 			</div>
-
-			{/* Main Buttons */}
 			<div className="buttons">
 				<div className="buttonWithLock">
 					<button
@@ -108,12 +93,7 @@ const BegLevelPickerBoy = () => {
 					</button>
 					<img src={lockImage} alt="Lock" className="lockImage3" />
 				</div>
-				<button onClick={handleNextClick} className="clickNext next-button">
-					<img src={bnextButton} alt="Next" />
-				</button>
 			</div>
-
-			{/* Access Code Input */}
 			{showAccessCodeInput && (
 				<div className="access-code-container">
 					<img

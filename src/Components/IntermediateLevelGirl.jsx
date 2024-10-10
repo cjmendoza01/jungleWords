@@ -1,41 +1,35 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./IntermediateLevelGirl.css";
-import girlImage from "../assets/girl.png";
 import ints1 from "../assets/buttons&dialogues/ints1.png";
 import ints2 from "../assets/buttons&dialogues/ints2.png";
 import ints3 from "../assets/buttons&dialogues/ints3.png";
-import doneButton from "../assets/buttons&dialogues/beginNext.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const IntermediateLevelGirl = () => {
 	const navigate = useNavigate();
 	const [selectedStage, setSelectedStage] = useState(null);
 
+	// Automatically navigate after stage selection
 	const handleStageClick = (stage) => {
 		setSelectedStage(stage);
-	};
-
-	const handleDoneClick = () => {
-		if (selectedStage === "IS1") {
+		if (stage === "IS1") {
 			navigate("/GirlIS1intro");
+		} else if (stage === "IS2") {
+			navigate("/GirlIS2intro");
+		} else if (stage === "IS3") {
+			navigate("/GirlIS3intro");
 		} else {
-			// Navigate to different routes for other stages
-			if (selectedStage === "IS2") {
-				navigate("/GirlIS2intro");
-			} else if (selectedStage === "IS3") {
-				navigate("/GirlIS3intro");
-			} else {
-				alert("Please select a stage");
-			}
+			alert("Please select a valid stage");
 		}
 	};
+
 	const handleBackClick = () => {
 		navigate(-1); // Go back to the previous page
 	};
 
 	return (
-		<div className="beginnerlevelGirl">
+		<div className="intermediatelevelGirl">
 			<video autoPlay muted loop className="background-video">
 				<source src="/BGAnimationGirl.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
@@ -47,6 +41,7 @@ const IntermediateLevelGirl = () => {
 					<img src={backButtonImage} alt="Back" />
 				</button>
 			</div>
+
 			<div className="buttons">
 				<button
 					onClick={() => handleStageClick("IS1")}
@@ -65,9 +60,6 @@ const IntermediateLevelGirl = () => {
 					className={`intStage3 ${selectedStage === "IS3" ? "selected" : ""}`}
 				>
 					<img src={ints3} alt="i3" />
-				</button>
-				<button onClick={handleDoneClick} className="buttonLevel done-button">
-					<img src={doneButton} alt="Done" />
 				</button>
 			</div>
 		</div>

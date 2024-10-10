@@ -1,32 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BeginnerLevelBoy.css";
-import girlImage from "../assets/girl.png";
 import begs1 from "../assets/buttons&dialogues/begs1.png";
 import begs2 from "../assets/buttons&dialogues/begs2.png";
 import begs3 from "../assets/buttons&dialogues/begs3.png";
-import doneButton from "../assets/buttons&dialogues/beginNext.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 
 const BeginnerLevelBoy = () => {
 	const navigate = useNavigate();
 	const [selectedStage, setSelectedStage] = useState(null);
 
+	// Automatically navigate after stage selection
 	const handleStageClick = (stage) => {
 		setSelectedStage(stage);
-	};
-
-	const handleDoneClick = () => {
-		if (selectedStage === "BS1") {
+		if (stage === "BS1") {
 			navigate("/BoyBS1intro");
+		} else if (stage === "BS2") {
+			navigate("/BoyBS2intro");
+		} else if (stage === "BS3") {
+			navigate("/BoyBS3intro");
 		} else {
-			if (selectedStage === "BS2") {
-				navigate("/BoyBS2intro");
-			} else if (selectedStage === "BS3") {
-				navigate("/BoyBS3intro");
-			} else {
-				alert("Please select a stage");
-			}
+			alert("Please select a valid stage");
 		}
 	};
 
@@ -66,9 +60,6 @@ const BeginnerLevelBoy = () => {
 					className={`begStage3 ${selectedStage === "BS3" ? "selected" : ""}`}
 				>
 					<img src={begs3} alt="s3" />
-				</button>
-				<button onClick={handleDoneClick} className="buttonLevel done-button">
-					<img src={doneButton} alt="Done" />
 				</button>
 			</div>
 		</div>

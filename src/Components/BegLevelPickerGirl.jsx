@@ -4,7 +4,6 @@ import "./BegLevelPickerGirl.css";
 import begButton from "../assets/buttons&dialogues/begButton.png";
 import intButton from "../assets/buttons&dialogues/intButton.png";
 import advButton from "../assets/buttons&dialogues/advButton.png";
-import bnextButton from "../assets/buttons&dialogues/beginNext.png";
 import lockImage from "../assets/buttons&dialogues/lock.png";
 import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
@@ -19,14 +18,7 @@ const BegLevelPickerGirl = () => {
 
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
-	};
-
-	const handleNextClick = () => {
-		if (selectedLevel) {
-			setShowAccessCodeInput(true);
-		} else {
-			alert("Please select a level");
-		}
+		setShowAccessCodeInput(true); // Automatically show access code input
 	};
 
 	const handleDoneClick = () => {
@@ -49,9 +41,11 @@ const BegLevelPickerGirl = () => {
 		setAccessCode("");
 		setSelectedLevel(null);
 	};
+
 	const handleBackClick = () => {
 		navigate(-1); // Go back to the previous page
 	};
+
 	return (
 		<div className="chooselevelGirl">
 			<video autoPlay muted loop className="background-video">
@@ -59,7 +53,7 @@ const BegLevelPickerGirl = () => {
 				Your browser does not support the video tag.
 			</video>
 			<audio autoPlay loop src={"/Music.mp3"} />
-			{/* Back and Next Buttons in the upper left corner */}
+			{/* Back button in the upper left corner */}
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">
 					<img src={backButtonImage} alt="Back" />
@@ -99,9 +93,6 @@ const BegLevelPickerGirl = () => {
 					</button>
 					<img src={lockImage} alt="Lock" className="lockImage3" />
 				</div>
-				<button onClick={handleNextClick} className="clickNext next-button">
-					<img src={bnextButton} alt="Next" />
-				</button>
 			</div>
 			{showAccessCodeInput && (
 				<div className="access-code-container">
