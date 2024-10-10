@@ -409,7 +409,7 @@ export const wordFamily = [
 	{ image: Hair, id: "hair", audio: HairAudio, wordFamily: "air" },
 	{ image: Ham, id: "ham", audio: HamAudio, wordFamily: "am" },
 	{ image: Hat, id: "hat", audio: HatAudio, wordFamily: "at" },
-	{ image: Hen, id: "hen", audio: HenAudio, wordFamily: "an" },
+	{ image: Hen, id: "hen", audio: HenAudio, wordFamily: "en" },
 	{ image: Hide, id: "hide", audio: HideAudio, wordFamily: "ide" },
 	{ image: Hill, id: "hill", audio: HillAudio, wordFamily: "ill" },
 	{ image: Hold, id: "hold", audio: HoldAudio, wordFamily: "old" },
