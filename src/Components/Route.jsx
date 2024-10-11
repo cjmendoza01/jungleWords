@@ -65,7 +65,7 @@ function App() {
 	return (
 		<Routes>
 			<Route index element={<Home />} />
-			<Route path="/about-us" element={<AboutUs />} />
+			<Route path="/AboutUs" element={<AboutUs />} />
 			<Route path="/startButton" element={<BeginnerStage1Boy />} />
 			<Route path="/CharacterPicker" element={<CharacterPicker />} />
 			<Route path="/LostGirl" element={<LostGirl />} />
@@ -130,7 +130,6 @@ function App() {
 			<Route path="/QRGame2" element={<QRGame2 />} />
 			<Route path="/AdvanceGJGirl" element={<AdvanceGJGirl />} />
 			<Route path="/AdvanceGJBoy" element={<AdvanceGJBoy />} />
-
 		</Routes>
 	);
 }

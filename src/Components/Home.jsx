@@ -22,7 +22,7 @@ function Home() {
 						<a href="/" className="home-link">
 							<img src="/home.png" alt="Home" style={{ userSelect: "none" }} />
 						</a>
-						<a href="/about-us" className="aboutus-link">
+						<a href="/AboutUs" className="aboutus-link">
 							<img
 								src="/aboutuss.png"
 								alt="About Us"
