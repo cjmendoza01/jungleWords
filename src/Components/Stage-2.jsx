@@ -141,7 +141,6 @@ export default function Stage2(props) {
 			setBananaCount(items.length);
 
 			setTimeout(() => {
-				console.log("opeeeen modal");
 				setOpenModal(true);
 			}, 5000);
 		}
@@ -171,7 +170,7 @@ export default function Stage2(props) {
 				setOpenCheckModal(false);
 			}, 2000);
 
-			if (bananaCount > 0) {
+			if (bananaCount - 1 > 0) {
 				setTimeout(() => {
 					setOpenModal(true);
 				}, 2500);
