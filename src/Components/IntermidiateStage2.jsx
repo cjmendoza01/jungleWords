@@ -5,6 +5,11 @@ import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useLocation, useNavigate } from "react-router-dom";
 
+import {
+	restrictToParentElement,
+	restrictToWindowEdges,
+	restrictToFirstScrollableAncestor,
+} from "@dnd-kit/modifiers";
 import ErrorSound from "/Wrong.mp3";
 import rightSound from "/Corect.mp3";
 // Import all image of sound icon
@@ -187,7 +192,10 @@ const IntermidiateStage2 = () => {
 			<audio ref={audioRef2} src={ErrorSound} />
 			<audio ref={audioRef3} src={rightSound} />
 			<div className="drag-n-drop-container">
-				<DndContext onDragEnd={handleDragEnd}>
+				<DndContext
+					onDragEnd={handleDragEnd}
+					modifiers={[restrictToWindowEdges]}
+				>
 					{/* Container for the droppable zone */}
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>
