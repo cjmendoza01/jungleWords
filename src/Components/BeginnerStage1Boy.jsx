@@ -92,15 +92,7 @@ const BeginnerStage1Boy = () => {
 			setFoodItems((foodItems) =>
 				foodItems.map((f) => (f.id === md.id ? { ...f, isDisplayed: true } : f))
 			);
-			setTimeout(() => {
-				setModalData({
-					item: "",
-					modalChoices: [],
-					audio: null,
-					image: null,
-					isDisplayed: false,
-				});
-			}, 150);
+
 			setTry(0);
 		}
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
@@ -244,6 +236,7 @@ const BeginnerStage1Boy = () => {
 									image={image}
 									isCorrect={isCorrect}
 									setModalActive={setModalActive}
+									setModalData={setModalData}
 									isModalAnswerCorrect={isModalAnswerCorrect}
 									setIsModalAnswerCorrect={setIsModalAnswerCorrect}
 									tries={tries}
@@ -310,6 +303,7 @@ const ModalChoice = ({
 	image,
 	isCorrect,
 	setModalActive,
+	setModalData,
 	isModalAnswerCorrect,
 	setIsModalAnswerCorrect,
 	tries,
@@ -349,8 +343,16 @@ const ModalChoice = ({
 							// setTimeout(() => {
 							// 	statCH();
 							// }, 500);
+
 							setTimeout(() => {
 								setModalActive(false);
+								setModalData({
+									item: "",
+									modalChoices: [],
+									audio: null,
+									image: null,
+									isDisplayed: false,
+								});
 							}, 100);
 							setWrongItem(true);
 							setTry(0);
@@ -367,6 +369,14 @@ const ModalChoice = ({
 
 						setTimeout(() => {
 							setModalActive(false);
+
+							setModalData({
+								item: "",
+								modalChoices: [],
+								audio: null,
+								image: null,
+								isDisplayed: false,
+							});
 						}, 100);
 					}
 				}
