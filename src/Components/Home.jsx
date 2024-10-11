@@ -22,7 +22,7 @@ function Home() {
 						<a href="/" className="home-link">
 							<img src="/home.png" alt="Home" style={{ userSelect: "none" }} />
 						</a>
-						<a href="/AboutUs" className="aboutus-link">
+						<a className="aboutus-link" onClick={() => navigate("/AboutUs")}>
 							<img
 								src="/aboutuss.png"
 								alt="About Us"
