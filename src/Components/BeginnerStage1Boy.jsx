@@ -75,7 +75,7 @@ const BeginnerStage1Boy = () => {
 			setModalActive(true);
 			setTimeout(() => {
 				audioRef.current.play();
-			}, 190);
+			}, 250);
 			// }, 190);
 			setIsModalAnswerCorrect(false);
 		}
@@ -127,7 +127,7 @@ const BeginnerStage1Boy = () => {
 	}, [isModalAnswerCorrect, modalActive, wrongItem]);
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("/BegLevelPickerBoy");
 	};
 
 	const playWrongSound = () => {

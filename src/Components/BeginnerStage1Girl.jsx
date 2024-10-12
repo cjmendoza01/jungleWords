@@ -74,7 +74,7 @@ const BeginnerStage1Boy = () => {
 			setModalActive(true);
 			setTimeout(() => {
 				audioRef.current.play();
-			}, 190);
+			}, 250);
 			// }, 100);
 			setIsModalAnswerCorrect(false);
 		}

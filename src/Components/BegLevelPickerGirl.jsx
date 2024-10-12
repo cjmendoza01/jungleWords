@@ -43,7 +43,7 @@ const BegLevelPickerGirl = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("BeginnerLevelGirl"); // Go back to the previous page
 	};
 
 	return (

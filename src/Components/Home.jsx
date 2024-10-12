@@ -16,7 +16,12 @@ function Home() {
 				<nav>
 					<div className="logo">
 						<audio autoPlay loop src={"/Music.mp3"} />
-						<img src="/Logo.png" alt="JW Logo" style={{ userSelect: "none" }} />
+						<img
+							src="/Logo.png"
+							alt="JW Logo"
+							style={{ userSelect: "none" }}
+							data-edge="visualsearch:no"
+						/>
 					</div>
 					<div className="nav-links">
 						<a href="/" className="home-link">
@@ -44,6 +49,7 @@ function Home() {
 							src="/Title.png"
 							alt="Your Image Alt Text"
 							style={{ userSelect: "none" }}
+							data-edge="visualsearch:no"
 						/>
 						<br></br>
 
@@ -54,6 +60,7 @@ function Home() {
 									alt="Start"
 									className="startButtonImage"
 									style={{ userSelect: "none" }}
+									data-edge="visualsearch:no"
 								/>
 							</button>
 						</div>
