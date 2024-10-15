@@ -4,6 +4,8 @@ import "./App.css";
 import startButtonImage from "../assets/buttons&dialogues/start.png"; // Ensure this path is correct
 import audioSound from "/Music.mp3";
 import bg from "/main.mp4";
+import { useRef } from "react";
+import { useEffect } from "react";
 function Home() {
 	const navigate = useNavigate();
 
@@ -11,12 +13,20 @@ function Home() {
 		navigate("/CharacterPicker");
 	};
 
+	const audRef = useRef(null);
+
+	useEffect(() => {
+		if (audRef?.current) {
+			audRef.current.play();
+		}
+	}, [audRef]);
+
 	return (
 		<div className="App">
 			<header>
 				<nav>
 					<div className="logo">
-						<audio autoPlay loop src={audioSound} />
+						<audio autoPlay loop ref={audRef} src={audioSound} />
 						<img
 							src="/Logo.png"
 							alt="JW Logo"
