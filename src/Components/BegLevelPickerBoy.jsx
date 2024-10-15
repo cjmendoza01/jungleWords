@@ -10,8 +10,11 @@ import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png"; // Import the X button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import boyVid from "/BGAnimationBoy.mp4";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const BegLevelPickerBoy = () => {
+	const [passwordVisible, setPasswordVisible] = useState(false);
+
 	const navigate = useNavigate();
 	const [selectedLevel, setSelectedLevel] = useState(null);
 	const [accessCode, setAccessCode] = useState("");
@@ -102,13 +105,50 @@ const BegLevelPickerBoy = () => {
 						alt="Access Code"
 						className="access-code-image"
 					/>
-					<input
-						type="password" // Change this from "text" to "password"
-						value={accessCode}
-						onChange={(e) => setAccessCode(e.target.value)}
-						className="access-code-input"
-						placeholder="Enter Access Code"
-					/>
+					<div
+						style={{
+							position: "absolute",
+							width: "40%",
+							top: "55%",
+							left: "50%",
+							marginTop: "10px",
+						}}
+					>
+						<div style={{ width: "100%", position: "relative" }}>
+							<input
+								type={passwordVisible ? "text" : "password"}
+								value={accessCode}
+								onChange={(e) => setAccessCode(e.target.value)}
+								className="access-code-input2"
+								placeholder="Enter Access Code"
+							/>
+							<div
+								style={{
+									position: "relative",
+									transform: "translate(-50%, -50%)",
+								}}
+							>
+								<button
+									onClick={() => {
+										setPasswordVisible(!passwordVisible);
+									}}
+									style={{
+										position: "absolute",
+										right: "0px",
+										top: "-45px",
+										// right: '10px',
+										// top: '50%',
+										// transform: 'translateY(-50%)',
+										background: "none",
+										border: "none",
+										cursor: "pointer",
+									}}
+								>
+									{passwordVisible ? <FaEye /> : <FaEyeSlash />}
+								</button>
+							</div>
+						</div>
+					</div>
 					<button onClick={handleDoneClick} className="done-button-overlay">
 						<img src={doneButton} alt="Done" />
 					</button>
