@@ -7,6 +7,7 @@ import begs2 from "../assets/buttons&dialogues/begs2.png";
 import begs3 from "../assets/buttons&dialogues/begs3.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import welcome from "../assets/buttons&dialogues/welcome.png";
+import MSC from "/BgMusic.mp3";
 
 const ChooseBeginnerLevel = () => {
 	const navigate = useNavigate();
@@ -33,7 +34,7 @@ const ChooseBeginnerLevel = () => {
 
 	return (
 		<div className="beginnerlevel">
-			<audio autoPlay loop src={"/BgMusic.mp3"} />
+			<audio autoPlay loop src={MSC} />
 			<img src={girlImage} alt="Girl" className="girl-image" />
 			<div className="speech-bubble">
 				<img src={welcome} alt="Please choose your level" />

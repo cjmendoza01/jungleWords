@@ -7,7 +7,7 @@ import intButton from "../assets/buttons&dialogues/intButton.png";
 import advButton from "../assets/buttons&dialogues/advButton.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import plsChoose from "../assets/buttons&dialogues/plschoose.png";
-
+import MSC from "/BgMusic.mp3";
 const ChooseLevel = () => {
 	const navigate = useNavigate();
 	const [selectedLevel, setSelectedLevel] = useState(null); // Initialize selectedLevel state
@@ -33,7 +33,7 @@ const ChooseLevel = () => {
 
 	return (
 		<div className="chooselevel">
-			<audio autoPlay loop src={"/BgMusic.mp3"} />
+			<audio autoPlay loop src={MSC} />
 			<img src={girlImage} alt="Girl" className="girl-image" />
 			<div className="speech-bubble">
 				<img src={plsChoose} alt="Please choose your level" />

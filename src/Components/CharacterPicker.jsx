@@ -8,7 +8,7 @@ import doneButtonImage from "../assets/buttons&dialogues/done.png";
 import termsAndConImage from "../assets/buttons&dialogues/termsAndcon.png";
 import agreeButtonImage from "../assets/buttons&dialogues/agreeButton.png";
 import disagreeButtonImage from "../assets/buttons&dialogues/disButton.png";
-
+import MSC from "/Music.mp3";
 const CharacterPicker = () => {
 	const [selectedCharacter, setSelectedCharacter] = useState(null);
 	const [termsAccepted, setTermsAccepted] = useState(false);
@@ -49,7 +49,7 @@ const CharacterPicker = () => {
 			{showTerms && (
 				<div className="terms-popup">
 					<div className="terms-content">
-						<audio autoPlay loop src={"/Music.mp3"} />
+						<audio autoPlay loop src={MSC} />
 						<img
 							src={termsAndConImage}
 							alt="Terms and Conditions"
