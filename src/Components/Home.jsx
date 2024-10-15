@@ -2,7 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 import startButtonImage from "../assets/buttons&dialogues/start.png"; // Ensure this path is correct
-
+import audioSound from "/Music.mp3";
+import bg from "/main.mp4";
 function Home() {
 	const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ function Home() {
 			<header>
 				<nav>
 					<div className="logo">
-						<audio autoPlay loop src={"/Music.mp3"} />
+						<audio autoPlay loop src={audioSound} />
 						<img
 							src="/Logo.png"
 							alt="JW Logo"
@@ -39,7 +40,7 @@ function Home() {
 			</header>
 			<main>
 				<video autoPlay muted loop className="video-background">
-					<source src="/main.mp4" type="video/mp4" />
+					<source src={bg} type="video/mp4" />
 					Your browser does not support the video tag.
 				</video>
 

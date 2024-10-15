@@ -9,7 +9,7 @@ import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png"; // Import the X button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
-
+import girlVid from "/BGAnimationGirl.mp4";
 const BegLevelPickerGirl = () => {
 	const navigate = useNavigate();
 	const [selectedLevel, setSelectedLevel] = useState(null);
@@ -49,7 +49,7 @@ const BegLevelPickerGirl = () => {
 	return (
 		<div className="chooselevelGirl">
 			<video autoPlay muted loop className="background-video">
-				<source src="/BGAnimationGirl.mp4" type="video/mp4" />
+				<source src={girlVid} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<audio autoPlay loop src={"/Music.mp3"} />
