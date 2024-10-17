@@ -400,7 +400,7 @@ export const wordFamily = [
 	{ image: Duck, id: "duck", audio: DuckAudio, wordFamily: "uck" },
 	{ image: Fair, id: "fair", audio: FairAudio, wordFamily: "air" },
 	{ image: Fan, id: "fan", audio: FanAudio, wordFamily: "an" },
-	{ image: Fed, id: "fed", audio: FedAudio, wordFamily: "ag" },
+	{ image: Fed, id: "fed", audio: FedAudio, wordFamily: "ed" },
 	{ image: Fill, id: "fill", audio: FillAudio, wordFamily: "ill" },
 	{ image: Flake, id: "flake", audio: FlakeAudio, wordFamily: "ake" },
 	{ image: Fog, id: "fog", audio: FogAudio, wordFamily: "og" },
