@@ -582,20 +582,26 @@ export default function Stage3() {
 				</div>
 			</div>
 			{openCheckModal && <CheckModal />}
-			{gameComplete && openThankyou && (
-				<div className="modal">
-					<S3TY closeTyVideo={closeTyVideo} />
+			{gameComplete ? (
+				<div className="gmCompleteDiv">
+					{openThankyou && (
+						<div className="modal">
+							<S3TY closeTyVideo={closeTyVideo} />
+						</div>
+					)}
+					{openNextGameModal ? (
+						<NextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => {
+								console.log("reset");
+								setResetGame(true);
+							}}
+						/>
+					) : (
+						<></>
+					)}
 				</div>
-			)}
-			{openNextGameModal ? (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => {
-						console.log("reset");
-						setResetGame(true);
-					}}
-				/>
 			) : (
 				<></>
 			)}
