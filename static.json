@@ -13,6 +13,13 @@
       "/images/*": {
         "Cache-Control": "public, max-age=604800, immutable"
       },
+      "/src/assets/*": {
+        "Cache-Control": "public, max-age=604800, immutable"
+      },
+      "/public/*": {
+        "Cache-Control": "public, max-age=604800, immutable"
+      },
+      
       "/videos/*": {
         "Cache-Control": "public, max-age=604800, immutable"
       }

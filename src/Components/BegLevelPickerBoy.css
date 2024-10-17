@@ -108,6 +108,7 @@
     transform: translate(-50%, -50%);
     background-color: transparent; 
   }
+  
   .done-button-overlay {
     margin-top: 40px; /* Adjust this value to position correctly */
     background-color: transparent; 

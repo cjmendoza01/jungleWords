@@ -6,9 +6,9 @@ import muteButton from "../assets/buttons&dialogues/muteButton.png";
 import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 
 import level1BoyVid from "/GonzoBS2TY.mp4";
-const level1GirlVid = "/GonzoBS2TY.mp4";
-const level2BoyVid = "/GonzoBS2TY.mp4";
-const level2GirlVid = "/GonzoBS2TY.mp4";
+import level1GirlVid from "/GonzoBS2TY.mp4";
+import level2BoyVid from "/GonzoBS2TY.mp4";
+import level2GirlVid from "/GonzoBS2TY.mp4";
 
 const BS2BoyGonzoTY = ({ closeTyVideo }) => {
 	const [gender, setGender] = useState("boy");
