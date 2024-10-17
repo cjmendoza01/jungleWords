@@ -135,7 +135,7 @@ export default function Stage2(props) {
 				setNextGameModal(false);
 			}
 
-			const items = randomFoodItemGetter(8, level);
+			const items = randomFoodItemGetter(1, level);
 			console.log("items", items);
 			setQuestions(items);
 			setBananaCount(items.length);
@@ -422,17 +422,23 @@ export default function Stage2(props) {
 				/>
 			)}
 			{openCheckModal && <CheckModal />}
-			{gameComplete && openThankyou && (
-				<div className="modal">
-					<BS1GonzoTY closeTyVideo={closeTyVideo} gameLevel={stgLevel} />
+			{gameComplete ? (
+				<div className="gmCompleteDiv">
+					{openThankyou && (
+						<div className="modal">
+							<BS1GonzoTY closeTyVideo={closeTyVideo} gameLevel={stgLevel} />
+						</div>
+					)}
+					{openNextGameModal && (
+						<NextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => setResetGame(true)}
+						/>
+					)}
 				</div>
-			)}
-			{openNextGameModal && (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => setResetGame(true)}
-				/>
+			) : (
+				<></>
 			)}
 		</div>
 	);
