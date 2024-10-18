@@ -139,7 +139,7 @@ export default function Stage2(props) {
 				setNextGameModal(false);
 			}
 
-			const items = randomFoodItemGetter(1, level);
+			const items = randomFoodItemGetter(8, level);
 			console.log("items", items);
 			setQuestions(items);
 			setBananaCount(items.length);
