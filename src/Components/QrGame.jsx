@@ -262,7 +262,11 @@ export default function QRGame() {
 					}}
 				>
 					<div style={{ width: "90%", height: "100%" }}>
-						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
+						<img
+							className="qr-Character"
+							src={gender === "boy" ? Boy : Girl}
+							alt="Character"
+						/>
 					</div>
 				</div>
 			</div>
@@ -349,6 +353,7 @@ export default function QRGame() {
 											audioRef.current.play();
 										}
 									}}
+									alt="Question"
 								/>
 								<audio ref={audioRef} src={questions[0]?.audio} />
 							</div>

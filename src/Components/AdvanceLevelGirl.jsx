@@ -16,8 +16,6 @@ const AdvanceLevelGirl = () => {
 			navigate("/GirlADV1intro");
 		} else if (stage === "AS2") {
 			navigate("/GirlADV2intro");
-		} else if (stage === "AS3") {
-			navigate("/GirlADV3intro");
 		} else {
 			alert("Please select a valid stage");
 		}
@@ -54,10 +52,6 @@ const AdvanceLevelGirl = () => {
 				>
 					<img src={advs2} alt="a2" />
 				</button>
-				<button
-					onClick={() => handleStageClick("AS3")}
-					className={`advStage3 ${selectedStage === "AS3" ? "selected" : ""}`}
-				></button>
 			</div>
 		</div>
 	);
