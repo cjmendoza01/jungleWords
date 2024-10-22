@@ -16,7 +16,7 @@ const GirlIntStage1Intro = () => {
 	return (
 		<div className="GirlIntStage2Intro">
 			<video autoPlay muted={false} onEnded={handleVideoEnd} className="video">
-				<source src={vidSrc} type="video/mp4" />
+				<source src={VidSrc} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 		</div>
