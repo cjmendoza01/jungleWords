@@ -22,23 +22,15 @@ function Aboutsdes() {
 				<main>
 					<div className="jungle-background">
 						<div className="contents">
-							<img src="/abtSd.png" alt="Your Image Alt Text" />
+							<img src="/abtSd.png" alt="Your Image Alt Text" /> <br></br> 
 							<h1>
-								JungleWords is a 2D game-based interactive learning focusing on
-								enhancing speech and language development for children with
-								special needs at San Diego Elementary School. It has distinct
-								levels aligned with San Diego Elementary School’s SPED
-								curriculum and tailored for users with Children with Autism
-								(CWA) and Intellectual Disabilities (ID), specifically Levels 2
-								and 3. Its goal is to engage students in speech exercises and
-								phonological awareness through the game.
-								<h1>
-									JungleWords is customized with level progressions, namely:
-									Beginner Level encapsulated with Word Sounds, Short Vowels,
-									and 3-word CVC; Intermediate Level encapsulated with Long
-									Vowels, Word Family, and 4-word CVC; and Advanced Level
-									encapsulated with Phrases and Sentences.
-								</h1>
+							San Diego Elementary School, located in Batasan Hills, Quezon City, offers a robust Special Education (SPED) 
+							program catering to the unique needs of learners with disabilities. The school provides specialized services 
+							such as a Non-Graded Program, a Transition Program, and a SPED-Graded Program specifically 
+							for Deaf learners. These programs are designed to foster inclusivity and help students transition smoothly 
+							into mainstream education or prepare them for life skills. The school's commitment to inclusive education 
+							ensures tailored support for each student's development and learning potential.
+
 							</h1>
 						</div>
 					</div>
