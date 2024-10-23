@@ -93,7 +93,7 @@ function SupportSDES() {
                   <p>[1] O. Seaman, "IRR of Republic Act No. 10533," Japan's Ministry of Education, Culture, Sports, Science and Technology, [Online]. Available: https://www.jpmac.or.jp/img/research/pdf_seamanlaw/O8_IRR-RA-10533-BSA.pdf. [Accessed: Oct. 23, 2024].</p>
                   <p>[2] "Disability Inclusion in the Philippines," DisabilityIN, [Online]. Available: https://disabilityin.org/country/the-philippines/#:~:text=Legislation,into%20the%20mainstream%20of%20society. [Accessed: Oct. 23, 2024].</p>
 				  <p>[3] "DO 72, s. 2009: Inclusive Education as Strategy for Increasing Participation Rate of Children," Department of Education, Philippines, Jul. 6, 2009. [Online]. Available: https://www.deped.gov.ph/2009/07/06/do-72-s-2009-inclusive-education-as-strategy-for-increasing-participation-rate-of-children/. [Accessed: Oct. 23, 2024].</p>
-				  <p> [4] "DO 18, s. 2022," Department of Education, Philippines, Apr. 2022. [Online]. Available: https://www.deped.gov.ph/wp-content/uploads/2022/04/DO_s2022_018.pdf. [Accessed: Oct. 23, 2024].</p>
+				  <p> </p>
                 </div>
               </div>
             </div>
