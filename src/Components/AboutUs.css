@@ -21,30 +21,31 @@ header nav {
   padding-left: 60px;
 }
 
-.nav-links {
+.nav-linksz {
   margin-right: 40px;
   display: flex;
   gap: 30px; /* Add spacing between nav links */
 }
 
-.nav-links a {
+.nav-linksz a {
   display: inline-block;
-  transition: transform 0.3s; /* Add transition for hover effect */
+  width: 115px; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
 }
 
-.nav-links img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.nav-linksz a img {
+  width: 90%; /* Image fills the container */
+  height: 110%; /* Image fills the container */
+  object-fit: contain; /* Maintain aspect ratio */
 }
 
-.nav-links a:hover img {
+.nav-linksz a:hover img {
   transform: scale(1.1); /* Zoom effect on hover */
 }
 
-.home-link img {
-  width: 150px; /* Adjust the width as needed */
-  height: 49px; /* Adjust the height as needed */
+.home-linkz img {
+  width: 115px; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
   padding-top: 6px;
 }
 
