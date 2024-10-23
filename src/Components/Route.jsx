@@ -2,6 +2,9 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home.jsx";
 import AboutUs from "./AboutUs.jsx";
+import SpecialEducation from "./SpecialEducation.jsx";
+import Aboutsdes from "./Aboutsdes.jsx";
+import SupportSDES from "./SupportSDES.jsx";
 import CharacterPicker from "./CharacterPicker.jsx";
 import LostGirl from "./LostGirl.jsx";
 import LostBoy from "./LostBoy.jsx";
@@ -66,6 +69,9 @@ function App() {
 		<Routes>
 			<Route index element={<Home />} />
 			<Route path="/AboutUs" element={<AboutUs />} />
+			<Route path="/SpecialEducation" element={<SpecialEducation />} />
+			<Route path="/Aboutsdes" element={<Aboutsdes />} />
+			<Route path="/SupportSDES" element={<SupportSDES />} />
 			<Route path="/startButton" element={<BeginnerStage1Boy />} />
 			<Route path="/CharacterPicker" element={<CharacterPicker />} />
 			<Route path="/LostGirl" element={<LostGirl />} />

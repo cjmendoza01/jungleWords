@@ -11,13 +11,11 @@ function AboutUs() {
 						<div className="logo">
 							<img src="/Logo.png" alt="JW Logo" />
 						</div>
-						<div className="nav-links">
-							<a href="/" className="home-link">
+						<div className="nav-linksz">
+							<a href="/" className="home-linkz">
 								<img src="/home.png" alt="Home" />
 							</a>
-							<a href="/about-us" className="aboutus-link">
-								<img src="/aboutuss.png" alt="About Us" />
-							</a>
+							
 						</div>
 					</nav>
 				</header>

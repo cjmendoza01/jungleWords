@@ -6,6 +6,7 @@ import audioSound from "/Music.mp3";
 import bg from "/main.mp4";
 import { useRef } from "react";
 import { useEffect } from "react";
+
 function Home() {
 	const navigate = useNavigate();
 
@@ -35,13 +36,33 @@ function Home() {
 						/>
 					</div>
 					<div className="nav-links">
-						<a href="/" className="home-link">
-							<img src="/home.png" alt="Home" style={{ userSelect: "none" }} />
-						</a>
+					
 						<a className="aboutus-link" onClick={() => navigate("/AboutUs")}>
 							<img
 								src="/aboutuss.png"
 								alt="About Us"
+								style={{ userSelect: "none" }}
+							/>
+						</a>
+						<a className="about-sdes-link" onClick={() => navigate("/Aboutsdes")}>
+							<img
+								src="/aboutSDES.png"
+								alt="About SDES"
+								style={{ userSelect: "none" }}
+							/>
+						</a>
+						<a className="sped-link" onClick={() => navigate("/SpecialEducation")}>
+							<img
+								src="/SpEd.png"
+								alt="Special Education"
+								style={{ userSelect: "none" }}
+							/>
+						</a>
+					
+						<a className="sdes-support-link" onClick={() => navigate("/SupportSDES")}>
+							<img
+								src="/sdesSupp.png"
+								alt="SDES Support"
 								style={{ userSelect: "none" }}
 							/>
 						</a>
@@ -56,6 +77,7 @@ function Home() {
 
 				<div className="jungle-background">
 					<div className="content">
+						<br></br>
 						<img
 							src="/Title.png"
 							alt="Your Image Alt Text"
