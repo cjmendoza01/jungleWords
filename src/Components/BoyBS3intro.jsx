@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./BoyBS3intro.css"; // Import CSS for styling
-
+import vidStr from "/sanderbs3instruc.mp4";
 const BoyBegStage3Intro = () => {
 	const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ const BoyBegStage3Intro = () => {
 				muted={false}
 				onEnded={handleVideoEnd}
 				className="video"
-				src="/sanderbs3instruc.mp4"
+				src={vidStr}
 			/>
 		</div>
 	);

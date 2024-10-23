@@ -4,14 +4,17 @@ import "./BegLevelPickerGirl.css";
 import begButton from "../assets/buttons&dialogues/begButton.png";
 import intButton from "../assets/buttons&dialogues/intButton.png";
 import advButton from "../assets/buttons&dialogues/advButton.png";
-import bnextButton from "../assets/buttons&dialogues/beginNext.png";
 import lockImage from "../assets/buttons&dialogues/lock.png";
 import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png"; // Import the X button image
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
+import girlVid from "/BGAnimationGirl.mp4";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const BegLevelPickerGirl = () => {
+	const [passwordVisible, setPasswordVisible] = useState(false);
+
 	const navigate = useNavigate();
 	const [selectedLevel, setSelectedLevel] = useState(null);
 	const [accessCode, setAccessCode] = useState("");
@@ -19,14 +22,7 @@ const BegLevelPickerGirl = () => {
 
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
-	};
-
-	const handleNextClick = () => {
-		if (selectedLevel) {
-			setShowAccessCodeInput(true);
-		} else {
-			alert("Please select a level");
-		}
+		setShowAccessCodeInput(true); // Automatically show access code input
 	};
 
 	const handleDoneClick = () => {
@@ -49,17 +45,19 @@ const BegLevelPickerGirl = () => {
 		setAccessCode("");
 		setSelectedLevel(null);
 	};
+
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("BeginnerLevelGirl"); // Go back to the previous page
 	};
+
 	return (
 		<div className="chooselevelGirl">
 			<video autoPlay muted loop className="background-video">
-				<source src="/BGAnimationGirl.mp4" type="video/mp4" />
+				<source src={girlVid} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			<audio autoPlay loop src={"/Music.mp3"} />
-			{/* Back and Next Buttons in the upper left corner */}
+			{/* Back button in the upper left corner */}
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">
 					<img src={backButtonImage} alt="Back" />
@@ -99,9 +97,6 @@ const BegLevelPickerGirl = () => {
 					</button>
 					<img src={lockImage} alt="Lock" className="lockImage3" />
 				</div>
-				<button onClick={handleNextClick} className="clickNext next-button">
-					<img src={bnextButton} alt="Next" />
-				</button>
 			</div>
 			{showAccessCodeInput && (
 				<div className="access-code-container">
@@ -110,13 +105,50 @@ const BegLevelPickerGirl = () => {
 						alt="Access Code"
 						className="access-code-image"
 					/>
-					<input
-						type="password" // Change this from "text" to "password"
-						value={accessCode}
-						onChange={(e) => setAccessCode(e.target.value)}
-						className="access-code-input"
-						placeholder="Enter Access Code"
-					/>
+					<div
+						style={{
+							position: "absolute",
+							width: "40%",
+							top: "55%",
+							left: "50%",
+							marginTop: "10px",
+						}}
+					>
+						<div style={{ width: "100%", position: "relative" }}>
+							<input
+								type={passwordVisible ? "text" : "password"}
+								value={accessCode}
+								onChange={(e) => setAccessCode(e.target.value)}
+								className="access-code-input2"
+								placeholder="Enter Access Code"
+							/>
+							<div
+								style={{
+									position: "relative",
+									transform: "translate(-50%, -50%)",
+								}}
+							>
+								<button
+									onClick={() => {
+										setPasswordVisible(!passwordVisible);
+									}}
+									style={{
+										position: "absolute",
+										right: "0px",
+										top: "-45px",
+										// right: '10px',
+										// top: '50%',
+										// transform: 'translateY(-50%)',
+										background: "none",
+										border: "none",
+										cursor: "pointer",
+									}}
+								>
+									{passwordVisible ? <FaEye /> : <FaEyeSlash />}
+								</button>
+							</div>
+						</div>
+					</div>
 					<button onClick={handleDoneClick} className="done-button-overlay">
 						<img src={doneButton} alt="Done" />
 					</button>

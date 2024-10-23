@@ -63,19 +63,20 @@ const BeginnerStage1Boy = () => {
 				)
 			);
 
-			setModalData({
-				id: item.id,
-				modalChoices: item.modalChoices,
-				audio: item.audio,
-				isDisplayed: item.isDisplayed,
-				image: item.image,
-			});
+			// setModalData({
+			// 	...item,
+			// 	// id: item.id,
+			// 	// modalChoices: item.modalChoices,
+			// 	// audio: item.audio,
+			// 	// isDisplayed: item.isDisplayed,
+			// 	// image: item.image,
+			// });
+			// setTimeout(() => {
+			setModalActive(true);
 			setTimeout(() => {
-				setModalActive(true);
-				setTimeout(() => {
-					audioRef.current.play();
-				}, 190);
-			}, 190);
+				audioRef.current.play();
+			}, 250);
+			// }, 190);
 			setIsModalAnswerCorrect(false);
 		}
 	};
@@ -91,15 +92,7 @@ const BeginnerStage1Boy = () => {
 			setFoodItems((foodItems) =>
 				foodItems.map((f) => (f.id === md.id ? { ...f, isDisplayed: true } : f))
 			);
-			setTimeout(() => {
-				setModalData({
-					item: "",
-					modalChoices: [],
-					audio: null,
-					image: null,
-					isDisplayed: false,
-				});
-			}, 150);
+
 			setTry(0);
 		}
 		if ((isModalAnswerCorrect && !modalActive) || wrongItem) {
@@ -114,7 +107,7 @@ const BeginnerStage1Boy = () => {
 			if (!wrongItem) {
 				setTimeout(() => {
 					setScale((scale) => scale + 0.05);
-				}, 1000);
+				}, 500);
 				right = right + 1;
 				setRightCounter(right);
 			}
@@ -134,7 +127,7 @@ const BeginnerStage1Boy = () => {
 	}, [isModalAnswerCorrect, modalActive, wrongItem]);
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("/BegLevelPickerBoy");
 	};
 
 	const playWrongSound = () => {
@@ -178,7 +171,6 @@ const BeginnerStage1Boy = () => {
 
 			<div className="drag-n-drop-container">
 				<DndContext onDragEnd={handleDragEnd}>
-					{/* Container for the droppable zone */}
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>
 							{isFoodItemDropped && (
@@ -197,7 +189,6 @@ const BeginnerStage1Boy = () => {
 						</DroppableZone>
 					</div>
 
-					{/* Container for the food items */}
 					<div className="draggable-container">
 						<div className="foods-container">
 							{foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
@@ -207,7 +198,13 @@ const BeginnerStage1Boy = () => {
 										id={"food-" + id}
 										modalChoices={modalChoices}
 									>
-										<img src={image} alt={id} />
+										<img
+											src={image}
+											alt={id}
+											onMouseDown={() => {
+												setModalData(foodItems[[i]]);
+											}}
+										/>
 									</FoodItem>
 								) : (
 									<div key={i}></div>
@@ -220,7 +217,10 @@ const BeginnerStage1Boy = () => {
 
 			{/* MODAL / POPUP */}
 			{/* {modalActive && ( */}
-			<div className="modal" style={modalActive ? {} : { display: "none" }}>
+			<div
+				className="modal"
+				style={modalActive ? {} : { visibility: "hidden" }}
+			>
 				<div className="modal-backdrop"></div>
 				<div className="modal-container">
 					<div className="soundicon" onClick={() => audioRef.current.play()}>
@@ -236,6 +236,7 @@ const BeginnerStage1Boy = () => {
 									image={image}
 									isCorrect={isCorrect}
 									setModalActive={setModalActive}
+									setModalData={setModalData}
 									isModalAnswerCorrect={isModalAnswerCorrect}
 									setIsModalAnswerCorrect={setIsModalAnswerCorrect}
 									tries={tries}
@@ -302,6 +303,7 @@ const ModalChoice = ({
 	image,
 	isCorrect,
 	setModalActive,
+	setModalData,
 	isModalAnswerCorrect,
 	setIsModalAnswerCorrect,
 	tries,
@@ -320,7 +322,7 @@ const ModalChoice = ({
 		if (isModalAnswerCorrect || wrongItem) {
 			setTimeout(() => {
 				setStatus("");
-			}, 800);
+			}, 300);
 		}
 	}, [isModalAnswerCorrect, wrongItem]);
 
@@ -341,9 +343,17 @@ const ModalChoice = ({
 							// setTimeout(() => {
 							// 	statCH();
 							// }, 500);
+
 							setTimeout(() => {
 								setModalActive(false);
-							}, 1000);
+								setModalData({
+									item: "",
+									modalChoices: [],
+									audio: null,
+									image: null,
+									isDisplayed: false,
+								});
+							}, 100);
 							setWrongItem(true);
 							setTry(0);
 						} else {
@@ -359,7 +369,15 @@ const ModalChoice = ({
 
 						setTimeout(() => {
 							setModalActive(false);
-						}, 1000);
+
+							setModalData({
+								item: "",
+								modalChoices: [],
+								audio: null,
+								image: null,
+								isDisplayed: false,
+							});
+						}, 100);
 					}
 				}
 			}}

@@ -3,6 +3,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./BS1GJBoy.css"; // Import CSS for styling
 import button from "../assets/buttons&dialogues/nextStage.png";
 import buttonPlay from "../assets/buttons&dialogues/playAgain.png";
+import VGB from "/vgoodBoy.mp4";
+import GB from "/goodBoy.mp4";
+import EB from "/excellentBoy.mp4";
+import VGG from "/vgoodGirl.mp4";
+import GG from "/goodGirl.mp4";
+import EG from "/excellentGirl.mp4";
 
 const IS2GJ = () => {
 	const navigate = useNavigate();
@@ -16,13 +22,14 @@ const IS2GJ = () => {
 	const qGender = queryParams.get("gender");
 
 	useEffect(() => {
-		let videos = ["/vgoodBoy.mp4", "/goodBoy.mp4", "/excellentBoy.mp4"];
+		let videos = [VGB, GB, EB];
+
 		let gd = "boy";
 
 		if (qGender) {
 			gd = qGender.toLowerCase();
 			if (gd === "girl") {
-				videos = ["/vgoodGirl.mp4", "/goodGirl.mp4", "/excellentGirl.mp4"];
+				videos = [VGG, GG, EG];
 			}
 		}
 		const randomVideo = videos[Math.floor(Math.random() * videos.length)];

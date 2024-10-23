@@ -4,6 +4,10 @@ import "./BS1GJBoy.css"; // Import CSS for styling
 import button from "../assets/buttons&dialogues/nextStage.png";
 import buttonPlay from "../assets/buttons&dialogues/playAgain.png";
 
+import VGB from "/vgoodBoy.mp4";
+import GB from "/goodBoy.mp4";
+import EB from "/excellentBoy.mp4";
+
 const BoyVideo = () => {
 	const navigate = useNavigate();
 	const videoRef = useRef(null);
@@ -12,7 +16,7 @@ const BoyVideo = () => {
 
 	// Randomly select a video source when the component mounts
 	useEffect(() => {
-		const videos = ["/vgoodBoy.mp4", "/goodBoy.mp4", "/excellentBoy.mp4"];
+		const videos = [VGB, GB, EB];
 		const randomVideo = videos[Math.floor(Math.random() * videos.length)];
 		const uniqueVideoSource = `${randomVideo}?t=${new Date().getTime()}`; // Cache busting to force reload
 		setVideoSource(uniqueVideoSource);

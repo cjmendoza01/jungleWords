@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./BoyIS1introo.css"; // Import CSS for styling
-
+import VidSrc from "/sanderis2instruc.mp4";
 const BoyIntStage2Intro = () => {
 	const navigate = useNavigate();
 
@@ -21,7 +21,7 @@ const BoyIntStage2Intro = () => {
 				onEnded={handleVideoEnd}
 				style={{ width: "100vw", height: "100vh", objectFit: "cover" }}
 			>
-				<source src="/sanderis2instruc.mp4" type="video/mp4" />
+				<source src={VidSrc} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 		</div>

@@ -87,7 +87,7 @@
     transform: scale(1.1);
   }
   .selected {
-    border: 2px solid #655c25; /* Yellow border indicating selection */
+    /* border: 2px solid #655c25; */
     border-radius: 10px; /* Adjust border radius as needed */
   
   }

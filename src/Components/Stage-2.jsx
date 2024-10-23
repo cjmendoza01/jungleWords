@@ -14,7 +14,8 @@ import Banana from "../assets/bs2/BananaGif.gif";
 import Basketfull from "../assets/bs2/basketfull.png";
 import Girl from "../assets/bs2/GirlBananas.gif";
 import Boy from "../assets/bs2/BoyBananas.gif";
-
+import GirlBasketEgg from "../assets/bs2/GirlEgg.gif";
+import BoyBasketEgg from "../assets/bs2/BoyEgg.gif";
 import CheckModal from "./Modals/CheckModal";
 import Gonzo from "../assets/bs2/Gonzo.gif";
 import HoneyBun from "../assets/is1/Honeybun.gif";
@@ -38,7 +39,8 @@ export default function Stage2(props) {
 	const [questions, setQuestions] = useState([]);
 	const [resetGame, setResetGame] = useState(false);
 	const [stgLevel, setStgLevel] = useState("1");
-
+	const [iconBoy, setIconBoy] = useState(Boy);
+	const [iconGirl, setIconGirl] = useState(Girl);
 	const [nextRoute, setNextRoute] = useState("");
 	const [tries, setTry] = useState(0);
 	const eggs = [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8];
@@ -99,8 +101,10 @@ export default function Stage2(props) {
 
 		if ((qLevel && qLevel === "2") || (stageLevel && stageLevel === "2")) {
 			if (gd == "girl") {
+				setIconGirl(GirlBasketEgg);
 				nxtRt = `/GirlIS2intro`;
 			} else {
+				setIconGirl(BoyBasketEgg);
 				nxtRt = `/BoyIS2intro`;
 			}
 		} else {
@@ -141,7 +145,6 @@ export default function Stage2(props) {
 			setBananaCount(items.length);
 
 			setTimeout(() => {
-				console.log("opeeeen modal");
 				setOpenModal(true);
 			}, 5000);
 		}
@@ -171,7 +174,7 @@ export default function Stage2(props) {
 				setOpenCheckModal(false);
 			}, 2000);
 
-			if (bananaCount > 0) {
+			if (bananaCount - 1 > 0) {
 				setTimeout(() => {
 					setOpenModal(true);
 				}, 2500);
@@ -344,7 +347,7 @@ export default function Stage2(props) {
 							<div className="stage-2-character-div">
 								<img
 									className="stage-2-char-div"
-									src={gender === "boy" ? Boy : Girl}
+									src={gender === "boy" ? iconBoy : iconGirl}
 									alt="Character"
 								/>
 							</div>
@@ -423,17 +426,23 @@ export default function Stage2(props) {
 				/>
 			)}
 			{openCheckModal && <CheckModal />}
-			{gameComplete && openThankyou && (
-				<div className="modal">
-					<BS1GonzoTY closeTyVideo={closeTyVideo} gameLevel={stgLevel} />
+			{gameComplete ? (
+				<div className="gmCompleteDiv">
+					{openThankyou && (
+						<div className="modal">
+							<BS1GonzoTY closeTyVideo={closeTyVideo} gameLevel={stgLevel} />
+						</div>
+					)}
+					{openNextGameModal && (
+						<NextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => setResetGame(true)}
+						/>
+					)}
 				</div>
-			)}
-			{openNextGameModal && (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => setResetGame(true)}
-				/>
+			) : (
+				<></>
 			)}
 		</div>
 	);

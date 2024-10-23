@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import PlayAgainImg from "../../assets/buttons&dialogues/playAgain.png";
+import VgoodBoy from "/vgoodBoy.mp4";
+import VgoodGirl from "/vgoodGirl.mp4";
 export default function LastNextGameModal({ gender, route, resetGame }) {
 	const navigate = useNavigate();
 
@@ -10,12 +12,12 @@ export default function LastNextGameModal({ gender, route, resetGame }) {
 	const [showBtn, setShowBtn] = useState(true);
 	useEffect(() => {
 		if (gender === "boy") {
-			setVid("/vgoodBoy.mp4");
-			videoRef.current.src = "/vgoodBoy.mp4";
+			setVid(VgoodBoy);
+			videoRef.current.src = VgoodBoy;
 		} else {
-			setVid("/vgoodGirl.mp4");
+			setVid(VgoodGirl);
 
-			videoRef.current.src = "/vgoodGirl.mp4";
+			videoRef.current.src = VgoodGirl;
 		}
 
 		if (videoRef?.current) {

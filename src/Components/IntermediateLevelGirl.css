@@ -37,7 +37,7 @@
   }
   
   .intStage2 {
-    margin: 5px;
+    margin: 32px;
     cursor: pointer;
     width: 300px;
     background-color: transparent; /* Ensure buttons are transparent */
@@ -87,7 +87,7 @@
     transform: scale(1.1);
   }
   .selected {
-    border: 2px solid #655c25; /* Yellow border indicating selection */
+    /* border: 2px solid #655c25;  */
     border-radius: 10px; /* Adjust border radius as needed */
   
   }
