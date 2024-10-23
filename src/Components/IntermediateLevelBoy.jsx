@@ -5,7 +5,8 @@ import ints1 from "../assets/buttons&dialogues/ints1.png";
 import ints2 from "../assets/buttons&dialogues/ints2.png";
 import ints3 from "../assets/buttons&dialogues/ints3.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
-
+import vidSrc from "/BGAnimationBoy.mp4";
+import Msc from "/Music.mp3";
 const IntermediateLevelBoy = () => {
 	const navigate = useNavigate();
 	const [selectedStage, setSelectedStage] = useState(null);
@@ -25,16 +26,16 @@ const IntermediateLevelBoy = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("BegLevelPickerBoy"); // Go back to the previous page
 	};
 
 	return (
 		<div className="intermediatelevelBoy">
 			<video autoPlay muted loop className="background-video">
-				<source src="/BGAnimationBoy.mp4" type="video/mp4" />
+				<source src={vidSrc} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
-			<audio autoPlay loop src={"/Music.mp3"} />
+			<audio autoPlay loop src={Msc} />
 			{/* Back button in the upper left corner */}
 			<div className="back-button-container">
 				<button onClick={handleBackClick} className="back-button">

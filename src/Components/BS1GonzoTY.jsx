@@ -5,6 +5,11 @@ import button from "../assets/buttons&dialogues/skip.png";
 import muteButton from "../assets/buttons&dialogues/muteButton.png";
 import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
 
+import level1BoyVid from "/GonzoBS2TY.mp4";
+import level1GirlVid from "/GonzoBS2TYGirl.mp4";
+import level2BoyVid from "/HoneyBunIS1TY.mp4";
+import level2GirlVid from "/HoneyBunIS1TYGirl.mp4";
+
 const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 	const [gender, setGender] = useState("boy");
 	const [level, setLevel] = useState("1");
@@ -27,11 +32,6 @@ const BS1GonzoTY = ({ closeTyVideo, gameLevel }) => {
 		}
 
 		let vid = "";
-
-		const level1BoyVid = "/GonzoBS2TY.mp4";
-		const level1GirlVid = "/GonzoBS2TYGirl.mp4";
-		const level2BoyVid = "/HoneyBunIS1TY.mp4";
-		const level2GirlVid = "/HoneyBunIS1TYGirl.mp4";
 
 		let lvl = "1";
 

@@ -408,6 +408,7 @@ export default function Stage3() {
 							position: "absolute",
 							top: "-35%",
 						}}
+						alt="wrong"
 					/>
 				)}
 				<img
@@ -420,6 +421,7 @@ export default function Stage3() {
 						margin: "0 auto", // Centers the image horizontally
 					}}
 					src={gender === "boy" ? Boy : Girl}
+					alt="Character"
 				/>
 			</div>
 		);
@@ -515,6 +517,7 @@ export default function Stage3() {
 									<img src={soundicon} alt="soundicon" />
 								</div>
 								<img
+									alt="Object Item"
 									style={{ objectFit: "contain", width: "90%", height: "90%" }}
 									src={rightItems[0]?.image}
 									onClick={() => {
@@ -582,20 +585,26 @@ export default function Stage3() {
 				</div>
 			</div>
 			{openCheckModal && <CheckModal />}
-			{gameComplete && openThankyou && (
-				<div className="modal">
-					<S3TY closeTyVideo={closeTyVideo} />
+			{gameComplete ? (
+				<div className="gmCompleteDiv">
+					{openThankyou && (
+						<div className="modal">
+							<S3TY closeTyVideo={closeTyVideo} />
+						</div>
+					)}
+					{openNextGameModal ? (
+						<NextGameModal
+							gender={gender}
+							route={nextRoute}
+							resetGame={() => {
+								console.log("reset");
+								setResetGame(true);
+							}}
+						/>
+					) : (
+						<></>
+					)}
 				</div>
-			)}
-			{openNextGameModal ? (
-				<NextGameModal
-					gender={gender}
-					route={nextRoute}
-					resetGame={() => {
-						console.log("reset");
-						setResetGame(true);
-					}}
-				/>
 			) : (
 				<></>
 			)}

@@ -4,6 +4,7 @@ import "./BoyVideo.css"; // Import CSS for styling
 import button from "../assets/buttons&dialogues/skip.png";
 import muteButton from "../assets/buttons&dialogues/muteButton.png";
 import unmuteButton from "../assets/buttons&dialogues/unmuteButton.png";
+import boyVid from "/Boy.mp4";
 
 const BoyVideo = () => {
 	const navigate = useNavigate();
@@ -31,7 +32,7 @@ const BoyVideo = () => {
 				ref={videoRef}
 				autoPlay
 				muted={isMuted}
-				src="/Boy.mp4"
+				src={boyVid}
 				onEnded={handleVideoEnd}
 				className="video"
 			>

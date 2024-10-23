@@ -38,6 +38,8 @@ export default function QRGame() {
 	const navigate = useNavigate();
 
 	const audioRef = useRef(null);
+	const wrongRef = useRef(null);
+	const RightRef = useRef(null);
 	useEffect(() => {
 		let gend = "boy";
 		let lvl = "1";
@@ -127,6 +129,7 @@ export default function QRGame() {
 		if (currQuestion.ans[qIndex].toLowerCase() === ans.toLowerCase()) {
 			console.log("right");
 			setShowCorrectModal(true);
+			RightRef.current.play();
 			setCamStatus("correct");
 			if (qIndex === 1) {
 				if (questions?.length === 1) {
@@ -149,6 +152,7 @@ export default function QRGame() {
 			}
 		} else {
 			setCamStatus("error");
+			wrongRef.current.play();
 		}
 	};
 
@@ -159,6 +163,7 @@ export default function QRGame() {
 		if (currQuestion?.id.toLowerCase() === ans.toLowerCase()) {
 			console.log("right");
 			setShowCorrectModal(true);
+			RightRef.current.play();
 			setCamStatus("correct");
 			if (questions?.length === 1) {
 				setGameComplete(true);
@@ -176,6 +181,7 @@ export default function QRGame() {
 			}
 		} else {
 			setCamStatus("error");
+			wrongRef.current.play();
 		}
 	};
 
@@ -219,6 +225,8 @@ export default function QRGame() {
 
 	return (
 		<div className="qrGameDiv">
+			<audio ref={wrongRef} src={"/Wrong.mp3"} />
+			<audio ref={RightRef} src={"Corect.mp3"} />
 			<div
 				style={{
 					height: "100%",
@@ -254,7 +262,11 @@ export default function QRGame() {
 					}}
 				>
 					<div style={{ width: "90%", height: "100%" }}>
-						<img className="qr-Character" src={gender === "boy" ? Boy : Girl} />
+						<img
+							className="qr-Character"
+							src={gender === "boy" ? Boy : Girl}
+							alt="Character"
+						/>
 					</div>
 				</div>
 			</div>
@@ -294,7 +306,10 @@ export default function QRGame() {
 										}}
 									>
 										{!gameComplete && openCam ? (
-											<Scanner onScan={handleScan} />
+											<Scanner
+												onScan={handleScan}
+												components={{ Audio: false }}
+											/>
 										) : (
 											<></>
 										)}
@@ -338,6 +353,7 @@ export default function QRGame() {
 											audioRef.current.play();
 										}
 									}}
+									alt="Question"
 								/>
 								<audio ref={audioRef} src={questions[0]?.audio} />
 							</div>

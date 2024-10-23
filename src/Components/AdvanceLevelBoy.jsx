@@ -24,7 +24,7 @@ const AdvanceLevelBoy = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate(-1); // Go back to the previous page
+		navigate("BegLevelPickerBoy"); // Go back to the previous page
 	};
 
 	return (

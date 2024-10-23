@@ -4,7 +4,13 @@ import "./BeginnerStage1Girl.css";
 import stage1Done from "../assets/buttons&dialogues/stage1Done.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // New back button import
 import { useLocation, useNavigate } from "react-router-dom";
-
+import bgVid from "/bgstage1.mp4";
+import Msc from "/BgMusic.mp3";
+import {
+	restrictToParentElement,
+	restrictToWindowEdges,
+	restrictToFirstScrollableAncestor,
+} from "@dnd-kit/modifiers";
 import ErrorSound from "/Wrong.mp3";
 import rightSound from "/Corect.mp3";
 // Import all image of sound icon
@@ -79,7 +85,7 @@ const IntermidiateStage2 = () => {
 			setModalActive(true);
 			setTimeout(() => {
 				audioRef.current.play();
-			}, 500);
+			}, 700);
 			// }, 100);
 
 			setIsModalAnswerCorrect(false);
@@ -174,7 +180,7 @@ const IntermidiateStage2 = () => {
 					objectFit: "cover",
 				}}
 			>
-				<source src="/bgstage1.mp4" type="video/mp4" />
+				<source src={bgVid} type="video/mp4" />
 				Your browser does not support the video tag.
 			</video>
 			{/* Back button in the upper left corner */}
@@ -183,11 +189,14 @@ const IntermidiateStage2 = () => {
 					<img src={backButtonImage} alt="Back" />
 				</button>
 			</div>
-			<audio autoPlay loop src={"/BgMusic.mp3"} />
+			<audio autoPlay loop src={Msc} />
 			<audio ref={audioRef2} src={ErrorSound} />
 			<audio ref={audioRef3} src={rightSound} />
 			<div className="drag-n-drop-container">
-				<DndContext onDragEnd={handleDragEnd}>
+				<DndContext
+					onDragEnd={handleDragEnd}
+					modifiers={[restrictToWindowEdges]}
+				>
 					{/* Container for the droppable zone */}
 					<div className="droppable-container">
 						<DroppableZone scale={scale}>

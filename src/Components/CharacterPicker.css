@@ -8,7 +8,7 @@ body {
 
 .CharacterPicker {
   text-align: center;
-  background: url('junglebg.png') no-repeat center bottom/cover;
+  background: url('/junglebg.png') no-repeat center bottom/cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,10 +54,11 @@ body {
 }
 
 .character-option.selected img {
-  transform: scale(1.05); /* Slightly scale up the selected character */
+  transform: scale(1.15); /* Slightly scale up the selected character */
 }
-
-
+.character-option:hover{
+transform: scale(1.10);
+}
 .wooden-sign {
   display: flex;
   justify-content: center;
