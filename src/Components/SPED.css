@@ -50,18 +50,18 @@ header nav {
 }
 
 .jungle-background {
-  min-height: 90vh;
+  min-height: 100vh; /* Make sure it takes the full height */
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  align-items: flex-start; /* Align content to the top */
+  overflow: auto; /* Allow scrolling for the jungle background */
 }
 
 .content {
   text-align: center;
   color: black; /* Changed text color to black */
   overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 80vh; /* Set a maximum height */
+  max-height: 85vh; /* Set a maximum height for scrolling */
   padding: 20px;
 }
 
@@ -90,3 +90,5 @@ p {
   text-align: justify;
   font-family: 'Poppins';
 }
+
+

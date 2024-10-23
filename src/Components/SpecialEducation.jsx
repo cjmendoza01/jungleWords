@@ -23,7 +23,7 @@ function SpecialEducation() {
             <div className="content">
               <img src="/specEd.png" alt="Special Education Image" />
 
-              <div className="text-content">
+              <div className="text-content"> 
                 <p>
                   Every child deserves equal opportunities, regardless of the
                   challenges they encounter. Special education plays a crucial
@@ -54,6 +54,8 @@ function SpecialEducation() {
                   school year, 232,975 students with disabilities or learning
                   exceptionalities were integrated into regular classes.
                 </p>
+				
+				<br></br>
 
                 <h2>Learning Exceptionalities</h2>
                 <p>
@@ -70,6 +72,8 @@ function SpecialEducation() {
                   learners, with totals of 41,317 and 64,338, respectively.
                 </p>
 
+				<br></br>
+
                 <h2>SPED Teachers</h2>
                 <p>
                   DepEd teachers who underwent formal training in SPED at the
@@ -82,6 +86,8 @@ function SpecialEducation() {
                   effectively implemented, fostering an environment where all
                   learners can thrive.
                 </p>
+
+				<br></br>
 
                 <h2>SPED Learners by Region</h2>
                 <p>
@@ -98,7 +104,8 @@ function SpecialEducation() {
                 <div className="reference-section">
 					<br></br>
 					<br></br>
-					<br></br>
+			
+
                   <h3>References</h3>
                   <p>[1] "Special Education (SPED) Profile in the Philippines," Congressional Policy and Budget Research Department. [Online]. Available: https://cpbrd.congress.gov.ph/2012-06-30-13-06-51/2012-06-30-13-36-50/1604-ff2023-17-special-education-sped-profile-in-the-philippines. [Accessed: Oct. 23, 2024].</p>
                   <p>[2] A. B. Author, "Title of the Document," ScholarWorks @ UNI, [Online]. Available: https://scholarworks.uni.edu/cgi/viewcontent.cgi?article=1909&context=grp. [Accessed: Oct. 23, 2024].</p>
