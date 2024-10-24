@@ -49,32 +49,31 @@ header nav {
   padding-top: 6px;
 }
 
-.jungle-background {
-  min-height: 100vh; /* Make sure it takes the full height */
+.jungle-background-sped {
+  height: 100vh; /* Make sure it takes the full height */
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Align content to the top */
   overflow: auto; /* Allow scrolling for the jungle background */
 }
 
-.content {
+.contents_spec_ed {
   text-align: center;
   color: black; /* Changed text color to black */
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 85vh; /* Set a maximum height for scrolling */
   padding: 20px;
 }
 
-.contents img {
+.contents_spec_ed img {
   max-width: 100%;
   width: 500px;
   height: auto;
-  display: block;
-  margin: 50px auto 20px auto;
+    display: block;
+    /* margin: 50px auto 20px auto; */
 }
 
 .text-content {
   margin-top: 10px;
+  margin-bottom: 100px;
   padding: 20px;
   color: black; /* Set text color to black */
   background-color: transparent; /* Transparent background */
