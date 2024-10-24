@@ -133,10 +133,22 @@ function SupportSDES() {
 								</p>
 
 								<div className="reference-section">
-									<br></br> <br></br> <br></br>{" "}
+									<br></br>{" "}
+									<div className="reference-section">
+
+  {/* First row: 4 images */}
+  <div className="image-row">
+    <img src="/1.jpg" alt="Image 1" />
+    <img src="/2.jpg" alt="Image 2" />
+    <img src="/3.jpg" alt="Image 3" />
+  </div>
+
+
+ 
+</div>
+
 									{/* nilagyan ko lang ng gantong space para sa pic hehe */}
-									<br></br> <br></br> <br></br>
-									<br></br> <br></br> <br></br>
+								
 									<h3>References</h3>
 									<p>
 										[1] O. Seaman, "IRR of Republic Act No. 10533," Japan's

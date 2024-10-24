@@ -113,7 +113,13 @@ function SpecialEducation() {
 
 								<div className="reference-section">
 									<br></br>
-									<br></br>
+									  {/* Second row: 3 images */}
+  <div className="image-row">
+  <img src="/4.jpg" alt="Image 4" />
+    <img src="/5.jpg" alt="Image 5" />
+    <img src="/7.jpg" alt="Image 6" />
+  </div>
+
 									<br></br>
 									<h3>References</h3>
 									<p>
