@@ -91,3 +91,17 @@ p {
 }
 
 
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Space between images */
+  margin-bottom: 40px; /* Space between rows */
+}
+
+.image-row img {
+  width: 300px;
+  height: auto;
+  border: 4px solid green; /* Green border */
+  border-radius: 10px; /* Optional: rounded corners */
+  object-fit: cover; /* Ensures consistent image scaling */
+}
