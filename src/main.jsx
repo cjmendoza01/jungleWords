@@ -14,7 +14,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 				/>
 				<meta http-equiv="X-Frame-Options" content="SAMEORIGIN" /> */}
 			{/* </Helmet> */}
-			<App />
+			<div>
+				<div className="desktop-only-message">
+					This app is only accessible on a desktop browser. Please switch to a
+					desktop device.
+				</div>
+
+				<div className="app-content">
+					<App />
+				</div>
+			</div>
 		</BrowserRouter>
 	</React.StrictMode>
 );
