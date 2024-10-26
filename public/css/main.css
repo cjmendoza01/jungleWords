@@ -569,3 +569,26 @@
   background-image: url("/opaque.png");
 	z-index: 11;
 }
+
+.app-content {
+  display: block;
+}
+
+.desktop-only-message {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    display: none;
+  }
+  .desktop-only-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+  }
+}
