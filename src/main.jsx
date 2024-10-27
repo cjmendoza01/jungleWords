@@ -2,19 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./Components/Route.jsx";
 import { BrowserRouter } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { BrowserView, isMobile } from "react-device-detect";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<Helmet>
-				<meta
-					http-equiv="Content-Security-Policy"
-					content="default-src 'self'; img-src 'self' https://junglewords.org; script-src 'self'"
-				/>
-				<meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
-			</Helmet>
 			<div>
 				{isMobile && (
 					<div className="desktop-only-message">
