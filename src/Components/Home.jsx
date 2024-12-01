@@ -66,6 +66,13 @@ function Home() {
 								style={{ userSelect: "none" }}
 							/>
 						</a>
+						<a className="sped-link" onClick={() => navigate("/TandC")}>
+							<img
+								src="/SpEd.png"
+								alt="Special Education"
+								style={{ userSelect: "none" }}
+							/>
+						</a>
 					</div>
 				</nav>
 			</header>
