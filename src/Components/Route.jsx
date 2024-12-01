@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./Home.jsx";
 import AboutUs from "./AboutUs.jsx";
 import SpecialEducation from "./SpecialEducation.jsx";
+import TandC from "./TandC.jsx";
 import Aboutsdes from "./Aboutsdes.jsx";
 import SupportSDES from "./SupportSDES.jsx";
 import CharacterPicker from "./CharacterPicker.jsx";
@@ -72,6 +73,7 @@ function App() {
 			<Route path="/SpecialEducation" element={<SpecialEducation />} />
 			<Route path="/Aboutsdes" element={<Aboutsdes />} />
 			<Route path="/SupportSDES" element={<SupportSDES />} />
+			<Route path="/TandC" element={<TandC />} />
 			<Route path="/startButton" element={<BeginnerStage1Boy />} />
 			<Route path="/CharacterPicker" element={<CharacterPicker />} />
 			<Route path="/LostGirl" element={<LostGirl />} />
