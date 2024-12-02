@@ -1,5 +1,5 @@
 import React from "react";
-import "./SPED.css";
+import "./TandC.css";
 
 function TandC() {
 	return (
