@@ -38,9 +38,10 @@ header nav {
 }
 
 .nav-links a img {
-  width: 100%; /* Image fills the container */
-  height: 110%; /* Image fills the container */
-  object-fit: contain; /* Maintain aspect ratio */
+  width: 180px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 /* Individual button styles */
@@ -79,6 +80,15 @@ header nav {
   object-fit: contain;
   border-radius: 8px;
 }
+
+.tnc-link {
+  width: 130px !important;
+  height: 59px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /* Hover effects for all buttons */
 .nav-links a:hover img {

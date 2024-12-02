@@ -9,7 +9,8 @@ import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
-import genButtonImage from "../assets/buttons&dialogues/genButton.png";  // Import the image for the Generate Code button
+import genButtonImage from "../assets/buttons&dialogues/genButton.png";
+
 import girlVid from "/BGAnimationGirl.mp4";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -95,7 +96,7 @@ const BegLevelPickerGirl = () => {
     if (selectedLevel) {
       const codes = passcodes[selectedLevel];
       const randomCode = codes[Math.floor(Math.random() * codes.length)];
-      setAccessCode(randomCode); // Automatically sets the generated code in the input
+      setAccessCode(randomCode);
     }
   };
 
@@ -146,40 +147,53 @@ const BegLevelPickerGirl = () => {
             alt="Access Code"
             className="access-code-image"
           />
-          <div style={{ width: "100%", position: "relative", marginBottom: "20px" }}>
-            <input
-              type={passwordVisible ? "text" : "password"}
-              value={accessCode}
-              onChange={(e) => setAccessCode(e.target.value)}
-              className="access-code-input2"
-              placeholder="Enter Access Code"
-            />
-            <div style={{ position: "relative", transform: "translate(-50%, -50%)" }}>
-              <button
-                onClick={() => setPasswordVisible(!passwordVisible)}
+          <div
+            style={{
+              position: "absolute",
+              width: "40%",
+              top: "55%",
+              left: "50%",
+              marginTop: "10px",
+            }}
+          >
+            <div style={{ width: "100%", position: "relative" }}>
+              <input
+                type={passwordVisible ? "text" : "password"}
+                value={accessCode}
+                onChange={(e) => setAccessCode(e.target.value)}
+                className="access-code-input2"
+                placeholder="Enter Access Code"
+              />
+              <div
                 style={{
-                  position: "absolute",
-                  right: "0px",
-                  top: "-45px",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
+                  position: "relative",
+                  transform: "translate(-50%, -50%)",
                 }}
               >
-                {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-              </button>
+                <button
+                  onClick={() => setPasswordVisible(!passwordVisible)}
+                  style={{
+                    position: "absolute",
+                    right: "0px",
+                    top: "-45px",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  {passwordVisible ? <FaEye /> : <FaEyeSlash />}
+                </button>
+              </div>
             </div>
           </div>
-
-          <div className="buttons-container">
-            <button onClick={generateAccessCode} className="gen-button">
-              <img src={genButtonImage} alt="Generate Code" />
-            </button>
-            <button onClick={handleDoneClick} className="done-button">
-              <img src={doneButton} alt="Done" />
+          <div className="generate-code-button">
+            <button onClick={generateAccessCode} className="gen-button-overlay">
+            <img src={genButtonImage} alt="Generate" />
             </button>
           </div>
-
+          <button onClick={handleDoneClick} className="dones-button-overlay">
+            <img src={doneButton} alt="Done" />
+          </button>
           <button onClick={handleCloseClick} className="close-button">
             <img src={beginX} alt="Close" />
           </button>

@@ -36,7 +36,7 @@ function Home() {
 						/>
 					</div>
 					<div className="nav-links">
-					
+			
 						<a className="aboutus-link" onClick={() => navigate("/AboutUs")}>
 							<img
 								src="/aboutuss.png"
@@ -66,10 +66,10 @@ function Home() {
 								style={{ userSelect: "none" }}
 							/>
 						</a>
-						<a className="sped-link" onClick={() => navigate("/TandC")}>
+						<a className="tnc-link" onClick={() => navigate("/TandC")}>
 							<img
-								src="/SpEd.png"
-								alt="Special Education"
+								src="/TandC.png"
+								alt="Terms and Condition"
 								style={{ userSelect: "none" }}
 							/>
 						</a>

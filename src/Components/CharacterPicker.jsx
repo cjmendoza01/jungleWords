@@ -4,7 +4,7 @@ import "./CharacterPicker.css";
 import boyImage from "../assets/SANDER.gif";
 import girlImage from "../assets/SANDY.gif";
 import chooseIcon from "../assets/buttons&dialogues/choosecharac.png";
-import doneButtonImage from "../assets/buttons&dialogues/done.png";
+import doneButtonImage from "../assets/buttons&dialogues/doneButton.png";
 import MSC from "/Music.mp3";
 
 const CharacterPicker = () => {
