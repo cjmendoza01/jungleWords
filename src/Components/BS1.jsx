@@ -6,10 +6,11 @@ import ChooseLevel from './ChooseLevel.jsx';
 import ChooseBeginnerLevel from './ChooseBeginnerLevel.jsx';
 import DragAndDrop1 from './DragAndDrop1.jsx';
 import K1 from './K1.jsx';
-import K2 from './K2.jsx';
+import K2 from './K2.jsx'; 
 import Menu from './Menu.jsx';
 import BoyVideo from './BoyVideo.jsx';
-import GirlVideo from './GirlVideo.jsx';
+import GirlVideo from './GirlVideo.jsx';  
+import ItemManagement from './ItemManagement.jsx';  
 // Import Animation if it exists
 // import Animation from './Animation.jsx'; 
 
@@ -29,6 +30,8 @@ function App() {
       <Route path='/DragAndDrop1' element={<DragAndDrop1 />} />
       <Route path='/boy-video' element={<BoyVideo />} />
       <Route path='/girl-video' element={<GirlVideo />} />
+      <Route path='/ItemManagement' element={<ItemManagement />} />
+
     </Routes>
   );
 }
