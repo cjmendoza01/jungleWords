@@ -64,6 +64,9 @@ import QRGame2 from "./QRGame2.jsx";
 import LastNextGameModal from "./Modals/LastNextGameModal.jsx";
 import AdvanceGJGirl from "./AdvanceGJGirl.jsx";
 import AdvanceGJBoy from "./AdvanceGJBoy.jsx";
+import ItemManagementG1 from "./ItemManagementG1.jsx";
+import ItemManagementG2 from './ItemManagementG2.jsx'; 
+import ItemManagementG3 from './ItemManagementG3.jsx'; 
 
 function App() {
 	return (
@@ -134,7 +137,9 @@ function App() {
 			<Route path="/BS1GJ" element={<BS1GJ />} />
 			<Route path="/BS1TY" element={<BS1TY />} />
 			<Route path="/LastGame" element={<LastNextGameModal />} />
-
+            <Route path='/ItemManagementG1' element={<ItemManagementG1 />} />
+			<Route path='/ItemManagementG2' element={<ItemManagementG2 />} />
+			<Route path='/ItemManagementG3' element={<ItemManagementG3 />} />
 			<Route path="/QRGame2" element={<QRGame2 />} />
 			<Route path="/AdvanceGJGirl" element={<AdvanceGJGirl />} />
 			<Route path="/AdvanceGJBoy" element={<AdvanceGJBoy />} />
