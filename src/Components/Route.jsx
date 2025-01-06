@@ -17,6 +17,8 @@ import BeginnerStage1Boy from "./BeginnerStage1Boy.jsx";
 import BeginnerStage1Girl from "./BeginnerStage1Girl.jsx";
 import IntermediateLevelBoy from "./IntermediateLevelBoy.jsx";
 import IntermediateLevelGirl from "./IntermediateLevelGirl.jsx";
+import BegLevelPickerGirlSample from "./BegLevelPickerGirlSample.jsx";
+import BegLevelPickerGirlGenerate from "./BegLevelPickerGirlGenerate.jsx";
 //import AdvanceLevelBoy from "./AdvanceLevelBoy.jsx";
 import SanderTY from "./SanderTY.jsx";
 import BS1GJBoy from "./BS1GJBoy.jsx";
@@ -91,6 +93,9 @@ function App() {
 			<Route path="/RewardPageBoy" element={<RewardPageBoy />} />
 			<Route path="/RewardPageGirl" element={<RewardPageGirl />} />
 			<Route path="/BeginnerStage1Boy" element={<BeginnerStage1Boy />} />
+			<Route path="/BegLevelPickerGirlSample" element={<BegLevelPickerGirlSample />} />
+			<Route path="/BegLevelPickerGirlGenerate" element={<BegLevelPickerGirlGenerate  />} />
+
 			{/* <Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />  */}
 			<Route path="/SanderTY" element={<SanderTY />} />
 			<Route path="/BS1GJBoy" element={<BS1GJBoy />} />
