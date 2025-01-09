@@ -13,6 +13,7 @@ import NextGameModal from "./Modals/NextGameModal";
 import AdvTy from "./AdvTy";
 import LastNextGameModal from "./Modals/LastNextGameModal";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function QRGame() {
 	const [questions, setQuestions] = useState([]);
@@ -113,13 +114,46 @@ export default function QRGame() {
 				setNextGameModal(false);
 			}
 
-			const items = qrGameQsGetter(5, level);
+			// const items = qrGameQsGetter(5, level);
+			// setQuestions(items);
+			// setTimeout(() => {
+			// 	audioRef.current.play();
+			// }, 1000);
+			getData();
+		}
+	}, [questions, gameComplete, setResetGame]);
+
+	const getData = async () => {
+		let lvl = 1;
+		if (qLevel) {
+			lvl = Number(qLevel);
+		}
+		const stage = lvl == 1 ? "stage1" : "stage2";
+		console.log(stage);
+		try {
+			const data = await axios.get(
+				`https://junglewordsapi.onrender.com/api/data/advanced/${stage}`
+			);
+			const apiItems = data?.data?.data || [];
+			console.log("API Items", apiItems);
+			if (!apiItems || apiItems?.length === 0) {
+				const items = qrGameQsGetter(5, lvl);
+				setQuestions(items);
+			} else {
+				setQuestions(apiItems);
+			}
+
+			setTimeout(() => {
+				audioRef.current.play();
+			}, 1000);
+		} catch (error) {
+			const items = qrGameQsGetter(5, lvl);
 			setQuestions(items);
 			setTimeout(() => {
 				audioRef.current.play();
 			}, 1000);
 		}
-	}, [questions, gameComplete, setResetGame]);
+	};
 
 	const level2Checker = (ans) => {
 		const currQuestion = questions[0];

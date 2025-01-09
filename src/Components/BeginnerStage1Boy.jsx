@@ -9,7 +9,7 @@ import rightSound from "/Corect.mp3";
 // Import all image of sound icon
 import soundicon from "../assets/Volume.png";
 import { foodItemsList } from "../utils/dndItemsGame";
-
+import axios from "axios";
 const BeginnerStage1Boy = () => {
 	const navigate = useNavigate();
 	// Food items to display in the side and to be dragged
@@ -18,20 +18,35 @@ const BeginnerStage1Boy = () => {
 	const [rightCounter, setRightCounter] = useState(0);
 
 	useEffect(() => {
-		function getRandomElements(arr, numElements) {
-			const shuffled = arr.slice(); // Create a copy to avoid modifying the original array
-			const selected = [];
-			for (let i = 0; i < numElements; i++) {
-				const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
-				selected.push(shuffled.splice(randomIndex, 1)[0]);
-			}
-			return selected;
+		const apiItems = getDatas();
+	}, []);
+	function getRandomElements(arr, numElements) {
+		const shuffled = arr.slice(); // Create a copy to avoid modifying the original array
+		const selected = [];
+		for (let i = 0; i < numElements; i++) {
+			const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
+			selected.push(shuffled.splice(randomIndex, 1)[0]);
 		}
+		return selected;
+	}
 
-		const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
-		setFoodItems(x);
-	}, [foodItemsList]);
+	const getDatas = async () => {
+		try {
+			const data = await axios.get(
+				"https://junglewordsapi.onrender.com/api/data/beginner/stage1"
+			);
 
+			const apiItems = data?.data?.data || [];
+			if (!apiItems || apiItems?.length === 0) {
+				const x = getRandomElements(foodItemsList, 6); // Adjust to select 6 items
+				setFoodItems(x);
+			} else {
+				setFoodItems(apiItems);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	const [currentFoodItem, setCurrentFoodItem] = useState(null);
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
 	const [modalData, setModalData] = useState({
@@ -191,7 +206,7 @@ const BeginnerStage1Boy = () => {
 
 					<div className="draggable-container">
 						<div className="foods-container">
-							{foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
+							{foodItems?.map(({ id, image, modalChoices, isDisplayed }, i) => {
 								return isDisplayed ? (
 									<FoodItem
 										key={i}

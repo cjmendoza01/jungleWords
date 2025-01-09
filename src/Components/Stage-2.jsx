@@ -29,6 +29,7 @@ import egg7 from "../assets/is1/egg1.gif";
 import egg8 from "../assets/is1/egg2.gif";
 import BS1GonzoTY from "./BS1GonzoTY";
 import { randomFoodItemGetter } from "../utils/gonzoBunny";
+import axios from "axios";
 
 export default function Stage2(props) {
 	const navigate = useNavigate(); // Enable navigation
@@ -139,6 +140,42 @@ export default function Stage2(props) {
 				setNextGameModal(false);
 			}
 
+			// const items = randomFoodItemGetter(8, level);
+			// console.log("items", items);
+			// setQuestions(items);
+			// setBananaCount(items.length);
+
+			// setTimeout(() => {
+			// 	setOpenModal(true);
+			// }, 5000);
+			getDatas();
+		}
+	}, [questions, gameComplete, resetGame]);
+
+	const getDatas = async () => {
+		try {
+			const level = stageLevel == 1 ? "beginner" : "intermediate";
+			const stage = stageLevel == 1 ? "stage2" : "stage1";
+			console.log(level);
+			console.log(stage);
+			const data = await axios.get(
+				`https://junglewordsapi.onrender.com/api/data/${level}/${stage}`
+			);
+
+			const apiItems = data?.data?.data || [];
+			console.log("API Items", apiItems);
+			if (!apiItems || apiItems?.length === 0) {
+				const items = randomFoodItemGetter(8, level);
+				console.log("items", items);
+				setQuestions(items);
+			} else {
+				setQuestions(apiItems);
+			}
+
+			setTimeout(() => {
+				setOpenModal(true);
+			}, 5000);
+		} catch (error) {
 			const items = randomFoodItemGetter(8, level);
 			console.log("items", items);
 			setQuestions(items);
@@ -147,8 +184,9 @@ export default function Stage2(props) {
 			setTimeout(() => {
 				setOpenModal(true);
 			}, 5000);
+			console.log(error);
 		}
-	}, [questions, gameComplete, resetGame]);
+	};
 
 	useEffect(() => {
 		const gends = ["girl", "boy"];

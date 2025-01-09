@@ -512,3 +512,25 @@ export const getSimilarWords = (string) => {
 
 	return randomItems;
 };
+
+export const randomWordFamilyGetter = (numElements, notIncluddedValues) => {
+	let items = wordFamily;
+
+	if (notIncluddedValues?.length) {
+		console.log("notIncVals");
+		console.log(notIncluddedValues);
+		items = items.filter(
+			(item) =>
+				!notIncluddedValues.some((notIncluded) => notIncluded.id === item.id)
+		);
+	}
+
+	const shuffled = items.slice();
+	const selected = [];
+
+	for (let i = 0; i < numElements; i++) {
+		const randomIndex = Math.floor(Math.random() * (shuffled.length - i));
+		selected.push(shuffled.splice(randomIndex, 1)[0]);
+	}
+	return selected;
+};

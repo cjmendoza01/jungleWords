@@ -12,6 +12,7 @@ import Boy from "../assets/bs3/BOY.gif";
 import Girl from "../assets/bs3/GIRL.gif";
 import NextGameModal from "./Modals/NextGameModal";
 import S3TY from "./S3TY";
+import axios from "axios";
 
 export default function Stage3() {
 	const [rightItems, setItems] = useState([]);

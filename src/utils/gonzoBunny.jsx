@@ -481,7 +481,7 @@ import waveAudio from "../assets/is1/is1Audio/Wave.mp3";
 import weekAudio from "../assets/is1/is1Audio/Week.mp3";
 import woundAudio from "../assets/is1/is1Audio/Wound.mp3";
 import Pop from "../assets/bs3/bs3images/Pop.png";
-const itemsList2 = [
+export const itemsList2 = [
 	{ id: "bake", audio: bakeAudio, image: Bake },
 	{ id: "base", audio: baseAudio, image: Base },
 	{ id: "bead", audio: beadAudio, image: Bead },

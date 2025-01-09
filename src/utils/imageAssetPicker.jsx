@@ -536,7 +536,7 @@ import weekAudio from "../assets/is1/is1Audio/Week.mp3";
 import woundAudio from "../assets/is1/is1Audio/Wound.mp3";
 import { wordFamily } from "./is3Assets";
 
-const longVowels = [
+export const longVowels = [
 	{ image: Bake, id: "bake", audio: bakeAudio },
 	{ image: Base, id: "base", audio: baseAudio },
 	{ image: Bead, id: "bead", audio: beadAudio },

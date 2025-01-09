@@ -8,6 +8,7 @@ import backButtonImage from "../assets/buttons&dialogues/backButton.png"; // Imp
 import { randomVowelGetter, randonItemGetter } from "../utils/imageAssetPicker";
 import { Qfilters, shuffle } from "../utils/formatter";
 
+import axios from "axios";
 import Boy from "../assets/bs3/BOY.gif";
 import Girl from "../assets/bs3/GIRL.gif";
 import wrChoice from "../assets/wrongChoice.png";
@@ -20,7 +21,7 @@ import rightSound from "/Corect.mp3";
 import { restrictToParentElement } from "@dnd-kit/modifiers";
 import CheckModal from "./Modals/CheckModal";
 import soundicon from "../assets/Volume.png";
-import { getSimilarWords } from "../utils/is3Assets";
+import { getSimilarWords, randomWordFamilyGetter } from "../utils/is3Assets";
 
 export default function Stage3() {
 	const audioRef = useRef();
@@ -250,22 +251,7 @@ export default function Stage3() {
 				shuffleItems("center");
 			}
 
-			let items = randonItemGetter(8, iLevel);
-
-			if (iLevel === 2) {
-				items = randomVowelGetter(8, iLevel);
-				const simlarWords = getSimilarWords(items[0].id);
-				console.log("simlarWords", simlarWords);
-				setWrongItems(simlarWords);
-			} else {
-				const wrnItems = randonItemGetter(16, iLevel, items);
-				setWrongItems(wrnItems);
-			}
-
-			setItems(items);
-			setTimeout(() => {
-				audioRef.current.play();
-			}, 1000);
+			getDatas();
 		}
 
 		if (gameComplete) {
@@ -281,6 +267,56 @@ export default function Stage3() {
 			setResetGame(false);
 		}
 	}, [rightItems, wrongItems, qLevel, gameComplete, resetGame]);
+
+	const getDatas = async () => {
+		const lvl = Number(qLevel) || 1;
+		try {
+			const level = lvl == 2 ? "intermediate" : "beginner";
+			const data = await axios.get(
+				`https://junglewordsapi.onrender.com/api/data/${level}/stage3`
+			);
+
+			let items = data?.data?.data || [];
+			console.log("API Items", items);
+			if (!items || items?.length === 0) {
+				if (lvl === 2) items = randomWordFamilyGetter(8);
+				else items = randonItemGetter(8, lvl);
+				console.log("lvl", lvl);
+				console.log(items);
+			}
+			if (lvl === 2) {
+				const simlarWords = getSimilarWords(items[0].id);
+				console.log("simlarWords", simlarWords);
+				setWrongItems(simlarWords);
+			} else {
+				const wrnItems = randonItemGetter(16, lvl, items);
+				setWrongItems(wrnItems);
+			}
+
+			setItems(items);
+			setTimeout(() => {
+				audioRef.current.play();
+			}, 1000);
+		} catch (error) {
+			console.log("error on APIIIIII");
+			let items = randonItemGetter(8, lvl);
+
+			if (lvl === 2) {
+				items = randomWordFamilyGetter(8, lvl);
+				const simlarWords = getSimilarWords(items[0].id);
+				console.log("simlarWords", simlarWords);
+				setWrongItems(simlarWords);
+			} else {
+				const wrnItems = randonItemGetter(16, lvl, items);
+				setWrongItems(wrnItems);
+			}
+
+			setItems(items);
+			setTimeout(() => {
+				audioRef.current.play();
+			}, 1000);
+		}
+	};
 
 	const checkForCollision = (dropzoneRefs) => {
 		console.log("drop zonesss", dropzoneRefs);

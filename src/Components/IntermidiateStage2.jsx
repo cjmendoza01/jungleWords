@@ -17,6 +17,7 @@ import rightSound from "/Corect.mp3";
 import soundicon from "../assets/Volume.png";
 import { wordCvc4 } from "../utils/dndItemsGame";
 import ModalChoice from "./Modals/ModalChoice";
+import axios from "axios";
 
 const IntermidiateStage2 = () => {
 	const location = useLocation();
@@ -29,19 +30,35 @@ const IntermidiateStage2 = () => {
 	const [rightCounter, setRightCounter] = useState(0);
 
 	useEffect(() => {
-		function getRandomElements(arr, numElements) {
-			const shuffled = arr.slice(); // Create a copy to avoid modifying the original array
-			const selected = [];
-			for (let i = 0; i < numElements; i++) {
-				const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
-				selected.push(shuffled.splice(randomIndex, 1)[0]);
-			}
-			return selected;
+		const apiItems = getDatas();
+	}, []);
+	function getRandomElements(arr, numElements) {
+		const shuffled = arr.slice(); // Create a copy to avoid modifying the original array
+		const selected = [];
+		for (let i = 0; i < numElements; i++) {
+			const randomIndex = Math.floor(Math.random() * (shuffled.length - i)); // Adjust for shrinking array
+			selected.push(shuffled.splice(randomIndex, 1)[0]);
 		}
+		return selected;
+	}
 
-		const x = getRandomElements(wordCvc4, 6);
-		setFoodItems(x);
-	}, [wordCvc4]);
+	const getDatas = async () => {
+		try {
+			const data = await axios.get(
+				"https://junglewordsapi.onrender.com/api/data/intermediate/stage2"
+			);
+
+			const apiItems = data?.data?.data || [];
+			if (!apiItems || apiItems?.length === 0) {
+				const x = getRandomElements(wordCvc4, 6); // Adjust to select 6 items
+				setFoodItems(x);
+			} else {
+				setFoodItems(apiItems);
+			}
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const [currentFoodItem, setCurrentFoodItem] = useState(null);
 	const [isFoodItemDropped, setIsFoodItemDropped] = useState(false);
@@ -226,7 +243,7 @@ const IntermidiateStage2 = () => {
 					{/* Container for the food items */}
 					<div className="draggable-container">
 						<div className="foods-container">
-							{foodItems.map(({ id, image, modalChoices, isDisplayed }, i) => {
+							{foodItems?.map(({ id, image, modalChoices, isDisplayed }, i) => {
 								return isDisplayed ? (
 									<FoodItem
 										key={i}
