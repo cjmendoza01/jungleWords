@@ -57,6 +57,7 @@ body {
 	width: 75%;
 	height: 100px;
 	overflow: auto;
+	z-index: 1;
 }
 
 /* Items inside the boxes */
@@ -85,7 +86,7 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	padding: 0 40px;
+	padding: 10px;
 }
 
 .replay-button,
@@ -94,6 +95,7 @@ body {
 	border: none;
 	cursor: pointer;
 	transition: transform 0.2s;
+	padding: 10px 20px;
 }
 
 .replay-button img,
