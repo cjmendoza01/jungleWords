@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./BegLevelPickerBoy.css";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./BegLevelPickerGirlGenerate.css";
 import begButton from "../assets/buttons&dialogues/begButton.png";
 import intButton from "../assets/buttons&dialogues/intButton.png";
 import advButton from "../assets/buttons&dialogues/advButton.png";
 import lockImage from "../assets/buttons&dialogues/lock.png";
 import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
-import doneButton from "../assets/buttons&dialogues/done.png";
 import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
 import genButtonImage from "../assets/buttons&dialogues/genButton.png";
-
 import axios from "axios";
 import girlVid from "/BGAnimationBoy.mp4";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -86,13 +84,11 @@ const passcodes = {
 	],
 };
 
-const BegLevelPickerBoy = () => {
+const BegLevelPickerBoyGenerate = () => {
 	const [passwordVisible, setPasswordVisible] = useState(false);
 	const [accessCode, setAccessCode] = useState("");
 	const [showAccessCodeInput, setShowAccessCodeInput] = useState(false);
 	const [selectedLevel, setSelectedLevel] = useState(null);
-
-	const navigate = useNavigate();
 
 	const [appData, setAppData] = useState({
 		accessCodeBoy: {
@@ -101,6 +97,7 @@ const BegLevelPickerBoy = () => {
 			advanced: "",
 		},
 	});
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		getDatas();
@@ -117,29 +114,37 @@ const BegLevelPickerBoy = () => {
 			console.log(error);
 		}
 	};
-
-	const checkAccessCode = () => {
-		if (appData?.accessCodeBoy[selectedLevel.toLowerCase()] === accessCode) {
-			isAccessGranted = true;
-			// Navigate to the respective level
-			if (selectedLevel === "Beginner") {
-				navigate("/BeginnerLevelBoy");
-			} else if (selectedLevel === "Intermediate") {
-				navigate("/IntermediateLevelBoy");
-			} else if (selectedLevel === "Advanced") {
-				navigate("/AdvanceLevelBoy");
-			}
-		} else {
-			alert("Invalid access code.");
-		}
-	};
-
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
 		setShowAccessCodeInput(true);
+		if (appData?.accessCodeGirl[level]) {
+			setAccessCode(appData?.accessCodeGirl[level]);
+		}
 	};
 
-	const handleDoneClick = () => {
+	const saveAccessCode = async () => {
+		if (selectedLevel && accessCode) {
+			try {
+				const saveItems = await axios.put(
+					`https://junglewordsapi.onrender.com/api/accessCode`,
+					{
+						level: selectedLevel,
+						value: accessCode,
+						gender: "boy",
+					}
+				);
+				console.log(saveItems);
+				getDatas();
+				alert(`Access Code for ${selectedLevel} saved`);
+				handleCloseClick();
+			} catch (error) {
+				console.log(error);
+				alert(error);
+			}
+		}
+	};
+
+	const handleSaveClick = () => {
 		const currentTime = Date.now();
 		const lastUsedTime = localStorage.getItem(`lastUsed_${accessCode}`);
 
@@ -157,14 +162,9 @@ const BegLevelPickerBoy = () => {
 			passcodes[selectedLevel].includes(accessCode)
 		) {
 			isAccessGranted = true;
-			// Navigate to the respective level
-			if (selectedLevel === "Beginner") {
-				navigate("/BeginnerLevelBoy");
-			} else if (selectedLevel === "Intermediate") {
-				navigate("/IntermediateLevelBoy");
-			} else if (selectedLevel === "Advanced") {
-				navigate("/AdvanceLevelBoy");
-			}
+			// Save the access code (you can modify this to save data elsewhere, if needed)
+			localStorage.setItem(`savedAccessCode_${selectedLevel}`, accessCode);
+			alert("Access code saved successfully.");
 		} else {
 			alert("Invalid access code.");
 		}
@@ -208,9 +208,9 @@ const BegLevelPickerBoy = () => {
 			<div className="buttons">
 				<div className="buttonWithLock">
 					<button
-						onClick={() => handleStageClick("Beginner")}
+						onClick={() => handleStageClick("beginner")}
 						className={`beginButton ${
-							selectedLevel === "Beginner" ? "selected" : ""
+							selectedLevel === "beginner" ? "selected" : ""
 						}`}
 					>
 						<img src={begButton} alt="Beginner" />
@@ -219,9 +219,9 @@ const BegLevelPickerBoy = () => {
 				</div>
 				<div className="buttonWithLock">
 					<button
-						onClick={() => handleStageClick("Intermediate")}
+						onClick={() => handleStageClick("intermediate")}
 						className={`interButton ${
-							selectedLevel === "Intermediate" ? "selected" : ""
+							selectedLevel === "intermediate" ? "selected" : ""
 						}`}
 					>
 						<img src={intButton} alt="Intermediate" />
@@ -230,9 +230,9 @@ const BegLevelPickerBoy = () => {
 				</div>
 				<div className="buttonWithLock">
 					<button
-						onClick={() => handleStageClick("Advanced")}
+						onClick={() => handleStageClick("advanced")}
 						className={`advanButton ${
-							selectedLevel === "Advanced" ? "selected" : ""
+							selectedLevel === "advanced" ? "selected" : ""
 						}`}
 					>
 						<img src={advButton} alt="Advanced" />
@@ -286,13 +286,13 @@ const BegLevelPickerBoy = () => {
 							</div>
 						</div>
 					</div>
-					{/* <div className="generate-code-button">
-            <button onClick={generateAccessCode} className="gen-button-overlay">
-            <img src={genButtonImage} alt="Generate" />
-            </button>
-          </div> */}
-					<button onClick={checkAccessCode} className="dones-button-overlay">
-						<img src={doneButton} alt="Done" />
+					<div className="generate-code-button">
+						<button onClick={generateAccessCode} className="gen-button-overlay">
+							<img src={genButtonImage} alt="Generate" />
+						</button>
+					</div>
+					<button onClick={saveAccessCode} className="save-button-overlay">
+						Save
 					</button>
 					<button onClick={handleCloseClick} className="close-button">
 						<img src={beginX} alt="Close" />
@@ -303,4 +303,4 @@ const BegLevelPickerBoy = () => {
 	);
 };
 
-export default BegLevelPickerBoy;
+export default BegLevelPickerBoyGenerate;

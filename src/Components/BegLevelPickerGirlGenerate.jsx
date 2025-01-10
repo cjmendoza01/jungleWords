@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./BegLevelPickerGirlGenerate.css";
 import begButton from "../assets/buttons&dialogues/begButton.png";
@@ -9,192 +9,301 @@ import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
 import genButtonImage from "../assets/buttons&dialogues/genButton.png";
-
+import axios from "axios";
 import girlVid from "/BGAnimationGirl.mp4";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const COOLDOWN_PERIOD = 30 * 60 * 1000; // 30 minutes in milliseconds
 
 const passcodes = {
-  Beginner: [
-    "beg512", "beg873", "beg124", "beg631", "beg298",
-    "beg745", "beg431", "beg250", "beg539", "beg876",
-    "beg192", "beg693", "beg401", "beg522", "beg318",
-    "beg649", "beg927", "beg834", "beg387", "beg681"
-  ],
-  Intermediate: [
-    "int741", "int132", "int596", "int340", "int805",
-    "int234", "int489", "int763", "int145", "int652",
-    "int318", "int970", "int582", "int691", "int425",
-    "int860", "int583", "int703", "int496", "int214"
-  ],
-  Advanced: [
-    "adv831", "adv426", "adv597", "adv145", "adv362",
-    "adv783", "adv295", "adv614", "adv854", "adv471",
-    "adv263", "adv928", "adv510", "adv709", "adv164",
-    "adv837", "adv935", "adv249", "adv618", "adv753"
-  ]
+	Beginner: [
+		"beg512",
+		"beg873",
+		"beg124",
+		"beg631",
+		"beg298",
+		"beg745",
+		"beg431",
+		"beg250",
+		"beg539",
+		"beg876",
+		"beg192",
+		"beg693",
+		"beg401",
+		"beg522",
+		"beg318",
+		"beg649",
+		"beg927",
+		"beg834",
+		"beg387",
+		"beg681",
+	],
+	Intermediate: [
+		"int741",
+		"int132",
+		"int596",
+		"int340",
+		"int805",
+		"int234",
+		"int489",
+		"int763",
+		"int145",
+		"int652",
+		"int318",
+		"int970",
+		"int582",
+		"int691",
+		"int425",
+		"int860",
+		"int583",
+		"int703",
+		"int496",
+		"int214",
+	],
+	Advanced: [
+		"adv831",
+		"adv426",
+		"adv597",
+		"adv145",
+		"adv362",
+		"adv783",
+		"adv295",
+		"adv614",
+		"adv854",
+		"adv471",
+		"adv263",
+		"adv928",
+		"adv510",
+		"adv709",
+		"adv164",
+		"adv837",
+		"adv935",
+		"adv249",
+		"adv618",
+		"adv753",
+	],
 };
 
 const BegLevelPickerGirlGenerate = () => {
-  const [passwordVisible, setPasswordVisible] = useState(false);
-  const [accessCode, setAccessCode] = useState("");
-  const [showAccessCodeInput, setShowAccessCodeInput] = useState(false);
-  const [selectedLevel, setSelectedLevel] = useState(null);
+	const [passwordVisible, setPasswordVisible] = useState(false);
+	const [accessCode, setAccessCode] = useState("");
+	const [showAccessCodeInput, setShowAccessCodeInput] = useState(false);
+	const [selectedLevel, setSelectedLevel] = useState(null);
 
-  const navigate = useNavigate();
+	const [appData, setAppData] = useState({
+		accessCodeGirl: {
+			beginner: "",
+			intermediate: "",
+			advanced: "",
+		},
+	});
+	const navigate = useNavigate();
 
-  const handleStageClick = (level) => {
-    setSelectedLevel(level);
-    setShowAccessCodeInput(true);
-  };
+	useEffect(() => {
+		getDatas();
+	}, []);
 
-  const handleSaveClick = () => {
-    const currentTime = Date.now();
-    const lastUsedTime = localStorage.getItem(`lastUsed_${accessCode}`);
+	const getDatas = async () => {
+		try {
+			const data = await axios.get(
+				"https://junglewordsapi.onrender.com/api/data"
+			);
+			console.log("Fetched Data", data);
+			setAppData(data?.data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	const handleStageClick = (level) => {
+		setSelectedLevel(level);
+		setShowAccessCodeInput(true);
+		if (appData?.accessCodeGirl[level]) {
+			setAccessCode(appData?.accessCodeGirl[level]);
+		}
+	};
 
-    if (lastUsedTime && currentTime - lastUsedTime < COOLDOWN_PERIOD) {
-      alert("This access code has been used recently. Please wait 30 minutes before using it again.");
-      return;
-    }
+	const saveAccessCode = async () => {
+		if (selectedLevel && accessCode) {
+			try {
+				const saveItems = await axios.put(
+					`https://junglewordsapi.onrender.com/api/accessCode`,
+					{
+						level: selectedLevel,
+						value: accessCode,
+						gender: "girl",
+					}
+				);
+				console.log(saveItems);
+				getDatas();
+				alert(`Access Code for ${selectedLevel} saved`);
+				handleCloseClick();
+			} catch (error) {
+				console.log(error);
+				alert(error);
+			}
+		}
+	};
 
-    let isAccessGranted = false;
-    // Check if the access code is in the list for the selected level
-    if (passcodes[selectedLevel] && passcodes[selectedLevel].includes(accessCode)) {
-      isAccessGranted = true;
-      // Save the access code (you can modify this to save data elsewhere, if needed)
-      localStorage.setItem(`savedAccessCode_${selectedLevel}`, accessCode);
-      alert("Access code saved successfully.");
-    } else {
-      alert("Invalid access code.");
-    }
+	const handleSaveClick = () => {
+		const currentTime = Date.now();
+		const lastUsedTime = localStorage.getItem(`lastUsed_${accessCode}`);
 
-    if (isAccessGranted) {
-      // Store the current time as the last used time for this access code
-      localStorage.setItem(`lastUsed_${accessCode}`, currentTime.toString());
-    }
-  };
+		if (lastUsedTime && currentTime - lastUsedTime < COOLDOWN_PERIOD) {
+			alert(
+				"This access code has been used recently. Please wait 30 minutes before using it again."
+			);
+			return;
+		}
 
-  const handleCloseClick = () => {
-    setShowAccessCodeInput(false);
-    setAccessCode("");
-    setSelectedLevel(null);
-  };
+		let isAccessGranted = false;
+		// Check if the access code is in the list for the selected level
+		if (
+			passcodes[selectedLevel] &&
+			passcodes[selectedLevel].includes(accessCode)
+		) {
+			isAccessGranted = true;
+			// Save the access code (you can modify this to save data elsewhere, if needed)
+			localStorage.setItem(`savedAccessCode_${selectedLevel}`, accessCode);
+			alert("Access code saved successfully.");
+		} else {
+			alert("Invalid access code.");
+		}
 
-  const handleBackClick = () => {
-    navigate("BeginnerLevelGirl");
-  };
+		if (isAccessGranted) {
+			// Store the current time as the last used time for this access code
+			localStorage.setItem(`lastUsed_${accessCode}`, currentTime.toString());
+		}
+	};
 
-  // Generate random access code for selected level
-  const generateAccessCode = () => {
-    if (selectedLevel) {
-      const codes = passcodes[selectedLevel];
-      const randomCode = codes[Math.floor(Math.random() * codes.length)];
-      setAccessCode(randomCode);
-    }
-  };
+	const handleCloseClick = () => {
+		setShowAccessCodeInput(false);
+		setAccessCode("");
+		setSelectedLevel(null);
+	};
 
-  return (
-    <div className="chooselevelGirl">
-      <video autoPlay muted loop className="background-video">
-        <source src={girlVid} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="nav-buttons">
-        <button onClick={handleBackClick} className="nav-button back-button">
-          <img src={backButtonImage} alt="Back" />
-        </button>
-      </div>
-      <div className="buttons">
-        <div className="buttonWithLock">
-          <button
-            onClick={() => handleStageClick("Beginner")}
-            className={`beginButton ${selectedLevel === "Beginner" ? "selected" : ""}`}
-          >
-            <img src={begButton} alt="Beginner" />
-          </button>
-          <img src={lockImage} alt="Lock" className="lockImages1" />
-        </div>
-        <div className="buttonWithLock">
-          <button
-            onClick={() => handleStageClick("Intermediate")}
-            className={`interButton ${selectedLevel === "Intermediate" ? "selected" : ""}`}
-          >
-            <img src={intButton} alt="Intermediate" />
-          </button>
-          <img src={lockImage} alt="Lock" className="lockImage2" />
-        </div>
-        <div className="buttonWithLock">
-          <button
-            onClick={() => handleStageClick("Advanced")}
-            className={`advanButton ${selectedLevel === "Advanced" ? "selected" : ""}`}
-          >
-            <img src={advButton} alt="Advanced" />
-          </button>
-          <img src={lockImage} alt="Lock" className="lockImage3" />
-        </div>
-      </div>
-      {showAccessCodeInput && (
-        <div className="access-code-container">
-          <img
-            src={accessCodeImage}
-            alt="Access Code"
-            className="access-code-image"
-          />
-          <div
-            style={{
-              position: "absolute",
-              width: "40%",
-              top: "55%",
-              left: "50%",
-              marginTop: "10px",
-            }}
-          >
-            <div style={{ width: "100%", position: "relative" }}>
-              <input
-                type={passwordVisible ? "text" : "password"}
-                value={accessCode}
-                onChange={(e) => setAccessCode(e.target.value)}
-                className="access-code-input2"
-                placeholder="Enter Access Code"
-              />
-              <div
-                style={{
-                  position: "relative",
-                  transform: "translate(-50%, -50%)",
-                }}
-              >
-                <button
-                  onClick={() => setPasswordVisible(!passwordVisible)}
-                  style={{
-                    position: "absolute",
-                    right: "0px",
-                    top: "-45px",
-                    background: "none",
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                >
-                  {passwordVisible ? <FaEye /> : <FaEyeSlash />}
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="generate-code-button">
-            <button onClick={generateAccessCode} className="gen-button-overlay">
-              <img src={genButtonImage} alt="Generate" />
-            </button>
-          </div>
-          <button onClick={handleSaveClick} className="save-button-overlay">
-            Save
-          </button>
-          <button onClick={handleCloseClick} className="close-button">
-            <img src={beginX} alt="Close" />
-          </button>
-        </div>
-      )}
-    </div>
-  );
+	const handleBackClick = () => {
+		navigate("BeginnerLevelGirl");
+	};
+
+	// Generate random access code for selected level
+	const generateAccessCode = () => {
+		if (selectedLevel) {
+			const codes = passcodes[selectedLevel];
+			const randomCode = codes[Math.floor(Math.random() * codes.length)];
+			setAccessCode(randomCode);
+		}
+	};
+
+	return (
+		<div className="chooselevelGirl">
+			<video autoPlay muted loop className="background-video">
+				<source src={girlVid} type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+			<div className="nav-buttons">
+				<button onClick={handleBackClick} className="nav-button back-button">
+					<img src={backButtonImage} alt="Back" />
+				</button>
+			</div>
+			<div className="buttons">
+				<div className="buttonWithLock">
+					<button
+						onClick={() => handleStageClick("beginner")}
+						className={`beginButton ${
+							selectedLevel === "beginner" ? "selected" : ""
+						}`}
+					>
+						<img src={begButton} alt="Beginner" />
+					</button>
+					<img src={lockImage} alt="Lock" className="lockImages1" />
+				</div>
+				<div className="buttonWithLock">
+					<button
+						onClick={() => handleStageClick("intermediate")}
+						className={`interButton ${
+							selectedLevel === "intermediate" ? "selected" : ""
+						}`}
+					>
+						<img src={intButton} alt="Intermediate" />
+					</button>
+					<img src={lockImage} alt="Lock" className="lockImage2" />
+				</div>
+				<div className="buttonWithLock">
+					<button
+						onClick={() => handleStageClick("advanced")}
+						className={`advanButton ${
+							selectedLevel === "advanced" ? "selected" : ""
+						}`}
+					>
+						<img src={advButton} alt="Advanced" />
+					</button>
+					<img src={lockImage} alt="Lock" className="lockImage3" />
+				</div>
+			</div>
+			{showAccessCodeInput && (
+				<div className="access-code-container">
+					<img
+						src={accessCodeImage}
+						alt="Access Code"
+						className="access-code-image"
+					/>
+					<div
+						style={{
+							position: "absolute",
+							width: "40%",
+							top: "55%",
+							left: "50%",
+							marginTop: "10px",
+						}}
+					>
+						<div style={{ width: "100%", position: "relative" }}>
+							<input
+								type={passwordVisible ? "text" : "password"}
+								value={accessCode}
+								onChange={(e) => setAccessCode(e.target.value)}
+								className="access-code-input2"
+								placeholder="Enter Access Code"
+							/>
+							<div
+								style={{
+									position: "relative",
+									transform: "translate(-50%, -50%)",
+								}}
+							>
+								<button
+									onClick={() => setPasswordVisible(!passwordVisible)}
+									style={{
+										position: "absolute",
+										right: "0px",
+										top: "-45px",
+										background: "none",
+										border: "none",
+										cursor: "pointer",
+									}}
+								>
+									{passwordVisible ? <FaEye /> : <FaEyeSlash />}
+								</button>
+							</div>
+						</div>
+					</div>
+					<div className="generate-code-button">
+						<button onClick={generateAccessCode} className="gen-button-overlay">
+							<img src={genButtonImage} alt="Generate" />
+						</button>
+					</div>
+					<button
+						onClick={() => saveAccessCode()}
+						className="save-button-overlay"
+					>
+						Save
+					</button>
+					<button onClick={handleCloseClick} className="close-button">
+						<img src={beginX} alt="Close" />
+					</button>
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default BegLevelPickerGirlGenerate;

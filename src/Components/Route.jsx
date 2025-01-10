@@ -67,8 +67,9 @@ import LastNextGameModal from "./Modals/LastNextGameModal.jsx";
 import AdvanceGJGirl from "./AdvanceGJGirl.jsx";
 import AdvanceGJBoy from "./AdvanceGJBoy.jsx";
 import ItemManagementG1 from "./ItemManagementG1.jsx";
-import ItemManagementG2 from './ItemManagementG2.jsx'; 
-import ItemManagementG3 from './ItemManagementG3.jsx'; 
+import ItemManagementG2 from "./ItemManagementG2.jsx";
+import ItemManagementG3 from "./ItemManagementG3.jsx";
+import BegLevelPickerBoyGenerate from "./BegLevelPickerBoyGenerate.jsx";
 
 function App() {
 	return (
@@ -93,8 +94,18 @@ function App() {
 			<Route path="/RewardPageBoy" element={<RewardPageBoy />} />
 			<Route path="/RewardPageGirl" element={<RewardPageGirl />} />
 			<Route path="/BeginnerStage1Boy" element={<BeginnerStage1Boy />} />
-			<Route path="/BegLevelPickerGirlSample" element={<BegLevelPickerGirlSample />} />
-			<Route path="/BegLevelPickerGirlGenerate" element={<BegLevelPickerGirlGenerate  />} />
+			<Route
+				path="/BegLevelPickerGirlSample"
+				element={<BegLevelPickerGirlSample />}
+			/>
+			<Route
+				path="/BegLevelPickerBoyGenerate"
+				element={<BegLevelPickerBoyGenerate />}
+			/>
+			<Route
+				path="/BegLevelPickerGirlGenerate"
+				element={<BegLevelPickerGirlGenerate />}
+			/>
 
 			{/* <Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />  */}
 			<Route path="/SanderTY" element={<SanderTY />} />
@@ -142,9 +153,9 @@ function App() {
 			<Route path="/BS1GJ" element={<BS1GJ />} />
 			<Route path="/BS1TY" element={<BS1TY />} />
 			<Route path="/LastGame" element={<LastNextGameModal />} />
-            <Route path='/ItemManagementG1' element={<ItemManagementG1 />} />
-			<Route path='/ItemManagementG2' element={<ItemManagementG2 />} />
-			<Route path='/ItemManagementG3' element={<ItemManagementG3 />} />
+			<Route path="/ItemManagementG1" element={<ItemManagementG1 />} />
+			<Route path="/ItemManagementG2" element={<ItemManagementG2 />} />
+			<Route path="/ItemManagementG3" element={<ItemManagementG3 />} />
 			<Route path="/QRGame2" element={<QRGame2 />} />
 			<Route path="/AdvanceGJGirl" element={<AdvanceGJGirl />} />
 			<Route path="/AdvanceGJBoy" element={<AdvanceGJBoy />} />
