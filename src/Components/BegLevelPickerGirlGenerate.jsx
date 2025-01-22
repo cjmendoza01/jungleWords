@@ -16,7 +16,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const COOLDOWN_PERIOD = 30 * 60 * 1000; // 30 minutes in milliseconds
 
 const passcodes = {
-	Beginner: [
+	beginner: [
 		"beg512",
 		"beg873",
 		"beg124",
@@ -38,7 +38,7 @@ const passcodes = {
 		"beg387",
 		"beg681",
 	],
-	Intermediate: [
+	intermediate: [
 		"int741",
 		"int132",
 		"int596",
@@ -60,7 +60,7 @@ const passcodes = {
 		"int496",
 		"int214",
 	],
-	Advanced: [
+	advanced: [
 		"adv831",
 		"adv426",
 		"adv597",
