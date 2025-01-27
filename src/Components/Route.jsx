@@ -70,6 +70,7 @@ import ItemManagementG1 from "./ItemManagementG1.jsx";
 import ItemManagementG2 from "./ItemManagementG2.jsx";
 import ItemManagementG3 from "./ItemManagementG3.jsx";
 import BegLevelPickerBoyGenerate from "./BegLevelPickerBoyGenerate.jsx";
+import Manage from "./Manage.jsx";
 
 function App() {
 	return (
@@ -94,19 +95,9 @@ function App() {
 			<Route path="/RewardPageBoy" element={<RewardPageBoy />} />
 			<Route path="/RewardPageGirl" element={<RewardPageGirl />} />
 			<Route path="/BeginnerStage1Boy" element={<BeginnerStage1Boy />} />
-			<Route
-				path="/BegLevelPickerGirlSample"
-				element={<BegLevelPickerGirlSample />}
-			/>
-			<Route
-				path="/BegLevelPickerBoyGenerate"
-				element={<BegLevelPickerBoyGenerate />}
-			/>
-			<Route
-				path="/BegLevelPickerGirlGenerate"
-				element={<BegLevelPickerGirlGenerate />}
-			/>
-
+			<Route path="/BegLevelPickerGirlSample" element={<BegLevelPickerGirlSample />} />
+			<Route path="/BegLevelPickerBoyGenerate" element={<BegLevelPickerBoyGenerate />} />
+			<Route path="/BegLevelPickerGirlGenerate" element={<BegLevelPickerGirlGenerate />}/>
 			{/* <Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />  */}
 			<Route path="/SanderTY" element={<SanderTY />} />
 			<Route path="/BS1GJBoy" element={<BS1GJBoy />} />
@@ -142,10 +133,7 @@ function App() {
 			<Route path="/GirlIS3intro" element={<GirlIS3intro />} />
 			<Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />
 			<Route path="/AdvanceLevelGirl" element={<AdvanceLevelGirl />} />
-			<Route
-				path="/IntermediateLevelGirl"
-				element={<IntermediateLevelGirl />}
-			/>
+			<Route path="/IntermediateLevelGirl" element={<IntermediateLevelGirl />} />
 			<Route path="/BoyADV1intro" element={<BoyADV1intro />} />
 			<Route path="/GirlADV1intro" element={<GirlADV1intro />} />
 			<Route path="/BoyADV2intro" element={<BoyADV2intro />} />
@@ -159,6 +147,7 @@ function App() {
 			<Route path="/QRGame2" element={<QRGame2 />} />
 			<Route path="/AdvanceGJGirl" element={<AdvanceGJGirl />} />
 			<Route path="/AdvanceGJBoy" element={<AdvanceGJBoy />} />
+			<Route path="/Manage" element={<Manage />} />
 		</Routes>
 	);
 }

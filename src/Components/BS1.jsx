@@ -13,6 +13,7 @@ import GirlVideo from './GirlVideo.jsx';
 import ItemManagementG1 from './ItemManagementG1.jsx';  
 import ItemManagementG2 from './ItemManagementG2.jsx'; 
 import ItemManagementG3 from './ItemManagementG3.jsx'; 
+import Manage from './Manage.jsx'; 
 // Import Animation if it exists
 // import Animation from './Animation.jsx'; 
 
@@ -35,6 +36,7 @@ function App() {
       <Route path='/ItemManagementG1' element={<ItemManagementG1 />} />
       <Route path='/ItemManagementG2' element={<ItemManagementG2 />} />
       <Route path='/ItemManagementG3' element={<ItemManagementG3 />} />
+      <Route path='/Manage' element={<Manage/>} />
 
     </Routes>
   );
