@@ -73,6 +73,15 @@ function Home() {
 								style={{ userSelect: "none" }}
 							/>
 						</a>
+
+						<a className="tnc-link" onClick={() => navigate("/Manage")}>
+							<img
+								src="/manage.png"
+								alt="Terms and Condition"
+								style={{ userSelect: "none" }}
+							/>
+						</a>
+
 					</div>
 				</nav>
 			</header>

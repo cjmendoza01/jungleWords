@@ -18,11 +18,7 @@ import axios from "axios";
 const ItemManagementG1 = () => {
 	const stageData = {
 		beginner: {
-			stage1: {
-				items: foodItemsList,
-				bg: Image1BG,
-				limit: 6,
-			},
+	    	stage1: { items: foodItemsList, bg: Image1BG, limit: 6,},
 			stage2: { items: gonzoItem, bg: Image2BG, limit: 8 },
 			stage3: { items: wordCvc3, bg: Image3BG, limit: 8 },
 		},
