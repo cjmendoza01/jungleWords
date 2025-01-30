@@ -10,6 +10,8 @@ import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
 import genButtonImage from "../assets/buttons&dialogues/genButton.png";
 import axios from "axios";
+import saveButtonImage from "../assets/buttons&dialogues/saveButtonImage.png";
+
 import girlVid from "/BGAnimationBoy.mp4";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -286,18 +288,19 @@ const BegLevelPickerBoyGenerate = () => {
 							</div>
 						</div>
 					</div>
-					<div className="generate-code-button">
-						<button onClick={generateAccessCode} className="gen-button-overlay">
-							<img src={genButtonImage} alt="Generate" />
-						</button>
-					</div>
-					<button onClick={saveAccessCode} className="save-button-overlay">
-						Save
-					</button>
-					<button onClick={handleCloseClick} className="close-button">
-						<img src={beginX} alt="Close" />
-					</button>
-				</div>
+										<div className="generate-code-button">
+											<button onClick={generateAccessCode} className="gen-button-overlay">
+												<img src={genButtonImage} alt="Generate" />
+											</button>
+										</div>
+										<button onClick={saveAccessCode} className="save-button-overlay">
+										<img src={saveButtonImage} alt="Save" />
+					
+										</button>
+										<button onClick={handleCloseClick} className="close-button">
+											<img src={beginX} alt="Close" />
+										</button>
+									</div>
 			)}
 		</div>
 	);

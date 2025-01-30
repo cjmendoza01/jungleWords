@@ -71,6 +71,7 @@ import ItemManagementG2 from "./ItemManagementG2.jsx";
 import ItemManagementG3 from "./ItemManagementG3.jsx";
 import BegLevelPickerBoyGenerate from "./BegLevelPickerBoyGenerate.jsx";
 import Manage from "./Manage.jsx";
+import AccessCodeCharacter from "./AccessCodeCharacter.jsx";
 
 function App() {
 	return (
@@ -98,6 +99,8 @@ function App() {
 			<Route path="/BegLevelPickerGirlSample" element={<BegLevelPickerGirlSample />} />
 			<Route path="/BegLevelPickerBoyGenerate" element={<BegLevelPickerBoyGenerate />} />
 			<Route path="/BegLevelPickerGirlGenerate" element={<BegLevelPickerGirlGenerate />}/>
+			<Route path="/AccessCodeCharacter" element={<AccessCodeCharacter />}/>
+			
 			{/* <Route path="/AdvanceLevelBoy" element={<AdvanceLevelBoy />} />  */}
 			<Route path="/SanderTY" element={<SanderTY />} />
 			<Route path="/BS1GJBoy" element={<BS1GJBoy />} />
