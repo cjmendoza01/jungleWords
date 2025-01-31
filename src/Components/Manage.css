@@ -102,7 +102,7 @@ p {
     height: auto;
     border-radius: 10px; /* Optional: rounded corners */
     cursor: pointer; /* Add hover pointer for interactivity */
-    transition: transform 0.2s ease-in-out; /* Smooth scaling */
+    transition: transform 0.1s ease-in-out; /* Smooth scaling */
   }
   
   .image-row img:hover {
@@ -116,4 +116,16 @@ p {
 
 .image-row img:hover {
   transform: scale(1.1); /* Enlarge image slightly on hover */
+}
+.image-button {
+  background: transparent; /* No background for the button */
+  border: none; /* No border */
+  padding: 0; /* No padding */
+  cursor: pointer; /* Pointer cursor to show interactivity */
+}
+
+.button-image {
+  width: 100%; /* Adjust image size to fit the button */
+  height: auto;
+  display: block; /* Ensure image takes up full width of button */
 }

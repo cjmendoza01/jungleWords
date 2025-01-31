@@ -9,6 +9,7 @@ import accessCodeImage from "../assets/buttons&dialogues/accessCode.png";
 import beginX from "../assets/buttons&dialogues/beginX.png";
 import backButtonImage from "../assets/buttons&dialogues/backButton.png";
 import genButtonImage from "../assets/buttons&dialogues/genButton.png";
+import saveButtonImage from "../assets/buttons&dialogues/saveButtonImage.png";
 import axios from "axios";
 import girlVid from "/BGAnimationGirl.mp4";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -291,11 +292,9 @@ const BegLevelPickerGirlGenerate = () => {
 							<img src={genButtonImage} alt="Generate" />
 						</button>
 					</div>
-					<button
-						onClick={() => saveAccessCode()}
-						className="save-button-overlay"
-					>
-						Save
+					<button onClick={saveAccessCode} className="save-button-overlay">
+					<img src={saveButtonImage} alt="Save" />
+
 					</button>
 					<button onClick={handleCloseClick} className="close-button">
 						<img src={beginX} alt="Close" />

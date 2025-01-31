@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url('/opaque.png') no-repeat center bottom/cover;
+    font-family: 'Poppins';
+    overflow: hidden;
+  }
+  
+  .CharacterPicker {
+    text-align: center;
+    background: url('/junglebg.png') no-repeat center bottom/cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Add relative positioning */
+  }
+  
+  .chooseIcon img {
+    width: 20%;
+    margin-bottom: 20px;
+  }
+  
+  .characters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Adjust the gap as needed */
+    margin-bottom: 20px;
+    width: 60%;
+  }
+  
+  .character-option {
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .character-option img {
+    height: 400px; /* Set a specific height for characters */
+    width: auto;
+    border: none; /* No border by default */
+    border-radius: 10px;
+    outline: none; /* Remove the default outline */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for shadow and scale */
+  }
+  
+  .character-option {
+    cursor: pointer;
+  }
+  
+  .character-option.selected img {
+    transform: scale(1.15); /* Slightly scale up the selected character */
+  }
+  .character-option:hover{
+  transform: scale(1.10);
+  }
+  .wooden-sign {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .done-button {
+    padding: 10px; /* Add padding to the button to make it larger */
+    background-color: transparent !important; /* Force background to be transparent */
+    border: none !important; /* Force no border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px; /* Add margin-top to create space between the characters and the button */
+  }
+  
+  .doneButtonImage {
+    width: 150px; /* Increase the width to make the button larger */
+    height: auto;
+    display: block; /* Ensure the image is displayed as a block element */
+  }
+  
+  .done-button:hover .doneButtonImage {
+    transform: scale(1.1);
+  }
+  
+  .terms-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .terms-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .terms-image {
+    width: 40%; /* Adjust the width as needed */
+    margin-bottom: 20px;
+  }
+  
+  .terms-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .agree-button {
+    position: absolute;
+    bottom: 10%; /* Adjust the position as needed */
+    left: 44%;
+    transform: translateX(-50%);
+    padding: 0; /* Remove default padding */
+    background: transparent; /* Make background transparent */
+    border: none; /* Remove default border */
+    cursor: pointer;
+  }
+  
+  .disagree-button{
+    position: absolute;
+    bottom: 10%; /* Adjust the position as needed */
+    left: 55%;
+    transform: translateX(-50%);
+    padding: 0; /* Remove default padding */
+    background: transparent; /* Make background transparent */
+    border: none; /* Remove default border */
+    cursor: pointer;
+  }
+  .agree-button img, .disagree-button img {
+    width: 100px; /* Adjust the size of the buttons */
+    height: auto;
+    
+  }
+  
+  .agree-button:hover img, .disagree-button:hover img {
+    transform: scale(1.1); /* Scale the image on hover */
+  }
+  
