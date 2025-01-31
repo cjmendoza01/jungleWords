@@ -9,16 +9,21 @@ import { itemsList2, wordCvc3 as gonzoItem } from "../utils/gonzoBunny";
 import { wordCvc3, longVowels } from "../utils/imageAssetPicker";
 import { wordCvc4 } from "../utils/dndItemsGame";
 
+import backButtonImage from "../assets/buttons&dialogues/backButton.png";
 import { itemsListAdvs1, itemsListAdvs2 } from "../utils/advAssets";
 import { wordFamily } from "../utils/is3Assets";
 import Image1BG from "/gamebg1.png";
 import Image2BG from "/gamebg2.png";
 import Image3BG from "/gamebg3.png";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const ItemManagementG1 = () => {
+	const navigate = useNavigate();
+
 	const stageData = {
 		beginner: {
-	    	stage1: { items: foodItemsList, bg: Image1BG, limit: 6,},
+			stage1: { items: foodItemsList, bg: Image1BG, limit: 6 },
 			stage2: { items: gonzoItem, bg: Image2BG, limit: 8 },
 			stage3: { items: wordCvc3, bg: Image3BG, limit: 8 },
 		},
@@ -118,8 +123,17 @@ const ItemManagementG1 = () => {
 		setSelectedItems(filteredItems);
 	};
 
+	const handleBackClick = () => {
+		navigate("/Manage");
+	};
+
 	return (
 		<div className="ItemManagement">
+			<div className="nav-buttons">
+				<button onClick={handleBackClick} className="nav-button back-button">
+					<img src={backButtonImage} alt="Back" />
+				</button>
+			</div>
 			<div
 				style={{
 					position: "absolute",

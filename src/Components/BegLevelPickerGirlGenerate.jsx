@@ -183,7 +183,7 @@ const BegLevelPickerGirlGenerate = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate("BeginnerLevelGirl");
+		navigate("AccessCodeCharacter");
 	};
 
 	// Generate random access code for selected level
@@ -293,8 +293,7 @@ const BegLevelPickerGirlGenerate = () => {
 						</button>
 					</div>
 					<button onClick={saveAccessCode} className="save-button-overlay">
-					<img src={saveButtonImage} alt="Save" />
-
+						<img src={saveButtonImage} alt="Save" />
 					</button>
 					<button onClick={handleCloseClick} className="close-button">
 						<img src={beginX} alt="Close" />
