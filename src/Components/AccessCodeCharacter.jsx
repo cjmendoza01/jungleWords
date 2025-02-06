@@ -34,7 +34,7 @@ const CharacterPicker = () => {
 
 	return (
 		<div className="CharacterPicker">
-			<audio autoPlay loop src={MSC11} />
+			<audio autoPlay loop src={MSC} />
 			<div className="nav-buttons">
 				<button onClick={handleBackClick} className="nav-button back-button">
 					<img src={backButtonImage} alt="Back" />
