@@ -29,7 +29,7 @@ const CharacterPicker = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate("Manage");
+		navigate("/Manage");
 	};
 
 	return (

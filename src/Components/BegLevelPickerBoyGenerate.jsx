@@ -184,7 +184,7 @@ const BegLevelPickerBoyGenerate = () => {
 	};
 
 	const handleBackClick = () => {
-		navigate("AccessCodeCharacter");
+		navigate("/Manage");
 	};
 
 	// Generate random access code for selected level
