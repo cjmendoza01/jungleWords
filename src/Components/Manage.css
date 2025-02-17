@@ -129,3 +129,100 @@ p {
   height: auto;
   display: block; /* Ensure image takes up full width of button */
 }
+
+
+.accesss-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accesss-code-image {
+  width: 60%; /* Adjust width as necessary */
+  height: auto; 
+  position: relative;
+}
+
+.accesss-code-input {
+  width: 40%; 
+  padding: 10px;
+  margin-top: 12px; /* Adjust this value to position correctly */
+  font-size: 16px;
+  border-radius: 5px;
+  border:  #ccc;
+  position: absolute;
+  top: 55%; /* Adjust to center the input within the image */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent; 
+}
+
+.accesss-code-input2 {
+  width: 160%; 
+  padding: 10px;
+   /* margin-top: 12px;  */
+  font-size: 16px;
+  border-radius: 5px;
+  border:  #ccc;
+  /* position: absolute;
+  top: 55%; 
+  left: 50%; */
+  transform: translate(-50%, -50%);
+  background-color: transparent; 
+}
+
+.doness-button-overlay {
+  margin-top: 90px; /* Adjust this value to position correctly */
+  background-color: transparent; 
+  border: none; 
+  position: absolute;
+  top: 50%; /* Adjust this value to position the Done button correctly */
+  left: 82%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  width: 90%; /* Adjust to fit the size within the image */
+  height: auto;
+}
+
+.doness-button-overlay img {
+  width: 100px; /* Adjust the size of the "Done" button */
+  height: auto;
+}
+.doness-button-overlay:hover img {
+  transform: scale(1.1); /* Scale the image on hover */
+}
+
+.gen-button-overlay img {
+  width: 60px; /* Adjust the size of the "Done" button */
+  height: auto;
+}
+.gen-button-overlay:hover img {
+  transform: scale(1.1); /* Scale the image on hover */
+}
+
+.closes-button {
+  position: absolute;
+  top: 20px; /* Position close button to the top right corner */
+  right: 180px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.closes-button img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+}
+.closes-button:hover img {
+  transform: scale(1.1); /* Scale the image on hover */
+}
+
+.clickNext img {
+  width: 150px; /* Adjust this value to make the "Next" button smaller */
+  height: auto;
+}
