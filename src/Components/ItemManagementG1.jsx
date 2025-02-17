@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./ItemManagementG1.css";
 import chooseIcon from "../assets/buttons&dialogues/itemManagement.png";
 import replayButtonImage from "../assets/buttons&dialogues/replayButton.png";
-import nextButtonImage from "../assets/buttons&dialogues/neksButton.png";
+import CheckButtonImage from "../assets/buttons&dialogues/CheckButton.png";
 import MSC from "/Music.mp3";
 import { foodItemsList } from "../utils/dndItemsGame";
 import { itemsList2, wordCvc3 as gonzoItem } from "../utils/gonzoBunny";
@@ -217,7 +217,7 @@ const ItemManagementG1 = () => {
 					onClick={() => saveData()}
 					disabled={selectedItems?.length !== maxItems}
 				>
-					<img src={nextButtonImage} alt="Next" />
+					<img src={CheckButtonImage} alt="Next" />
 				</button>
 			</div>
 		</div>
