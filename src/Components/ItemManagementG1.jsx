@@ -150,8 +150,9 @@ const ItemManagementG1 = () => {
 			<audio autoPlay loop src={MSC} />
 			<div className="header">
 				<img src={chooseIcon} alt="Item Management" />
-				<div>
+				<div className="dropdown-container">
 					<select
+						className="custom-dropdown"
 						onChange={(event) => {
 							if (event.target.value === "advanced" && stage === "stage3") {
 								setStage("stage1");
@@ -159,18 +160,18 @@ const ItemManagementG1 = () => {
 							setLevel(event.target.value);
 						}}
 					>
-						<option value={"beginner"}>Beginner</option>
-						<option value={"intermediate"}>Intermediate</option>
-						<option value={"advanced"}>Advanced</option>
+						<option value="beginner">🐣 Beginner</option>
+						<option value="intermediate">🚀 Intermediate</option>
+						<option value="advanced">🎓 Advanced</option>
 					</select>
-					<select onChange={(event) => setStage(event.target.value)}>
-						<option value={"stage1"}>Stage1</option>
-						<option value={"stage2"}>Stage2</option>
-						{level !== "advanced" ? (
-							<option value={"stage3"}>Stage3</option>
-						) : (
-							<></>
-						)}
+
+					<select
+						className="custom-dropdown"
+						onChange={(event) => setStage(event.target.value)}
+					>
+						<option value="stage1">🏁 Stage 1</option>
+						<option value="stage2">🎯 Stage 2</option>
+						{level !== "advanced" && <option value="stage3">🌟 Stage 3</option>}
 					</select>
 				</div>
 			</div>
