@@ -130,10 +130,11 @@ const ItemManagementG1 = () => {
 	return (
 		<div className="ItemManagement">
 			<div className="nav-buttons">
-				<button onClick={handleBackClick} className="nav-button back-button">
-					<img src={backButtonImage} alt="Back" />
-				</button>
-			</div>
+                            <a href="/" className="home-linkz" onClick={() => sessionStorage.removeItem("isAuthenticated")}>
+                                <img src="/home.png" alt="Home" />
+                            </a>
+                        </div>
+			<div className="buttons"></div>
 			<div
 				style={{
 					position: "absolute",
@@ -160,18 +161,18 @@ const ItemManagementG1 = () => {
 							setLevel(event.target.value);
 						}}
 					>
-						<option value="beginner">🐣 Beginner</option>
-						<option value="intermediate">🚀 Intermediate</option>
-						<option value="advanced">🎓 Advanced</option>
+						<option value="beginner"> Beginner</option>
+						<option value="intermediate">Intermediate</option>
+						<option value="advanced">Advanced</option>
 					</select>
 
 					<select
 						className="custom-dropdown"
 						onChange={(event) => setStage(event.target.value)}
 					>
-						<option value="stage1">🏁 Stage 1</option>
-						<option value="stage2">🎯 Stage 2</option>
-						{level !== "advanced" && <option value="stage3">🌟 Stage 3</option>}
+						<option value="stage1">Stage 1</option>
+						<option value="stage2">Stage 2</option>
+						{level !== "advanced" && <option value="stage3">Stage 3</option>}
 					</select>
 				</div>
 			</div>
