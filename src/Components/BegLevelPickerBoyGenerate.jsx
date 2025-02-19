@@ -203,10 +203,10 @@ const BegLevelPickerBoyGenerate = () => {
 				Your browser does not support the video tag.
 			</video>
 			<div className="nav-buttons">
-				<button onClick={handleBackClick} className="nav-button back-button">
-					<img src={backButtonImage} alt="Back" />
-				</button>
-			</div>
+                            <a href="/" className="home-linkz" onClick={() => sessionStorage.removeItem("isAuthenticated")}>
+                                <img src="/home.png" alt="Home" />
+                            </a>
+                        </div>
 			<div className="buttons">
 				<div className="buttonWithLock">
 					<button

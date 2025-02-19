@@ -202,10 +202,11 @@ const BegLevelPickerGirlGenerate = () => {
 				Your browser does not support the video tag.
 			</video>
 			<div className="nav-buttons">
-				<button onClick={handleBackClick} className="nav-button back-button">
-					<img src={backButtonImage} alt="Back" />
-				</button>
-			</div>
+    <a href="/" className="home-linkz" onClick={() => sessionStorage.removeItem("isAuthenticated")}>
+        <img src="/home.png" alt="Home" />
+    </a>
+</div>
+
 			<div className="buttons">
 				<div className="buttonWithLock">
 					<button
@@ -288,7 +289,7 @@ const BegLevelPickerGirlGenerate = () => {
 						</div>
 					</div>
 					<div className="generate-code-button">
-						<button onClick={generateAccessCode} className="gen-button-overlay">
+						<button onClick={generateAccessCode} className="gens-button-overlay">
 							<img src={genButtonImage} alt="Generate" />
 						</button>
 					</div>
