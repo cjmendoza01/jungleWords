@@ -130,11 +130,14 @@ const ItemManagementG1 = () => {
 	return (
 		<div className="ItemManagement">
 			<div className="nav-buttons">
-                            <a href="/" className="home-linkz" onClick={() => sessionStorage.removeItem("isAuthenticated")}>
-                                <img src="/home.png" alt="Home" />
-                            </a>
-                        </div>
-			<div className="buttons"></div>
+				<a
+					href="/"
+					className="home-linkz"
+					onClick={() => sessionStorage.removeItem("isAuthenticated")}
+				>
+					<img src="/home.png" alt="Home" />
+				</a>
+			</div>
 			<div
 				style={{
 					position: "absolute",
