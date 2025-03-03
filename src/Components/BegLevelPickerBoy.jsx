@@ -120,7 +120,6 @@ const BegLevelPickerBoy = () => {
 
 	const checkAccessCode = () => {
 		if (appData?.accessCodeBoy[selectedLevel.toLowerCase()] === accessCode) {
-			isAccessGranted = true;
 			// Navigate to the respective level
 			if (selectedLevel === "Beginner") {
 				navigate("/BeginnerLevelBoy");

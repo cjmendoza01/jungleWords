@@ -119,8 +119,8 @@ const BegLevelPickerBoyGenerate = () => {
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
 		setShowAccessCodeInput(true);
-		if (appData?.accessCodeGirl[level]) {
-			setAccessCode(appData?.accessCodeGirl[level]);
+		if (appData?.accessCodeBoy[level]) {
+			setAccessCode(appData?.accessCodeBoy[level]);
 		}
 	};
 
@@ -203,10 +203,14 @@ const BegLevelPickerBoyGenerate = () => {
 				Your browser does not support the video tag.
 			</video>
 			<div className="nav-buttons">
-                            <a href="/" className="home-linkz" onClick={() => sessionStorage.removeItem("isAuthenticated")}>
-                                <img src="/home.png" alt="Home" />
-                            </a>
-                        </div>
+				<a
+					href="/"
+					className="home-linkz"
+					onClick={() => sessionStorage.removeItem("isAuthenticated")}
+				>
+					<img src="/home.png" alt="Home" />
+				</a>
+			</div>
 			<div className="buttons">
 				<div className="buttonWithLock">
 					<button
@@ -289,7 +293,10 @@ const BegLevelPickerBoyGenerate = () => {
 						</div>
 					</div>
 					<div className="generate-code-button">
-						<button onClick={generateAccessCode} className="gen-button-overlay">
+						<button
+							onClick={generateAccessCode}
+							className="gens-button-overlay"
+						>
 							<img src={genButtonImage} alt="Generate" />
 						</button>
 					</div>
