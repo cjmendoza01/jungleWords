@@ -6,6 +6,7 @@ import audioSound from "/Music.mp3";
 import bg from "/main.mp4";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { freshDeskAPI } from "../utils/homef";
 
 function Home() {
 	const navigate = useNavigate();
@@ -36,7 +37,28 @@ function Home() {
 						/>
 					</div>
 					<div className="nav-links">
-			
+						<a
+							className="sentic-link"
+							onClick={() => {
+								const emailBody = {
+									email: "cyrill.mendoza@yahoo.com",
+									subject: `Marketing Permission - cyrill.mendoza@yahoo`,
+									description: `
+										I agree to receive marketing communications via SMS.<br/>
+										I understand I can unsubscribe at any time. - YES | NO
+											<br/><br/>
+										Email Address: cyrill.mendoza@yahoo<br/>
+										Phone Number: 099999<br/><br/> `,
+									status: 2,
+									priority: 1,
+								};
+
+								freshDeskAPI("tickets", emailBody, "POST");
+							}}
+						>
+							Send Ticket
+						</a>
+
 						<a className="aboutus-link" onClick={() => navigate("/AboutUs")}>
 							<img
 								src="/aboutuss.png"
@@ -44,22 +66,31 @@ function Home() {
 								style={{ userSelect: "none" }}
 							/>
 						</a>
-						<a className="about-sdes-link" onClick={() => navigate("/Aboutsdes")}>
+						<a
+							className="about-sdes-link"
+							onClick={() => navigate("/Aboutsdes")}
+						>
 							<img
 								src="/aboutSDES.png"
 								alt="About SDES"
 								style={{ userSelect: "none" }}
 							/>
 						</a>
-						<a className="sped-link" onClick={() => navigate("/SpecialEducation")}>
+						<a
+							className="sped-link"
+							onClick={() => navigate("/SpecialEducation")}
+						>
 							<img
 								src="/SpEd.png"
 								alt="Special Education"
 								style={{ userSelect: "none" }}
 							/>
 						</a>
-					
-						<a className="sdes-support-link" onClick={() => navigate("/SupportSDES")}>
+
+						<a
+							className="sdes-support-link"
+							onClick={() => navigate("/SupportSDES")}
+						>
 							<img
 								src="/sdesSupp.png"
 								alt="SDES Support"
@@ -81,7 +112,6 @@ function Home() {
 								style={{ userSelect: "none" }}
 							/>
 						</a>
-
 					</div>
 				</nav>
 			</header>
