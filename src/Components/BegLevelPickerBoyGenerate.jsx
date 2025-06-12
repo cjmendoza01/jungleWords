@@ -289,7 +289,7 @@ const BegLevelPickerBoyGenerate = () => {
 						</div>
 					</div>
 					<div className="generate-code-button">
-						<button onClick={generateAccessCode} className="gen-button-overlay">
+						<button onClick={generateAccessCode} className="gens-button-overlay">
 							<img src={genButtonImage} alt="Generate" />
 						</button>
 					</div>
