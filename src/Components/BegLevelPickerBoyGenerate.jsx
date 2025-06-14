@@ -119,8 +119,8 @@ const BegLevelPickerBoyGenerate = () => {
 	const handleStageClick = (level) => {
 		setSelectedLevel(level);
 		setShowAccessCodeInput(true);
-		if (appData?.accessCodeBoy[level]) {
-			setAccessCode(appData?.accessCodeBoy[level]);
+		if (appData?.accessCodeGirl[level]) {
+			setAccessCode(appData?.accessCodeGirl[level]);
 		}
 	};
 

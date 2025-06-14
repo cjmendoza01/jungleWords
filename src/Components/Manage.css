@@ -4,225 +4,69 @@ body {
   margin: 0;
   min-height: 100vh;
   background: url('/opaque.png') no-repeat center bottom/cover;
-  font-family: 'Poppins';
-  overflow: auto; /* Allow the page to scroll */
+  font-family: 'Poppins', sans-serif;
+  position: relative;  /* Added to anchor absolute children */
+  overflow: auto;
 }
-
-header nav {
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.logo img {
-  height: 75px;
-  padding-left: 60px;
-}
-
-.nav-linksz {
-  margin-right: 40px;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-linksz a {
-  display: inline-block;
-  width: 115px;
-  height: 60px;
-}
-
-.nav-linksz a img {
-  width: 90%;
-  height: 110%;
-  object-fit: contain;
-}
-
-.nav-linksz a:hover img {
-  transform: scale(1.1);
-}
-
-.home-linkz img {
-  width: 115px;
-  height: 60px;
-  padding-top: 6px;
-}
-
-.jungle-background-sped {
-  height: 100vh; /* Make sure it takes the full height */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align content to the top */
-  overflow: auto; /* Allow scrolling for the jungle background */
-}
-
-.contents_spec_ed {
-  text-align: center;
-  color: black; /* Changed text color to black */
-  padding: 20px;
-}
-
-.contents_spec_ed img {
-  max-width: 100%;
-  width: 500px;
-  height: auto;
-  display: block;
-}
-
-.text-content {
-  margin-top: 10px;
-  margin-bottom: 100px;
-  padding: 20px;
-  color: black; /* Set text color to black */
-  background-color: transparent; /* Transparent background */
-  text-align: justify;
-}
-
-p {
-  color: rgb(0, 0, 0);
-  max-width: 1000px;
-  margin: 20px auto;
-  font-size: 18px;
-  line-height: 1.8; /* Increase line-height for better readability */
-  text-align: justify;
-  font-family: 'Poppins';
-}
-
-.image-row {
-  display: flex;
-  justify-content: center;
-  gap: 200px; /* Space between images */
-  margin-top: 20px; /* Space above the images */
-  margin-bottom: 40px; /* Space below the images */
-}
-
-.image-row img {
-    width: 300px; /* Adjust size as needed */
-    height: auto;
-    border-radius: 10px; /* Optional: rounded corners */
-    cursor: pointer; /* Add hover pointer for interactivity */
-    transition: transform 0.1s ease-in-out; /* Smooth scaling */
-  }
-  
-  .image-row img:hover {
-    transform: scale(1.1); /* Enlarge image slightly on hover */
-  }
-  
-  /* Remove any borders explicitly */
-  .image-row img {
-    border: none; 
-  }
-
-.image-row img:hover {
-  transform: scale(1.1); /* Enlarge image slightly on hover */
-}
-.image-button {
-  background: transparent; /* No background for the button */
-  border: none; /* No border */
-  padding: 0; /* No padding */
-  cursor: pointer; /* Pointer cursor to show interactivity */
-}
-
-.button-image {
-  width: 100%; /* Adjust image size to fit the button */
-  height: auto;
-  display: block; /* Ensure image takes up full width of button */
-}
-
 
 .accesss-code-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 350px; /* fixed width for better layout */
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* optional slight white bg */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .accesss-code-image {
-  width: 60%; /* Adjust width as necessary */
-  height: auto; 
-  position: relative;
+  width: 60%;
+  height: auto;
+  margin-bottom: 15px;
 }
 
 .accesss-code-input {
-  width: 40%; 
-  padding: 10px;
-  margin-top: 12px; /* Adjust this value to position correctly */
+  width: 100%;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 5px;
-  border:  #ccc;
-  position: absolute;
-  top: 55%; /* Adjust to center the input within the image */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: transparent; 
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  box-sizing: border-box;
+  margin-top: 12px;
 }
 
 .accesss-code-input2 {
-  width: 160%; 
-  padding: 10px;
-   /* margin-top: 12px;  */
+  width: 100%;
+  padding: 12px;
   font-size: 16px;
-  border-radius: 5px;
-  border:  #ccc;
-  /* position: absolute;
-  top: 55%; 
-  left: 50%; */
-  transform: translate(-50%, -50%);
-  background-color: transparent; 
-}
-
-.doness-button-overlay {
-  margin-top: 90px; /* Adjust this value to position correctly */
-  background-color: transparent; 
-  border: none; 
-  position: absolute;
-  top: 50%; /* Adjust this value to position the Done button correctly */
-  left: 82%;
-  transform: translate(-50%, 0);
-  cursor: pointer;
-  width: 90%; /* Adjust to fit the size within the image */
-  height: auto;
-}
-
-.doness-button-overlay img {
-  width: 100px; /* Adjust the size of the "Done" button */
-  height: auto;
-}
-.doness-button-overlay:hover img {
-  transform: scale(1.1); /* Scale the image on hover */
-}
-
-.gen-button-overlay img {
-  width: 60px; /* Adjust the size of the "Done" button */
-  height: auto;
-}
-.gen-button-overlay:hover img {
-  transform: scale(1.1); /* Scale the image on hover */
-}
-
-.closes-button {
-  position: absolute;
-  top: 20px; /* Position close button to the top right corner */
-  right: 180px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
   background-color: transparent;
+  box-sizing: border-box;
+  margin-top: 15px;
+}
+
+.text-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.2s;
 }
 
-.closes-button img {
-  width: 30px; /* Adjust size as needed */
-  height: auto;
-}
-.closes-button:hover img {
-  transform: scale(1.1); /* Scale the image on hover */
-}
-
-.clickNext img {
-  width: 150px; /* Adjust this value to make the "Next" button smaller */
-  height: auto;
+.text-button:hover {
+  background-color: #45a049;
 }
