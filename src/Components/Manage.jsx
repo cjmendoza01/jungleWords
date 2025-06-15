@@ -15,7 +15,7 @@ function Manage() {
     const [accessCode, setAccessCode] = useState("");
     const [teacherCode, setTeacherCode] = useState("");
     const [attempts, setAttempts] = useState(3);
-    const [step, setStep] = useState("access"); // access, teacherCode, management
+    const [step, setStep] = useState("access");
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -64,6 +64,12 @@ function Manage() {
     return (
         <div className="manage-container">
             <audio autoPlay loop src={"/BgMusic.mp3"} />
+
+            <video className="video-background" autoPlay muted loop>
+                <source src="/main.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+
             <header>
                 <nav>
                     <div className="logo">
@@ -81,7 +87,7 @@ function Manage() {
                 </nav>
             </header>
 
-            <main className="jungle-background-sped">
+            <main className="main-content">
                 <div className="contents_spec_ed">
                     {step === "access" && (
                         <div className="accesss-code-container">
@@ -93,8 +99,8 @@ function Manage() {
                                 onChange={(e) => setAccessCode(e.target.value)}
                                 placeholder="Access Code"
                             />
-                            <button className="text-button" onClick={handleAccessSubmit}>
-                                Update
+                            <button className="image-btn" onClick={handleAccessSubmit}>
+                                <img src="/update.png" alt="Update" />
                             </button>
                         </div>
                     )}
@@ -109,8 +115,8 @@ function Manage() {
                                 onChange={(e) => setTeacherCode(e.target.value)}
                                 placeholder="Teacher Code"
                             />
-                            <button className="text-button" onClick={handleTeacherCodeSubmit}>
-                                Done
+                            <button className="image-btn" onClick={handleAccessSubmit}>
+                                <img src="/done.png" alt="Done" />
                             </button>
                         </div>
                     )}
@@ -121,7 +127,7 @@ function Manage() {
                                 <h2>MANAGEMENT</h2>
                                 <p>
                                     Welcome to the Manage Portal! This exclusive page is designed to give educators full control over the games they use in the classroom.
-                                    Through this portal, teachers can easily manipulate access codes and customize the in-game content...
+                                    Through this portal, teachers can easily manipulate access codes and customize the in-game content.
                                 </p>
                             </div>
                             <div className="image-row">

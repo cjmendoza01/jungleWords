@@ -3,36 +3,55 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: url('/opaque.png') no-repeat center bottom/cover;
   font-family: 'Poppins', sans-serif;
-  position: relative;  /* Added to anchor absolute children */
   overflow: auto;
+  background: black;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.manage-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.main-content {
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .accesss-code-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 45%;
+  left: 45%;
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 350px; /* fixed width for better layout */
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* optional slight white bg */
+  width: 350px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.accesss-code-image {
-  width: 60%;
-  height: auto;
-  margin-bottom: 15px;
-}
-
-.accesss-code-input {
+.accesss-code-input,
+.accesss-code-input2 {
   width: 100%;
   padding: 12px;
   font-size: 16px;
@@ -43,21 +62,10 @@ body {
   margin-top: 12px;
 }
 
-.accesss-code-input2 {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  box-sizing: border-box;
-  margin-top: 15px;
-}
-
 .text-button {
   margin-top: 20px;
   padding: 12px 20px;
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 8px;
@@ -69,4 +77,56 @@ body {
 
 .text-button:hover {
   background-color: #45a049;
+}
+
+.image-btn {
+  margin-top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.image-btn img {
+  width: 100px;
+  height: auto;
+}
+
+.logo img {
+  width: 60px;
+}
+
+.nav-linksz {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.home-linkz img {
+  width: 60px;
+}
+
+.image-button {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 20px !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.image-button:focus,
+.image-button:active {
+  outline: none !important;
+  border: none ;
+  box-shadow: none ;
+}
+
+.button-image {
+  display: block;
+  width: 220px;
+  height: auto;
+  border: none ;
+  background: transparent ;
 }
