@@ -11,11 +11,12 @@ function getDynamicTeacherCode() {
     return `JW${year}${minute}`;
 }
 
+
 function Manage() {
     const [accessCode, setAccessCode] = useState("");
     const [teacherCode, setTeacherCode] = useState("");
     const [attempts, setAttempts] = useState(3);
-    const [step, setStep] = useState("access");
+    const [step, setStep] = useState("access"); // access, teacherCode, management
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -25,7 +26,8 @@ function Manage() {
         }
     }, []);
 
-    const handleAccessSubmit = () => {
+
+      const handleAccessSubmit = () => {
         if (accessCode === DEFAULT_PASSWORD) {
             setAccessCode("");
             setStep("teacherCode");
@@ -42,7 +44,7 @@ function Manage() {
         }
     };
 
-    const handleTeacherCodeSubmit = () => {
+     const handleTeacherCodeSubmit = () => {
         const expectedCode = getDynamicTeacherCode();
 
         if (teacherCode === expectedCode) {
@@ -61,6 +63,8 @@ function Manage() {
         }
     };
 
+
+
     return (
         <div className="manage-container">
             <audio autoPlay loop src={"/BgMusic.mp3"} />
@@ -72,9 +76,7 @@ function Manage() {
 
             <header>
                 <nav>
-                    <div className="logo">
-                        <img src="/Logo.png" alt="JW Logo" />
-                    </div>
+                    
                     <div className="nav-linksz">
                         <a
                             href="/"
@@ -89,7 +91,7 @@ function Manage() {
 
             <main className="main-content">
                 <div className="contents_spec_ed">
-                    {step === "access" && (
+                    {step === "access" && (         
                         <div className="accesss-code-container">
                             <h2>Enter Access Code</h2>
                             <input
@@ -115,7 +117,7 @@ function Manage() {
                                 onChange={(e) => setTeacherCode(e.target.value)}
                                 placeholder="Teacher Code"
                             />
-                            <button className="image-btn" onClick={handleAccessSubmit}>
+                            <button className="image-btn" onClick={handleTeacherCodeSubmit}>
                                 <img src="/done.png" alt="Done" />
                             </button>
                         </div>

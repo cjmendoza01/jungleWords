@@ -116,12 +116,26 @@ body {
   outline: none !important;
 }
 
-.image-button:focus,
-.image-button:active {
+.image-button img {
+  width: 220px;
+  height: auto;
+  display: block;
+  border: none !important;
   outline: none !important;
-  border: none ;
-  box-shadow: none ;
+  box-shadow: none !important;
 }
+
+/* Ensure active/focus states don't add any outline or border */
+.image-button:focus,
+.image-button:active,
+.image-button:focus-visible,
+.image-button img:focus,
+.image-button img:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 
 .button-image {
   display: block;
